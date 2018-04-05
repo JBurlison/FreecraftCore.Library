@@ -4,9 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Common.Logging;
+using Common.Logging.Simple;
 using FreecraftCore.Packet.Auth;
 using GladNet;
-using GladNet3;
 
 namespace Authentication.TestServer
 {
@@ -16,10 +17,11 @@ namespace Authentication.TestServer
 		{
 			NetworkAddressInfo info = new NetworkAddressInfo(IPAddress.Parse("127.0.0.1"), 3724);
 
-			AuthenticationServerApplicationBase authServer = new AuthenticationServerApplicationBase(info);
+			AuthenticationServerApplicationBase authServer = new AuthenticationServerApplicationBase(info, new ConsoleOutLogger("ConsoleLogger", LogLevel.All, true, false, false, null));
 
 			if(authServer.StartServer())
-				await authServer.BeginListening();
+				await authServer.BeginListening()
+					.ConfigureAwait(false);
 			else
 			{
 				throw new InvalidOperationException($"Unable start server.");

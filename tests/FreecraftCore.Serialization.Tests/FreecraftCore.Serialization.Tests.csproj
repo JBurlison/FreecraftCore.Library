@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FreecraftCore.Serializer">
-      <Version>3.0.23</Version>
+      <Version>3.0.26</Version>
     </PackageReference>
     <PackageReference Include="NUnit">
       <Version>3.9.0</Version>

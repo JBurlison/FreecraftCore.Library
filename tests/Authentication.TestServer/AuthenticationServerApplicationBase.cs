@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Autofac;
 using Common.Logging;
 using Common.Logging.Simple;
 using FreecraftCore;
@@ -13,19 +14,53 @@ using FreecraftCore.API.Common;
 using FreecraftCore.Packet.Auth;
 using FreecraftCore.Serializer;
 using GladNet;
-using GladNet3;
+using JetBrains.Annotations;
 
 namespace Authentication.TestServer
 {
 	public sealed class AuthenticationServerApplicationBase : TcpServerServerApplicationBase<AuthenticationServerPayload, AuthenticationClientPayload>
 	{
+		/// <summary>
+		/// Application logger.
+		/// </summary>
+		public ILog Logger { get; }
+
 		private INetworkSerializationService Serializer { get; }
 
+		private IContainer ServiceContainer { get; }
+
 		/// <inheritdoc />
-		public AuthenticationServerApplicationBase(NetworkAddressInfo serverAddress) 
+		public AuthenticationServerApplicationBase([NotNull] NetworkAddressInfo serverAddress, [NotNull] ILog logger) 
 			: base(serverAddress)
 		{
+			if(serverAddress == null) throw new ArgumentNullException(nameof(serverAddress));
+			if(logger == null) throw new ArgumentNullException(nameof(logger));
+
+			Logger = logger;
 			Serializer = new FreecraftCoreGladNetSerializerAdapter(CreateSerializer());
+			ServiceContainer = BuildServiceContainer();
+		}
+
+		private IContainer BuildServiceContainer()
+		{
+			ContainerBuilder builder = new ContainerBuilder();
+
+			//TODO: Implement proper handler discovery.
+			builder.RegisterInstance(new AuthLogonChallengeRequestHandler(Logger).AsTryHandler<AuthLogonChallengeRequest, AuthenticationClientPayload, AuthenticationServerPayload>())
+				.As<IPeerMessageHandler<AuthenticationClientPayload, AuthenticationServerPayload>>();
+
+			builder.RegisterType<AuthDefaultRequestHandler>()
+				.AsImplementedInterfaces()
+				.SingleInstance();
+
+			builder.RegisterInstance(Logger)
+				.As<ILog>();
+
+			builder.RegisterType<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload>>()
+				.As<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload>>()
+				.SingleInstance();
+
+			return builder.Build();
 		}
 
 		private ISerializerService CreateSerializer()
@@ -47,40 +82,32 @@ namespace Authentication.TestServer
 		}
 
 		/// <inheritdoc />
-		protected override async Task HandleIncomingNetworkMessage(IManagedNetworkClient<AuthenticationServerPayload, AuthenticationClientPayload> networkClient, NetworkIncomingMessage<AuthenticationClientPayload> message)
-		{
-			Console.WriteLine($"Recieved Payload: {message.Payload.GetType().Name}");
-
-			//This is just demo code
-			if(message.Payload is AuthLogonChallengeRequest c)
-				Console.WriteLine($"ClientBuild: {c.Build.ToString()}");
-
-			AuthLogonChallengeResponse response = new AuthLogonChallengeResponse(AuthenticationResult.FailNoGameTime);
-
-			await networkClient.SendMessage(response);
-
-			//await networkClient.DisconnectAsync(1);
-		}
-
-		/// <inheritdoc />
 		protected override bool IsClientAcceptable(TcpClient tcpClient)
 		{
 			return true;
 		}
 
 		/// <inheritdoc />
-		protected override IManagedNetworkClient<AuthenticationServerPayload, AuthenticationClientPayload> CreateIncomingClientPipeline(TcpClient client)
+		protected override IManagedNetworkServerClient<AuthenticationServerPayload, AuthenticationClientPayload> CreateIncomingSessionPipeline(TcpClient client)
 		{
 			Console.WriteLine($"Client Connected: {(client.Client.RemoteEndPoint as IPEndPoint)?.Address.ToString()}");
 
 			//The auth server is encryptionless and headerless
-			IManagedNetworkClient<AuthenticationServerPayload, AuthenticationClientPayload> managedClient = new DotNetTcpClientNetworkClient(client)
+			IManagedNetworkServerClient<AuthenticationServerPayload, AuthenticationClientPayload> managedClient = new DotNetTcpClientNetworkClient(client)
 				.AddHeaderlessNetworkMessageReading(Serializer)
 				.For<AuthenticationClientPayload, AuthenticationServerPayload, IAuthenticationPayload>()
 				.Build()
-				.AsManaged(new ConsoleOutLogger("ConsoleLogger", LogLevel.All, true, false, false, null));
+				.AsManagedSession(Logger);
 
 			return managedClient;
+		}
+
+		/// <inheritdoc />
+		protected override ManagedClientSession<AuthenticationServerPayload, AuthenticationClientPayload> CreateIncomingSession(IManagedNetworkServerClient<AuthenticationServerPayload, AuthenticationClientPayload> client)
+		{
+			//TODO: This is ugly clean it up
+			//TODO: Expose a way to get incoming connection address
+			return new AuthServerClientSession(client, new NetworkAddressInfo(IPAddress.Any, 50), ServiceContainer.Resolve<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload>>());
 		}
 	}
 }

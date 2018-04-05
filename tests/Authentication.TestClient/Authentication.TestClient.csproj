@@ -8,9 +8,13 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Authentication.TestClient</RootNamespace>
     <AssemblyName>Authentication.TestClient</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -50,16 +56,16 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FreecraftCore.Serializer">
-      <Version>3.0.23</Version>
+      <Version>3.0.26</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Client.DotNetTcpClient">
-      <Version>3.0.20</Version>
+      <Version>3.0.27</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Crypto.API">
-      <Version>3.0.20</Version>
+      <Version>3.0.27</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Serializer.FreecraftCore">
-      <Version>3.0.20</Version>
+      <Version>3.0.27</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

@@ -32,8 +32,9 @@ namespace FreecraftCore.Handlers
 		{
 			AuthLogonProofRequest proof = null;
 
+			//TODO: Change this console logging
 			if(payload.Result != AuthenticationResult.Success)
-				throw new InvalidOperationException($"The auth challenge failed. Returned: {payload.Result}.");
+				Console.WriteLine($"Failed Auth: {payload.Result}");
 
 			using(WoWSRP6CryptoServiceProvider srpProvider = new WoWSRP6CryptoServiceProvider(payload.Challenge.B.ToBigInteger(), payload.Challenge.N.ToBigInteger(), payload.Challenge.g.ToBigInteger()))
 			{

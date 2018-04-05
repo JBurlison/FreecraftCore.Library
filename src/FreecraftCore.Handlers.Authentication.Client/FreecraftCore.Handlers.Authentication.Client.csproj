@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GladNet3.Handler.API" Version="3.0.16" />
+    <PackageReference Include="GladNet3.Handler.API" Version="3.0.27" />
     <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
   </ItemGroup>
 

@@ -8,9 +8,13 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Authentication.TestServer</RootNamespace>
     <AssemblyName>Authentication.TestServer</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,7 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,7 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\AuthDefaultRequestHandler.cs" />
     <Compile Include="AuthenticationServerApplicationBase.cs" />
+    <Compile Include="Handlers\AuthLogonChallengeRequestHandler.cs" />
+    <Compile Include="AuthServerClientSession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,14 +59,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Autofac">
+      <Version>4.6.2</Version>
+    </PackageReference>
+    <PackageReference Include="Common.Logging">
+      <Version>3.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="FreecraftCore.Serializer">
+      <Version>3.0.26</Version>
+    </PackageReference>
     <PackageReference Include="GladNet3.Client.DotNetTcpClient">
-      <Version>3.0.20</Version>
+      <Version>3.0.27</Version>
+    </PackageReference>
+    <PackageReference Include="GladNet3.Handler.API">
+      <Version>3.0.27</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Serializer.FreecraftCore">
-      <Version>3.0.20</Version>
+      <Version>3.0.27</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Server.DotNetTcpServer">
-      <Version>3.0.20</Version>
+      <Version>3.0.27</Version>
+    </PackageReference>
+    <PackageReference Include="Moq">
+      <Version>4.8.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
