@@ -76,7 +76,7 @@ namespace FreecraftCore.Packet.Auth
 
 		public AuthLogonChallengeResponse(AuthenticationResult result)
 		{
-			if(!Enum.IsDefined(typeof(AuthenticationResult), result)) throw new InvalidEnumArgumentException(nameof(result), (int)result, typeof(AuthenticationResult));
+			if(!Enum.IsDefined(typeof(AuthenticationResult), result)) throw new ArgumentOutOfRangeException(nameof(result), "Value should be defined in the AuthenticationResult enum.");
 
 			Result = result;
 

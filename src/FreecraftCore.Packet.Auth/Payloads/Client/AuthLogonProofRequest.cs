@@ -57,11 +57,12 @@ namespace FreecraftCore.Packet.Auth
 			if (providedA == null) throw new ArgumentNullException(nameof(providedA));
 			if (m1Hash == null) throw new ArgumentNullException(nameof(m1Hash));
 
-			ThrowIfInvalidLength(nameof(providedA),
+			//TODO: Redo model validation logic
+			/*ThrowIfInvalidLength(nameof(providedA),
 				() => GetType().GetTypeInfo().GetMember(nameof(A)).First().GetCustomAttribute<KnownSizeAttribute>(true).KnownSize, providedA.Length);
 
 			ThrowIfInvalidLength(nameof(m1Hash),
-				() => GetType().GetTypeInfo().GetMember(nameof(M1)).First().GetCustomAttribute<KnownSizeAttribute>(true).KnownSize, m1Hash.Length);
+				() => GetType().GetTypeInfo().GetMember(nameof(M1)).First().GetCustomAttribute<KnownSizeAttribute>(true).KnownSize, m1Hash.Length);*/
 
 			A = providedA;
 			M1 = m1Hash;

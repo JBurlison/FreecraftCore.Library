@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FreecraftCore.Server.Database.Authentication.Models
+namespace FreecraftCore
 {
     public partial class Autobroadcast
     {

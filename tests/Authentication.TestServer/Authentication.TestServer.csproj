@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="Handlers\AuthDefaultRequestHandler.cs" />
     <Compile Include="AuthenticationServerApplicationBase.cs" />
-    <Compile Include="Handlers\AuthLogonChallengeRequestHandler.cs" />
     <Compile Include="AuthServerClientSession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,11 +82,18 @@
     <PackageReference Include="Moq">
       <Version>4.8.2</Version>
     </PackageReference>
+    <PackageReference Include="MySql.Data.EntityFrameworkCore">
+      <Version>6.10.6</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\FreecraftCore.API.Common.Auth\FreecraftCore.API.Common.Auth.csproj">
       <Project>{8579cd34-8b4f-4578-ac53-1ea46a92a67e}</Project>
       <Name>FreecraftCore.API.Common.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.Handlers.Authentication.Server\FreecraftCore.Handlers.Authentication.Server.csproj">
+      <Project>{b1b47be4-dccd-4900-8f85-8d039f56996f}</Project>
+      <Name>FreecraftCore.Handlers.Authentication.Server</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Auth\FreecraftCore.Packet.Auth.csproj">
       <Project>{fe9b9306-281b-4134-aa8f-b995f6098b91}</Project>
@@ -96,6 +102,14 @@
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj">
       <Project>{eb22a6ae-5098-40cd-9a58-ef989075fb22}</Project>
       <Name>FreecraftCore.Packet.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.Server.Database.Authentication\FreecraftCore.Server.Database.Authentication.csproj">
+      <Project>{09193b4c-539b-4426-bc28-f187f51f0383}</Project>
+      <Name>FreecraftCore.Server.Database.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.Server.Database.Common\FreecraftCore.Server.Database.Common.csproj">
+      <Project>{7a2070b2-77c7-4e06-97dd-0144fb41429a}</Project>
+      <Name>FreecraftCore.Server.Database.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace FreecraftCore.Server.Database.Authentication.Models
+namespace FreecraftCore
 {
     public partial class authContext : DbContext
     {

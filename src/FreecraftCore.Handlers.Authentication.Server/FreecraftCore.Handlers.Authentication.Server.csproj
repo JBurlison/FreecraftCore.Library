@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Common.Logging" Version="3.4.1" />
+    <PackageReference Include="GladNet3.Handler.API" Version="3.0.27" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FreecraftCore.Packet.Auth\FreecraftCore.Packet.Auth.csproj" />
+    <ProjectReference Include="..\FreecraftCore.Server.Database.Authentication\FreecraftCore.Server.Database.Authentication.csproj" />
+    <ProjectReference Include="..\FreecraftCore.Server.Database.Common\FreecraftCore.Server.Database.Common.csproj" />
+  </ItemGroup>
+
+</Project>

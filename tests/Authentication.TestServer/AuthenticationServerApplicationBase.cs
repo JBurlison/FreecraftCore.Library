@@ -15,6 +15,7 @@ using FreecraftCore.Packet.Auth;
 using FreecraftCore.Serializer;
 using GladNet;
 using JetBrains.Annotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace Authentication.TestServer
 {
@@ -45,10 +46,6 @@ namespace Authentication.TestServer
 		{
 			ContainerBuilder builder = new ContainerBuilder();
 
-			//TODO: Implement proper handler discovery.
-			builder.RegisterInstance(new AuthLogonChallengeRequestHandler(Logger).AsTryHandler<AuthLogonChallengeRequest, AuthenticationClientPayload, AuthenticationServerPayload>())
-				.As<IPeerMessageHandler<AuthenticationClientPayload, AuthenticationServerPayload>>();
-
 			builder.RegisterType<AuthDefaultRequestHandler>()
 				.AsImplementedInterfaces()
 				.SingleInstance();
@@ -59,6 +56,25 @@ namespace Authentication.TestServer
 			builder.RegisterType<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload>>()
 				.As<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload>>()
 				.SingleInstance();
+
+			//TODO: Maybe use ASP Core DI service so we can hide this stuff
+			DbContextOptionsBuilder<authContext> authDatabaseBuilder = new DbContextOptionsBuilder<authContext>();
+			authDatabaseBuilder.UseMySQL(@"server=localhost;port=3306;user=root;password=test;database=auth");
+
+			//Add the database stuff
+			builder.RegisterType<authContext>()
+				.AsSelf()
+				.InstancePerDependency();
+
+			builder.RegisterType<AuthenticationDatabaseUserAccountAccountRepository>()
+				.As<IAuthenticationUserAccountRepository>()
+				.InstancePerDependency();
+
+			builder.RegisterType<InvertedControlRepositoryServiceFactory<IAuthenticationUserAccountRepository>>()
+				.As<IRepositoryServiceFactory<IAuthenticationUserAccountRepository>>();
+
+			//This registers all the authentication message handlers
+			builder.RegisterModule<AuthenticationHandlerRegisterationModule>();
 
 			return builder.Build();
 		}
