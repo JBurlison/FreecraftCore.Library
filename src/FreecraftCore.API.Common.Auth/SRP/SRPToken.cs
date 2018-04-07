@@ -44,6 +44,23 @@ namespace FreecraftCore.API.Common.Auth
 		[WireMember(4)]
 		public byte[] salt { get; private set; }
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="b">SRP6: B (server random)</param>
+		/// <param name="g">SRP6: g (generator modulo N)</param>
+		/// <param name="n">SRP6: N (large safe prime)</param>
+		/// <param name="salt">SRP6: s (salt)</param>
+		public SRPToken(byte[] b, byte[] g, byte[] n, byte[] salt)
+		{
+			//TODO: Validate lengths
+
+			B = b;
+			this.g = g;
+			N = n;
+			this.salt = salt;
+		}
+
 		//Serializer ctor
 		protected SRPToken()
 		{

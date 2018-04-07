@@ -36,7 +36,7 @@ namespace FreecraftCore.Handlers
 			if(payload.Result != AuthenticationResult.Success)
 				Console.WriteLine($"Failed Auth: {payload.Result}");
 
-			using(WoWSRP6CryptoServiceProvider srpProvider = new WoWSRP6CryptoServiceProvider(payload.Challenge.B.ToBigInteger(), payload.Challenge.N.ToBigInteger(), payload.Challenge.g.ToBigInteger()))
+			using(WoWSRP6ClientCryptoServiceProvider srpProvider = new WoWSRP6ClientCryptoServiceProvider(payload.Challenge.B.ToBigInteger(), payload.Challenge.N.ToBigInteger(), payload.Challenge.g.ToBigInteger()))
 			{
 				using(WoWSRP6PublicComponentHashServiceProvider hashingService = new WoWSRP6PublicComponentHashServiceProvider())
 				{

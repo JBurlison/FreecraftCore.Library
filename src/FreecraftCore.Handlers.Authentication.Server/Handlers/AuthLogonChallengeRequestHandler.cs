@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
 using FreecraftCore;
 using FreecraftCore.API.Common;
+using FreecraftCore.API.Common.Auth;
+using FreecraftCore.Crypto;
 using FreecraftCore.Packet.Auth;
 using GladNet;
 using JetBrains.Annotations;
@@ -52,14 +56,39 @@ namespace Authentication.TestServer
 				if(Logger.IsDebugEnabled)
 					Logger.Debug($"Account: {payload.Identity} Exists: {accountExists}");
 
-				AuthLogonChallengeResponse response = new AuthLogonChallengeResponse(accountExists ? AuthenticationResult.FailBanned : AuthenticationResult.FailUnknownAccount);
+				//Depending on if it exists we build an appropriate response
+				AuthLogonChallengeResponse response = accountExists
+					? BuildSuccessResponse(await repo.GetAccount(payload.Identity).ConfigureAwait(false))
+					: BuildFailureResponse();
 
 				await context.PayloadSendService.SendMessage(response)
 					.ConfigureAwait(false);
 			}
+		}
 
-			await context.ConnectionService.DisconnectAsync(1)
-				.ConfigureAwait(false);
+		//TODO: Handle all failure scenarios like ban/lock/etc
+		private AuthLogonChallengeResponse BuildFailureResponse()
+		{
+			return new AuthLogonChallengeResponse(AuthenticationResult.FailUnknownAccount);
+		}
+
+		private AuthLogonChallengeResponse BuildSuccessResponse([NotNull] Account account)
+		{
+			if(account == null) throw new ArgumentNullException(nameof(account));
+
+			//TODO: unit test this
+			using(WoWSRP6ServerCryptoServiceProvider srp = new WoWSRP6ServerCryptoServiceProvider(account.V))
+			{
+				//TODO: Add a hexstring extension method
+				BigInteger B = srp.GenerateB();
+				byte[] salt = BigInteger.Parse(account.S, NumberStyles.HexNumber).ToByteArray();
+				byte[] G = WoWSRP6ServerCryptoServiceProvider.G.ToByteArray();
+				byte[] N = WoWSRP6ServerCryptoServiceProvider.N.ToByteArray();
+
+				SRPToken srpToken = new SRPToken(B.ToByteArray(), G, N, salt);
+
+				return new AuthLogonChallengeResponse(srpToken);
+			}
 		}
 	}
 }

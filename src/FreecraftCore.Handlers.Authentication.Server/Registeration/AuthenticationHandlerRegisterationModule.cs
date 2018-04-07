@@ -26,8 +26,6 @@ namespace FreecraftCore
 
 			foreach(Type t in handlerTypes)
 			{
-				Console.WriteLine($"Registering: {t}");
-
 				Type concretePayloadType = t.GetTypeInfo()
 					.ImplementedInterfaces
 					.First(i => i.GetTypeInfo().IsGenericType && i.GetTypeInfo().GetGenericTypeDefinition() == typeof(IPeerPayloadSpecificMessageHandler<,>))
@@ -36,8 +34,6 @@ namespace FreecraftCore
 
 				Type tryHandlerType = typeof(TrySemanticsBasedOnTypePeerMessageHandler<,,>)
 					.MakeGenericType(typeof(AuthenticationClientPayload), typeof(AuthenticationServerPayload), concretePayloadType);
-
-				Console.WriteLine($"Creating: {tryHandlerType}");
 
 				builder.Register(context =>
 					{

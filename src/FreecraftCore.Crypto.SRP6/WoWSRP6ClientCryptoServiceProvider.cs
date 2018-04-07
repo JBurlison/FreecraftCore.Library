@@ -12,11 +12,11 @@ namespace FreecraftCore.Crypto
 	/// Based on the work https://github.com/vermie/MangosClient/blob/master/Client/Authentication/Network/AuthSocket.cs
 	/// and the specification: http://srp.stanford.edu/design.html
 	/// </summary>
-	public class WoWSRP6CryptoServiceProvider : IDisposable
+	public class WoWSRP6ClientCryptoServiceProvider : IDisposable
 	{
 		//TODO: Reimplement secure random generation in netstandard1.6
 		//TODO: Implement >net4 Lazy loaded version.
-#if !NETSTANDARD1_5 && !NETSTANDARD1_6
+#if !NETSTANDARD1_3 && !NETSTANDARD1_6
 		[NotNull]
 		private RNGCryptoServiceProvider randomProvider { get; } = new RNGCryptoServiceProvider();
 #else
@@ -50,7 +50,7 @@ namespace FreecraftCore.Crypto
 		/// </summary>
 		private BigInteger privateKeyComponent_a { get; }
 
-		public WoWSRP6CryptoServiceProvider(BigInteger providedB, BigInteger providedN, BigInteger providedg)
+		public WoWSRP6ClientCryptoServiceProvider(BigInteger providedB, BigInteger providedN, BigInteger providedg)
 		{
 			B = providedB;
 			N = providedN;
@@ -106,7 +106,7 @@ namespace FreecraftCore.Crypto
 		//Based on the source from: http://www.dotnetframework.org/default.aspx/DotNET/DotNET/8@0/untmp/whidbey/REDBITS/ndp/clr/src/BCL/System/Security/Cryptography/RNGCryptoServiceProvider@cs/1/RNGCryptoServiceProvider@cs
 		public static void GetNonZeroBytes(RandomNumberGenerator generator, byte[] data)
 		{
-#if NETSTANDARD1_5 || NETSTANDARD1_6
+#if NETSTANDARD1_3 || NETSTANDARD1_6
 			generator.GetBytes(data);
 
 			int indexOfFirst0Byte = data.Length;
@@ -146,39 +146,10 @@ namespace FreecraftCore.Crypto
 #endif
 		}
 
-		#region IDisposable Support
-		private bool disposedValue = false; // To detect redundant calls
-
-		protected virtual void Dispose(bool disposing)
-		{
-			if (!disposedValue)
-			{
-				if (disposing)
-				{
-					// TODO: dispose managed state (managed objects).
-				}
-
-				// TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-				// TODO: set large fields to null.
-
-				disposedValue = true;
-			}
-		}
-
-		// TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-		// ~SRP6CryptoServiceProvider() {
-		//   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-		//   Dispose(false);
-		// }
-
-		// This code added to correctly implement the disposable pattern.
+		/// <inheritdoc />
 		public void Dispose()
 		{
-			// Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-			Dispose(true);
-			// TODO: uncomment the following line if the finalizer is overridden above.
-			// GC.SuppressFinalize(this);
+			randomProvider.Dispose();
 		}
-#endregion
 	}
 }

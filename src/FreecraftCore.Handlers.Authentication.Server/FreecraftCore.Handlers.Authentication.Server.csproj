@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FreecraftCore.Crypto.SRP6\FreecraftCore.Crypto.SRP6.csproj" />
     <ProjectReference Include="..\FreecraftCore.Packet.Auth\FreecraftCore.Packet.Auth.csproj" />
     <ProjectReference Include="..\FreecraftCore.Server.Database.Authentication\FreecraftCore.Server.Database.Authentication.csproj" />
     <ProjectReference Include="..\FreecraftCore.Server.Database.Common\FreecraftCore.Server.Database.Common.csproj" />

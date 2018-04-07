@@ -18,5 +18,14 @@ namespace FreecraftCore
 		/// <param name="accountName">The account name to check for.</param>
 		/// <returns>Indicates if an account is in the database with the provided account name.</returns>
 		Task<bool> DoesAccountExists(string accountName);
+
+		/// <summary>
+		/// Loads the <see cref="Account"/> model with the specified
+		/// <see cref="accountName"/>.
+		/// Throws if it does not exist.
+		/// </summary>
+		/// <param name="accountName">The name of the account.</param>
+		/// <returns></returns>
+		Task<Account> GetAccount(string accountName);
 	}
 }

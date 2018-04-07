@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using JetBrains.Annotations;
 
 
 namespace FreecraftCore.Packet.Auth
@@ -61,7 +62,7 @@ namespace FreecraftCore.Packet.Auth
 		/// </summary>
 		[Optional(nameof(isAuthenticationChallengeSuccessful))]
 		[WireMember(5)]
-		public byte securityFlags { get; private set; }
+		public byte SecurityFlags { get; private set; }
 
 		//The server is suppose to send additional info depending on the flags
 		//However, the serializer isn't capable of conditionally reading different sizes based on flags
@@ -74,6 +75,11 @@ namespace FreecraftCore.Packet.Auth
 			return Result == AuthenticationResult.Success || Result == AuthenticationResult.Success_Survey;
 		}
 
+		/// <summary>
+		/// Creates a new failed response.
+		/// <see cref="Result"/> Must not be success.
+		/// </summary>
+		/// <param name="result">Non-success result.</param>
 		public AuthLogonChallengeResponse(AuthenticationResult result)
 		{
 			if(!Enum.IsDefined(typeof(AuthenticationResult), result)) throw new ArgumentOutOfRangeException(nameof(result), "Value should be defined in the AuthenticationResult enum.");
@@ -82,6 +88,18 @@ namespace FreecraftCore.Packet.Auth
 
 			if(isAuthenticationChallengeSuccessful)
 				throw new InvalidOperationException($"Cannot initialize {nameof(Result)} as {AuthenticationResult.Success} without fully intializing payload.");
+		}
+
+		/// <inheritdoc />
+		public AuthLogonChallengeResponse([NotNull] SRPToken challenge, byte securityFlags = 0) //TODO: Handle security flags
+		{
+			if(challenge == null) throw new ArgumentNullException(nameof(challenge));
+
+			//TODO: Validate sizes
+			Result = AuthenticationResult.Success;
+			Challenge = challenge;
+			ClientFileHMACSeed = new byte[16]; //TODO: Implement this eventually; not implemented in TC.
+			SecurityFlags = securityFlags;
 		}
 
 		//TODO: Proper ctor; right now we don't have a server so we can get away with just default

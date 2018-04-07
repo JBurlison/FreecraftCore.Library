@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,17 @@ namespace FreecraftCore
 			return AuthenticationDatabaseContext
 				.Account
 				.AnyAsync(a => a.Username == accountName);
+		}
+
+		/// <inheritdoc />
+		public Task<Account> GetAccount(string accountName)
+		{
+			if(string.IsNullOrWhiteSpace(accountName)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(accountName));
+
+			return AuthenticationDatabaseContext
+				.Account
+				.Where(a => a.Username == accountName)
+				.SingleAsync();
 		}
 
 		/// <inheritdoc />
