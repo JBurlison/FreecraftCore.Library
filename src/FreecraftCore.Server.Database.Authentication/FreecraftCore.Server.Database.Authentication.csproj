@@ -13,4 +13,9 @@
     <PackageReference Include="MySql.Data.EntityFrameworkCore.Design" Version="6.10.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FreecraftCore.Crypto.BigInteger\FreecraftCore.Crypto.BigInteger.csproj" />
+    <ProjectReference Include="..\FreecraftCore.Server.Database.Common\FreecraftCore.Server.Database.Common.csproj" />
+  </ItemGroup>
+
 </Project>

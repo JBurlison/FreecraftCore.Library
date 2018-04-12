@@ -8,10 +8,20 @@
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.6.2" />
     <PackageReference Include="Common.Logging" Version="3.4.1" />
-    <PackageReference Include="GladNet3.Handler.API" Version="3.0.27" />
+    <PackageReference Include="GladNet3.Handler.API" Version="3.0.30" />
+    <PackageReference Include="GladNet3.Server.API" Version="3.0.30" />
+    <PackageReference Include="Reinterpret.Net" Version="2.0.5" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.4.0" />
   </ItemGroup>
 

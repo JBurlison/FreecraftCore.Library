@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FreecraftCore.API.Common;
 using FreecraftCore.Serializer;
+using JetBrains.Annotations;
 
 namespace FreecraftCore.Packet.Auth
 {
@@ -43,7 +44,15 @@ namespace FreecraftCore.Packet.Auth
 
 		//TODO: Proper Ctor. Right now we only implement client stuff. Server sends this.
 
-		public LogonProofSuccess()
+		public LogonProofSuccess([NotNull] byte[] m2Value)
+		{
+			if(m2Value == null) throw new ArgumentNullException(nameof(m2Value));
+			if(m2Value.Length != 20) throw new ArgumentException("Value cannot be a collection with size not equal to 20.", nameof(m2Value));
+
+			M2 = m2Value;
+		}
+
+		protected LogonProofSuccess()
 		{
 
 		}

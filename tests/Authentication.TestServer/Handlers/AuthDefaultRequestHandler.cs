@@ -10,7 +10,7 @@ using JetBrains.Annotations;
 
 namespace Authentication.TestServer
 {
-	public sealed class AuthDefaultRequestHandler : IPeerPayloadSpecificMessageHandler<AuthenticationClientPayload, AuthenticationServerPayload>
+	public sealed class AuthDefaultRequestHandler : IPeerPayloadSpecificMessageHandler<AuthenticationClientPayload, AuthenticationServerPayload, IPeerSessionMessageContext<AuthenticationServerPayload>>
 	{
 		private ILog Logger { get; }
 
@@ -23,10 +23,10 @@ namespace Authentication.TestServer
 		}
 
 		/// <inheritdoc />
-		public Task HandleMessage(IPeerMessageContext<AuthenticationServerPayload> context, AuthenticationClientPayload payload)
+		public Task HandleMessage(IPeerSessionMessageContext<AuthenticationServerPayload> context, AuthenticationClientPayload payload)
 		{
 			if(Logger.IsWarnEnabled)
-				Logger.Warn($"Recieved unhandable Payload: {payload.GetType().Name} From: {"TODO"}");
+				Logger.Warn($"Recieved unhandable Payload: {payload.GetType().Name} ConnectionId: {context.Details.ConnectionId}");
 
 			return Task.CompletedTask;
 		}

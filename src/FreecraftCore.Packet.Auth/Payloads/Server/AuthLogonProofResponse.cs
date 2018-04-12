@@ -31,6 +31,13 @@ namespace FreecraftCore.Packet.Auth
 		
 		//TODO: Add real ctor. Right now we only implement client stuff and this is sent by server.
 
+		//TODO: Make better ctor
+		/// <inheritdoc />
+		public AuthLogonProofResponse(ILogonProofResult proofResult)
+		{
+			ProofResult = proofResult;
+		}
+
 		public AuthLogonProofResponse()
 		{
 

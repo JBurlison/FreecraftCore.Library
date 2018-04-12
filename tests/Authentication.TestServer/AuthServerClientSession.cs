@@ -16,7 +16,7 @@ namespace Authentication.TestServer
 		/// <summary>
 		/// The message handling service for auth messages.
 		/// </summary>
-		private MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload> AuthMessageHandlerService { get; }
+		private MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload, IPeerSessionMessageContext<AuthenticationServerPayload>> AuthMessageHandlerService { get; }
 
 		public static IPeerRequestSendService<AuthenticationServerPayload> MockedInterceptor { get; }
 
@@ -26,8 +26,9 @@ namespace Authentication.TestServer
 		}
 
 		/// <inheritdoc />
-		public AuthServerClientSession(IManagedNetworkServerClient<AuthenticationServerPayload, AuthenticationClientPayload> internalManagedNetworkClient, NetworkAddressInfo clientAddress, [NotNull] MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload> authMessageHandlerService) 
-			: base(internalManagedNetworkClient, clientAddress)
+		public AuthServerClientSession(IManagedNetworkServerClient<AuthenticationServerPayload, AuthenticationClientPayload> internalManagedNetworkClient, SessionDetails details, 
+			[NotNull] MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload, IPeerSessionMessageContext<AuthenticationServerPayload>> authMessageHandlerService) 
+			: base(internalManagedNetworkClient, details)
 		{
 			if(authMessageHandlerService == null) throw new ArgumentNullException(nameof(authMessageHandlerService));
 
@@ -38,7 +39,13 @@ namespace Authentication.TestServer
 		public override Task OnNetworkMessageRecieved(NetworkIncomingMessage<AuthenticationClientPayload> message)
 		{
 			//TODO: How should we handle server not having interceptor
-			return AuthMessageHandlerService.TryHandleMessage(new DefaultPeerMessageContext<AuthenticationServerPayload>(Connection, SendService, MockedInterceptor), message);
+			return AuthMessageHandlerService.TryHandleMessage(new AuthSessionMessageContext(Connection, SendService, MockedInterceptor, Details), message);
+		}
+
+		/// <inheritdoc />
+		protected override void OnSessionDisconnected()
+		{
+			//TODO: Do session cleanup if we need it
 		}
 	}
 }

@@ -26,6 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>7.2</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>7.2</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,6 +53,7 @@
     <Compile Include="Handlers\AuthDefaultRequestHandler.cs" />
     <Compile Include="AuthenticationServerApplicationBase.cs" />
     <Compile Include="AuthServerClientSession.cs" />
+    <Compile Include="Handlers\AuthSessionMessageContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,19 +68,19 @@
       <Version>3.4.1</Version>
     </PackageReference>
     <PackageReference Include="FreecraftCore.Serializer">
-      <Version>3.0.26</Version>
+      <Version>3.0.27</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Client.DotNetTcpClient">
-      <Version>3.0.27</Version>
+      <Version>3.0.30</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Handler.API">
-      <Version>3.0.27</Version>
+      <Version>3.0.30</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Serializer.FreecraftCore">
-      <Version>3.0.27</Version>
+      <Version>3.0.30</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Server.DotNetTcpServer">
-      <Version>3.0.27</Version>
+      <Version>3.0.30</Version>
     </PackageReference>
     <PackageReference Include="Moq">
       <Version>4.8.2</Version>

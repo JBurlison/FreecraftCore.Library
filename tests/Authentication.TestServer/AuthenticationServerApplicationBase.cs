@@ -53,8 +53,8 @@ namespace Authentication.TestServer
 			builder.RegisterInstance(Logger)
 				.As<ILog>();
 
-			builder.RegisterType<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload>>()
-				.As<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload>>()
+			builder.RegisterType<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload, IPeerSessionMessageContext<AuthenticationServerPayload>>>()
+				.As<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload, IPeerSessionMessageContext<AuthenticationServerPayload>>>()
 				.SingleInstance();
 
 			//TODO: Maybe use ASP Core DI service so we can hide this stuff
@@ -75,6 +75,11 @@ namespace Authentication.TestServer
 
 			//This registers all the authentication message handlers
 			builder.RegisterModule<AuthenticationHandlerRegisterationModule>();
+
+			//TODO: We should move to service factory design
+			builder.RegisterType<AuthenticationInMemoryAuthChallengeRepository>()
+				.As<IAuthenticationAuthChallengeRepository>()
+				.SingleInstance();
 
 			return builder.Build();
 		}
@@ -119,11 +124,9 @@ namespace Authentication.TestServer
 		}
 
 		/// <inheritdoc />
-		protected override ManagedClientSession<AuthenticationServerPayload, AuthenticationClientPayload> CreateIncomingSession(IManagedNetworkServerClient<AuthenticationServerPayload, AuthenticationClientPayload> client)
+		protected override ManagedClientSession<AuthenticationServerPayload, AuthenticationClientPayload> CreateIncomingSession(IManagedNetworkServerClient<AuthenticationServerPayload, AuthenticationClientPayload> client, SessionDetails details)
 		{
-			//TODO: This is ugly clean it up
-			//TODO: Expose a way to get incoming connection address
-			return new AuthServerClientSession(client, new NetworkAddressInfo(IPAddress.Any, 50), ServiceContainer.Resolve<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload>>());
+			return new AuthServerClientSession(client, details, ServiceContainer.Resolve<MessageHandlerService<AuthenticationClientPayload, AuthenticationServerPayload, IPeerSessionMessageContext<AuthenticationServerPayload>>>());
 		}
 	}
 }

@@ -56,6 +56,12 @@ namespace FreecraftCore.Crypto
 		internal int _sign;
 		internal uint[] _bits;
 
+		//TODO: Is it safe to expose this?
+		/// <summary>
+		/// For WCELL code integration.
+		/// </summary>
+		internal uint[] Data => _bits;
+
 		// We have to make a choice of how to represent int.MinValue. This is the one
 		// value that fits in an int, but whose negation does not fit in an int.
 		// We choose to use a large representation, so we're symmetric with respect to negation.

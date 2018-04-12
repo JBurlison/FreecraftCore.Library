@@ -28,12 +28,12 @@ namespace FreecraftCore
 			{
 				Type concretePayloadType = t.GetTypeInfo()
 					.ImplementedInterfaces
-					.First(i => i.GetTypeInfo().IsGenericType && i.GetTypeInfo().GetGenericTypeDefinition() == typeof(IPeerPayloadSpecificMessageHandler<,>))
+					.First(i => i.GetTypeInfo().IsGenericType && i.GetTypeInfo().GetGenericTypeDefinition() == typeof(IPeerPayloadSpecificMessageHandler<,,>))
 					.GetGenericArguments()
 					.First();
 
-				Type tryHandlerType = typeof(TrySemanticsBasedOnTypePeerMessageHandler<,,>)
-					.MakeGenericType(typeof(AuthenticationClientPayload), typeof(AuthenticationServerPayload), concretePayloadType);
+				Type tryHandlerType = typeof(TrySemanticsBasedOnTypePeerMessageHandler<,,,>)
+					.MakeGenericType(typeof(AuthenticationClientPayload), typeof(AuthenticationServerPayload), concretePayloadType, typeof(IPeerSessionMessageContext<AuthenticationServerPayload>));
 
 				builder.Register(context =>
 					{
@@ -41,7 +41,7 @@ namespace FreecraftCore
 
 						return Activator.CreateInstance(tryHandlerType, handler);
 					})
-					.As(typeof(IPeerMessageHandler<AuthenticationClientPayload, AuthenticationServerPayload>))
+					.As(typeof(IPeerMessageHandler<AuthenticationClientPayload, AuthenticationServerPayload, IPeerSessionMessageContext<AuthenticationServerPayload>>))
 					.SingleInstance();
 			}
 		}
@@ -51,7 +51,7 @@ namespace FreecraftCore
 			return GetType().GetTypeInfo()
 				.Assembly
 				.GetTypes()
-				.Where(t => t.GetInterfaces().Any(i => i.GetTypeInfo().IsGenericType && i.GetGenericTypeDefinition() == typeof(IPeerPayloadSpecificMessageHandler<,>)));
+				.Where(t => t.GetInterfaces().Any(i => i.GetTypeInfo().IsGenericType && i.GetGenericTypeDefinition() == typeof(IPeerPayloadSpecificMessageHandler<,,>)));
 		}
 	}
 }

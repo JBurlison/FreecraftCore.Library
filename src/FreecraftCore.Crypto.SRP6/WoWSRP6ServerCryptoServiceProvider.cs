@@ -33,7 +33,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// N: large prime
 		/// </summary>
-		public static BigInteger N { get; } = BigInteger.Parse(@"894B645E89E1535BBDAD5B8B290650530801B18EBFBF5E8FAB3C82872A3E9BB7", NumberStyles.HexNumber);
+		public static BigInteger N { get; } = @"894B645E89E1535BBDAD5B8B290650530801B18EBFBF5E8FAB3C82872A3E9BB7".ToBigInteger();
 
 		/// <inheritdoc />
 		public WoWSRP6ServerCryptoServiceProvider(string passwordVerifierHex)
@@ -46,7 +46,7 @@ namespace FreecraftCore
 		{
 			try
 			{
-				return BigInteger.Parse(passwordVerifierHex, NumberStyles.HexNumber);
+				return passwordVerifierHex.ToBigInteger();
 
 			}
 			catch(Exception e)
@@ -64,26 +64,43 @@ namespace FreecraftCore
 		/// Generates SRP6 B value with the provided V.
 		/// </summary>
 		/// <returns></returns>
-		public BigInteger GenerateB()
+		public BigInteger GeneratePrivateB()
 		{
-			//Trinitycore
-			/*BigNumber gmod = g.ModExp(b, N);
-			B = ((v * 3) + gmod) % N;*/
 			try
 			{
 				byte[] bytes = new byte[19];
 
 				randomProvider.GetBytes(bytes);
 
-				BigInteger b = new BigInteger(bytes);
-				BigInteger gmod = G.ModPow(b, N);
+				//A check from WCELL: https://github.com/WCell/WCell/blob/4f009372d072cff74b7606031673449209ee6e62/Core/WCell.Core/Cryptography/SecureRemotePassword.cs#L452
+				// Must make sure the most significant byte is not zero
+				if(bytes[0] == 0)
+					bytes[0] = 1;
 
-				return ((V * 3) + gmod) % N;
+				return bytes.ToBigInteger();
 			}
 			catch(Exception e)
 			{
 				throw new InvalidOperationException($"Error: {e.Message} Failed to generate SRP6 B.", e);
 			}
+		}
+
+		public BigInteger GeneratePublicB(BigInteger secretB)
+		{
+			//Trinitycore
+			/*BigNumber gmod = g.ModExp(b, N);
+			B = ((v * 3) + gmod) % N;*/
+			BigInteger gmod = G.ModPow(secretB, N);
+
+			BigInteger publicB = ((V * 3) + gmod) % N;
+
+			//A check from WCELL: https://github.com/WCell/WCell/blob/4f009372d072cff74b7606031673449209ee6e62/Core/WCell.Core/Cryptography/SecureRemotePassword.cs#L301
+			if(publicB < 0)
+			{
+				publicB += N;
+			}
+
+			return publicB;
 		}
 
 		/// <inheritdoc />
