@@ -11,13 +11,13 @@ namespace FreecraftCore.Packet.Auth
 	/// or an invalid token (Authenticator pin) sent. (Ex. Invalid authenticator pin or invalid phone pin)
 	/// </summary>
 	[WireDataContract]
-	public class LogonProofFailure : ILogonProofResult
+	public class LogonProofFailure : LogonProofResult
 	{
 		//This is sent when SRP6 was invalid or Token failed
 		/// <summary>
 		/// Indicates a failure to authenticate.
 		/// </summary>
-		public AuthenticationResult Result { get; } = AuthenticationResult.FailUnknownAccount;
+		public override AuthenticationResult Result { get; } = AuthenticationResult.FailUnknownAccount;
 
 		//The below fields are always the same whether it's an invalid token or if it's an invalid SRP6 M sent.
 

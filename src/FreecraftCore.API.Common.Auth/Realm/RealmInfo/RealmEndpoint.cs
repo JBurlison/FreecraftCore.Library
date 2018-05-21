@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Net;
+using JetBrains.Annotations;
 
 namespace FreecraftCore.API.Common
 {
@@ -31,6 +32,14 @@ namespace FreecraftCore.API.Common
 		public int Port => lazyPort.Value;
 
 		//TODO: If we make a server make a ctor for this
+
+		/// <inheritdoc />
+		public RealmEndpoint([NotNull] string realmEndpointInformation)
+		{
+			if(string.IsNullOrWhiteSpace(realmEndpointInformation)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(realmEndpointInformation));
+
+			RealmEndpointInformation = realmEndpointInformation;
+		}
 
 		public RealmEndpoint()
 		{

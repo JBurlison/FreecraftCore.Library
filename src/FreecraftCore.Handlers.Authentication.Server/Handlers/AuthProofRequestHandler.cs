@@ -94,7 +94,7 @@ namespace FreecraftCore
 				BigInteger N = WoWSRP6ServerCryptoServiceProvider.N;
 
 				//Host:  S = (Av^u) ^ b (computes session key)
-				BigInteger S = ((A * (challenge.V.ModPow(u, N))) % N) //TODO: Do we need % N here?
+				BigInteger S = ((A * (challenge.V.ModPow(u, N)))) //TODO: Do we need % N here?
 					.ModPow(challenge.PrivateB, N);
 
 				//Host:  K = H(S)
@@ -108,15 +108,17 @@ namespace FreecraftCore
 					.Concat(K.ToCleanByteArray())
 					.ToArray();
 
-				byte[] M2 = hasher.Hash(preMHash);
+				byte[] M = hasher.Hash(preMHash);
 
-				Logger.Debug($"M: {M2.Aggregate("", (s, b) => $"{s} {b}")}");
+				Logger.Debug($"M: {M.Aggregate("", (s, b) => $"{s} {b}")}");
 				Logger.Debug($"M1: {payload.M1.Aggregate("", (s, b) => $"{s} {b}")}");
 
 				//TODO: Remove this test code
-				if(TestClass.CompareBuffers(M2, payload.M1, 20) == 0)
+				if(TestClass.CompareBuffers(M, payload.M1, 20) == 0)
 				{
 					Logger.Debug($"Auth Proof Success.");
+
+					byte[] M2 = hasher.Hash(payload.A.Concat(M).Concat(K.ToCleanByteArray()).ToArray());
 
 					await context.PayloadSendService.SendMessage(new AuthLogonProofResponse(new LogonProofSuccess(M2)));
 				}

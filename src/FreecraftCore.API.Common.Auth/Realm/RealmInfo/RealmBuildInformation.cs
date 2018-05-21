@@ -17,11 +17,22 @@ namespace FreecraftCore.API.Common
 		[WireMember(3)]
 		public byte MinorVersion { get; }
 
-		//TODO: If we ever make a server add a real ctor. Right now only the server sends this
+		[WireMember(4)]
+		public short BuildNumber { get; }
 
-		public RealmBuildInformation()
+		/// <inheritdoc />
+		public RealmBuildInformation(ExpansionType expansion, byte majorVersion, byte minorVersion, short buildNumber)
 		{
+			if(!Enum.IsDefined(typeof(ExpansionType), expansion)) throw new ArgumentOutOfRangeException(nameof(expansion), "Value should be defined in the ExpansionType enum.");
 
+			Expansion = expansion;
+			MajorVersion = majorVersion;
+			MinorVersion = minorVersion;
+			BuildNumber = buildNumber;
+		}
+
+		protected RealmBuildInformation()
+		{
 		}
 	}
 }

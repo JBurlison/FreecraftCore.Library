@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore.API.Common
 {
@@ -8,6 +9,7 @@ namespace FreecraftCore.API.Common
 	/// Indicates the authorization the account has been granted.
 	/// (GM/Arena Tourny/Trial and etc)
 	/// </summary>
+	[WireDataContract]
 	public enum AccountAuthorizationFlags : uint //uint32 AccountFlags; (kind of large for no reason)
 	{
 		//0x01 = GM, 0x08 = Trial, 0x00800000 = Pro pass (arena tournament)

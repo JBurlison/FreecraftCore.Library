@@ -27,13 +27,13 @@ namespace FreecraftCore.Packet.Auth
 		/// Contains the information sent as a response to the Proof attempt.
 		/// </summary>
 		[WireMember(1)]
-		public ILogonProofResult ProofResult { get; private set; }
+		public LogonProofResult ProofResult { get; private set; }
 		
 		//TODO: Add real ctor. Right now we only implement client stuff and this is sent by server.
 
 		//TODO: Make better ctor
 		/// <inheritdoc />
-		public AuthLogonProofResponse(ILogonProofResult proofResult)
+		public AuthLogonProofResponse(LogonProofResult proofResult)
 		{
 			ProofResult = proofResult;
 		}

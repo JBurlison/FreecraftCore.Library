@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using JetBrains.Annotations;
 
 namespace FreecraftCore.API.Common
 {
+	//TODO: Refactor parts shared between different queries into seperate objects
 	[WireDataContract]
 	public class DefaultRealmInformation : IRealmInformation
 	{
@@ -13,7 +15,6 @@ namespace FreecraftCore.API.Common
 		/// <summary>
 		/// Packed information about the realm.
 		/// </summary>
-		[DontWrite]
 		[WireMember(1)]
 		public RealmFlags Flags { get; }
 
@@ -21,6 +22,7 @@ namespace FreecraftCore.API.Common
 		/// The string the realm should display on the realmlist tab.
 		/// This might not be only the name. It could include build information.
 		/// </summary>
+		[Encoding(EncodingType.ASCII)]
 		[WireMember(2)]
 		public string RealmString { get; }
 
@@ -31,7 +33,7 @@ namespace FreecraftCore.API.Common
 		public RealmEndpoint RealmAddress { get; }
 
 		//Maybe wrap this into something? Query it for realm pop info? I don't know
-		//TOOD: Research Mangos and Ember to find out why this is a float.
+		//TODO: Research Mangos and Ember to find out why this is a float.
 		//Odd that this is a float.
 		[WireMember(4)]
 		public float PopulationLevel { get; }
@@ -55,9 +57,23 @@ namespace FreecraftCore.API.Common
 		[WireMember(7)]
 		public byte RealmId { get; }
 
-		//TODO: If we ever make a server then we should create a real ctor
+		/// <inheritdoc />
+		public DefaultRealmInformation(RealmFlags flags, [NotNull] string realmString, [NotNull] RealmEndpoint realmAddress, float populationLevel, byte characterCount, byte realmTimeZone, byte realmId)
+		{
+			if(realmAddress == null) throw new ArgumentNullException(nameof(realmAddress));
+			if(!Enum.IsDefined(typeof(RealmFlags), flags)) throw new ArgumentOutOfRangeException(nameof(flags), "Value should be defined in the RealmFlags enum.");
+			if(string.IsNullOrWhiteSpace(realmString)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(realmString));
 
-		public DefaultRealmInformation()
+			Flags = flags;
+			RealmString = realmString;
+			RealmAddress = realmAddress;
+			PopulationLevel = populationLevel;
+			CharacterCount = characterCount;
+			RealmTimeZone = realmTimeZone;
+			RealmId = realmId;
+		}
+
+		protected DefaultRealmInformation()
 		{
 
 		}

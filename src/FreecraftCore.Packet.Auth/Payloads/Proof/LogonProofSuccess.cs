@@ -12,12 +12,12 @@ namespace FreecraftCore.Packet.Auth
 	/// Only for >= 2.x.x clients. 1.12.1 clients recieve something slightly different.
 	/// </summary>
 	[WireDataContract]
-	public class LogonProofSuccess : ILogonProofResult
+	public class LogonProofSuccess : LogonProofResult
 	{
 		/// <summary>
 		/// Indicates that the result of the logon attempt was successful.
 		/// </summary>
-		public AuthenticationResult Result { get; } = AuthenticationResult.Success;
+		public override AuthenticationResult Result { get; } = AuthenticationResult.Success;
 
 		/// <summary>
 		/// SRP6 M2. See http://srp.stanford.edu/design.html for more information.
@@ -36,11 +36,11 @@ namespace FreecraftCore.Packet.Auth
 
 		//TODO: What is survey ID? Always 0 on Trinitycore. Check mangos and EmberEmu
 		[WireMember(3)]
-		private readonly uint surveyId = 0;
+		private uint surveyId { get; } = 0;
 
 		//TODO: What is this? Always 0 from Trinitycore.
 		[WireMember(4)]
-		private readonly ushort unk3 = 0;
+		private ushort unk3 { get; } = 0;
 
 		//TODO: Proper Ctor. Right now we only implement client stuff. Server sends this.
 

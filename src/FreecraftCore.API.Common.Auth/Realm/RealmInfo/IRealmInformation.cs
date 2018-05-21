@@ -9,9 +9,6 @@ namespace FreecraftCore.API.Common
 	/// <summary>
 	/// Base contract of information a realm definition contains.
 	/// </summary>
-	[DefaultChild(typeof(DefaultRealmInformation))]
-	[WireDataContractBaseTypeByFlags((int)RealmFlags.SpecifyBuild, typeof(RealmCompleteInformation))]
-	[WireDataContract(WireDataContractAttribute.KeyType.Byte, InformationHandlingFlags.DontConsumeRead)] //AuthServer sents byte flags that can be used to determine type information
 	public interface IRealmInformation
 	{
 		/// <summary>

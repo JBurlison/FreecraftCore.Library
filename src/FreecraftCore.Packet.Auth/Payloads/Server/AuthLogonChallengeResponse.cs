@@ -98,7 +98,7 @@ namespace FreecraftCore.Packet.Auth
 			//TODO: Validate sizes
 			Result = AuthenticationResult.Success;
 			Challenge = challenge;
-			ClientFileHMACSeed = new byte[16]; //TODO: Implement this eventually; not implemented in TC.
+			ClientFileHMACSeed = Enumerable.Repeat((byte)1, 16).ToArray(); //TODO: Implement this eventually; not implemented in TC.
 			SecurityFlags = securityFlags;
 		}
 

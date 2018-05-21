@@ -28,7 +28,7 @@ namespace FreecraftCore.Handlers
 		}
 
 		/// <inheritdoc />
-		public async Task HandleMessage(IPeerMessageContext<AuthenticationClientPayload> context, AuthLogonChallengeResponse payload)
+		public Task HandleMessage(IPeerMessageContext<AuthenticationClientPayload> context, AuthLogonChallengeResponse payload)
 		{
 			AuthLogonProofRequest proof = null;
 
@@ -51,7 +51,9 @@ namespace FreecraftCore.Handlers
 				}
 			}
 
-			await context.PayloadSendService.SendMessage(proof);
+			Console.WriteLine("Sending Proof");
+
+			return context.PayloadSendService.SendMessage(proof);
 		}
 	}
 }

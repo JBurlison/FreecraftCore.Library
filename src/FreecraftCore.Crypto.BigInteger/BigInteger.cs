@@ -262,7 +262,7 @@ namespace FreecraftCore.Crypto
 		// Return the value of this BigInteger as a little-endian twos-complement
 		// byte array, using the fewest number of bytes possible. If the value is zero,
 		// return an array of one byte whose element is 0x00.
-		public byte[] ToByteArray()
+		internal byte[] ToByteArray()
 		{
 			if (_bits == null && _sign == 0)
 				return new byte[] { 0 };

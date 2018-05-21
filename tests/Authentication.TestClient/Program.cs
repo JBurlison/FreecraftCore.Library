@@ -39,23 +39,8 @@ namespace Authentication.TestClient
 
 			Serializer.Compile();
 
-			List<IManagedNetworkClient<AuthenticationClientPayload, AuthenticationServerPayload>> clients
-				 = new List<IManagedNetworkClient<AuthenticationClientPayload, AuthenticationServerPayload>>(1000);
+			await AsyncMain(BuildClient());
 
-			List<ConfiguredTaskAwaitable> tasks = new List<ConfiguredTaskAwaitable>(1000);
-
-			Console.ReadKey();
-			for(int i = 0; i < 1000; i++)
-				clients.Add(BuildClient());
-
-			for(int i = 0; i < 1000; i++)
-			{
-				int j = i;
-				tasks.Add(Task.Run(() => AsyncMain(clients[j])).ConfigureAwait(false));
-			}
-
-			for(int i = 0; i < tasks.Count; i++)
-				await tasks[i];
 
 			Console.ReadKey();
 		}
@@ -76,17 +61,6 @@ namespace Authentication.TestClient
 		{
 			try
 			{
-				/*AuthLogonChallengeRequest challengeRequest = new AuthLogonChallengeRequest(ProtocolVersion.ProtocolVersionTwo, GameType.WoW, ExpansionType.WrathOfTheLichKing, 3, 5,
-					ClientBuild.Wotlk_3_3_5a, PlatformType.x86, OperatingSystemType.Win, LocaleType.enUS,
-					IPAddress.Parse("127.0.0.1"), "Glader");
-
-				while(true)
-				{
-					byte[] bytes = Serializer.Serialize(challengeRequest);
-					AuthenticationClientPayload result = Serializer.Deserialize<AuthenticationClientPayload>(bytes);
-					await Task.Delay(10);
-				}*/
-
 				if(!await client.ConnectAsync("127.0.0.1", 3724).ConfigureAwait(false))
 					Console.WriteLine("Failed to connect");
 
@@ -94,31 +68,35 @@ namespace Authentication.TestClient
 						ClientBuild.Wotlk_3_3_5a, PlatformType.x86, OperatingSystemType.Win, LocaleType.enUS,
 						IPAddress.Parse("127.0.0.1"), "Glader"))
 					.ConfigureAwait(false);
-
-				int count = Interlocked.Add(ref Count, 1);
-
-				Console.WriteLine(count);
 			}
 			catch(Exception e)
 			{
 				Console.WriteLine($"Error: {e.Message}");
 			}
-			
 
-			//var response = (await client.ReadMessageAsync()).Payload;
-
-			//Console.WriteLine("Recieved payload");
-
-			/*AuthenticationLogonChallengeResponseMessageHandler handler = new AuthenticationLogonChallengeResponseMessageHandler();
-
-			if(response is AuthLogonChallengeResponse challengeResponse)
+			while(true)
 			{
-				Console.WriteLine($"Response: Valid: {challengeResponse.isValid} Result: {challengeResponse.Result} SRP: {challengeResponse.Challenge}");
+				var response = (await client.ReadMessageAsync()).Payload;
 
-				await handler.HandleMessage(new DefaultPeerMessageContext<AuthenticationClientPayload>(client, client, new PayloadInterceptMessageSendService<AuthenticationClientPayload>(client, client)), challengeResponse);
+				Console.WriteLine("Recieved payload");
+
+				AuthenticationLogonChallengeResponseMessageHandler handler = new AuthenticationLogonChallengeResponseMessageHandler();
+
+				AuthenticationLogonProofResponseMessageHandler proofHandler = new AuthenticationLogonProofResponseMessageHandler();
+
+				RealmListResponseMessageHandler realmListResponseHandler = new RealmListResponseMessageHandler();
+
+				if(response is AuthLogonChallengeResponse challengeResponse)
+				{
+					Console.WriteLine($"Response: Valid: {challengeResponse.isValid} Result: {challengeResponse.Result} SRP: {challengeResponse.Challenge}");
+
+					await handler.HandleMessage(new DefaultPeerMessageContext<AuthenticationClientPayload>(client, client, new PayloadInterceptMessageSendService<AuthenticationClientPayload>(client, client)), challengeResponse);
+				}
+				else if(response is AuthRealmListResponse realmListResponse)
+					await realmListResponseHandler.HandleMessage(new DefaultPeerMessageContext<AuthenticationClientPayload>(client, client, new PayloadInterceptMessageSendService<AuthenticationClientPayload>(client, client)), realmListResponse);
+				else if(response is AuthLogonProofResponse proofResponse)
+					await proofHandler.HandleMessage(new DefaultPeerMessageContext<AuthenticationClientPayload>(client, client, new PayloadInterceptMessageSendService<AuthenticationClientPayload>(client, client)), proofResponse);
 			}
-			else
-				Console.WriteLine($"Recieved Payload of Type: {response.GetType().Name}");*/
 		}
 	}
 }

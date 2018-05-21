@@ -46,6 +46,9 @@ namespace Authentication.TestServer
 		{
 			ContainerBuilder builder = new ContainerBuilder();
 
+			builder.RegisterInstance(Serializer)
+				.As<INetworkSerializationService>();
+
 			builder.RegisterType<AuthDefaultRequestHandler>()
 				.AsImplementedInterfaces()
 				.SingleInstance();
@@ -71,7 +74,8 @@ namespace Authentication.TestServer
 				.InstancePerDependency();
 
 			builder.RegisterType<InvertedControlRepositoryServiceFactory<IAuthenticationUserAccountRepository>>()
-				.As<IRepositoryServiceFactory<IAuthenticationUserAccountRepository>>();
+				.As<IRepositoryServiceFactory<IAuthenticationUserAccountRepository>>()
+				.SingleInstance();
 
 			//This registers all the authentication message handlers
 			builder.RegisterModule<AuthenticationHandlerRegisterationModule>();
@@ -81,12 +85,23 @@ namespace Authentication.TestServer
 				.As<IAuthenticationAuthChallengeRepository>()
 				.SingleInstance();
 
+			//TODO: Make this registeration generic so we don't need 1:1 for each repository service
+			builder.RegisterType<AuthenticationDatabaseRealmRepository>()
+				.As<IAuthenticationRealmRepository>()
+				.InstancePerDependency();
+
+			builder.RegisterType<InvertedControlRepositoryServiceFactory<IAuthenticationRealmRepository>>()
+				.As<IRepositoryServiceFactory<IAuthenticationRealmRepository>>()
+				.SingleInstance();
+
 			return builder.Build();
 		}
 
 		private ISerializerService CreateSerializer()
 		{
 			SerializerService serializer = new SerializerService();
+
+			serializer.RegisterType<RealmListContainer>();
 
 			typeof(AuthLogonChallengeRequest).Assembly
 				.GetTypes()

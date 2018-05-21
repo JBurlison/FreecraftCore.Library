@@ -13,11 +13,16 @@ namespace FreecraftCore.Packet.Auth
 	[WireDataContract(WireDataContractAttribute.KeyType.Byte)] //the type information is sent as a byte
 	[WireDataContractBaseType(0, typeof(LogonProofSuccess))] //0 in the stream means success
 	[WireDataContractBaseType(4, typeof(LogonProofFailure))] //4 means token failure.
-	public interface ILogonProofResult
+	public abstract class LogonProofResult
 	{
 		/// <summary>
 		/// Indicates the result of the proof.
 		/// </summary>
-		AuthenticationResult Result { get; }
+		public abstract AuthenticationResult Result { get; }
+
+		protected LogonProofResult()
+		{
+			
+		}
 	}
 }
