@@ -22,6 +22,8 @@ namespace FreecraftCore
 		/// </summary>
 		private IAuthenticationAuthChallengeRepository ChallengeRepository { get; }
 
+		private IAuthenticationUserAccountRepository AccountRepository { get; }
+
 		/// <summary>
 		/// A combined static hash of sorts between SRP6 N and G.
 		/// </summary>
@@ -47,13 +49,14 @@ namespace FreecraftCore
 		}
 
 		/// <inheritdoc />
-		public AuthProofRequestHandler([NotNull] ILog logger, [NotNull] IAuthenticationAuthChallengeRepository challengeRepository)
+		public AuthProofRequestHandler([NotNull] ILog logger, [NotNull] IAuthenticationAuthChallengeRepository challengeRepository, [NotNull] IAuthenticationUserAccountRepository accountRepository)
 		{
 			if(logger == null) throw new ArgumentNullException(nameof(logger));
 			if(challengeRepository == null) throw new ArgumentNullException(nameof(challengeRepository));
 
 			Logger = logger;
 			ChallengeRepository = challengeRepository;
+			AccountRepository = accountRepository ?? throw new ArgumentNullException(nameof(accountRepository));
 		}
 
 		/// <inheritdoc />
@@ -119,6 +122,9 @@ namespace FreecraftCore
 					Logger.Debug($"Auth Proof Success.");
 
 					byte[] M2 = hasher.Hash(payload.A.Concat(M).Concat(K.ToCleanByteArray()).ToArray());
+
+					//TODO: We also want to update last/login IP and other stuff
+					await AccountRepository.UpdateSessionKey(challenge.AccountId, K);
 
 					await context.PayloadSendService.SendMessage(new AuthLogonProofResponse(new LogonProofSuccess(M2)));
 				}

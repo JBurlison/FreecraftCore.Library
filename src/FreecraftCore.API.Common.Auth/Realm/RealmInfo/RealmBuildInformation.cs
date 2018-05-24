@@ -34,5 +34,11 @@ namespace FreecraftCore.API.Common
 		protected RealmBuildInformation()
 		{
 		}
+
+		/// <inheritdoc />
+		public override string ToString()
+		{
+			return $"{nameof(Expansion)}: {Expansion} {nameof(MajorVersion)}: {MajorVersion} {nameof(MinorVersion)}: {MinorVersion} {nameof(BuildNumber)}: {BuildNumber}";
+		}
 	}
 }

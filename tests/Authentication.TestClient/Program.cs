@@ -37,6 +37,8 @@ namespace Authentication.TestClient
 					Serializer.RegisterType(t);
 				});
 
+			Serializer.RegisterType<RealmListContainer>();
+
 			Serializer.Compile();
 
 			await AsyncMain(BuildClient());
@@ -84,7 +86,7 @@ namespace Authentication.TestClient
 
 				AuthenticationLogonProofResponseMessageHandler proofHandler = new AuthenticationLogonProofResponseMessageHandler();
 
-				RealmListResponseMessageHandler realmListResponseHandler = new RealmListResponseMessageHandler();
+				RealmListResponseMessageHandler realmListResponseHandler = new RealmListResponseMessageHandler(bytes => Serializer.Deserialize<RealmListContainer>(bytes));
 
 				if(response is AuthLogonChallengeResponse challengeResponse)
 				{

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FreecraftCore.Crypto;
 using Microsoft.EntityFrameworkCore;
 
 namespace FreecraftCore
@@ -44,6 +45,21 @@ namespace FreecraftCore
 				.Account
 				.Where(a => a.Username == accountName)
 				.SingleAsync();
+		}
+
+		/// <inheritdoc />
+		public async Task UpdateSessionKey(int accountId, BigInteger sessionKey)
+		{
+			Account account = await AuthenticationDatabaseContext
+				.Account
+				.FindAsync(accountId);
+
+			account.Sessionkey = sessionKey.ToHexString();
+
+			AuthenticationDatabaseContext.Update(account);
+
+			//TODO: If this fails for some reason then auth shouldn't continue. We need a better way to handle that case
+			await AuthenticationDatabaseContext.SaveChangesAsync();
 		}
 
 		/// <inheritdoc />

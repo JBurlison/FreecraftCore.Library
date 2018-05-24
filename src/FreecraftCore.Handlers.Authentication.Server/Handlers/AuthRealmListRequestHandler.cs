@@ -59,7 +59,7 @@ namespace FreecraftCore
 
 				byte[] realmData = Serializer.Serialize(realmListContainer);
 
-				AuthRealmListResponse response = new AuthRealmListResponse(realmData);
+				AuthRealmListResponse response = new AuthRealmListResponse((ushort)(realmData.Length + 6), realmInfos);
 
 				if(Logger.IsDebugEnabled)
 					Logger.Debug($"Sending {typeof(AuthRealmListResponse).Name} PayloadSize: {response.PayloadSize}.");

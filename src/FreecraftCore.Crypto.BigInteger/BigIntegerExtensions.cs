@@ -61,6 +61,25 @@ namespace FreecraftCore.Crypto
 			return new BigInteger(temp);
 		}
 
+		//Based on: https://github.com/WCell/WCell/blob/4f009372d072cff74b7606031673449209ee6e62/Core/WCell.Core/Cryptography/BigInteger.cs#L1736
+		/// <summary>
+		/// Returns a hex string showing the contains of the BigInteger
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public static string ToHexString(this BigInteger value)
+		{
+			string result = value.Data[value.Data.Length - 1].ToString("X");
+
+			//TODO: Is there a better/faster way to compute this?
+			for(int i = value.Data.Length - 2; i >= 0; i--)
+			{
+				result += value.Data[i].ToString("X8");
+			}
+
+			return result;
+		}
+
 		//TODO: Test performance
 		//TODO: Create a byte array versions which should be much faster
 		//Based on: https://github.com/WCell/WCell/blob/4f009372d072cff74b7606031673449209ee6e62/Core/WCell.Core/Cryptography/BigInteger.cs#L206

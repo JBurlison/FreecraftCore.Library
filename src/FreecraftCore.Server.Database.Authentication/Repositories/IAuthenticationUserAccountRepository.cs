@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using FreecraftCore.Crypto;
 
 namespace FreecraftCore
 {
@@ -27,5 +28,13 @@ namespace FreecraftCore
 		/// <param name="accountName">The name of the account.</param>
 		/// <returns></returns>
 		Task<Account> GetAccount(string accountName);
+
+		/// <summary>
+		/// Updates the session key for the account id.
+		/// </summary>
+		/// <param name="accountId">The account id to update.</param>
+		/// <param name="sessionKey">The new session key.</param>
+		/// <returns></returns>
+		Task UpdateSessionKey(int accountId, BigInteger sessionKey);
 	}
 }

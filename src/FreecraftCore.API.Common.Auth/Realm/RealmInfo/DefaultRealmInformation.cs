@@ -77,5 +77,11 @@ namespace FreecraftCore.API.Common
 		{
 
 		}
+
+		/// <inheritdoc />
+		public override string ToString()
+		{
+			return $"{nameof(Flags)}: {Flags} {nameof(RealmString)}: {RealmString} {nameof(RealmAddress)}: {RealmAddress} {nameof(RealmId)}: {RealmId}";
+		}
 	}
 }

@@ -11,6 +11,11 @@ namespace FreecraftCore
 		public string Identity { get; }
 
 		/// <summary>
+		/// The account id for the challenge.
+		/// </summary>
+		public int AccountId { get; }
+
+		/// <summary>
 		/// SRP6: Public random B
 		/// </summary>
 		public BigInteger PublicB { get; }
@@ -33,15 +38,17 @@ namespace FreecraftCore
 		//TODO: If we need non-complex EF7/Core we need to add status and key. Status to prevent exploit
 
 		/// <inheritdoc />
-		public AuthenticationChallengeModel(BigInteger publicB, BigInteger v, BigInteger privateB, BigInteger salt, [NotNull] string identity)
+		public AuthenticationChallengeModel(BigInteger publicB, BigInteger v, BigInteger privateB, BigInteger salt, [NotNull] string identity, int accountId)
 		{
 			if(string.IsNullOrWhiteSpace(identity)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(identity));
+			if(accountId < 0) throw new ArgumentOutOfRangeException(nameof(accountId));
 
 			PublicB = publicB;
 			V = v;
 			PrivateB = privateB;
 			Salt = salt;
 			Identity = identity;
+			AccountId = accountId;
 		}
 	}
 }

@@ -72,5 +72,11 @@ namespace FreecraftCore.API.Common
 		{
 
 		}
+
+		/// <inheritdoc />
+		public override string ToString()
+		{
+			return $"RealmType: {RealmType} HasBuildInfo: {HasBuildInformation} {DefaultInformation?.ToString()} {BuildInfo?.ToString()}";
+		}
 	}
 }
