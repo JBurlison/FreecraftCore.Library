@@ -4,11 +4,12 @@ using System.ComponentModel;
 using System.Linq;
 using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
+using GladNet;
 
 namespace FreecraftCore.Packet
 {
 	[WireDataContract]
-	public class OutgoingClientPacketHeader : IGamePacketHeader
+	public class OutgoingClientPacketHeader : IGamePacketHeader, IPacketHeader
 	{
 		//Header only contains 2 byte (short) packet size and 4 byte opcode
 		/// <inheritdoc />
@@ -35,6 +36,9 @@ namespace FreecraftCore.Packet
 
 		/// <inheritdoc />
 		public bool isValid => (PacketSize + 2) >= HeaderSize; //Is only valid if we have at least a header
+
+		//Have to add this for GladNet3 compatibility
+		int IPacketHeader.PacketSize => PacketSize;
 
 		public OutgoingClientPacketHeader(int payloadSize, NetworkOperationCode operationCode)
 		{
