@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
 using GladNet;
@@ -49,6 +50,28 @@ namespace FreecraftCore.Packet
 		public void OnAfterDeserialization()
 		{
 			PayloadSize = ComputePayloadSize();
+		}
+
+		/// <summary>
+		/// Encodes the size variable-length.
+		/// The size SHOULD include the 2 byte size of the OpCode. It is not assumed.
+		/// Without using that in the size the size will be invalid.
+		/// </summary>
+		/// <param name="size">The size.</param>
+		/// <returns>Variable length encoded size.</returns>
+		public static byte[] EncodePacketSize(int size)
+		{
+			if(IsLargePacketSize(size))
+				return new byte[3] {(byte)(0x80 | (0xFF & (size >> 16))), (byte)(0xFF & (size >> 8)), (byte)(0xFF & size)};
+			else
+				return new byte[2] { (byte)(0xFF & (size >> 8)), (byte)(0xFF & size) };
+		}
+
+		//From trinitycore ServerPktHeader
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		private static bool IsLargePacketSize(int size)
+		{
+			return size > 0x7FFF;
 		}
 
 		/// <inheritdoc />

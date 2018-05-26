@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using FreecraftCore.Packet.Common;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore.Packet
 {
+	//TODO: Redo this as [ReverseData] BigEndian short for size
 	/// <summary>
 	/// Small packet header.
 	/// </summary>
@@ -34,7 +36,45 @@ namespace FreecraftCore.Packet
 				throw new InvalidOperationException($"{nameof(IncomingClientSmallPacketHeader)} did not contain any encoded bytes.");
 
 			//See: https://github.com/FreecraftCore/FreecraftCore.Packet/blob/master/docs/WorldHeader.md
-			return (int)(((uint)encodedSizeBytes[0]) << 8 | encodedSizeBytes[1]) - sizeof(NetworkOperationCode);
+			return DecodePayloadSize(encodedSizeBytes);
+		}
+
+		/// <summary>
+		/// Decodes the 2 byte array for size
+		/// </summary>
+		/// <param name="bytes"></param>
+		/// <returns></returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static int DecodePayloadSize(byte[] bytes)
+		{
+			return DecodePacketSize(bytes) - sizeof(NetworkOperationCode);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static int DecodePacketSize(byte[] bytes)
+		{
+			return (int)(((uint)bytes[0]) << 8 | bytes[1]);
+		}
+
+		/// <summary>
+		/// Decodes the 2 bytes for the size.
+		/// The first byte being seperated as it what was decided what packet
+		/// type to use.
+		/// </summary>
+		/// <param name="firstByte"></param>
+		/// <param name="followingByte"></param>
+		/// <returns></returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static int DecodePayloadSize(byte firstByte, byte followingByte)
+		{
+			//We assume correct parameters for performance sake.
+			return DecodePacketSize(firstByte, followingByte) - sizeof(NetworkOperationCode);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static int DecodePacketSize(byte firstByte, byte followingByte)
+		{
+			return (int)(((uint)firstByte) << 8 | followingByte);
 		}
 
 		//Just check the validity of the encoded size bytes.
