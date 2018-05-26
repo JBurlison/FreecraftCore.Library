@@ -59,6 +59,7 @@ namespace FreecraftCore.Packet
 		/// </summary>
 		/// <param name="size">The size.</param>
 		/// <returns>Variable length encoded size.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static byte[] EncodePacketSize(int size)
 		{
 			if(IsLargePacketSize(size))
