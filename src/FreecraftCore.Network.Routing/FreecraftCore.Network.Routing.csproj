@@ -5,18 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="GladNet3.Common.API" Version="3.0.31" />
     <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
     <PackageReference Include="System.Threading.Tasks.Dataflow" Version="4.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="GladNet3.Common.API">
-      <HintPath>..\..\..\..\..\.nuget\packages\gladnet3.common.api\3.0.30\lib\netstandard1.3\GladNet3.Common.API.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
