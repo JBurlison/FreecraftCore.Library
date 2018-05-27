@@ -26,13 +26,13 @@ namespace FreecraftCore
 				.Assembly
 				.GetExportedTypes();
 
+			GamePacketPayloadTypes = AssemblyTypes
+				.Where(t => typeof(GamePacketPayload).IsAssignableFrom(t))
+				.ToArray();
+
 			SerializableTypes = GamePacketPayloadTypes
 				.Concat(AssemblyTypes.Where(t => t.GetCustomAttribute<WireDataContractAttribute>() != null))
 				.Distinct()
-				.ToArray();
-
-			GamePacketPayloadTypes = AssemblyTypes
-				.Where(t => typeof(GamePacketPayload).IsAssignableFrom(t))
 				.ToArray();
 		}
 	}
