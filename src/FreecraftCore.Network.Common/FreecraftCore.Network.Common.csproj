@@ -1,19 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj" />
+    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.29" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <ProjectReference Include="..\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj" />
   </ItemGroup>
 
 </Project>

@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FreecraftCore.Serialization.Tests</RootNamespace>
     <AssemblyName>FreecraftCore.Serialization.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -18,6 +18,7 @@
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,25 +67,9 @@
       <Project>{EB22A6AE-5098-40CD-9A58-EF989075FB22}</Project>
       <Name>FreecraftCore.Packet.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game.CharacterScreen\FreecraftCore.Packet.Game.CharacterScreen.csproj">
-      <Project>{BF78F38B-C142-4223-96AB-AD5A990155B9}</Project>
-      <Name>FreecraftCore.Packet.Game.CharacterScreen</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game.Chat\FreecraftCore.Packet.Game.Chat.csproj">
-      <Project>{17C51F98-933B-49BA-8092-9E07D2306285}</Project>
-      <Name>FreecraftCore.Packet.Game.Chat</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game.Common\FreecraftCore.Packet.Game.Common.csproj">
-      <Project>{976086DF-2FC5-41A8-9949-36E934DE7B50}</Project>
-      <Name>FreecraftCore.Packet.Game.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game.Core\FreecraftCore.Packet.Game.Core.csproj">
-      <Project>{1470BF8F-1579-4445-AF8F-F3EAF4066208}</Project>
-      <Name>FreecraftCore.Packet.Game.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game.Warden\FreecraftCore.Packet.Game.Warden.csproj">
-      <Project>{2298E1B3-5E4E-4EA8-8E7E-271DAE4E69AC}</Project>
-      <Name>FreecraftCore.Packet.Game.Warden</Name>
+    <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game\FreecraftCore.Packet.Game.csproj">
+      <Project>{E7203CA7-1D14-4322-8062-1F72FCDD3EC5}</Project>
+      <Name>FreecraftCore.Packet.Game</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

@@ -1,24 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="GladNet3.Common.API" Version="3.0.30" />
-    <PackageReference Include="Microsoft.Tpl.Dataflow" Version="4.5.24" />
+    <Reference Include="GladNet3.Common.API">
+      <HintPath>..\..\..\..\..\.nuget\packages\gladnet3.common.api\3.0.30\lib\netstandard1.3\GladNet3.Common.API.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

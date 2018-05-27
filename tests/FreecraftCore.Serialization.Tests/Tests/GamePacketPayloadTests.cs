@@ -27,9 +27,9 @@ namespace FreecraftCore.Tests
 
 	}
 
-	[TestFixture]
+	/*[TestFixture]
 	public class WardenPayloadTests : AutomatedReflectionTests<GamePacketPayload, WardenServerPayload>
 	{
 
-	}
+	}*/
 }

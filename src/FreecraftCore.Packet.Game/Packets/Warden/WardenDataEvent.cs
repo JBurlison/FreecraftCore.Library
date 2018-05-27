@@ -12,14 +12,16 @@ namespace FreecraftCore.Packet
 	/// Sent with <see cref="NetworkOperationCode.SMSG_WARDEN_DATA"/>.
 	/// </summary>
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_WARDEN_DATA)]
-	[WireDataContract(WireDataContractAttribute.KeyType.Byte, InformationHandlingFlags.DontConsumeRead)] //don't consume type information
-	public abstract class WardenServerPayload : GamePacketPayload
+	public class WardenDataEvent : GamePacketPayload
 	{
-		[DontWrite] //don't write; it's from type information
+		[ReadToEnd]
 		[WireMember(1)]
-		public WardenSubOperationCodeServer SubOperationCode { get; private set; }
+		public byte[] Data { get; }
 
-		protected WardenServerPayload()
+		/// <inheritdoc />
+		public override bool isValid => true;
+
+		protected WardenDataEvent()
 		{
 			
 		}
