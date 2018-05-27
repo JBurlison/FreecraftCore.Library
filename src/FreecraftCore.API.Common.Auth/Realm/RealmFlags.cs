@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	//Based on: https://github.com/EmberEmu/Ember/blob/spark-new/src/libs/shared/shared/Realm.h
 	/// <summary>

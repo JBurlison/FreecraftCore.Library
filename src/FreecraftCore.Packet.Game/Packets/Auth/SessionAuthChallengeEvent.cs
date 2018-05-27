@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	/// <summary>
 	/// First message sent by the server after connections (as an event)

@@ -5,7 +5,7 @@ using System.Text;
 using FreecraftCore.Serializer;
 
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	//value-type wrapper for the object GUID from Trinitycore
 	[WireDataContract]

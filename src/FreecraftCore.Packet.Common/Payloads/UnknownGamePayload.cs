@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Represents an unknown game payload.

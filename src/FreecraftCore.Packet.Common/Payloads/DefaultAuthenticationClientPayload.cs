@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FreecraftCore.Packet.Auth;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 

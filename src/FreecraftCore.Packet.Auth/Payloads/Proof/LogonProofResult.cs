@@ -1,10 +1,10 @@
-﻿using FreecraftCore.API.Common;
+﻿using FreecraftCore;
 using FreecraftCore.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	//TODO: Check mangos 1.12.1 for other possible LoginProof results. Also, we need to implement 1.12.1 result. Only have 3.3.5 at the moment.
 	/// <summary>

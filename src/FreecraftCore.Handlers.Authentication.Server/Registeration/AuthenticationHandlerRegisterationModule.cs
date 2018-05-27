@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Autofac;
-using FreecraftCore.Packet.Auth;
+using FreecraftCore;
 using GladNet;
 using Module = Autofac.Module;
 

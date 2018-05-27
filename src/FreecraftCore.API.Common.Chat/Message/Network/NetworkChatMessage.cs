@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	[DefaultChild(typeof(UnhandledChatTypeMessage))]
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_GUILD, typeof(DefaultNetworkChatMessage))] //for guild chat messages

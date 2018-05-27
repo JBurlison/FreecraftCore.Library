@@ -1,7 +1,7 @@
-﻿using FreecraftCore.Packet.Common;
+﻿using FreecraftCore;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Authentication payload base type that is used to wire children for serialization purposes.

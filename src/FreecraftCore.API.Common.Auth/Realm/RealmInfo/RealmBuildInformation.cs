@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	[WireDataContract]
 	public class RealmBuildInformation

@@ -1,12 +1,12 @@
-﻿using FreecraftCore.Packet.Common;
+﻿using FreecraftCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FreecraftCore.Packet.Auth;
+using FreecraftCore;
 
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Metadata marker for an authentication payload sent by the server.

@@ -5,7 +5,7 @@ using System.Text;
 using FreecraftCore.Serializer;
 
 
-namespace FreecraftCore.Packet.Common
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Represents the unique Operation Code of a message.

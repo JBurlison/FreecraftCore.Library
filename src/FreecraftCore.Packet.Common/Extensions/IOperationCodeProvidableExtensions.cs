@@ -4,10 +4,10 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	//TODO: Document
 	public static class IOperationCodeProvidableExtensions

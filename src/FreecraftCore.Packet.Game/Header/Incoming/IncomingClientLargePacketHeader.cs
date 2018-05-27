@@ -3,10 +3,10 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Large packet header.
@@ -15,13 +15,13 @@ namespace FreecraftCore.Packet
 	public class IncomingClientLargePacketHeader : IncomingClientPacketHeader
 	{
 		//[a][bb]
-		//See: https://github.com/FreecraftCore/FreecraftCore.Packet/blob/master/docs/WorldHeader.md
+		//See: https://github.com/FreecraftCore/FreecraftCore/blob/master/docs/WorldHeader.md
 		[KnownSize(3)]
 		[WireMember(1)]
 		private readonly byte[] encodedSizeBytes;
 
 		//[cc]
-		//See: https://github.com/FreecraftCore/FreecraftCore.Packet/blob/master/docs/WorldHeader.md
+		//See: https://github.com/FreecraftCore/FreecraftCore/blob/master/docs/WorldHeader.md
 		/// <inheritdoc />
 		[WireMember(2)] //after the 3 bytes of encoded size
 		public override NetworkOperationCode OperationCode { get; protected set; }
@@ -36,7 +36,7 @@ namespace FreecraftCore.Packet
 			if (encodedSizeBytes == null)
 				throw new InvalidOperationException($"{nameof(IncomingClientLargePacketHeader)} did not contain any encoded bytes.");
 
-			//See: https://github.com/FreecraftCore/FreecraftCore.Packet/blob/master/docs/WorldHeader.md
+			//See: https://github.com/FreecraftCore/FreecraftCore/blob/master/docs/WorldHeader.md
 			return DecodePayloadSize(encodedSizeBytes);
 		}
 

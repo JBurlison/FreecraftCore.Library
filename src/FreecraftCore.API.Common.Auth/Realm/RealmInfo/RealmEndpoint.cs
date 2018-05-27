@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	[WireDataContract]
 	public class RealmEndpoint

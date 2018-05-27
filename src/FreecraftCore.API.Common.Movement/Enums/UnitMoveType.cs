@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Enumeration of all the motion types a unit can be in.

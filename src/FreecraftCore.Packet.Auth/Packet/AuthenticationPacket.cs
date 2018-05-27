@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FreecraftCore.Packet;
+using FreecraftCore;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	//We cannot just deserialize this object because there is not a 1:1 mapping for
 	//Authentication Operation Codes

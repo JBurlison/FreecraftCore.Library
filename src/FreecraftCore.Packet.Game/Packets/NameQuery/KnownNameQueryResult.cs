@@ -1,7 +1,7 @@
-﻿using FreecraftCore.API.Common;
+﻿using FreecraftCore;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	[WireDataContract]
 	public class KnownNameQueryResult : NameQueryResult

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Enumeration of authentication destination codes.

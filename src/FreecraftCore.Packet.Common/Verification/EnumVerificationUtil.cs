@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	public static class EnumVerificationUtil
 	{

@@ -1,10 +1,10 @@
-﻿using FreecraftCore.Packet.Common;
+﻿using FreecraftCore;
 using FreecraftCore.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	//TODO: We may use the serializer for this one day.
 	[WireDataContract]

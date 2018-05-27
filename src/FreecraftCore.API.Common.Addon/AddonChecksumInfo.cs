@@ -4,7 +4,7 @@ using System.Linq;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	[WireDataContract]
 	public class AddonChecksumInfo

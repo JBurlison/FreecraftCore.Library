@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FreecraftCore.API.Common;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_PLAYER_LOGIN)]

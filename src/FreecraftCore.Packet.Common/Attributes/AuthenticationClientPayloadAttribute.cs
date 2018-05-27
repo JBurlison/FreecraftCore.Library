@@ -1,8 +1,8 @@
 ﻿using System;
-using FreecraftCore.Packet.Auth;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
+using FreecraftCore;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Metadata marker for an authentication payload sent by the client.

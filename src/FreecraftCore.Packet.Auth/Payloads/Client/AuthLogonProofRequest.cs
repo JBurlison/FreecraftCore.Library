@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Packet.Common;
+﻿using FreecraftCore;
 using FreecraftCore.Serializer;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	[WireDataContract]
 	[AuthenticationClientPayload(AuthOperationCode.AUTH_LOGON_PROOF)] //TODO: Figure out how to support linking with the limited information.

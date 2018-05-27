@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Crypto.Stream
+namespace FreecraftCore.Crypto
 {
 	public static class CryptoStreamReaderExtensions
 	{

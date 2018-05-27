@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FreecraftCore.API.Common;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Sent by the server when a logon proof request was successful.

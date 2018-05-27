@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Contract for types that implement functionality to lookup movement speed values.

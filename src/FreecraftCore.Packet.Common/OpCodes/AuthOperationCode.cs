@@ -5,7 +5,7 @@ using System.Text;
 using FreecraftCore.Serializer;
 
 
-namespace FreecraftCore.Packet.Common
+namespace FreecraftCore
 {
 	//Check Trinitycore's AuthSession.cpp for more information
 	/// <summary>

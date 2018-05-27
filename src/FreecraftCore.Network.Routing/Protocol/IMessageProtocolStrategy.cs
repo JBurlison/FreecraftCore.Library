@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FreecraftCore.Packet;
+using FreecraftCore;
 
-namespace FreecraftCore.Network
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Contract for a strongly typed strategy that provides a <see cref="ProtocolCode"/>.

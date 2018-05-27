@@ -1,6 +1,6 @@
 ﻿using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Represents a failed name query result.

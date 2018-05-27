@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using FreecraftCore.Packet;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
@@ -11,6 +11,7 @@ namespace FreecraftCore
 	/// Sent to the connecting user before the character list.
 	/// Sent with <see cref="NetworkOperationCode.SMSG_ADDON_INFO"/>.
 	/// </summary>
+	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_ADDON_INFO)]
 	public sealed class AddonInfoEvent : GamePacketPayload
 	{

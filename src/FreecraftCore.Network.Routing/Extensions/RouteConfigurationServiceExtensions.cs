@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Network
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Extensions for the <see cref="RouteConfigurationService"/> class.

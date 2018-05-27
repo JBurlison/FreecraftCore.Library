@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	//TODO: Refactor parts shared between different queries into seperate objects
 	[WireDataContract]

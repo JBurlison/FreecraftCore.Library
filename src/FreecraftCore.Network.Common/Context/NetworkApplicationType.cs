@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FreecraftCore.Network
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Enumeration of application types in the network.

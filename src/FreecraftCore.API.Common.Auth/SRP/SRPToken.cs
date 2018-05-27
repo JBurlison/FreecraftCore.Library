@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace FreecraftCore.API.Common.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// SRP token based on Trinitycore/Mangos/WoW authentication protocol.

@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Packet.Common;
+﻿using FreecraftCore;
 using FreecraftCore.Serializer;
 using System;
 using System.CodeDom;
@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using FreecraftCore.Packet.Auth;
+using FreecraftCore;
 
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Authentication payload base type that is used to wire children for serialization purposes.

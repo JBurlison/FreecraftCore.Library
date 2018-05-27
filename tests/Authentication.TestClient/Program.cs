@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 using Common.Logging;
 using Common.Logging.Simple;
 using FreecraftCore;
-using FreecraftCore.API.Common;
+using FreecraftCore;
 using FreecraftCore.Crypto;
-using FreecraftCore.Handlers;
-using FreecraftCore.Packet.Auth;
+using FreecraftCore;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 using GladNet;
 

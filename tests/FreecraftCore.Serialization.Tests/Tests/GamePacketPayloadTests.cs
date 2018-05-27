@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FreecraftCore.Packet;
-using FreecraftCore.Packet.Auth;
+using FreecraftCore;
+using FreecraftCore;
 using NUnit.Framework;
 
 namespace FreecraftCore.Tests

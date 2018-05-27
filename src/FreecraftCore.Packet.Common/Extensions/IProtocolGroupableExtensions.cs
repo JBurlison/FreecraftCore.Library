@@ -4,9 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	public static class IProtocolGroupableExtensions
 	{

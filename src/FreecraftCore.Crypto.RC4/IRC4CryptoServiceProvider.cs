@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Crypto.RC4
+namespace FreecraftCore.Crypto
 {
 	/// <summary>
 	/// RC4 encryption/decryption service.

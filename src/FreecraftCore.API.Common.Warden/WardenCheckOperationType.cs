@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.API.Common.Warden
+namespace FreecraftCore
 {
 	//From Trinitycore Warden.h
 	/// <summary>

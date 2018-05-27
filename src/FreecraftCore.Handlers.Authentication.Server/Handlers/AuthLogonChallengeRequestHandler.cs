@@ -8,10 +8,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
 using FreecraftCore;
-using FreecraftCore.API.Common;
-using FreecraftCore.API.Common.Auth;
+using FreecraftCore;
+using FreecraftCore;
 using FreecraftCore.Crypto;
-using FreecraftCore.Packet.Auth;
+using FreecraftCore;
 using GladNet;
 using JetBrains.Annotations;
 

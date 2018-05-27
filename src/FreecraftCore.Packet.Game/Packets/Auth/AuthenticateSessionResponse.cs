@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FreecraftCore.API.Common;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_AUTH_RESPONSE)] //the response to a request to authenticate a session

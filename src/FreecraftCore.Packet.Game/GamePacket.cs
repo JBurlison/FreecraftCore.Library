@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	//I tried to make this compatible with the serializer
 	//There was too much bitpacking/shifting based on incoming

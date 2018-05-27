@@ -1,8 +1,8 @@
 using System;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Metadata marker for an authentication payload.

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FreecraftCore.API.Common;
-using FreecraftCore.Packet.Auth;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
+using FreecraftCore;
+using FreecraftCore;
 using GladNet;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Handlers
+namespace FreecraftCore
 {
 	public class RealmListResponseMessageHandler : IPeerPayloadSpecificMessageHandler<AuthRealmListResponse, AuthenticationClientPayload>
 	{

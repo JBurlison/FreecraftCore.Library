@@ -3,12 +3,12 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using FreecraftCore.API.Common;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_AUTH_SESSION)]

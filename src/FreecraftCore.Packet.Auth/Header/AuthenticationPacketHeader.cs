@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FreecraftCore.Packet;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// The default <see cref="IAuthenticationPacketHeader"/> and only type of authentication

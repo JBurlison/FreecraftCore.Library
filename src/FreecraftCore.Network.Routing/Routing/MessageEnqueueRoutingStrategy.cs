@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Network
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Routing strategy that enqueues a message in a linked externally managed queue object.

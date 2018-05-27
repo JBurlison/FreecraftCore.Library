@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FreecraftCore.API.Common;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Sent by the server when a logon proof request was failed due to either an invalid SRP6 M sent

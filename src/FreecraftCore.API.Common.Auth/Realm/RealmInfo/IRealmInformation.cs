@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Base contract of information a realm definition contains.

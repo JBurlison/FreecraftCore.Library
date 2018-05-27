@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FreecraftCore.Packet;
+using FreecraftCore;
 using GladNet;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Network
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Similar to JAM route config where it routes messages based on protocol.

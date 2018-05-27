@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Enumeration of all update types that can come in an update packet.

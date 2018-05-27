@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	[WireDataContract]
 	public sealed class DefaultPlayerChatMessage : PlayerChatMessage

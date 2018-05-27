@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 using GladNet;
 
-namespace FreecraftCore.Packet
+namespace FreecraftCore
 {
 	[WireDataContract]
 	public class OutgoingClientPacketHeader : IGamePacketHeader, IPacketHeader

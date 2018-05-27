@@ -1,5 +1,5 @@
-﻿using FreecraftCore.Packet;
-using FreecraftCore.Packet.Common;
+﻿using FreecraftCore;
+using FreecraftCore;
 
 namespace FreecraftCore
 {

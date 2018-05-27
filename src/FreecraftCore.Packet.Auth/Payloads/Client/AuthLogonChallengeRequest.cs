@@ -1,14 +1,14 @@
-﻿using FreecraftCore.Packet.Common;
+﻿using FreecraftCore;
 using FreecraftCore.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
-using FreecraftCore.API.Common;
+using FreecraftCore;
 
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Initial Authentication payload

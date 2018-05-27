@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	//From Trinitycore AuthCodes.h
 	/// <summary>

@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.Crypto.Parameters;
 
-namespace FreecraftCore.Crypto.RC4
+namespace FreecraftCore.Crypto
 {
 	/// <summary>
 	/// Provides basic RC4 cipher services.

@@ -1,6 +1,6 @@
-﻿using FreecraftCore.API.Common;
-using FreecraftCore.API.Common.Auth;
-using FreecraftCore.Packet.Common;
+﻿using FreecraftCore;
+using FreecraftCore;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Text;
 using JetBrains.Annotations;
 
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// The response payload to a <see cref="AuthLogonChallengeRequest"/>.

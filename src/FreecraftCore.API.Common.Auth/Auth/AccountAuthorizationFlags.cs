@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Indicates the authorization the account has been granted.

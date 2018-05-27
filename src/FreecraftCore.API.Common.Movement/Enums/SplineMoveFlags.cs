@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	//Same on 1.12.1 I think; see https://github.com/mangoszero/server/blob/d0a4af096e528533044e7029446d1c5c9e98a16c/src/game/movement/spline.h
 	/// <summary>

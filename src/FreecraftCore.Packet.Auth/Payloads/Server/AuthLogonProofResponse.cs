@@ -1,11 +1,11 @@
-﻿using FreecraftCore.API.Common;
-using FreecraftCore.Packet.Common;
+﻿using FreecraftCore;
+using FreecraftCore;
 using FreecraftCore.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Response payload sent in response to the <see cref="AuthLogonProofRequest"/>.

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	//Based on PlayerChatTag in Player.h in Trinitycore.
 	/// <summary>

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common.Logging;
 using Common.Logging.Simple;
-using FreecraftCore.Packet.Auth;
+using FreecraftCore;
 using GladNet;
 
 namespace Authentication.TestServer

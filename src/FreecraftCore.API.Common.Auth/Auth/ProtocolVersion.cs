@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	//In Trinitycore this is uint8 error but according to https://github.com/EmberEmu/Ember/blob/spark-new/src/login/grunt/client/LoginChallenge.h
 	//It is the protocol version

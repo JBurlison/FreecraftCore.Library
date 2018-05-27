@@ -5,7 +5,7 @@ using System.Linq;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Container class encapsulating the data required for the addon checksum verification.

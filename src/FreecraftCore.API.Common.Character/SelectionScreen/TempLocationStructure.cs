@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FreecraftCore.Serializer;
 
-namespace FreecraftCore.API.Common
+namespace FreecraftCore
 {
 	//TODO: Replace with something real when we need to actually use this stuff
 	/// <summary>
