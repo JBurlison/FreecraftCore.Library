@@ -1,18 +1,18 @@
-﻿using FreecraftCore.API.Common;
+﻿using FreecraftCore;
 using FreecraftCore.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Response payload contains the realm list.
 	/// Response to the request <see cref="AuthRealmListRequest"/>.
 	/// </summary>
 	[WireDataContract]
-	[AuthenticationServerPayload(Common.AuthOperationCode.REALM_LIST)] //TODO: Figure out how to support linking with the limited information.
+	[AuthenticationServerPayload(AuthOperationCode.REALM_LIST)] //TODO: Figure out how to support linking with the limited information.
 	public class AuthRealmListResponse : AuthenticationServerPayload
 	{
 		//TODO: Implement

@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FreecraftCore.Packet.Auth
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Payload for requesting the realm list.
 	/// </summary>
 	[WireDataContract]
-	[AuthenticationClientPayload(Common.AuthOperationCode.REALM_LIST)] //TODO: Figure out how to support linking with the limited information.
+	[AuthenticationClientPayload(AuthOperationCode.REALM_LIST)] //TODO: Figure out how to support linking with the limited information.
 	public class AuthRealmListRequest : AuthenticationClientPayload
 	{
 		//TODO: Implement

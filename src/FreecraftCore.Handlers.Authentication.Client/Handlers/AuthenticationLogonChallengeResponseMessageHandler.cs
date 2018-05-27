@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
-using FreecraftCore.API;
-using FreecraftCore.API.Common;
+using FreecraftCore;
 using FreecraftCore.Crypto;
-using FreecraftCore.Handlers;
-using FreecraftCore.Packet.Auth;
-using FreecraftCore.Packet.Common;
+using FreecraftCore;
+using FreecraftCore;
+using FreecraftCore;
 using GladNet;
 using JetBrains.Annotations;
 using BigInteger = FreecraftCore.Crypto.BigInteger;
 
-namespace FreecraftCore.Handlers
+namespace FreecraftCore
 {
 	//TODO: Do we even want a handler? We might just want to intercept the response.
 	//TODO: Add dependencies for auth details and such.
