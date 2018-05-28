@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using FreecraftCore.Serializer;
+
+namespace FreecraftCore
+{
+	/// <summary>
+	/// Sent to the connecting during character list
+	/// in response to <see cref="NetworkOperationCode.CMSG_READY_FOR_ACCOUNT_DATA_TIMES"/>.
+	/// Sent with <see cref="NetworkOperationCode.SMSG_ACCOUNT_DATA_TIMES"/>.
+	/// </summary>
+	[WireDataContract]
+	[GamePayloadOperationCode(NetworkOperationCode.SMSG_ACCOUNT_DATA_TIMES)]
+	public sealed class AccountDataTimesResponse : GamePacketPayload
+	{
+		/// <inheritdoc />
+		public override bool isValid => true;
+
+		[ReadToEnd]
+		[WireMember(1)]
+		public byte[] Data { get; }
+
+		public AccountDataTimesResponse()
+		{
+			
+		}
+	}
+}
