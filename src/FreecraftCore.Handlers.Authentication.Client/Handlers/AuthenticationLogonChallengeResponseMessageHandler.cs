@@ -43,6 +43,8 @@ namespace FreecraftCore
 					//Set the session key in the store for usage
 					BigInteger unhashedKey = srpProvider.ComputeSessionKey("Glader".ToUpper(), "test", payload.Challenge.salt);
 
+					Console.WriteLine($"SessionKey: {unhashedKey} KeySize: {unhashedKey.ToCleanByteArray().Length}");
+
 					proof = new AuthLogonProofRequest(srpProvider.A.ToCleanByteArray(), hashingService.ComputeSRP6M1(srpProvider.g, srpProvider.N, "Glader".ToUpper(), payload.Challenge.salt, srpProvider.A, srpProvider.B, unhashedKey));
 
 					//Set the session key as a hashed session key

@@ -19,7 +19,7 @@ namespace FreecraftCore
 		//Packet size which is 4 bytes (from WoW header) + Payload.Length
 		[ReverseData] //makes bigendian
 		[WireMember(1)]
-		private ushort PacketSize { get; set; }
+		public ushort PacketSize { get; set; }
 
 		[WireMember(2)]
 		public NetworkOperationCode OperationCode { get; private set; }

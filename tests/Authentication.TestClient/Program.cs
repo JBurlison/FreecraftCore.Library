@@ -63,7 +63,7 @@ namespace Authentication.TestClient
 		{
 			try
 			{
-				if(!await client.ConnectAsync("127.0.0.1", 3724).ConfigureAwait(false))
+				if(!await client.ConnectAsync("127.0.0.1", 5050).ConfigureAwait(false))
 					Console.WriteLine("Failed to connect");
 
 				await client.SendMessage(new AuthLogonChallengeRequest(ProtocolVersion.ProtocolVersionTwo, GameType.WoW, ExpansionType.WrathOfTheLichKing, 3, 5,
