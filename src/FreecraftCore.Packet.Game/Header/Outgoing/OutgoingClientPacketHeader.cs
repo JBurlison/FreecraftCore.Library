@@ -19,8 +19,14 @@ namespace FreecraftCore
 		//Packet size which is 4 bytes (from WoW header) + Payload.Length
 		[ReverseData] //makes bigendian
 		[WireMember(1)]
-		public ushort PacketSize { get; set; }
+		private ushort SerializedPacketSize { get; set; }
 
+		/// <inheritdoc />
+		public int PacketSize => SerializedPacketSize;
+
+		/// <summary>
+		/// The operation code of the packet
+		/// </summary>
 		[WireMember(2)]
 		public NetworkOperationCode OperationCode { get; private set; }
 
@@ -28,33 +34,36 @@ namespace FreecraftCore
 		//Trinitycore has the recieval being a 32bit operation code
 		//But it's more likely the first 2 bytes are the little endian ordered opcode
 		//and these 2 bytes likely represent something different
+
 		[WireMember(3)]
 		private readonly short unknownBytes = 0;
 
 		/// <inheritdoc />
-		public int PayloadSize => PacketSize - sizeof(ushort) - sizeof(NetworkOperationCode) - 2; //computed as the packet size minus header/opcode info
+		public int PayloadSize => PacketSize - 4;
 
 		/// <inheritdoc />
-		public bool isValid => (PacketSize + 2) >= HeaderSize; //Is only valid if we have at least a header
+		public bool isValid => true;
 
-		//Have to add this for GladNet3 compatibility
-		int IPacketHeader.PacketSize => PacketSize;
-
+		/// <summary>
+		/// Initializes a new packet header with a PacketSize of <see cref="PayloadSize"/> + 4 bytes.
+		/// DO NOT provide the payloadsize with the opcode. Remove the opcode length from the payloadsize
+		/// before providing it as a paremeters.
+		/// The header 
+		/// </summary>
+		/// <param name="payloadSize"></param>
+		/// <param name="operationCode"></param>
 		public OutgoingClientPacketHeader(int payloadSize, NetworkOperationCode operationCode)
 		{
 			if (!Enum.IsDefined(typeof(NetworkOperationCode), operationCode))
 				throw new ArgumentOutOfRangeException(nameof(operationCode), "Value should be defined in the NetworkOperationCode enum.");
 
 			OperationCode = operationCode;
-
-			//Doesn't make much sense because the header is 6 bytes
-			//This is how Jackpoz has it setup.
-			PacketSize = (ushort)(payloadSize + 4);
+			SerializedPacketSize = (ushort)(payloadSize + 4);
 		}
 
 		protected OutgoingClientPacketHeader()
 		{
 				
-		}		
+		}
 	}
 }
