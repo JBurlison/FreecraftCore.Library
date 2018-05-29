@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore;
-using FreecraftCore;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
