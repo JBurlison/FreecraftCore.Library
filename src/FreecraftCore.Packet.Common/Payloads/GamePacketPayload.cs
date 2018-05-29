@@ -14,7 +14,8 @@ namespace FreecraftCore
 		//It is in the header.
 
 		/// <inheritdoc />
-		public abstract bool isValid { get; }
+		[Obsolete("This should not longer be used to check the payload validity. Data validation framework will replace it.")]
+		public virtual bool isValid { get; } = true;
 
 		protected GamePacketPayload()
 		{
