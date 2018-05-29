@@ -7,5 +7,9 @@
   <ItemGroup>
     <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.29" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\FreecraftCore.API.Common\FreecraftCore.API.Common.csproj" />
+  </ItemGroup>
 
 </Project>

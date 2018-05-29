@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
+	[ForClientBuild(ClientBuild.Wotlk_3_3_5a)]
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_AUTH_SESSION)]
 	[ProtocolGrouping(ProtocolCode.Authentication)] //Though this isn't part of the actual authserver stuff it's still auth.

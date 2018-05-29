@@ -7,6 +7,7 @@ namespace FreecraftCore
 	/// <summary>
 	/// The 1.12.1 implementation of the <see cref="NetworkOperationCode.CMSG_AUTH_SESSION"/>.
 	/// </summary>
+	[ForClientBuild(ClientBuild.Vanilla_1_12_1)]
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_AUTH_SESSION)]
 	[ProtocolGrouping(ProtocolCode.Authentication)] //Though this isn't part of the actual authserver stuff it's still auth.

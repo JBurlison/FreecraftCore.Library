@@ -11,6 +11,7 @@ namespace FreecraftCore
 	/// First message sent by the server after connections (as an event)
 	/// and is used to authenticate a session on that server.
 	/// </summary>
+	[ForClientBuild(ClientBuild.Vanilla_1_12_1)]
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_AUTH_CHALLENGE)] //the packet the worldserver first sends
 	[ProtocolGrouping(ProtocolCode.Authentication)] //Though this isn't part of the actual authserver stuff it's still auth.

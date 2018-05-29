@@ -89,6 +89,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.Packet.Game.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.Packet.Game.1_12_1", "src\FreecraftCore.Packet.Game.1_12_1\FreecraftCore.Packet.Game.1_12_1.csproj", "{54942DA8-4C1F-4766-AE56-424F9384FA8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.API.Common", "src\FreecraftCore.API.Common\FreecraftCore.API.Common.csproj", "{28A02F90-C0D9-444B-B455-783260F63F85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,6 +229,10 @@ Global
 		{54942DA8-4C1F-4766-AE56-424F9384FA8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54942DA8-4C1F-4766-AE56-424F9384FA8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54942DA8-4C1F-4766-AE56-424F9384FA8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28A02F90-C0D9-444B-B455-783260F63F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28A02F90-C0D9-444B-B455-783260F63F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28A02F90-C0D9-444B-B455-783260F63F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28A02F90-C0D9-444B-B455-783260F63F85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -272,6 +278,7 @@ Global
 		{1B1AD1CE-538C-43A7-AD52-9A5BB97F77A6} = {78CBA3CF-28F2-464F-892A-3FB745AC735E}
 		{AD87FE80-85A6-4F6F-998F-5FDAAE870D50} = {64D61A43-6570-4F17-BE2D-78CFF756EC24}
 		{54942DA8-4C1F-4766-AE56-424F9384FA8E} = {64D61A43-6570-4F17-BE2D-78CFF756EC24}
+		{28A02F90-C0D9-444B-B455-783260F63F85} = {C5D14933-7D5B-4185-9B9F-38AB1A8A40E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77340858-04C1-4169-93A3-121A82FA6670}
