@@ -73,6 +73,10 @@
       <Project>{8579CD34-8B4F-4578-AC53-1EA46A92A67E}</Project>
       <Name>FreecraftCore.API.Common.Auth</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.API.Common\FreecraftCore.API.Common.csproj">
+      <Project>{28A02F90-C0D9-444B-B455-783260F63F85}</Project>
+      <Name>FreecraftCore.API.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.Crypto.BigInteger\FreecraftCore.Crypto.BigInteger.csproj">
       <Project>{9B65D1B2-F81E-4A8B-9F7B-6343D7F3E4CC}</Project>
       <Name>FreecraftCore.Crypto.BigInteger</Name>
