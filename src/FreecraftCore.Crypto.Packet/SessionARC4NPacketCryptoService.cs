@@ -6,8 +6,10 @@ namespace FreecraftCore.Crypto
 {
 	/// <summary>
 	/// Handles session-based crypto services for packets.
+	/// This algorithm is for >= 3.1.x client versions.
+	/// Older WoW versions use XOR packet encryption.
 	/// </summary>
-	public class SessionPacketCryptoService : ISessionPacketCryptoService
+	public class SessionARC4NPacketCryptoService : ISessionPacketCryptoService
 	{
 		//TODO: Maybe not hard code this for different server or client versions
 		/// <summary>
@@ -41,7 +43,7 @@ namespace FreecraftCore.Crypto
 		/// </summary>
 		/// <param name="sessionKey">The key to be used in the cipher.</param>
 		/// <param name="isForEncryption">If true the the service encrypts. Otherwise it decrypts.</param>
-		public SessionPacketCryptoService(BigInteger sessionKey, bool isForEncryption)
+		public SessionARC4NPacketCryptoService(BigInteger sessionKey, bool isForEncryption)
 			: this(sessionKey.ToCleanByteArray(), isForEncryption)
 		{
 
@@ -52,7 +54,7 @@ namespace FreecraftCore.Crypto
 		/// </summary>
 		/// <param name="sessionKey">The key to be used in the cipher.</param>
 		/// <param name="isForEncryption">If true the the service encrypts. Otherwise it decrypts.</param>
-		public SessionPacketCryptoService([NotNull] byte[] sessionKey, bool isForEncryption)
+		public SessionARC4NPacketCryptoService([NotNull] byte[] sessionKey, bool isForEncryption)
 			: this(sessionKey, isForEncryption, isForEncryption ? encryptionKey : decryptionKey)
 		{
 
@@ -64,7 +66,7 @@ namespace FreecraftCore.Crypto
 		/// <param name="sessionKey"></param>
 		/// <param name="isForEncryption"></param>
 		/// <param name="hmacKey"></param>
-		public SessionPacketCryptoService([NotNull] byte[] sessionKey, bool isForEncryption, [NotNull] byte[] hmacKey)
+		public SessionARC4NPacketCryptoService([NotNull] byte[] sessionKey, bool isForEncryption, [NotNull] byte[] hmacKey)
 		{
 			if (sessionKey == null) throw new ArgumentNullException(nameof(sessionKey));
 			if (hmacKey == null) throw new ArgumentNullException(nameof(hmacKey));
