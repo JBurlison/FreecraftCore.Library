@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using FreecraftCore;
 using FreecraftCore.Serializer;
@@ -9,17 +10,19 @@ namespace DynamicProxy.GamePacketPayload.PerformanceTests
 	{
 		static void Main(string[] args)
 		{
+			Stopwatch stopWatch = new Stopwatch();
 			SerializerService serializer = new SerializerService();
-			Type[] dynamicProxies = GamePacketMetadataMarker.GamePacketPayloadTypesWithDynamicProxies.Value.ToArray();
+			stopWatch.Start();
+			Type[] dynamicProxies = GamePacketMetadataMarker.GenerateDynamicProxyTemporaryDTOTypes(new Type[0]).ToArray();
 
 			foreach(Type t in dynamicProxies)
 			{
 				//Console.WriteLine($"Registering: {t.Name}");
-				//serializer.RegisterType(t);
+				serializer.RegisterType(t);
 			}
-				
+			stopWatch.Stop();
 
-			Console.WriteLine("Finished");
+			Console.WriteLine($"Finished ms: {stopWatch.ElapsedMilliseconds}");
 			Console.ReadKey();
 		}
 	}

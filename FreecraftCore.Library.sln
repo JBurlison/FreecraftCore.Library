@@ -81,6 +81,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.Packet.Game",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProxy.GamePacketPayload.PerformanceTests", "tests\DynamicProxy.GamePacketPayload.PerformanceTests\DynamicProxy.GamePacketPayload.PerformanceTests.csproj", "{C0C75491-6D9C-4FC6-8797-F6F9B4789996}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{78CBA3CF-28F2-464F-892A-3FB745AC735E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.Packet.Game.DefaultProxy.Roslyn.Tool", "tools\FreecraftCore.Packet.Game.DefaultProxy.Roslyn.Tool\FreecraftCore.Packet.Game.DefaultProxy.Roslyn.Tool.csproj", "{1B1AD1CE-538C-43A7-AD52-9A5BB97F77A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -207,6 +211,10 @@ Global
 		{C0C75491-6D9C-4FC6-8797-F6F9B4789996}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0C75491-6D9C-4FC6-8797-F6F9B4789996}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0C75491-6D9C-4FC6-8797-F6F9B4789996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B1AD1CE-538C-43A7-AD52-9A5BB97F77A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B1AD1CE-538C-43A7-AD52-9A5BB97F77A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B1AD1CE-538C-43A7-AD52-9A5BB97F77A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B1AD1CE-538C-43A7-AD52-9A5BB97F77A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -249,6 +257,7 @@ Global
 		{6D296166-928D-4D8B-A2AD-542A77404CA5} = {2E903AB5-E882-49A7-A612-FCCB9F11D540}
 		{E7203CA7-1D14-4322-8062-1F72FCDD3EC5} = {64D61A43-6570-4F17-BE2D-78CFF756EC24}
 		{C0C75491-6D9C-4FC6-8797-F6F9B4789996} = {2E903AB5-E882-49A7-A612-FCCB9F11D540}
+		{1B1AD1CE-538C-43A7-AD52-9A5BB97F77A6} = {78CBA3CF-28F2-464F-892A-3FB745AC735E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77340858-04C1-4169-93A3-121A82FA6670}

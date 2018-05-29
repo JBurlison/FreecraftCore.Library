@@ -26,6 +26,8 @@ namespace FreecraftCore
 
 		public static Lazy<IReadOnlyCollection<Type>> GamePacketPayloadTypesWithDynamicProxies { get; }
 
+		public static Lazy<IReadOnlyCollection<NetworkOperationCode>> UnimplementedOperationCodes { get; }
+
 		/// <summary>
 		/// The backing field name for the dynamic proxy DTOs.
 		/// </summary>
@@ -49,16 +51,23 @@ namespace FreecraftCore
 			GamePacketPayloadTypesWithDynamicProxies = new Lazy<IReadOnlyCollection<Type>>(() => GamePacketPayloadTypes
 				.Concat(GenerateDynamicProxyTemporaryDTOTypes(GamePacketPayloadTypes))
 				.ToArray(), true);
+
+			UnimplementedOperationCodes = new Lazy<IReadOnlyCollection<NetworkOperationCode>>(() =>
+			{
+				var codes = GamePacketPayloadTypes
+					.Where(t => t.GetCustomAttribute<GamePayloadOperationCodeAttribute>(true) != null)
+					.Select(t => t.GetCustomAttribute<GamePayloadOperationCodeAttribute>(true).OperationCode)
+					.Distinct()
+					.ToArray();
+
+				return ((NetworkOperationCode[])Enum.GetValues(typeof(NetworkOperationCode)))
+					.Where(o => !codes.Contains(o))
+					.ToArray();
+			}, true);
 		}
 
 		public static IEnumerable<Type> GenerateDynamicProxyTemporaryDTOTypes(IEnumerable<Type> implementedPacketTypes)
 		{
-			NetworkOperationCode[] codes = implementedPacketTypes
-				.Where(t => t.GetCustomAttribute<GamePayloadOperationCodeAttribute>(true) != null)
-				.Select(t => t.GetCustomAttribute<GamePayloadOperationCodeAttribute>(true).OperationCode)
-				.Distinct()
-				.ToArray();
-
 			var an = new AssemblyName("FreecraftCore.Packet.Game.Dynamic");
 			AssemblyBuilder assemblyBuilder = AssemblyBuilder.DefineDynamicAssembly(an, AssemblyBuilderAccess.Run);
 			ModuleBuilder moduleBuilder = assemblyBuilder.DefineDynamicModule("Proxy");
@@ -74,8 +83,7 @@ namespace FreecraftCore
 			CustomAttributeBuilder wireMemberAttributeBuilder = new CustomAttributeBuilder(wireMemberAttributeCtor, new object[1] {1});
 			ConcurrentBag<Type> types = new ConcurrentBag<Type>();
 
-			Parallel.ForEach((((NetworkOperationCode[])Enum.GetValues(typeof(NetworkOperationCode)))
-				.Where(o => !codes.Contains(o))), opcode =>
+			Parallel.ForEach(UnimplementedOperationCodes.Value, opcode =>
 			{
 				TypeBuilder tb = GetProxyDTOTypeBuilder($"{opcode.ToString()}_ProxyDTO", moduleBuilder);
 
