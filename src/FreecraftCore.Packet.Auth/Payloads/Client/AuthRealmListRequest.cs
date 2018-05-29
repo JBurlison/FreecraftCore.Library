@@ -1,7 +1,4 @@
 ﻿using FreecraftCore.Serializer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace FreecraftCore
 {

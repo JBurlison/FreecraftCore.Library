@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ARC4.ThirdParty
+﻿namespace ARC4.ThirdParty
 {
 	public class JackpozARC4
 	{

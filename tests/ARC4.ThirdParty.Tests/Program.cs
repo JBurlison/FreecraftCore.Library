@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using FreecraftCore.Crypto;
-using Org.BouncyCastle.Crypto.Agreement.Srp;
 using Org.BouncyCastle.Crypto.Engines;
-using Org.BouncyCastle.Crypto.Paddings;
 using Org.BouncyCastle.Crypto.Parameters;
 
 namespace ARC4.ThirdParty.Tests

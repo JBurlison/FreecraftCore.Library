@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-
-namespace FreecraftCore
+﻿namespace FreecraftCore
 {
 	/// <summary>
 	/// Enumeration of all games that authenticate with the WoW protocol

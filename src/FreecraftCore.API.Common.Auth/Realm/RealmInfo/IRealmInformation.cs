@@ -1,10 +1,4 @@
-﻿using FreecraftCore.Serializer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-
-namespace FreecraftCore
+﻿namespace FreecraftCore
 {
 	/// <summary>
 	/// Base contract of information a realm definition contains.

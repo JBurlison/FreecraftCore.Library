@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using FreecraftCore;
-using FreecraftCore.Serializer;
-
-namespace FreecraftCore
+﻿namespace FreecraftCore
 {
 	/// <summary>
 	/// Base contract for all Warden payloads sent by the server.

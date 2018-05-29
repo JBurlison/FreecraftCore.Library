@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace FreecraftCore
+﻿namespace FreecraftCore
 {
     public partial class AccountAccess
     {

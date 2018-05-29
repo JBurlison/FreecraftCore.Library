@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FreecraftCore
+﻿namespace FreecraftCore
 {
 	// Defined in Trinitycore in SharedDefines.h EmotesText.dbc
 	/// <summary>

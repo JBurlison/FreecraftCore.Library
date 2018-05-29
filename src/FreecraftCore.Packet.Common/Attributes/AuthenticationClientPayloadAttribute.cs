@@ -1,6 +1,4 @@
 ﻿using System;
-using FreecraftCore;
-using FreecraftCore;
 
 namespace FreecraftCore
 {

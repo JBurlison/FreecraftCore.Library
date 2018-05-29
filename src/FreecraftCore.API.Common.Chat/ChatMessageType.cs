@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FreecraftCore
+﻿namespace FreecraftCore
 {
 	//Based on Trinitycore's ChatMsg in SharedDefines.
 	/// <summary>

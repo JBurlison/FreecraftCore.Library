@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
 using Common.Logging.Simple;
-using FreecraftCore;
-using FreecraftCore;
-using FreecraftCore.Crypto;
-using FreecraftCore;
 using FreecraftCore;
 using FreecraftCore.Serializer;
 using GladNet;

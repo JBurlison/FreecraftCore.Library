@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using FreecraftCore;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore

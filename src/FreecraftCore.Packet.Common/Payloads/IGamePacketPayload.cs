@@ -1,10 +1,4 @@
-﻿using FreecraftCore.Serializer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using FreecraftCore;
-
-namespace FreecraftCore
+﻿namespace FreecraftCore
 {
 	/// <summary>
 	/// Interface metadata market for game payloads.

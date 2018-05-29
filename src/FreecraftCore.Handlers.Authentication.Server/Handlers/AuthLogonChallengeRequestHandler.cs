@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using Common.Logging;
 using FreecraftCore;
-using FreecraftCore;
-using FreecraftCore;
 using FreecraftCore.Crypto;
-using FreecraftCore;
 using GladNet;
 using JetBrains.Annotations;
 

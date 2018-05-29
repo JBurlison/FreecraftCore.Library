@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace FreecraftCore.Crypto
+﻿namespace FreecraftCore.Crypto
 {
 	public interface ISessionPacketCryptoService : ICryptoServiceProvider
 	{

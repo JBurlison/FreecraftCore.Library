@@ -6,7 +6,6 @@
 // ==--==
 
 using System;
-using System.Runtime.InteropServices;
 using Conditional = System.Diagnostics.ConditionalAttribute;
 
 //Don't use numerics to avoid collisions in >net35

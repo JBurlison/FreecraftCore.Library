@@ -277,7 +277,6 @@ namespace FreecraftCore.Crypto
 {
 	using System;
 	using System.Globalization;
-	using System.Runtime.CompilerServices;
 	using System.Security;
 	using System.Text;
 	using Conditional = System.Diagnostics.ConditionalAttribute;

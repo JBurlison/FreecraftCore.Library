@@ -4,6 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1705;NU1701;CS0169;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1705;NU1701;CS0169;</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.29" />
   </ItemGroup>

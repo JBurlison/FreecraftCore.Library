@@ -1,5 +1,4 @@
-﻿using FreecraftCore;
-using FreecraftCore.Serializer;
+﻿using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {

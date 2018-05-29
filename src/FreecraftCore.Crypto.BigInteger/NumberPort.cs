@@ -8,10 +8,6 @@ namespace FreecraftCore.Crypto
 
 	using System;
 	using System.Globalization;
-	using System.Runtime;
-	using System.Runtime.CompilerServices;
-	using System.Runtime.Versioning;
-	using System.Security;
 	using System.Text;
 	using System.Diagnostics;
 

@@ -1,10 +1,4 @@
 ﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using FreecraftCore;
-using FreecraftCore;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 

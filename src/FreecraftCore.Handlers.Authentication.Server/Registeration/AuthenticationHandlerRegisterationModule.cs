@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using Autofac;
-using FreecraftCore;
 using GladNet;
 using Module = Autofac.Module;
 

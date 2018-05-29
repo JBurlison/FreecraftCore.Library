@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FreecraftCore
+﻿namespace FreecraftCore
 {	
 	/// <summary>
 	/// Contract for message Types that can be in a valid or invalid state.

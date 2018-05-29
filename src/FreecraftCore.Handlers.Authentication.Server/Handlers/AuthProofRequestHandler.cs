@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Common.Logging;
 using FreecraftCore.Crypto;
-using FreecraftCore;
 using GladNet;
 using JetBrains.Annotations;
 using Reinterpret.Net;

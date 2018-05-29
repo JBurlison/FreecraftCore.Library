@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using FreecraftCore.Serializer;
-
-namespace FreecraftCore
+﻿namespace FreecraftCore
 {
 	public abstract class BaseGuid
 	{

@@ -5,11 +5,7 @@
 // 
 // ==--==
 
-using System;
-using System.Diagnostics;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Text;
 
 //Don't use numerics to avoid collisions in >net35
 namespace FreecraftCore.Crypto

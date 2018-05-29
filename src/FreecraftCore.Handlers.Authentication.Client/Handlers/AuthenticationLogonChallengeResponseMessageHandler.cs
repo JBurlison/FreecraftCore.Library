@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
 using System.Threading.Tasks;
-using FreecraftCore;
 using FreecraftCore.Crypto;
-using FreecraftCore;
-using FreecraftCore;
-using FreecraftCore;
 using GladNet;
-using JetBrains.Annotations;
 using BigInteger = FreecraftCore.Crypto.BigInteger;
 
 namespace FreecraftCore
