@@ -11,8 +11,6 @@ namespace FreecraftCore
 		/// <summary>
 		/// The packet data.
 		/// </summary>
-		[ReadToEnd]
-		[WireMember(1)]
 		byte[] Data { get; set; }
 	}
 }

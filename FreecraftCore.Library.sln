@@ -77,7 +77,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.Handlers.Auth
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigInteger.ThirdParty.Tests", "tests\BigInteger.ThirdParty.Tests\BigInteger.ThirdParty.Tests.csproj", "{6D296166-928D-4D8B-A2AD-542A77404CA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.Packet.Game", "src\FreecraftCore.Packet.Game\FreecraftCore.Packet.Game.csproj", "{E7203CA7-1D14-4322-8062-1F72FCDD3EC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.Packet.Game", "src\FreecraftCore.Packet.Game\FreecraftCore.Packet.Game.csproj", "{E7203CA7-1D14-4322-8062-1F72FCDD3EC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicProxy.GamePacketPayload.PerformanceTests", "tests\DynamicProxy.GamePacketPayload.PerformanceTests\DynamicProxy.GamePacketPayload.PerformanceTests.csproj", "{C0C75491-6D9C-4FC6-8797-F6F9B4789996}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -201,6 +203,10 @@ Global
 		{E7203CA7-1D14-4322-8062-1F72FCDD3EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7203CA7-1D14-4322-8062-1F72FCDD3EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7203CA7-1D14-4322-8062-1F72FCDD3EC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C75491-6D9C-4FC6-8797-F6F9B4789996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C75491-6D9C-4FC6-8797-F6F9B4789996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C75491-6D9C-4FC6-8797-F6F9B4789996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C75491-6D9C-4FC6-8797-F6F9B4789996}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -242,6 +248,7 @@ Global
 		{B1B47BE4-DCCD-4900-8F85-8D039F56996F} = {5511A23F-B7CD-45C6-84A9-7D9ED3C9FC22}
 		{6D296166-928D-4D8B-A2AD-542A77404CA5} = {2E903AB5-E882-49A7-A612-FCCB9F11D540}
 		{E7203CA7-1D14-4322-8062-1F72FCDD3EC5} = {64D61A43-6570-4F17-BE2D-78CFF756EC24}
+		{C0C75491-6D9C-4FC6-8797-F6F9B4789996} = {2E903AB5-E882-49A7-A612-FCCB9F11D540}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77340858-04C1-4169-93A3-121A82FA6670}
