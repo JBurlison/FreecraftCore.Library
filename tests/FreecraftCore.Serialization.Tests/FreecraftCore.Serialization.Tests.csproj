@@ -47,6 +47,7 @@
     <Compile Include="Tests\GamePacketPayloadTests.cs" />
     <Compile Include="Tests\AutomatedReflectionTests.cs" />
     <Compile Include="Tests\AuthenticationPayloadTests.cs" />
+    <Compile Include="Tests\ManualSerializationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FreecraftCore.Serializer">
@@ -63,6 +64,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\FreecraftCore.API.Common.Auth\FreecraftCore.API.Common.Auth.csproj">
+      <Project>{8579CD34-8B4F-4578-AC53-1EA46A92A67E}</Project>
+      <Name>FreecraftCore.API.Common.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Auth\FreecraftCore.Packet.Auth.csproj">
       <Project>{FE9B9306-281B-4134-AA8F-B995F6098B91}</Project>
       <Name>FreecraftCore.Packet.Auth</Name>
