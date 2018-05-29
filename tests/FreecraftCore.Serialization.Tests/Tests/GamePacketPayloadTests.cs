@@ -20,6 +20,12 @@ namespace FreecraftCore.Tests
 
 	}
 
+	[TestFixture]
+	public class VanillaGamePayloadTests : AutomatedReflectionTests<GamePacketPayload, SessionAuthProofRequest_Vanilla>
+	{
+
+	}
+
 	/*[TestFixture]
 	public class WardenPayloadTests : AutomatedReflectionTests<GamePacketPayload, WardenServerPayload>
 	{

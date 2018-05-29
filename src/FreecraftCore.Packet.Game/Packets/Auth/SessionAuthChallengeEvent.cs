@@ -19,6 +19,10 @@ namespace FreecraftCore
 		[WireMember(1)]
 		private uint unknownOne { get; set; }
 
+		/// <summary>
+		/// The auth session challenge data.
+		/// (Shared structure between 1.12.1 and 3.3.5)
+		/// </summary>
 		[WireMember(2)]
 		public SessionAuthChallengeEventData EventData { get; }
 

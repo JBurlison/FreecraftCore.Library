@@ -71,6 +71,10 @@
       <Project>{EB22A6AE-5098-40CD-9A58-EF989075FB22}</Project>
       <Name>FreecraftCore.Packet.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game.1_12_1\FreecraftCore.Packet.Game.1_12_1.csproj">
+      <Project>{54942DA8-4C1F-4766-AE56-424F9384FA8E}</Project>
+      <Name>FreecraftCore.Packet.Game.1_12_1</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game\FreecraftCore.Packet.Game.csproj">
       <Project>{E7203CA7-1D14-4322-8062-1F72FCDD3EC5}</Project>
       <Name>FreecraftCore.Packet.Game</Name>

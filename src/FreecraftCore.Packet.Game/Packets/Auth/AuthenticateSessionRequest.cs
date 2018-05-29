@@ -29,6 +29,7 @@ namespace FreecraftCore
 		//Not checked on Trinitycore
 		//Was probably used for loadbalancing so it knows
 		//which server to ask for the session key.
+		//Skipped on Mangos too, with read_skip<uint32>()
 		[WireMember(3)]
 		private int LoginServiceId { get; set; } = 0;
 
@@ -40,6 +41,7 @@ namespace FreecraftCore
 
 		//Not check on trinitycore
 		//Don't know what the type of login server would mean.
+		//Not in the 1.12.1 packet
 		[WireMember(5)]
 		private uint LoginServerType { get; set; } = 0; // 0 GRUNT, 1 Battle.net
 
