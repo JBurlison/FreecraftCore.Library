@@ -22,9 +22,10 @@ namespace FreecraftCore
 		public int Unk2 { get; } = 0;
 
 		/// <summary>
-		/// Serializer ctor.
+		/// Defualt ctor. Sets all to 0.
+		/// Sent by Trinitycore with those values.
 		/// </summary>
-		protected SMSG_LEARNED_DANCE_MOVES_PAYLOAD()
+		public SMSG_LEARNED_DANCE_MOVES_PAYLOAD()
 		{
 			
 		}
