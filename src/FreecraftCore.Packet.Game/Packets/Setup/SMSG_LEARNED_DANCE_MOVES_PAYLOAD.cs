@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using FreecraftCore.Serializer;
+
+namespace FreecraftCore
+{
+	//Not sent by 1.12.1 servers
+	/// <summary>
+	/// Some sort of weird dance studio packet or something?
+	/// It is sent when a player is logging into the world.
+	/// </summary>
+	[GamePayloadOperationCode(NetworkOperationCode.SMSG_LEARNED_DANCE_MOVES)]
+	[WireDataContract]
+	public sealed class SMSG_LEARNED_DANCE_MOVES_PAYLOAD : GamePacketPayload
+	{
+		//TODO: What is this? Was this ever used...?
+		[WireMember(1)]
+		public int Unk1 { get; } = 0;
+
+		[WireMember(2)]
+		public int Unk2 { get; } = 0;
+
+		/// <summary>
+		/// Serializer ctor.
+		/// </summary>
+		protected SMSG_LEARNED_DANCE_MOVES_PAYLOAD()
+		{
+			
+		}
+	}
+}
