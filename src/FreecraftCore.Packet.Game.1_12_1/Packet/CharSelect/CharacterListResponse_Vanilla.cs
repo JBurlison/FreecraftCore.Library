@@ -21,10 +21,10 @@ namespace FreecraftCore.Packet.CharSelect
 
 		[WireMember(1)]
 		[SendSize(SendSizeAttribute.SizeType.Byte)] //Jackpoz's bot shows it sends count as byte
-		public CharacterScreenCharacter[] Characters { get; private set; }
+		public CharacterScreenCharacter_Vanilla[] Characters { get; private set; }
 
 		/// <inheritdoc />
-		public CharacterListResponse_Vanilla([NotNull] CharacterScreenCharacter[] characters)
+		public CharacterListResponse_Vanilla([NotNull] CharacterScreenCharacter_Vanilla[] characters)
 		{
 			Characters = characters ?? throw new ArgumentNullException(nameof(characters));
 		}
