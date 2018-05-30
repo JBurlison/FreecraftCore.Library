@@ -1,13 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
-namespace FreecraftCore
+namespace FreecraftCore.Packet.CharSelect
 {
+	/// <summary>
+	/// Vanilla 1.12.1 implementation of the <see cref="NetworkOperationCode.SMSG_CHAR_ENUM"/>
+	/// packet.
+	/// </summary>
+	[ForClientBuild(ClientBuild.Vanilla_1_12_1)]
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_CHAR_ENUM)]
 	[ProtocolGrouping(ProtocolCode.Game)] //TODO: Change this protocol to something more specific
-	public class CharacterListResponse : GamePacketPayload
+	public class CharacterListResponse_Vanilla : GamePacketPayload
 	{
 		/// <inheritdoc />
 		public override bool isValid { get; } = true; //TODO: Implement data validation
@@ -17,12 +24,12 @@ namespace FreecraftCore
 		public CharacterScreenCharacter[] Characters { get; private set; }
 
 		/// <inheritdoc />
-		public CharacterListResponse([NotNull] CharacterScreenCharacter[] characters)
+		public CharacterListResponse_Vanilla([NotNull] CharacterScreenCharacter[] characters)
 		{
 			Characters = characters ?? throw new ArgumentNullException(nameof(characters));
 		}
 
-		protected CharacterListResponse()
+		protected CharacterListResponse_Vanilla()
 		{
 			//serialization ctor
 		}

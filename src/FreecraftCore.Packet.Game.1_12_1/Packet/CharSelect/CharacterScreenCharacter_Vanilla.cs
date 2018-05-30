@@ -1,23 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
-	/// <summary>
-	/// Represents a single character for the selection screen.
-	/// </summary>
 	[WireDataContract]
-	public class CharacterScreenCharacter
+	public class CharacterScreenCharacter_Vanilla
 	{
+		/// <summary>
+		/// The character data.
+		/// </summary>
 		[WireMember(1)]
 		public CharacterScreenData Data { get; }
-
-		//This is not sent in 1.12.1/mangos/cmangos
-		//TODO: See Trinitycore's HandleCharEnum to see how the selection customization optional flags are set
-		[WireMember(11)]
-		public uint SelectionFlags { get; }
 
 		/// <summary>
 		/// Indicates if this is the first login by the account.
@@ -31,39 +27,41 @@ namespace FreecraftCore
 		[WireMember(13)]
 		public CharacterScreenPetInfo PetInformation { get; }
 
+		//This is slightly different in VanillaWoW
 		/// <summary>
 		/// Represents the display IDs of the various items equipped by a character so that
 		/// the client can render it.
 		/// </summary>
 		[KnownSize(19)] //Jackpoz has this set as 20 items but reads length - 1 and Trinitycore sends 19 items. SO THERE ARE 19!!
 		[WireMember(14)]
-		private CharacterScreenItem[] _VisualEquipmentItems { get; }
-
-		//TODO: Why is this sent?
-		[KnownSize(4)] //jackpoz bot shows they send 4 bags
-		[WireMember(15)]
-		private CharacterScreenBag[] _Bags { get; }
+		private CharacterScreenItem_Vanilla[] _VisualEquipmentItems { get; }
 
 		/// <summary>
 		/// Represents the display IDs of the various items equipped by a character so that
 		/// the client can render it.
 		/// </summary>
-		public IEnumerable<CharacterScreenItem> VisualEquipmentItems => _VisualEquipmentItems;
+		public IEnumerable<CharacterScreenItem_Vanilla> VisualEquipmentItems => _VisualEquipmentItems;
+
+		//Cmangos shows a 4 byte and 1 byte data at the end of the vanilla packet about bag info
+		//p_data << uint32(0);                                   // first bag display id
+		//p_data << uint8(0);                                    // first bag inventory type
+
+		[KnownSize(5)]
+		[WireMember(15)]
+		public byte[] UnknownBagData { get; }
 
 		/// <inheritdoc />
-		public CharacterScreenCharacter([NotNull] CharacterScreenData data, uint selectionFlags, bool isFirstLogin, [NotNull] CharacterScreenPetInfo petInformation, [NotNull] CharacterScreenItem[] visualEquipmentItems, [NotNull] CharacterScreenBag[] bags)
+		public CharacterScreenCharacter_Vanilla([NotNull] CharacterScreenData data, bool isFirstLogin, [NotNull] CharacterScreenPetInfo petInformation, [NotNull] CharacterScreenItem_Vanilla[] visualEquipmentItems)
 		{
 			Data = data ?? throw new ArgumentNullException(nameof(data));
-			SelectionFlags = selectionFlags;
 			this.isFirstLogin = isFirstLogin;
 			PetInformation = petInformation ?? throw new ArgumentNullException(nameof(petInformation));
 			_VisualEquipmentItems = visualEquipmentItems ?? throw new ArgumentNullException(nameof(visualEquipmentItems));
-			_Bags = bags ?? throw new ArgumentNullException(nameof(bags));
 		}
 
-		protected CharacterScreenCharacter()
+		protected CharacterScreenCharacter_Vanilla()
 		{
-			
+
 		}
 	}
 }

@@ -34,7 +34,6 @@ namespace FreecraftCore
 		[WireMember(3)]
 		public byte[] OptionalSeeds { get; }
 
-
 		/*/// <summary>
 		/// A 16 byte non-cryptographically secure BigInteger.
 		/// It is not stored on Trinitycore or Mangos, isn't sent by EmberEmu
