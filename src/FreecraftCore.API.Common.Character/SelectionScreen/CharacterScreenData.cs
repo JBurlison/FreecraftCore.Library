@@ -73,5 +73,13 @@ namespace FreecraftCore
 			GuildId = guildId;
 			CharacterFlags = characterFlags;
 		}
+
+		/// <summary>
+		/// Serializer ctor.
+		/// </summary>
+		protected CharacterScreenData()
+		{
+			
+		}
 	}
 }
