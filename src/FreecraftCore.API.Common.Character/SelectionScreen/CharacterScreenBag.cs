@@ -19,6 +19,14 @@ namespace FreecraftCore
 		[WireMember(3)]
 		private uint UnknownThree { get; }
 
+		/// <inheritdoc />
+		public CharacterScreenBag(uint unknownOne, byte unknownTwo, uint unknownThree)
+		{
+			UnknownOne = unknownOne;
+			UnknownTwo = unknownTwo;
+			UnknownThree = unknownThree;
+		}
+
 		protected CharacterScreenBag()
 		{
 			//serializer ctor
