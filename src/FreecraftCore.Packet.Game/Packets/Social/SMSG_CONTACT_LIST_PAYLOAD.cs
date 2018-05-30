@@ -37,7 +37,7 @@ namespace FreecraftCore
 		/// </summary>
 		[ReadToEnd]
 		[WireMember(2)]
-		public byte[] Data { get; }
+		public byte[] Data { get; } = new byte[4]; //TODO: Don't autoset like this
 
 		/// <summary>
 		/// Creates an empty friends list packet.
