@@ -48,7 +48,7 @@ namespace FreecraftCore
 
 		[KnownSize(5)]
 		[WireMember(15)]
-		public byte[] UnknownBagData { get; }
+		public byte[] UnknownBagData { get; } = new byte[5];
 
 		/// <inheritdoc />
 		public CharacterScreenCharacter_Vanilla([NotNull] CharacterScreenData data, bool isFirstLogin, [NotNull] CharacterScreenPetInfo petInformation, [NotNull] CharacterScreenItem_Vanilla[] visualEquipmentItems)
