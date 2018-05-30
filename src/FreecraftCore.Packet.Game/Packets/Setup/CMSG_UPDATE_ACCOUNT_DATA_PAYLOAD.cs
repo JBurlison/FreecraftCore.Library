@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
+	//Cmangos and Mangos do not handle this on 1.12.1. Vanilla format does not matter.
 	/// <summary>
 	/// Sent by the client to set some client data.
 	/// </summary>
