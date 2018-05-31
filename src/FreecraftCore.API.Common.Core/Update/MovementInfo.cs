@@ -33,10 +33,10 @@ namespace FreecraftCore
 
 		private bool IsOnTransport => MovementFlags.HasFlag(MovementFlag.OnTransport);
 
-		private bool HasTransportationTime => IsOnTransport && MovementFlags.HasFlag(MovementFlagExtra.InterpolateMove);
+		private bool HasTransportationTime => IsOnTransport && ExtraFlags.HasFlag(MovementFlagExtra.InterpolateMove);
 
 		private bool HasMovementPitch => MovementFlags.HasFlag(MovementFlag.Swimming | MovementFlag.Flying)
-			|| MovementFlags.HasFlag(MovementFlagExtra.AlwaysAllowPitching);
+			|| ExtraFlags.HasFlag(MovementFlagExtra.AlwaysAllowPitching);
 
 		private bool IsFalling => MovementFlags.HasFlag(MovementFlag.Falling);
 
