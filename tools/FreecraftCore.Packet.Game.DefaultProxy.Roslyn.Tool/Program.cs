@@ -16,7 +16,7 @@ namespace FreecraftCore
 		{
 			Dictionary<NetworkOperationCode, CompilationUnitSyntax> compilationUnits = new Dictionary<NetworkOperationCode, CompilationUnitSyntax>(Enum.GetValues(typeof(NetworkOperationCode)).Length);
 
-			foreach(NetworkOperationCode code in GamePacketMetadataMarker.UnimplementedOperationCodes.Value)
+			foreach(NetworkOperationCode code in Enum.GetValues(typeof(NetworkOperationCode)))
 			{
 				compilationUnits.Add(code, BuildPayloadClassSyntax($"{code}_DTO_PROXY", code));
 			}
