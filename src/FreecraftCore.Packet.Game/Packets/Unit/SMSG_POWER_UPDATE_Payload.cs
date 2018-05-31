@@ -5,6 +5,7 @@ using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
+	//1.12.1 servers do not send this.
 	/// <summary>
 	/// Send by the server to update a unit's power field.
 	/// </summary>

@@ -3,6 +3,7 @@ using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
+	//AddedInVersion(ClientVersionBuild.V3_1_0_9767) this went from byte to short. so in 1.12.1, if it exists, it will be a byte.
 	/// <summary>
 	/// Flags enumeration of object updates.
 	/// </summary>
