@@ -18,12 +18,8 @@ namespace FreecraftCore
 		public static bool VerifyIsDefined<TEnumType>([CanBeNull] this TEnumType value, string name, bool throwIfInvalid = false)
 			where TEnumType : struct, IConvertible
 		{
-			//This reflection may be expensive in release builds
-#if DEBUG || DEBUGBUILD
-			if(value.GetType().GetTypeInfo().IsEnum)
-#endif
-				if (Enum.IsDefined(typeof(TEnumType), value))
-					return true;
+			if (Enum.IsDefined(typeof(TEnumType), value))
+				return true;
 
 			if (throwIfInvalid)
 				throw new ArgumentOutOfRangeException(nameof(value), $"The enumeration {nameof(value)} of Type: {typeof(TEnumType).FullName} with Name: {name} is not valid for the enumeration range.");
