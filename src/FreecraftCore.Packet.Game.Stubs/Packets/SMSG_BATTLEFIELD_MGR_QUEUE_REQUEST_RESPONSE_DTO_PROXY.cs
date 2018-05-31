@@ -12,12 +12,12 @@ public sealed class SMSG_BATTLEFIELD_MGR_QUEUE_REQUEST_RESPONSE_DTO_PROXY : Game
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

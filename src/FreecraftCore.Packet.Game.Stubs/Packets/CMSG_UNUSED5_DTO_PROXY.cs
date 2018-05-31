@@ -12,12 +12,12 @@ public sealed class CMSG_UNUSED5_DTO_PROXY : GamePacketPayload, IUnimplementedGa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

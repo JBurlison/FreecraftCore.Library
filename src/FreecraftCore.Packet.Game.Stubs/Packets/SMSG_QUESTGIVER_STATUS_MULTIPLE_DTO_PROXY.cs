@@ -12,12 +12,12 @@ public sealed class SMSG_QUESTGIVER_STATUS_MULTIPLE_DTO_PROXY : GamePacketPayloa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

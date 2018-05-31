@@ -12,12 +12,12 @@ public sealed class CMSG_GUILD_MOTD_DTO_PROXY : GamePacketPayload, IUnimplemente
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

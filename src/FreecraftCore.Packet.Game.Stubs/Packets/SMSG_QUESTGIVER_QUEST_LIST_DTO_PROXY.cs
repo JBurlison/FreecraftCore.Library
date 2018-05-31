@@ -12,12 +12,12 @@ public sealed class SMSG_QUESTGIVER_QUEST_LIST_DTO_PROXY : GamePacketPayload, IU
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

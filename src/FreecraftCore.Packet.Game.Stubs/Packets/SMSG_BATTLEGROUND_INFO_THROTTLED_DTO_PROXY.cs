@@ -12,12 +12,12 @@ public sealed class SMSG_BATTLEGROUND_INFO_THROTTLED_DTO_PROXY : GamePacketPaylo
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

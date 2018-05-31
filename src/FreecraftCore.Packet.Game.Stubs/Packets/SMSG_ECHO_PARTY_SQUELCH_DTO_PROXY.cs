@@ -12,12 +12,12 @@ public sealed class SMSG_ECHO_PARTY_SQUELCH_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

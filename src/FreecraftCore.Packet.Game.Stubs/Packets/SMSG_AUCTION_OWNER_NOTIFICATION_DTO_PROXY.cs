@@ -12,12 +12,12 @@ public sealed class SMSG_AUCTION_OWNER_NOTIFICATION_DTO_PROXY : GamePacketPayloa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

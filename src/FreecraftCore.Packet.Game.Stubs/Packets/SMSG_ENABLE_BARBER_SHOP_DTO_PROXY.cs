@@ -12,12 +12,12 @@ public sealed class SMSG_ENABLE_BARBER_SHOP_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

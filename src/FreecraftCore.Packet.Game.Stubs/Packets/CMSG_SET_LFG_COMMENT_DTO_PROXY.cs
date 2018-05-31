@@ -12,12 +12,12 @@ public sealed class CMSG_SET_LFG_COMMENT_DTO_PROXY : GamePacketPayload, IUnimple
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_LFD_PARTY_LOCK_INFO_REQUEST_DTO_PROXY : GamePacketPaylo
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

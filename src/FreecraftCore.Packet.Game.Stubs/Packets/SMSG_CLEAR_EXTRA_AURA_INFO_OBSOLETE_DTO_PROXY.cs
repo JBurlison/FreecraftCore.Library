@@ -12,12 +12,12 @@ public sealed class SMSG_CLEAR_EXTRA_AURA_INFO_OBSOLETE_DTO_PROXY : GamePacketPa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

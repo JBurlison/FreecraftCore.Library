@@ -12,12 +12,12 @@ public sealed class SMSG_DESTRUCTIBLE_BUILDING_DAMAGE_DTO_PROXY : GamePacketPayl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_SET_ACTION_BUTTON_DTO_PROXY : GamePacketPayload, IUnimp
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

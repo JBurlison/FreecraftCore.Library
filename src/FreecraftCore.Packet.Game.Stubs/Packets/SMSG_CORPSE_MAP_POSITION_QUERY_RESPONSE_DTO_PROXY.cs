@@ -12,12 +12,12 @@ public sealed class SMSG_CORPSE_MAP_POSITION_QUERY_RESPONSE_DTO_PROXY : GamePack
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

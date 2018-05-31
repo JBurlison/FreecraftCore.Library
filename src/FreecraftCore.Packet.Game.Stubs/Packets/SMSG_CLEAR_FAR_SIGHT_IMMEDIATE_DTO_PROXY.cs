@@ -12,12 +12,12 @@ public sealed class SMSG_CLEAR_FAR_SIGHT_IMMEDIATE_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

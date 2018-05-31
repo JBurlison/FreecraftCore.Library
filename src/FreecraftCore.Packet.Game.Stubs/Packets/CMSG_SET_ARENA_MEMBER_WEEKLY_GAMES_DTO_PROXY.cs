@@ -12,12 +12,12 @@ public sealed class CMSG_SET_ARENA_MEMBER_WEEKLY_GAMES_DTO_PROXY : GamePacketPay
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

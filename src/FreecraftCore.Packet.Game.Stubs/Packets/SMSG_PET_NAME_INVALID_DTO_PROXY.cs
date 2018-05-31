@@ -12,12 +12,12 @@ public sealed class SMSG_PET_NAME_INVALID_DTO_PROXY : GamePacketPayload, IUnimpl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

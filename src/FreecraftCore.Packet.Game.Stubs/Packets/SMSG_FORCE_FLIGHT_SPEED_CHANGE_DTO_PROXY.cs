@@ -12,12 +12,12 @@ public sealed class SMSG_FORCE_FLIGHT_SPEED_CHANGE_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

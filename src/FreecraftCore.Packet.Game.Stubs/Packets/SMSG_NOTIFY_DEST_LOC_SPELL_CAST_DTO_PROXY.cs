@@ -12,12 +12,12 @@ public sealed class SMSG_NOTIFY_DEST_LOC_SPELL_CAST_DTO_PROXY : GamePacketPayloa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

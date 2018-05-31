@@ -12,12 +12,12 @@ public sealed class SMSG_CAMERA_SHAKE_DTO_PROXY : GamePacketPayload, IUnimplemen
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

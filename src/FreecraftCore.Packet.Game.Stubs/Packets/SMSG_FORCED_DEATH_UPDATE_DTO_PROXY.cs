@@ -12,12 +12,12 @@ public sealed class SMSG_FORCED_DEATH_UPDATE_DTO_PROXY : GamePacketPayload, IUni
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

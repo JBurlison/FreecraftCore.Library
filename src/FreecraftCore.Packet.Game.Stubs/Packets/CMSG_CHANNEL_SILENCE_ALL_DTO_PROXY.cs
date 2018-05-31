@@ -12,12 +12,12 @@ public sealed class CMSG_CHANNEL_SILENCE_ALL_DTO_PROXY : GamePacketPayload, IUni
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

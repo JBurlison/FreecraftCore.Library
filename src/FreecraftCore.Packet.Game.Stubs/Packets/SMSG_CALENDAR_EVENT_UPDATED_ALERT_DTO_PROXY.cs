@@ -12,12 +12,12 @@ public sealed class SMSG_CALENDAR_EVENT_UPDATED_ALERT_DTO_PROXY : GamePacketPayl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

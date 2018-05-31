@@ -12,12 +12,12 @@ public sealed class SMSG_FLIGHT_SPLINE_SYNC_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

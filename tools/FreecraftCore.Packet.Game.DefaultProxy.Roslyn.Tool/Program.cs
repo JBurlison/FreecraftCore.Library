@@ -295,7 +295,7 @@ namespace FreecraftCore
 																			(
 																				SyntaxFactory.ReturnStatement
 																				(
-																					SyntaxFactory.IdentifierName($"{nameof(IUnimplementedGamePacketPayload.Data)}")
+																					SyntaxFactory.IdentifierName($"_{nameof(IUnimplementedGamePacketPayload.Data)}")
 																				)
 																			)
 																		)
@@ -315,7 +315,7 @@ namespace FreecraftCore
 																						SyntaxFactory.AssignmentExpression
 																						(
 																							SyntaxKind.SimpleAssignmentExpression,
-																							SyntaxFactory.IdentifierName($"{nameof(IUnimplementedGamePacketPayload.Data)}"),
+																							SyntaxFactory.IdentifierName($"_{nameof(IUnimplementedGamePacketPayload.Data)}"),
 																							SyntaxFactory.IdentifierName("value")
 																						)
 																					)

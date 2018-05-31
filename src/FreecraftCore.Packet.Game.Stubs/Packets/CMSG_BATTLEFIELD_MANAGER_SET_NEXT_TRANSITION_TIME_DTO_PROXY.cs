@@ -12,12 +12,12 @@ public sealed class CMSG_BATTLEFIELD_MANAGER_SET_NEXT_TRANSITION_TIME_DTO_PROXY 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

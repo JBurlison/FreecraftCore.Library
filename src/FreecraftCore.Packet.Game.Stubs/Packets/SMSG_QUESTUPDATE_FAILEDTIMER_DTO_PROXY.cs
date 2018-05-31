@@ -12,12 +12,12 @@ public sealed class SMSG_QUESTUPDATE_FAILEDTIMER_DTO_PROXY : GamePacketPayload, 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

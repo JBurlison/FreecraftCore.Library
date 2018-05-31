@@ -12,12 +12,12 @@ public sealed class MSG_QUERY_GUILD_BANK_TEXT_DTO_PROXY : GamePacketPayload, IUn
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

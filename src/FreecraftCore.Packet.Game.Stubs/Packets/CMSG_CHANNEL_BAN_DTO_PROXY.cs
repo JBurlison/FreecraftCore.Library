@@ -12,12 +12,12 @@ public sealed class CMSG_CHANNEL_BAN_DTO_PROXY : GamePacketPayload, IUnimplement
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_SET_ALLOW_LOW_LEVEL_RAID1_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

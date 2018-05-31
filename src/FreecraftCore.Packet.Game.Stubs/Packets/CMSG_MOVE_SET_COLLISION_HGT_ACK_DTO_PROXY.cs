@@ -12,12 +12,12 @@ public sealed class CMSG_MOVE_SET_COLLISION_HGT_ACK_DTO_PROXY : GamePacketPayloa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

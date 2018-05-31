@@ -12,12 +12,12 @@ public sealed class SMSG_READ_ITEM_FAILED_DTO_PROXY : GamePacketPayload, IUnimpl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

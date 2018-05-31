@@ -12,12 +12,12 @@ public sealed class CMSG_FAR_SIGHT_DTO_PROXY : GamePacketPayload, IUnimplemented
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

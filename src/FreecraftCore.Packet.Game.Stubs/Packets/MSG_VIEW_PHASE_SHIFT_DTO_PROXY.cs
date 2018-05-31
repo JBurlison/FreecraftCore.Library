@@ -12,12 +12,12 @@ public sealed class MSG_VIEW_PHASE_SHIFT_DTO_PROXY : GamePacketPayload, IUnimple
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

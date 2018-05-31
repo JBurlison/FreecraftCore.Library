@@ -12,12 +12,12 @@ public sealed class CMSG_BATTLEFIELD_MANAGER_ADVANCE_STATE_DTO_PROXY : GamePacke
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

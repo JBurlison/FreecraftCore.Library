@@ -12,12 +12,12 @@ public sealed class SMSG_HIGHEST_THREAT_UPDATE_DTO_PROXY : GamePacketPayload, IU
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class SMSG_UPDATE_INSTANCE_OWNERSHIP_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

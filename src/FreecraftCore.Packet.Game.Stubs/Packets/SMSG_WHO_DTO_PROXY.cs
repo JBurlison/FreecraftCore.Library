@@ -12,12 +12,12 @@ public sealed class SMSG_WHO_DTO_PROXY : GamePacketPayload, IUnimplementedGamePa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

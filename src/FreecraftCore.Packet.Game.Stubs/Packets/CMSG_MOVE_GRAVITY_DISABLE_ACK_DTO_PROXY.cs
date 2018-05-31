@@ -12,12 +12,12 @@ public sealed class CMSG_MOVE_GRAVITY_DISABLE_ACK_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

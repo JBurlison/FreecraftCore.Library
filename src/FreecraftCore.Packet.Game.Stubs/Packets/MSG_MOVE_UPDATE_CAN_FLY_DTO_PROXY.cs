@@ -12,12 +12,12 @@ public sealed class MSG_MOVE_UPDATE_CAN_FLY_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

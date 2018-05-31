@@ -12,12 +12,12 @@ public sealed class MSG_MOVE_FALL_LAND_DTO_PROXY : GamePacketPayload, IUnimpleme
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

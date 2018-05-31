@@ -12,12 +12,12 @@ public sealed class CMSG_DEBUG_PASSIVE_AURA_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

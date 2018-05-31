@@ -12,12 +12,12 @@ public sealed class SMSG_ITEM_COOLDOWN_DTO_PROXY : GamePacketPayload, IUnimpleme
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

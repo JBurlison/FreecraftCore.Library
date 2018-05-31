@@ -12,12 +12,12 @@ public sealed class SMSG_BUY_ITEM_DTO_PROXY : GamePacketPayload, IUnimplementedG
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

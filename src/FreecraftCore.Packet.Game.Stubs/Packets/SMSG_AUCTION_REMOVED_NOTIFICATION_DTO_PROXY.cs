@@ -12,12 +12,12 @@ public sealed class SMSG_AUCTION_REMOVED_NOTIFICATION_DTO_PROXY : GamePacketPayl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

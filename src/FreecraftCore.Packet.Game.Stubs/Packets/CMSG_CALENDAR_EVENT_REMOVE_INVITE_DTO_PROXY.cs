@@ -12,12 +12,12 @@ public sealed class CMSG_CALENDAR_EVENT_REMOVE_INVITE_DTO_PROXY : GamePacketPayl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

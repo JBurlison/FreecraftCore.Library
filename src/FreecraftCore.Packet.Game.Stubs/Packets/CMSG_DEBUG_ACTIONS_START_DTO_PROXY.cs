@@ -12,12 +12,12 @@ public sealed class CMSG_DEBUG_ACTIONS_START_DTO_PROXY : GamePacketPayload, IUni
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

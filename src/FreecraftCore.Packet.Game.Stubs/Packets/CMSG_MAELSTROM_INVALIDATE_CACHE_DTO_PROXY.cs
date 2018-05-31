@@ -12,12 +12,12 @@ public sealed class CMSG_MAELSTROM_INVALIDATE_CACHE_DTO_PROXY : GamePacketPayloa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

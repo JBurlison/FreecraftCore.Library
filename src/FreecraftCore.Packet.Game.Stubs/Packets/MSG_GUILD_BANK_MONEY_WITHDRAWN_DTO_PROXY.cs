@@ -12,12 +12,12 @@ public sealed class MSG_GUILD_BANK_MONEY_WITHDRAWN_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

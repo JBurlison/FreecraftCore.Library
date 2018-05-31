@@ -12,12 +12,12 @@ public sealed class SMSG_CORPSE_NOT_IN_INSTANCE_DTO_PROXY : GamePacketPayload, I
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

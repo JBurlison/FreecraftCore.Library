@@ -12,12 +12,12 @@ public sealed class MSG_MOVE_START_SWIM_DTO_PROXY : GamePacketPayload, IUnimplem
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

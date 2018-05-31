@@ -12,12 +12,12 @@ public sealed class CMSG_GM_CHARACTER_RESTORE_DTO_PROXY : GamePacketPayload, IUn
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

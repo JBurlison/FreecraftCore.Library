@@ -12,12 +12,12 @@ public sealed class SMSG_SET_EXTRA_AURA_INFO_NEED_UPDATE_OBSOLETE_DTO_PROXY : Ga
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

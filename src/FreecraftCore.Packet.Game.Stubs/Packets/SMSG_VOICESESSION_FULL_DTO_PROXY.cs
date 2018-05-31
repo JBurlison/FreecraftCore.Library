@@ -12,12 +12,12 @@ public sealed class SMSG_VOICESESSION_FULL_DTO_PROXY : GamePacketPayload, IUnimp
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_MAIL_RETURN_TO_SENDER_DTO_PROXY : GamePacketPayload, IU
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

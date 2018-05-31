@@ -12,12 +12,12 @@ public sealed class CMSG_PERFORM_ACTION_SET_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_QUESTGIVER_REQUEST_REWARD_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class SMSG_DAMAGE_CALC_LOG_DTO_PROXY : GamePacketPayload, IUnimple
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class SMSG_PARTY_MEMBER_STATS_FULL_DTO_PROXY : GamePacketPayload, 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

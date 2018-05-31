@@ -12,12 +12,12 @@ public sealed class CMSG_COMMENTATOR_EXIT_INSTANCE_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

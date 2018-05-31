@@ -12,12 +12,12 @@ public sealed class SMSG_EMOTE_DTO_PROXY : GamePacketPayload, IUnimplementedGame
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

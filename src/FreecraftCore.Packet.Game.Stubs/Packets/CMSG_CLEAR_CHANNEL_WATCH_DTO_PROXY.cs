@@ -12,12 +12,12 @@ public sealed class CMSG_CLEAR_CHANNEL_WATCH_DTO_PROXY : GamePacketPayload, IUni
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

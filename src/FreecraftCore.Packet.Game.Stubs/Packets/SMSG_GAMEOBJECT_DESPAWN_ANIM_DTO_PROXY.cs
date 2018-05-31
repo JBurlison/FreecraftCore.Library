@@ -12,12 +12,12 @@ public sealed class SMSG_GAMEOBJECT_DESPAWN_ANIM_DTO_PROXY : GamePacketPayload, 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

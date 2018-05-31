@@ -12,12 +12,12 @@ public sealed class SMSG_MINIGAME_MOVE_FAILED_DTO_PROXY : GamePacketPayload, IUn
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

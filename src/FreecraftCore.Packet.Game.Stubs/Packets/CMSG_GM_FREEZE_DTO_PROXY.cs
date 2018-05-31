@@ -12,12 +12,12 @@ public sealed class CMSG_GM_FREEZE_DTO_PROXY : GamePacketPayload, IUnimplemented
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

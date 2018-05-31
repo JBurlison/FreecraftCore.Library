@@ -12,12 +12,12 @@ public sealed class SMSG_GAMETIMEBIAS_SET_DTO_PROXY : GamePacketPayload, IUnimpl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

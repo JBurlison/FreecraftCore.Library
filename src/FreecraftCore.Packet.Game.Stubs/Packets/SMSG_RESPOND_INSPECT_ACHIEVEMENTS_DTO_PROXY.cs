@@ -12,12 +12,12 @@ public sealed class SMSG_RESPOND_INSPECT_ACHIEVEMENTS_DTO_PROXY : GamePacketPayl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

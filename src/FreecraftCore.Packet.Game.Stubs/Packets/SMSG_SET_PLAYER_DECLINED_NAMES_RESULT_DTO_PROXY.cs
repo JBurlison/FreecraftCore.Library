@@ -12,12 +12,12 @@ public sealed class SMSG_SET_PLAYER_DECLINED_NAMES_RESULT_DTO_PROXY : GamePacket
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class SMSG_SUSPEND_COMMS_DTO_PROXY : GamePacketPayload, IUnimpleme
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

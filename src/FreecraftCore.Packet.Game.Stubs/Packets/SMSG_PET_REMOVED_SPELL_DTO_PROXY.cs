@@ -12,12 +12,12 @@ public sealed class SMSG_PET_REMOVED_SPELL_DTO_PROXY : GamePacketPayload, IUnimp
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

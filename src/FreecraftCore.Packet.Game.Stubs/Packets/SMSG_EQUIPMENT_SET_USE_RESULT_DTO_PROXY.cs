@@ -12,12 +12,12 @@ public sealed class SMSG_EQUIPMENT_SET_USE_RESULT_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

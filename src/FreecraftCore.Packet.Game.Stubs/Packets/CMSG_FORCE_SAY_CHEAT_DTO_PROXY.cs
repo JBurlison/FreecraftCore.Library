@@ -12,12 +12,12 @@ public sealed class CMSG_FORCE_SAY_CHEAT_DTO_PROXY : GamePacketPayload, IUnimple
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

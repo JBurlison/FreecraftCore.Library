@@ -12,12 +12,12 @@ public sealed class CMSG_FORCE_PITCH_RATE_CHANGE_ACK_DTO_PROXY : GamePacketPaylo
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

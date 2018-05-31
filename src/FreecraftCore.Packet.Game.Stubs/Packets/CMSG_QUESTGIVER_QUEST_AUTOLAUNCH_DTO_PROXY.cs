@@ -12,12 +12,12 @@ public sealed class CMSG_QUESTGIVER_QUEST_AUTOLAUNCH_DTO_PROXY : GamePacketPaylo
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

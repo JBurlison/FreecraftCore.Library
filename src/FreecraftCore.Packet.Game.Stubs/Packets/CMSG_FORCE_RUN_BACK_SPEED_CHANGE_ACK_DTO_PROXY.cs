@@ -12,12 +12,12 @@ public sealed class CMSG_FORCE_RUN_BACK_SPEED_CHANGE_ACK_DTO_PROXY : GamePacketP
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

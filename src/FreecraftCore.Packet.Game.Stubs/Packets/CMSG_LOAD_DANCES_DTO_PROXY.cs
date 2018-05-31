@@ -12,12 +12,12 @@ public sealed class CMSG_LOAD_DANCES_DTO_PROXY : GamePacketPayload, IUnimplement
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

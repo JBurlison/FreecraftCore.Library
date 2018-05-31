@@ -12,12 +12,12 @@ public sealed class SMSG_SPLINE_MOVE_SET_FLYING_DTO_PROXY : GamePacketPayload, I
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

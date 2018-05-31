@@ -12,12 +12,12 @@ public sealed class CMSG_BATTLEMASTER_HELLO_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_CALENDAR_ADD_EVENT_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_GM_UPDATE_TICKET_STATUS_DTO_PROXY : GamePacketPayload, 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

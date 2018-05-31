@@ -12,12 +12,12 @@ public sealed class MSG_RAID_READY_CHECK_FINISHED_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

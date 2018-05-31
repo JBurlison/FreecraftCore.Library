@@ -12,12 +12,12 @@ public sealed class MSG_MOVE_START_STRAFE_LEFT_DTO_PROXY : GamePacketPayload, IU
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

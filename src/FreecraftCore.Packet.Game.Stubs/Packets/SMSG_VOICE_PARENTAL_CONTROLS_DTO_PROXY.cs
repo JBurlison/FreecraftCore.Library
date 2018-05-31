@@ -12,12 +12,12 @@ public sealed class SMSG_VOICE_PARENTAL_CONTROLS_DTO_PROXY : GamePacketPayload, 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

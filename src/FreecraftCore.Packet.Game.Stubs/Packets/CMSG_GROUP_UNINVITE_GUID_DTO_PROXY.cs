@@ -12,12 +12,12 @@ public sealed class CMSG_GROUP_UNINVITE_GUID_DTO_PROXY : GamePacketPayload, IUni
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

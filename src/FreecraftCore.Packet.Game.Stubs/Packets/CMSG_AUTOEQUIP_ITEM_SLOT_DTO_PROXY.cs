@@ -12,12 +12,12 @@ public sealed class CMSG_AUTOEQUIP_ITEM_SLOT_DTO_PROXY : GamePacketPayload, IUni
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

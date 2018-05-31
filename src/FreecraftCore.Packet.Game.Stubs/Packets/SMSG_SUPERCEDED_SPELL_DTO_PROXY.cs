@@ -12,12 +12,12 @@ public sealed class SMSG_SUPERCEDED_SPELL_DTO_PROXY : GamePacketPayload, IUnimpl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

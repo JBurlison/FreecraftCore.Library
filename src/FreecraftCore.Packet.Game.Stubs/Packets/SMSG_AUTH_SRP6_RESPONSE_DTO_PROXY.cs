@@ -12,12 +12,12 @@ public sealed class SMSG_AUTH_SRP6_RESPONSE_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

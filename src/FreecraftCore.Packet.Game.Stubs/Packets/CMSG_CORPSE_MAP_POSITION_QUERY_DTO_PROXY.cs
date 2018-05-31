@@ -12,12 +12,12 @@ public sealed class CMSG_CORPSE_MAP_POSITION_QUERY_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

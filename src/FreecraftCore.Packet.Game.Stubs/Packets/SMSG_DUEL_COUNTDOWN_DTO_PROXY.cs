@@ -12,12 +12,12 @@ public sealed class SMSG_DUEL_COUNTDOWN_DTO_PROXY : GamePacketPayload, IUnimplem
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

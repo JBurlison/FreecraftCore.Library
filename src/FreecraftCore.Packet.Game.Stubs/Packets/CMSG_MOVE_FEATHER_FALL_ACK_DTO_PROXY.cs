@@ -12,12 +12,12 @@ public sealed class CMSG_MOVE_FEATHER_FALL_ACK_DTO_PROXY : GamePacketPayload, IU
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

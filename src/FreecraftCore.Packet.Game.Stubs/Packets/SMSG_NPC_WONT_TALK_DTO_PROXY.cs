@@ -12,12 +12,12 @@ public sealed class SMSG_NPC_WONT_TALK_DTO_PROXY : GamePacketPayload, IUnimpleme
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

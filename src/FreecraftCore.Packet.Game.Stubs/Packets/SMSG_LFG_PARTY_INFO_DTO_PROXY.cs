@@ -12,12 +12,12 @@ public sealed class SMSG_LFG_PARTY_INFO_DTO_PROXY : GamePacketPayload, IUnimplem
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_CANCEL_TEMP_ENCHANTMENT_DTO_PROXY : GamePacketPayload, 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

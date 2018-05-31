@@ -12,12 +12,12 @@ public sealed class CMSG_LFG_JOIN_DTO_PROXY : GamePacketPayload, IUnimplementedG
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class SMSG_CALENDAR_RAID_LOCKOUT_ADDED_DTO_PROXY : GamePacketPaylo
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

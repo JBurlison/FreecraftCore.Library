@@ -12,12 +12,12 @@ public sealed class SMSG_CHAR_FACTION_CHANGE_DTO_PROXY : GamePacketPayload, IUni
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_REMOVE_GLYPH_DTO_PROXY : GamePacketPayload, IUnimplemen
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

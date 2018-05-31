@@ -12,12 +12,12 @@ public sealed class SMSG_DURABILITY_DAMAGE_DEATH_DTO_PROXY : GamePacketPayload, 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

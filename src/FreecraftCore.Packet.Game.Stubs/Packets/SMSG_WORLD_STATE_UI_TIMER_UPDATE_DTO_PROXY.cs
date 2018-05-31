@@ -12,12 +12,12 @@ public sealed class SMSG_WORLD_STATE_UI_TIMER_UPDATE_DTO_PROXY : GamePacketPaylo
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

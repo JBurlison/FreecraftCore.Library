@@ -12,12 +12,12 @@ public sealed class MSG_INSPECT_HONOR_STATS_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

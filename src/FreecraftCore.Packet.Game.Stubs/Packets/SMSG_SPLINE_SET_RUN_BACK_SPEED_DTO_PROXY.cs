@@ -12,12 +12,12 @@ public sealed class SMSG_SPLINE_SET_RUN_BACK_SPEED_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

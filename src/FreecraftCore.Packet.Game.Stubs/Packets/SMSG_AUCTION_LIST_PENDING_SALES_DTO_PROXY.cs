@@ -12,12 +12,12 @@ public sealed class SMSG_AUCTION_LIST_PENDING_SALES_DTO_PROXY : GamePacketPayloa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

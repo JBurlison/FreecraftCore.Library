@@ -12,12 +12,12 @@ public sealed class SMSG_SPLINE_SET_TURN_RATE_DTO_PROXY : GamePacketPayload, IUn
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

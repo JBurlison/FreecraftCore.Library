@@ -12,12 +12,12 @@ public sealed class CMSG_GUILD_PROMOTE_DTO_PROXY : GamePacketPayload, IUnimpleme
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

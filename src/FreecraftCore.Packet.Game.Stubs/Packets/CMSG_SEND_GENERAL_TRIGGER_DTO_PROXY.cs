@@ -12,12 +12,12 @@ public sealed class CMSG_SEND_GENERAL_TRIGGER_DTO_PROXY : GamePacketPayload, IUn
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

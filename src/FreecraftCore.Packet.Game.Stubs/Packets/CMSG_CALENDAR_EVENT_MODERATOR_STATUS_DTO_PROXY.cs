@@ -12,12 +12,12 @@ public sealed class CMSG_CALENDAR_EVENT_MODERATOR_STATUS_DTO_PROXY : GamePacketP
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

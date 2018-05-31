@@ -12,12 +12,12 @@ public sealed class MSG_MOVE_SET_FLIGHT_SPEED_CHEAT_DTO_PROXY : GamePacketPayloa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

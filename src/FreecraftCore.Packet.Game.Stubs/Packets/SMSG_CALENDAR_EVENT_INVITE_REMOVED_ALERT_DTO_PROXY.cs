@@ -12,12 +12,12 @@ public sealed class SMSG_CALENDAR_EVENT_INVITE_REMOVED_ALERT_DTO_PROXY : GamePac
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_BATTLEFIELD_MGR_ENTRY_INVITE_RESPONSE_DTO_PROXY : GameP
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_AUTH_SRP6_RECODE_DTO_PROXY : GamePacketPayload, IUnimpl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

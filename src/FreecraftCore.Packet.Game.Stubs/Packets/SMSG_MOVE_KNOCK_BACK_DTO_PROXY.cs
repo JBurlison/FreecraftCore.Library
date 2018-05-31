@@ -12,12 +12,12 @@ public sealed class SMSG_MOVE_KNOCK_BACK_DTO_PROXY : GamePacketPayload, IUnimple
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

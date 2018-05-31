@@ -12,12 +12,12 @@ public sealed class SMSG_SPLINE_MOVE_GRAVITY_DISABLE_DTO_PROXY : GamePacketPaylo
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

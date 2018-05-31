@@ -12,12 +12,12 @@ public sealed class SMSG_OPEN_LFG_DUNGEON_FINDER_DTO_PROXY : GamePacketPayload, 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

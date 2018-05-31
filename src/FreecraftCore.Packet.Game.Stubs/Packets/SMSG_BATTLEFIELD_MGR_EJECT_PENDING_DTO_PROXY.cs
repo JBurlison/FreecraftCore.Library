@@ -12,12 +12,12 @@ public sealed class SMSG_BATTLEFIELD_MGR_EJECT_PENDING_DTO_PROXY : GamePacketPay
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

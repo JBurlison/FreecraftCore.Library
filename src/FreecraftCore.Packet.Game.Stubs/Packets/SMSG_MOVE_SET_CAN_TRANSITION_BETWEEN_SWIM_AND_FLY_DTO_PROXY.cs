@@ -12,12 +12,12 @@ public sealed class SMSG_MOVE_SET_CAN_TRANSITION_BETWEEN_SWIM_AND_FLY_DTO_PROXY 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

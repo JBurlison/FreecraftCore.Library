@@ -12,12 +12,12 @@ public sealed class SMSG_PLAY_TIME_WARNING_DTO_PROXY : GamePacketPayload, IUnimp
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

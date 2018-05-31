@@ -12,12 +12,12 @@ public sealed class SMSG_LOOT_ALL_PASSED_DTO_PROXY : GamePacketPayload, IUnimple
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

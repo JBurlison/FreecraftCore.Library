@@ -12,12 +12,12 @@ public sealed class CMSG_BATTLEFIELD_MGR_QUEUE_REQUEST_DTO_PROXY : GamePacketPay
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

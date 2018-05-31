@@ -12,12 +12,12 @@ public sealed class SMSG_FEIGN_DEATH_RESISTED_DTO_PROXY : GamePacketPayload, IUn
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

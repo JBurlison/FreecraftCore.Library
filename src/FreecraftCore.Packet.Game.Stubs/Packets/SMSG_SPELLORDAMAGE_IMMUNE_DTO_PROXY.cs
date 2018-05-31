@@ -12,12 +12,12 @@ public sealed class SMSG_SPELLORDAMAGE_IMMUNE_DTO_PROXY : GamePacketPayload, IUn
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

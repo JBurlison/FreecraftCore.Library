@@ -12,12 +12,12 @@ public sealed class CMSG_MOVE_STOP_SWIM_CHEAT_DTO_PROXY : GamePacketPayload, IUn
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

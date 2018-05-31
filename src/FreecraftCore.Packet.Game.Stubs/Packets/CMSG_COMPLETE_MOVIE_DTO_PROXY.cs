@@ -12,12 +12,12 @@ public sealed class CMSG_COMPLETE_MOVIE_DTO_PROXY : GamePacketPayload, IUnimplem
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

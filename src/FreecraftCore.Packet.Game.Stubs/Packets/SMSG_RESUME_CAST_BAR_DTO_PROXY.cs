@@ -12,12 +12,12 @@ public sealed class SMSG_RESUME_CAST_BAR_DTO_PROXY : GamePacketPayload, IUnimple
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class SMSG_CHEAT_DUMP_ITEMS_DEBUG_ONLY_RESPONSE_DTO_PROXY : GamePa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

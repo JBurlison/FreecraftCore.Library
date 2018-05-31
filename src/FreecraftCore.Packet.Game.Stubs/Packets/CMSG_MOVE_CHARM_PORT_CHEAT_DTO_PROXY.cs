@@ -12,12 +12,12 @@ public sealed class CMSG_MOVE_CHARM_PORT_CHEAT_DTO_PROXY : GamePacketPayload, IU
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

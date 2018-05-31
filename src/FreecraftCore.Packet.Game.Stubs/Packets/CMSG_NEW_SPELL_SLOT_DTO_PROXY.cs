@@ -12,12 +12,12 @@ public sealed class CMSG_NEW_SPELL_SLOT_DTO_PROXY : GamePacketPayload, IUnimplem
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

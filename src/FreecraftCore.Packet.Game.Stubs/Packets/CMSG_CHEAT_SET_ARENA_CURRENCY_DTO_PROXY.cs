@@ -12,12 +12,12 @@ public sealed class CMSG_CHEAT_SET_ARENA_CURRENCY_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

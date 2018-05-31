@@ -12,12 +12,12 @@ public sealed class CMSG_ARENA_TEAM_DISBAND_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_CHANGE_PERSONAL_ARENA_RATING_DTO_PROXY : GamePacketPayl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

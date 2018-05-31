@@ -12,12 +12,12 @@ public sealed class MSG_MOVE_SET_PITCH_RATE_CHEAT_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

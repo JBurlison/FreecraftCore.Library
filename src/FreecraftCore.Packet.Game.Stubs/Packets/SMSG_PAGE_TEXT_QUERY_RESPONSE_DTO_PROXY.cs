@@ -12,12 +12,12 @@ public sealed class SMSG_PAGE_TEXT_QUERY_RESPONSE_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

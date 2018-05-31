@@ -12,12 +12,12 @@ public sealed class SMSG_COMMENTATOR_SKIRMISH_QUEUE_RESULT1_DTO_PROXY : GamePack
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_STABLE_SWAP_PET_DTO_PROXY : GamePacketPayload, IUnimple
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

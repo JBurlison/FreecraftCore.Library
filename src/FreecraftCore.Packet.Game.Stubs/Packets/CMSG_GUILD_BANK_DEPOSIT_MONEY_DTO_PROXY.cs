@@ -12,12 +12,12 @@ public sealed class CMSG_GUILD_BANK_DEPOSIT_MONEY_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_ADD_VOICE_IGNORE_DTO_PROXY : GamePacketPayload, IUnimpl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

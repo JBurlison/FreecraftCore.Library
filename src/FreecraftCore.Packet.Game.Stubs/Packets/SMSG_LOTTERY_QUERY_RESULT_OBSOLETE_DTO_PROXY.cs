@@ -12,12 +12,12 @@ public sealed class SMSG_LOTTERY_QUERY_RESULT_OBSOLETE_DTO_PROXY : GamePacketPay
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

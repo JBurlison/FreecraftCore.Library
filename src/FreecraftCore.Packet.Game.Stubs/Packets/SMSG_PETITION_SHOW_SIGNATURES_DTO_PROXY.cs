@@ -12,12 +12,12 @@ public sealed class SMSG_PETITION_SHOW_SIGNATURES_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

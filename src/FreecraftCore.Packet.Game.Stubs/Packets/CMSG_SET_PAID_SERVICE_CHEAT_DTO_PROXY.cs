@@ -12,12 +12,12 @@ public sealed class CMSG_SET_PAID_SERVICE_CHEAT_DTO_PROXY : GamePacketPayload, I
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

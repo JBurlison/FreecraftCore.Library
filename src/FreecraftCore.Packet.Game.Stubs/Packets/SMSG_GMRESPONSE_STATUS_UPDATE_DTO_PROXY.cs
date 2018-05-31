@@ -12,12 +12,12 @@ public sealed class SMSG_GMRESPONSE_STATUS_UPDATE_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

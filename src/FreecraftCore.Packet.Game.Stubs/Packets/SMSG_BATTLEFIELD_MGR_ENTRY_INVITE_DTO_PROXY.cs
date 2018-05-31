@@ -12,12 +12,12 @@ public sealed class SMSG_BATTLEFIELD_MGR_ENTRY_INVITE_DTO_PROXY : GamePacketPayl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

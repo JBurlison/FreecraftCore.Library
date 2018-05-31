@@ -12,12 +12,12 @@ public sealed class CMSG_MOVE_SET_RUN_SPEED_DTO_PROXY : GamePacketPayload, IUnim
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

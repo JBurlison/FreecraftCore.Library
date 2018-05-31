@@ -12,12 +12,12 @@ public sealed class CMSG_GUILD_SET_OFFICER_NOTE_DTO_PROXY : GamePacketPayload, I
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

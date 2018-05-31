@@ -12,12 +12,12 @@ public sealed class MSG_MINIMAP_PING_DTO_PROXY : GamePacketPayload, IUnimplement
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

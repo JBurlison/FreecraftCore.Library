@@ -12,12 +12,12 @@ public sealed class MSG_QUERY_NEXT_MAIL_TIME_DTO_PROXY : GamePacketPayload, IUni
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

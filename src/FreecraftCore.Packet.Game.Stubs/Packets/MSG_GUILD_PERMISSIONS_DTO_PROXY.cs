@@ -12,12 +12,12 @@ public sealed class MSG_GUILD_PERMISSIONS_DTO_PROXY : GamePacketPayload, IUnimpl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

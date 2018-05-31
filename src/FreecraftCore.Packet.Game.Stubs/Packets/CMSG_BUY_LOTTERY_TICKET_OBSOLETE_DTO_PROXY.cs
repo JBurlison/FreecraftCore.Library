@@ -12,12 +12,12 @@ public sealed class CMSG_BUY_LOTTERY_TICKET_OBSOLETE_DTO_PROXY : GamePacketPaylo
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

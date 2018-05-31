@@ -12,12 +12,12 @@ public sealed class SMSG_UPDATE_INSTANCE_ENCOUNTER_UNIT_DTO_PROXY : GamePacketPa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

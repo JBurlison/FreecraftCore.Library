@@ -12,12 +12,12 @@ public sealed class CMSG_MAIL_MARK_AS_READ_DTO_PROXY : GamePacketPayload, IUnimp
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

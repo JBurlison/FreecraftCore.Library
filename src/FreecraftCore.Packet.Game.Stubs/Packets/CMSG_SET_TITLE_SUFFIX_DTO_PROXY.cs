@@ -12,12 +12,12 @@ public sealed class CMSG_SET_TITLE_SUFFIX_DTO_PROXY : GamePacketPayload, IUnimpl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_SET_SAVED_INSTANCE_EXTEND_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

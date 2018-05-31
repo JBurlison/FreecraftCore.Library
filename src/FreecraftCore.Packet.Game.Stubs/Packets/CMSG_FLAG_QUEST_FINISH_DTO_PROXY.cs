@@ -12,12 +12,12 @@ public sealed class CMSG_FLAG_QUEST_FINISH_DTO_PROXY : GamePacketPayload, IUnimp
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

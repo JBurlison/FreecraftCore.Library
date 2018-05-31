@@ -12,12 +12,12 @@ public sealed class CMSG_DISMISS_CONTROLLED_VEHICLE_DTO_PROXY : GamePacketPayloa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

@@ -12,12 +12,12 @@ public sealed class CMSG_GM_CREATE_ITEM_TARGET_DTO_PROXY : GamePacketPayload, IU
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

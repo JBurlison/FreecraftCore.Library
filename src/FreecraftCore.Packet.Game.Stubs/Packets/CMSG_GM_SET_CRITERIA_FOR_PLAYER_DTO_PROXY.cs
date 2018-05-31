@@ -12,12 +12,12 @@ public sealed class CMSG_GM_SET_CRITERIA_FOR_PLAYER_DTO_PROXY : GamePacketPayloa
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

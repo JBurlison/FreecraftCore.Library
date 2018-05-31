@@ -12,12 +12,12 @@ public sealed class CMSG_MOVE_WATER_WALK_ACK_DTO_PROXY : GamePacketPayload, IUni
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

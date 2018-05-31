@@ -12,12 +12,12 @@ public sealed class CMSG_GROUP_CHANGE_SUB_GROUP_DTO_PROXY : GamePacketPayload, I
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

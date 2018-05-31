@@ -12,12 +12,12 @@ public sealed class SMSG_DYNAMIC_DROP_ROLL_RESULT_DTO_PROXY : GamePacketPayload,
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

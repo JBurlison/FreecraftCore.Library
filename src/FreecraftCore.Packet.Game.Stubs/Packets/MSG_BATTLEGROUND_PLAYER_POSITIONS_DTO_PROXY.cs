@@ -12,12 +12,12 @@ public sealed class MSG_BATTLEGROUND_PLAYER_POSITIONS_DTO_PROXY : GamePacketPayl
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

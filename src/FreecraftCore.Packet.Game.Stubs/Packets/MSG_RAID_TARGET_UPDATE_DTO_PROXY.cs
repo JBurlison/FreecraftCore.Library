@@ -12,12 +12,12 @@ public sealed class MSG_RAID_TARGET_UPDATE_DTO_PROXY : GamePacketPayload, IUnimp
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

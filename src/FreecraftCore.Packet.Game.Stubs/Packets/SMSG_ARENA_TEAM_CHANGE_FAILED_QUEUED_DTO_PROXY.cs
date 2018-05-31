@@ -12,12 +12,12 @@ public sealed class SMSG_ARENA_TEAM_CHANGE_FAILED_QUEUED_DTO_PROXY : GamePacketP
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

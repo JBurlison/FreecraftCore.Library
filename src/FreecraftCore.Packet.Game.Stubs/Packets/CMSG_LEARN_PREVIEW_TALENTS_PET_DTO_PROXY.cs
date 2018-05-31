@@ -12,12 +12,12 @@ public sealed class CMSG_LEARN_PREVIEW_TALENTS_PET_DTO_PROXY : GamePacketPayload
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

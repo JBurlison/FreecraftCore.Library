@@ -12,12 +12,12 @@ public sealed class CMSG_RECLAIM_CORPSE_DTO_PROXY : GamePacketPayload, IUnimplem
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

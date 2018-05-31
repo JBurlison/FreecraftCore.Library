@@ -12,12 +12,12 @@ public sealed class CMSG_SET_ARENA_TEAM_SEASON_GAMES_DTO_PROXY : GamePacketPaylo
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

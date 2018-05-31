@@ -12,12 +12,12 @@ public sealed class CMSG_PET_SET_ACTION_DTO_PROXY : GamePacketPayload, IUnimplem
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

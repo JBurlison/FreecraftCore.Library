@@ -12,12 +12,12 @@ public sealed class MSG_GM_GEARRATING_DTO_PROXY : GamePacketPayload, IUnimplemen
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

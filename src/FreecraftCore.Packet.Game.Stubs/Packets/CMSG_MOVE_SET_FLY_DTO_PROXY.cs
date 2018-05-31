@@ -12,12 +12,12 @@ public sealed class CMSG_MOVE_SET_FLY_DTO_PROXY : GamePacketPayload, IUnimplemen
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

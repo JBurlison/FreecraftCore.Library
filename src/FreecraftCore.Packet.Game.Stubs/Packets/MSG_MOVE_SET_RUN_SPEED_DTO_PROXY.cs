@@ -12,12 +12,12 @@ public sealed class MSG_MOVE_SET_RUN_SPEED_DTO_PROXY : GamePacketPayload, IUnimp
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 

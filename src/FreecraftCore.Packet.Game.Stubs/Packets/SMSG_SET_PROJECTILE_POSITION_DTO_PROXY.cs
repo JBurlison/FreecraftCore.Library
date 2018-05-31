@@ -12,12 +12,12 @@ public sealed class SMSG_SET_PROJECTILE_POSITION_DTO_PROXY : GamePacketPayload, 
     {
         get
         {
-            return Data;
+            return _Data;
         }
 
         set
         {
-            Data = value;
+            _Data = value;
         }
     }
 
