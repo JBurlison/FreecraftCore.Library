@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
+	//Same on 1.12.1 as in 3.3.5
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_NAME_QUERY)]
 	[ProtocolGrouping(ProtocolCode.Game)] //TODO: Change this protocol to something more specific
