@@ -43,12 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Capture\VanillaPacketCaptureTestCaseBuilder.cs" />
+    <Compile Include="Tests\Capture\WotlkPacketCaptureTestCaseBuilder.cs" />
     <Compile Include="Tests\DynamicProxyTypeTests.cs" />
     <Compile Include="Tests\GamePacketPayloadTests.cs" />
     <Compile Include="Tests\AutomatedReflectionTests.cs" />
     <Compile Include="Tests\AuthenticationPayloadTests.cs" />
+    <Compile Include="Tests\Capture\GenericPacketCaptureTests.cs" />
     <Compile Include="Tests\ManualSerializationTests.cs" />
-    <Compile Include="Tests\PacketCaptureGenericTests.cs" />
+    <Compile Include="Tests\Capture\PacketCaptureTestCaseCaptureBuilder.cs" />
+    <Compile Include="Tests\Capture\PacketCaptureTestEntry.cs" />
+    <Compile Include="Tests\Capture\VanillaPacketCaptureGenericTests.cs" />
+    <Compile Include="Tests\Capture\WotlkPacketCaptureGenericTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DotNetZip">
@@ -106,271 +112,290 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_0d18639f-176f-4fd7-89cd-f51a3e1c76ab">
+    <None Include="PacketCaptures\Vanilla\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_1f287c9e-161e-4495-b185-0137e27ea801">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_11567d71-9af6-4589-bfea-5349f952730b">
+    <None Include="PacketCaptures\Vanilla\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_816bc631-8c11-48ba-9863-cfadf87cba06">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_116de894-163a-4306-9082-ff42353dfc69">
+    <None Include="PacketCaptures\Vanilla\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_af9a4bb5-d48f-410e-939e-7cccde23e164">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_122325cb-50b8-4d0b-894c-2cb56529b4be">
+    <None Include="PacketCaptures\Vanilla\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_ba0a1020-7e65-4f91-bbc8-1ef22a205163">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_13caf621-bf4d-473d-998a-0bd3850ac2be">
+    <None Include="PacketCaptures\Vanilla\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_c58574ad-64fe-4ec5-87f5-f36b62415ceb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_1500b155-6f30-4a49-b01b-87518e539eaa">
+    <None Include="PacketCaptures\Vanilla\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_b047878d-dd4a-403e-9a8b-6060a3d7bbab">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_1e4d70d6-38b0-4ea1-8932-c0b8cff13c54">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_0d18639f-176f-4fd7-89cd-f51a3e1c76ab">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_1f6f321a-6218-44d6-92af-330dda8b4ece">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_11567d71-9af6-4589-bfea-5349f952730b">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_243d42c7-33ef-4587-9c59-fc0672a78486">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_116de894-163a-4306-9082-ff42353dfc69">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_2867a0f0-a2ce-47e8-93d1-7e9dec10f5a6">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_122325cb-50b8-4d0b-894c-2cb56529b4be">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_2ec526f7-4442-4ef6-b132-906c5c62a117">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_13caf621-bf4d-473d-998a-0bd3850ac2be">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_39c7740f-ec2f-4ae2-8ede-35a8ff6c6a17">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_1500b155-6f30-4a49-b01b-87518e539eaa">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_3b7937c8-4027-4703-8892-742140909fd6">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_1e4d70d6-38b0-4ea1-8932-c0b8cff13c54">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_401b49f7-13f4-411c-abef-c45f90fa8d18">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_1f6f321a-6218-44d6-92af-330dda8b4ece">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_41584f35-fddd-43b3-98e1-b02db0df4ef4">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_243d42c7-33ef-4587-9c59-fc0672a78486">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_44ca8a6d-056a-42d4-9c86-6ccb64616909">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_2867a0f0-a2ce-47e8-93d1-7e9dec10f5a6">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4626b256-d02b-483e-a392-faae73275c19">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_2ec526f7-4442-4ef6-b132-906c5c62a117">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4cc980dd-5a57-4c49-a16a-4ee6dafbedb4">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_39c7740f-ec2f-4ae2-8ede-35a8ff6c6a17">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4e01101b-8f35-419c-935f-4fa6c669cafc">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_3b7937c8-4027-4703-8892-742140909fd6">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4e537b3f-12fb-4b78-b8d3-520396e8b965">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_401b49f7-13f4-411c-abef-c45f90fa8d18">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4fc16b16-026c-475b-bcf1-1583a3f94616">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_41584f35-fddd-43b3-98e1-b02db0df4ef4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_527d3bf7-1568-4093-834e-85a3732c1b2c">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_44ca8a6d-056a-42d4-9c86-6ccb64616909">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_52b68071-541d-45ae-b9ec-5e4cf21aa3ec">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4626b256-d02b-483e-a392-faae73275c19">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_55c46f8d-d270-4edf-a9ca-ddf42e424a60">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4cc980dd-5a57-4c49-a16a-4ee6dafbedb4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_581ce68e-1e14-4a33-a346-2d324ae18c71">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4e01101b-8f35-419c-935f-4fa6c669cafc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_6a4ed55b-32dc-4ae1-a8af-38e514b6d127">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4e537b3f-12fb-4b78-b8d3-520396e8b965">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_6bce3766-c886-4a92-97bd-8274e030922f">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_4fc16b16-026c-475b-bcf1-1583a3f94616">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_6f9f9b47-aef6-4454-a85b-a118a2640b50">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_527d3bf7-1568-4093-834e-85a3732c1b2c">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_7b54e4e9-62dd-418c-8f81-293785411b6c">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_52b68071-541d-45ae-b9ec-5e4cf21aa3ec">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_7e1fbdc1-9edb-413a-b68c-c6d974ad3977">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_55c46f8d-d270-4edf-a9ca-ddf42e424a60">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_823d194e-74d9-4df6-abd2-8a24210f5387">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_581ce68e-1e14-4a33-a346-2d324ae18c71">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8714e735-c7fc-4f84-9076-7a5d494361e1">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_6a4ed55b-32dc-4ae1-a8af-38e514b6d127">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_89d94a04-aaab-4109-a67d-d5f4c5ee9dbf">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_6bce3766-c886-4a92-97bd-8274e030922f">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8b140052-ae27-47b5-80ba-c7a23c62d29a">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_6f9f9b47-aef6-4454-a85b-a118a2640b50">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8b50f346-d1b8-4fa6-bc0b-f1550636d9e7">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_7b54e4e9-62dd-418c-8f81-293785411b6c">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8cda24ef-62d1-4e51-9818-9cb8344d79c2">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_7e1fbdc1-9edb-413a-b68c-c6d974ad3977">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8e635f91-01cf-4311-bb48-d44545650ffe">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_823d194e-74d9-4df6-abd2-8a24210f5387">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8edda623-bef2-49dd-96e7-6f4f589c62c6">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8714e735-c7fc-4f84-9076-7a5d494361e1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_924ab4a8-5c27-4bff-ac72-2afbff2f8254">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_89d94a04-aaab-4109-a67d-d5f4c5ee9dbf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_92920c32-3d17-49e5-8c26-fc019eb4a152">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8b140052-ae27-47b5-80ba-c7a23c62d29a">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_96c4a72c-1811-4637-9ebe-a427a75833de">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8b50f346-d1b8-4fa6-bc0b-f1550636d9e7">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_96f03ff3-da68-42a7-ab51-1a1461123384">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8cda24ef-62d1-4e51-9818-9cb8344d79c2">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_98ab5d42-c347-48bc-b57f-5fed42a49604">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8e635f91-01cf-4311-bb48-d44545650ffe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_9aec800d-0f79-401d-8b77-5ca01a99ae69">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_8edda623-bef2-49dd-96e7-6f4f589c62c6">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_9bcdec7b-821a-45fe-9a9f-2f43f77ba805">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_924ab4a8-5c27-4bff-ac72-2afbff2f8254">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_9f5d1b40-baf3-48c0-9198-68156f8d0f8f">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_92920c32-3d17-49e5-8c26-fc019eb4a152">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_a1d5dc5e-d03e-4e36-a4d1-05563bab96c8">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_96c4a72c-1811-4637-9ebe-a427a75833de">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_a35c77f6-5d4c-476d-b482-0b54b64c1274">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_96f03ff3-da68-42a7-ab51-1a1461123384">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_a87c9abc-1fc5-43fd-a337-7562b0e995b8">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_98ab5d42-c347-48bc-b57f-5fed42a49604">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_aab76a2c-8587-4c49-8e99-aee104d6baaa">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_9aec800d-0f79-401d-8b77-5ca01a99ae69">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_aabdd68b-a6a3-4155-a7dc-81050eecfab2">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_9bcdec7b-821a-45fe-9a9f-2f43f77ba805">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_ab2ca8be-f529-434e-a1e1-32459668668f">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_9f5d1b40-baf3-48c0-9198-68156f8d0f8f">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_acc9fb6a-262c-468a-b3b7-5cf8b174145d">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_a1d5dc5e-d03e-4e36-a4d1-05563bab96c8">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_b1b5c7d1-3e58-4ac0-8b57-dc7998cfd324">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_a35c77f6-5d4c-476d-b482-0b54b64c1274">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_b53ec0ce-8137-4c1e-b45b-9c83ab748961">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_a87c9abc-1fc5-43fd-a337-7562b0e995b8">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_be115fca-3ef3-4699-98af-3045abd79ae8">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_aab76a2c-8587-4c49-8e99-aee104d6baaa">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_c7ada322-0361-47f4-84f1-e5cb5eef4c59">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_aabdd68b-a6a3-4155-a7dc-81050eecfab2">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_c7f9c377-54ce-49cd-b79a-b14b1b200c91">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_ab2ca8be-f529-434e-a1e1-32459668668f">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_c959d9d5-6b54-4ec9-b1af-852bf646cae7">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_acc9fb6a-262c-468a-b3b7-5cf8b174145d">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_d02d0507-43a9-461f-bfa1-9d19dbac717a">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_b1b5c7d1-3e58-4ac0-8b57-dc7998cfd324">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_d6f5c028-afbb-41aa-b842-299cd8127965">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_b53ec0ce-8137-4c1e-b45b-9c83ab748961">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_d95df685-bbdd-438f-b931-9b426f6adfa6">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_be115fca-3ef3-4699-98af-3045abd79ae8">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_dcc82962-5af0-43c6-a2b8-7879f277eec7">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_c7ada322-0361-47f4-84f1-e5cb5eef4c59">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_dd51a6c7-eda9-413e-901d-1ae03789e086">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_c7f9c377-54ce-49cd-b79a-b14b1b200c91">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_e226352d-5ac2-4bf6-a4f6-b76cdf3a2281">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_c959d9d5-6b54-4ec9-b1af-852bf646cae7">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_e38e1be3-007b-459e-b01d-3eb6e63c5f5c">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_d02d0507-43a9-461f-bfa1-9d19dbac717a">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_e7efe1bc-9e3f-466a-83e1-84b2637b606c">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_d6f5c028-afbb-41aa-b842-299cd8127965">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_e89fbe42-7c67-416c-a610-70f8829c4ada">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_d95df685-bbdd-438f-b931-9b426f6adfa6">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_eb942835-0f5e-4b6b-8043-959c79d82035">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_dcc82962-5af0-43c6-a2b8-7879f277eec7">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_ec431971-d8d3-4eea-bbe3-57ef773ac285">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_dd51a6c7-eda9-413e-901d-1ae03789e086">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_edc9618f-8b39-48b2-8886-fedaed57f557">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_e226352d-5ac2-4bf6-a4f6-b76cdf3a2281">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_f77b2b25-6f83-487d-a646-47822666c174">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_e38e1be3-007b-459e-b01d-3eb6e63c5f5c">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_fa433d50-997f-4d30-9f35-91c3f5b2b12a">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_e7efe1bc-9e3f-466a-83e1-84b2637b606c">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_fca1684a-5d7e-457e-9094-e99f0639cce7">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_e89fbe42-7c67-416c-a610-70f8829c4ada">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_fdbca7ae-f701-4bd8-b0ad-3a83e7657890">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_eb942835-0f5e-4b6b-8043-959c79d82035">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_ffe1d42c-72d8-4ff0-adc2-59f2bc573a0c">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_ec431971-d8d3-4eea-bbe3-57ef773ac285">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_0f12a17b-f862-4f58-b983-719a71682088">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_edc9618f-8b39-48b2-8886-fedaed57f557">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_2bfa187a-4289-40a0-b779-e005266f54e8">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_f77b2b25-6f83-487d-a646-47822666c174">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_38566115-3ad6-46d1-95ed-9cc9f7b5be12">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_fa433d50-997f-4d30-9f35-91c3f5b2b12a">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_41daadb1-89e5-479b-99e8-406975db8c99">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_fca1684a-5d7e-457e-9094-e99f0639cce7">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_96684539-2aad-4720-9dd8-6423a1e05169">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_fdbca7ae-f701-4bd8-b0ad-3a83e7657890">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_9c1f03df-a7e8-4f04-b6a8-8820c077ab01">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_ffe1d42c-72d8-4ff0-adc2-59f2bc573a0c">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_a81d65a8-4da8-4c19-a93f-fe0e31b9433d">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_0f12a17b-f862-4f58-b983-719a71682088">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_bbcd7551-dbdc-4a10-b93d-f0add225b98f">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_2bfa187a-4289-40a0-b779-e005266f54e8">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_bdb04ca1-8662-4220-b404-4889c78e4434">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_38566115-3ad6-46d1-95ed-9cc9f7b5be12">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_d67a1534-a2ba-411a-93ae-2fafb182b112">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_41daadb1-89e5-479b-99e8-406975db8c99">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_de5d0703-0fb0-425b-9fe7-0e466f41ff0e">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_96684539-2aad-4720-9dd8-6423a1e05169">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PacketCaptures\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_e5a106ca-64bf-44f5-842c-74f772b4794f">
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_9c1f03df-a7e8-4f04-b6a8-8820c077ab01">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_a81d65a8-4da8-4c19-a93f-fe0e31b9433d">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_bbcd7551-dbdc-4a10-b93d-f0add225b98f">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_bdb04ca1-8662-4220-b404-4889c78e4434">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_d67a1534-a2ba-411a-93ae-2fafb182b112">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_de5d0703-0fb0-425b-9fe7-0e466f41ff0e">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_e5a106ca-64bf-44f5-842c-74f772b4794f">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
