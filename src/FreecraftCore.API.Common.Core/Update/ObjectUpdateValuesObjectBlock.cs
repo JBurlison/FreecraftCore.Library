@@ -17,10 +17,10 @@ namespace FreecraftCore
 		/// The diff of the object values.
 		/// </summary>
 		[WireMember(2)]
-		public ObjectUpdateValuesDiffCollection UpdateValuesCollection { get; }
+		public UpdateFieldValueCollection UpdateValuesCollection { get; }
 
 		/// <inheritdoc />
-		public ObjectUpdateValuesObjectBlock(PackedGuid objectToUpdate, ObjectUpdateValuesDiffCollection updateValuesCollection)
+		public ObjectUpdateValuesObjectBlock(PackedGuid objectToUpdate, UpdateFieldValueCollection updateValuesCollection)
 		{
 			ObjectToUpdate = objectToUpdate;
 			UpdateValuesCollection = updateValuesCollection;

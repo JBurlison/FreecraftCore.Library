@@ -1,6 +1,6 @@
 ﻿namespace FreecraftCore
 {
-	public enum SplineMode
+	public enum SplineMode : byte
 	{
 		Linear = 0,
 		CatmullRom = 1,

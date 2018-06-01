@@ -29,10 +29,10 @@ namespace FreecraftCore
 		/// The object field values of the created object.
 		/// </summary>
 		[WireMember(4)]
-		public ObjectUpdateValuesDiffCollection ObjectValuesCollection { get; }
+		public UpdateFieldValueCollection ObjectValuesCollection { get; }
 
 		/// <inheritdoc />
-		public ObjectCreationData(PackedGuid creationGuid, ObjectType creationObjectType, MovementBlockData movementData, ObjectUpdateValuesDiffCollection objectValuesCollection)
+		public ObjectCreationData(PackedGuid creationGuid, ObjectType creationObjectType, MovementBlockData movementData, UpdateFieldValueCollection objectValuesCollection)
 		{
 			CreationGuid = creationGuid;
 			CreationObjectType = creationObjectType;

@@ -36,12 +36,12 @@ namespace FreecraftCore
 		[WireMember(5)]
 		public SplineInfo SplineInformation { get; }
 
-		private bool HasGoRotation => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_POSITION);
+		private bool HasUpdatePosition => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_POSITION);
 
 		//The following data requires that we're not living.
-		private bool HasCorpseLocation => IsDead && HasGoRotation; //TODO: WPP says this is GOPosition
+		private bool HasCorpseLocation => IsDead && HasUpdatePosition; //TODO: WPP says this is GOPosition
 
-		private bool IsStationaryObject => !HasCorpseLocation && UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_STATIONARY_POSITION);
+		private bool IsStationaryObject => IsDead && !HasUpdatePosition && UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_STATIONARY_POSITION);
 
 		[Optional(nameof(HasCorpseLocation))]
 		[WireMember(6)]
@@ -82,16 +82,19 @@ namespace FreecraftCore
 		[WireMember(12)]
 		public VehicleMovementInfo VehicleMovementInformation { get; }
 
-		[Optional(nameof(HasGoRotation))]
+		private bool HasUpdateRotation => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_ROTATION);
+
+		//TODO: Handle packed quaternions. See WoWPacketParser
+		[Optional(nameof(HasUpdateRotation))]
 		[WireMember(13)]
-		public float Orientation { get; }
+		public long UpdatePackedQuaternion { get; }
 
 		//TODO: Validate
 		/// <inheritdoc />
 		public MovementBlockData(ObjectUpdateFlags updateFlags, MovementInfo moveInfo,
 			float[] movementSpeeds, SplineInfo splineInformation, CorpseInfo deadMovementInformation,
 			StationaryMovementInfo stationaryObjectMovementInformation, int unk1,
-			uint lowGuid, PackedGuid target, uint unknownTransportTimer, VehicleMovementInfo vehicleMovementInformation, float orientation)
+			uint lowGuid, PackedGuid target, uint unknownTransportTimer, VehicleMovementInfo vehicleMovementInformation, long packedRotationQuat)
 		{
 			UpdateFlags = updateFlags;
 			MoveInfo = moveInfo;
@@ -104,7 +107,7 @@ namespace FreecraftCore
 			Target = target;
 			UnknownTransportTimer = unknownTransportTimer;
 			VehicleMovementInformation = vehicleMovementInformation;
-			Orientation = orientation;
+			UpdatePackedQuaternion = packedRotationQuat;
 		}
 
 		public MovementBlockData()

@@ -1,4 +1,5 @@
-﻿using FreecraftCore.Serializer;
+﻿using System;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -32,7 +33,7 @@ namespace FreecraftCore
 		/// </summary>
 		protected ObjectUpdateBlock()
 		{
-			
+			Console.WriteLine($"Creating Empty: {GetType().Name}");
 		}
 	}
 }

@@ -11,9 +11,9 @@ namespace FreecraftCore
 		[WireMember(1)]
 		public SplineFlag SplineFlags { get; }
 
-		public bool HasFinalTarget => SplineFlags.HasFlag(SplineFlag.FinalTarget);
 		public bool HasFinalOrientation => SplineFlags.HasFlag(SplineFlag.FinalOrientation);
-		public bool HasFinalPoint => SplineFlags.HasFlag(SplineFlag.FinalPoint);
+		public bool HasFinalTarget => !HasFinalOrientation && SplineFlags.HasFlag(SplineFlag.FinalTarget);
+		public bool HasFinalPoint => !HasFinalTarget && SplineFlags.HasFlag(SplineFlag.FinalPoint);
 
 		/// <summary>
 		/// Optional: Exists if <see cref="SplineFlag.FinalTarget"/> is set.

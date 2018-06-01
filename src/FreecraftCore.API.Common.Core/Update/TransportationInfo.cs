@@ -18,18 +18,23 @@ namespace FreecraftCore
 		[WireMember(2)]
 		public Vector4<float> TransportOffset { get; }
 
+		//Was missing this field
+		[WireMember(3)]
+		public int TransportTime { get; }
+
 		//ClientVersion.AddedInVersion(ClientType.WrathOfTheLichKing)
 		/// <summary>
 		/// Indicates the id of the transportation seat.
 		/// </summary>
-		[WireMember(3)]
+		[WireMember(4)]
 		public byte TransportSeatId { get; }
 
 		/// <inheritdoc />
-		public TransportationInfo([NotNull] PackedGuid transportGuid, [NotNull] Vector4<float> transportOffset, byte transportSeatId)
+		public TransportationInfo(PackedGuid transportGuid, Vector4<float> transportOffset, int transportTime, byte transportSeatId)
 		{
-			TransportGuid = transportGuid ?? throw new ArgumentNullException(nameof(transportGuid));
-			TransportOffset = transportOffset ?? throw new ArgumentNullException(nameof(transportOffset));
+			TransportGuid = transportGuid;
+			TransportOffset = transportOffset;
+			TransportTime = transportTime;
 			TransportSeatId = transportSeatId;
 		}
 
