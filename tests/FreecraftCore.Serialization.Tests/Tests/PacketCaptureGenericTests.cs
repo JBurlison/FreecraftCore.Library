@@ -69,8 +69,8 @@ namespace FreecraftCore
 					Serializer = new SerializerService();
 
 					//TODO: Once we enable full custom type serializer support we won't need to register manually.
-					Serializer.RegisterType<PackedGuid>();
-					Serializer.RegisterType<UpdateFieldValueCollection>();
+					//Serializer.RegisterType<PackedGuid>();
+					//Serializer.RegisterType<UpdateFieldValueCollection>();
 
 					//We want to register all known packets and then PROXY_DTOs after
 					GamePacketMetadataMarker.SerializableTypes
