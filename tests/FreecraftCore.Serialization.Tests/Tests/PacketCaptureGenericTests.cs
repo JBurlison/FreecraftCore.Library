@@ -165,6 +165,7 @@ namespace FreecraftCore
 
 		private static PacketCaptureTestEntry RebuildEntryAsUncompressed(PacketCaptureTestEntry entry)
 		{
+			return entry;
 			if(entry.OpCode == NetworkOperationCode.SMSG_COMPRESSED_UPDATE_OBJECT)
 			{
 				//Skip the opcode

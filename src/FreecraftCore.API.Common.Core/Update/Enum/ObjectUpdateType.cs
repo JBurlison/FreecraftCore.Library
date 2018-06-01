@@ -40,5 +40,5 @@ namespace FreecraftCore
 		/// Don't know
 		/// </summary>
 		UPDATETYPE_NEAR_OBJECTS = 5
-	};
+	}
 }
