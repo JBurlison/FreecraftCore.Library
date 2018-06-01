@@ -15,7 +15,7 @@ using Reinterpret.Net;
 namespace FreecraftCore
 {
 	[TestFixture]
-	public sealed class PacketCaptureGenericTests
+	public static class PacketCaptureGenericTests
 	{
 		public static SerializerService Serializer { get; }
 
@@ -101,31 +101,7 @@ namespace FreecraftCore
 			NetworkOperationCode originalOpCode = entry.OpCode;
 
 			//TODO: Test compression another time.
-			if(entry.OpCode == NetworkOperationCode.SMSG_COMPRESSED_UPDATE_OBJECT)
-			{
-				//Skip the opcode
-				int decompressedSize = entry.BinaryData.Reinterpret<int>(2);
-				byte[] newBytes = new byte[decompressedSize + 2]; // +2 for opcode
-
-				ZlibCodec stream = new ZlibCodec(CompressionMode.Decompress)
-				{
-					InputBuffer = entry.BinaryData,
-					NextIn = 2 + 4, //opcode + size
-					AvailableBytesIn = entry.BinaryData.Length,
-					OutputBuffer = newBytes,
-					NextOut = 2,
-					AvailableBytesOut = decompressedSize
-				};
-
-				stream.InitializeInflate(true);
-				stream.Inflate(FlushType.None);
-				stream.Inflate(FlushType.Finish);
-				stream.EndInflate();
-
-				((short)(NetworkOperationCode.SMSG_UPDATE_OBJECT)).Reinterpret(newBytes, 0);
-
-				entry = new PacketCaptureTestEntry(NetworkOperationCode.SMSG_UPDATE_OBJECT, newBytes, entry.FileName);
-			}
+			entry = RebuildEntryAsUncompressed(entry);
 
 			Console.WriteLine($"Entry Decompressed/Real Size: {entry.BinaryData.Length} OpCode: {originalOpCode}");
 
@@ -157,12 +133,65 @@ namespace FreecraftCore
 			{
 				Console.WriteLine($"Encountered: {block.GetType().Name} Block Type: {block.UpdateType}");
 			}
-			
+
 
 			//assert
 			Assert.NotNull(payload, $"Resulting capture capture deserialization attempt null for File: {entry.FileName}");
 			//We should have deserialized it. We want to make sure the opcode matches
 			Assert.AreEqual(entry.OpCode, payload.GetOperationCode(), $"Mismatched {nameof(NetworkOperationCode)} on packet capture File: {entry.FileName}. Expected: {entry.OpCode} Was: {payload.GetOperationCode()}");
+		}
+
+		[Test]
+		[TestCaseSource(nameof(TestSource))]
+		public static void Can_Serialize_DeserializedDTO_To_Same_Binary_Representation(PacketCaptureTestEntry entry)
+		{
+			//arrange
+			NetworkOperationCode originalOpCode = entry.OpCode;
+			//TODO: Test compression another time.
+			entry = RebuildEntryAsUncompressed(entry);
+			Console.WriteLine($"Entry Decompressed/Real Size: {entry.BinaryData.Length} OpCode: {originalOpCode}");
+			SerializerService serializer = Serializer;
+			GamePacketPayload payload = serializer.Deserialize<GamePacketPayload>(entry.BinaryData);
+
+			//act
+			byte[] serializedBytes = serializer.Serialize(payload);
+
+			//assert
+			Assert.AreEqual(entry.BinaryData.Length, serializedBytes.Length);
+			
+			for(int i = 0; i < entry.BinaryData.Length; i++)
+				Assert.AreEqual(entry.BinaryData[i], serializedBytes[i]);
+		}
+
+		private static PacketCaptureTestEntry RebuildEntryAsUncompressed(PacketCaptureTestEntry entry)
+		{
+			if(entry.OpCode == NetworkOperationCode.SMSG_COMPRESSED_UPDATE_OBJECT)
+			{
+				//Skip the opcode
+				int decompressedSize = entry.BinaryData.Reinterpret<int>(2);
+				byte[] newBytes = new byte[decompressedSize + 2]; // +2 for opcode
+
+				ZlibCodec stream = new ZlibCodec(CompressionMode.Decompress)
+				{
+					InputBuffer = entry.BinaryData,
+					NextIn = 2 + 4, //opcode + size
+					AvailableBytesIn = entry.BinaryData.Length,
+					OutputBuffer = newBytes,
+					NextOut = 2,
+					AvailableBytesOut = decompressedSize
+				};
+
+				stream.InitializeInflate(true);
+				stream.Inflate(FlushType.None);
+				stream.Inflate(FlushType.Finish);
+				stream.EndInflate();
+
+				((short)(NetworkOperationCode.SMSG_UPDATE_OBJECT)).Reinterpret(newBytes, 0);
+
+				entry = new PacketCaptureTestEntry(NetworkOperationCode.SMSG_UPDATE_OBJECT, newBytes, entry.FileName);
+			}
+
+			return entry;
 		}
 
 		public class PacketCaptureTestEntry
