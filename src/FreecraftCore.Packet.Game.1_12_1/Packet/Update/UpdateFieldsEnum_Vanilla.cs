@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FreecraftCore
 {
-	enum EObjectFields_Vanilla
+	public enum EObjectFields_Vanilla
 	{
 		OBJECT_FIELD_GUID = 0x00, // Size:2
 		OBJECT_FIELD_TYPE = 0x02, // Size:1
@@ -14,7 +14,7 @@ namespace FreecraftCore
 		OBJECT_END = 0x06,
 	};
 
-	enum EItemFields_Vanilla
+	public enum EItemFields_Vanilla
 	{
 		ITEM_FIELD_OWNER = EObjectFields_Vanilla.OBJECT_END + 0x00, // Size:2
 		ITEM_FIELD_CONTAINED = EObjectFields_Vanilla.OBJECT_END + 0x02, // Size:2
@@ -37,7 +37,7 @@ namespace FreecraftCore
 		ITEM_END = EObjectFields_Vanilla.OBJECT_END + 0x2A,
 	};
 
-	enum EContainerFields_Vanilla
+	public enum EContainerFields_Vanilla
 	{
 		CONTAINER_FIELD_NUM_SLOTS = EItemFields_Vanilla.ITEM_END + 0x00, // Size:1
 		CONTAINER_ALIGN_PAD = EItemFields_Vanilla.ITEM_END + 0x01, // Size:1
@@ -46,7 +46,7 @@ namespace FreecraftCore
 		CONTAINER_END = EItemFields_Vanilla.ITEM_END + 0x3A,
 	};
 
-	enum EUnitFields_Vanilla
+	public enum EUnitFields_Vanilla
 	{
 		UNIT_FIELD_CHARM = 0x00 + EObjectFields_Vanilla.OBJECT_END, // Size:2
 		UNIT_FIELD_SUMMON = 0x02 + EObjectFields_Vanilla.OBJECT_END, // Size:2
@@ -249,7 +249,7 @@ namespace FreecraftCore
 		PLAYER_END = 0x446 + UNIT_END
 	};
 
-	enum EGamEObjectFields_Vanilla
+	public enum EGamEObjectFields_Vanilla
 	{
 		OBJECT_FIELD_CREATED_BY = EObjectFields_Vanilla.OBJECT_END + 0x00,
 		GAMEOBJECT_DISPLAYID = EObjectFields_Vanilla.OBJECT_END + 0x02,
@@ -270,7 +270,7 @@ namespace FreecraftCore
 		OBJECT_END = EObjectFields_Vanilla.OBJECT_END + 0x14,
 	};
 
-	enum EDynamicObjectFields_Vanilla
+	public enum EDynamicObjectFields_Vanilla
 	{
 		DYNAMICOBJECT_CASTER = EObjectFields_Vanilla.OBJECT_END + 0x00,
 		DYNAMICOBJECT_BYTES = EObjectFields_Vanilla.OBJECT_END + 0x02,
@@ -284,7 +284,7 @@ namespace FreecraftCore
 		OBJECT_END = EObjectFields_Vanilla.OBJECT_END + 0x0A,
 	};
 
-	enum ECorpseFields_Vanilla
+	public enum ECorpseFields_Vanilla
 	{
 		CORPSE_FIELD_OWNER = EObjectFields_Vanilla.OBJECT_END + 0x00,
 		CORPSE_FIELD_FACING = EObjectFields_Vanilla.OBJECT_END + 0x02,
