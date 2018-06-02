@@ -59,7 +59,7 @@ namespace FreecraftCore
 					{
 						byte[] bytes = File.ReadAllBytes(filePath);
 
-						testSource.Add(new PacketCaptureTestEntry(code, bytes, cap));
+						testSource.Add(new PacketCaptureTestEntry(code, bytes, Path.GetFileName(cap)));
 					}
 					catch(Exception e)
 					{

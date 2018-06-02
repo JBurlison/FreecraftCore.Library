@@ -9,15 +9,29 @@ namespace FreecraftCore
 	/// <summary>
 	/// The vanilla wow version of the update block collection.
 	/// </summary>
+	[SeperatedCollectionSize(nameof(UpdateBlockCollection_Vanilla._items), nameof(UpdateBlockCollection_Vanilla.UpdateBlockSize))]
 	[WireDataContract]
 	public sealed class UpdateBlockCollection_Vanilla : ReadonlyCollectionContainer<ObjectUpdateBlock_Vanilla>
 	{
+		//TODO: Add CTOR for this
+		//Pre 3.0.2 they make the dumb mistake of NOT length prefixing this array.
+		//So dumb.
+		[WireMember(1)]
+		public int UpdateBlockSize { get; }
+
+		//TODO: Add CTOR for this
 		//ClientVersion.RemovedInVersion(ClientVersionBuild.V3_0_2_9056) there was a bool inbetween count and array for HasTransport.
+		/// <summary>
+		/// Indicates if the unit is transporting or something.
+		/// Removed in 3.0.2
+		/// </summary>
+		[WireMember(2)]
+		public bool HasTransport { get; }
 
 		//We do this because the serializer currently chokes
 		[SendSize(SendSizeAttribute.SizeType.Int32)]
-		[WireMember(1)]
-		private readonly ObjectUpdateBlock_Vanilla[] _items;
+		[WireMember(3)]
+		internal readonly ObjectUpdateBlock_Vanilla[] _items;
 
 		//WPP shows this is sent as a int length prefixed collection of update blocks.
 		/// <inheritdoc />

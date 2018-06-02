@@ -21,6 +21,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public ObjectUpdateValuesObjectBlock_Vanilla(PackedGuid objectToUpdate, UpdateFieldValueCollection updateValuesCollection)
+			: base()
 		{
 			ObjectToUpdate = objectToUpdate;
 			UpdateValuesCollection = updateValuesCollection;

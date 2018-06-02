@@ -15,6 +15,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public ObjectUpdateMovementBlock_Vanilla(ObjectGuid movementGuid, MovementBlockData_Vanilla movementData)
+			: base()
 		{
 			MovementGuid = movementGuid;
 			MovementData = movementData;

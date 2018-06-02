@@ -43,7 +43,6 @@ namespace FreecraftCore
 		/// <summary>
 		/// The update blocks.
 		/// </summary>
-		[Compress]
 		[WireMember(1)]
 		public UpdateBlockCollection_Vanilla UpdateBlocks { get; }
 

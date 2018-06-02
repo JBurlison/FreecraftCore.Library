@@ -19,7 +19,7 @@
 		/// <inheritdoc />
 		public override string ToString()
 		{
-			return FileName;
+			return $"{FileName}";
 		}
 
 		/// <inheritdoc />

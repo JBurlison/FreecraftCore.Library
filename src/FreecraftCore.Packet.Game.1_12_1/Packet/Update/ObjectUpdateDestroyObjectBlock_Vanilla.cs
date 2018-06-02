@@ -18,6 +18,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public ObjectUpdateDestroyObjectBlock_Vanilla([NotNull] PackedGuidCollection destroyedGuids)
+			: base()
 		{
 			DestroyedGuids = destroyedGuids ?? throw new ArgumentNullException(nameof(destroyedGuids));
 		}

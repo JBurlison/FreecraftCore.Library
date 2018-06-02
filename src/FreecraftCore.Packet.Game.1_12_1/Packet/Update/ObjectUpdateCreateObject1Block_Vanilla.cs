@@ -43,6 +43,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public ObjectUpdateCreateObject2Block_Vanilla(ObjectCreationData_Vanilla creationData)
+			: base()
 		{
 			CreationData = creationData;
 		}
