@@ -4,6 +4,7 @@ using System.Text;
 
 namespace FreecraftCore
 {
+	//These are all the same from 1.12.1 to 3.3.5
 	public enum EObjectFields_Vanilla
 	{
 		OBJECT_FIELD_GUID = 0x00, // Size:2
@@ -187,7 +188,7 @@ namespace FreecraftCore
 		PLAYER_FIELD_BANK_SLOT_1 = 0x178 + UNIT_END, // Size:48
 		PLAYER_FIELD_BANK_SLOT_LAST = 0x1a6 + UNIT_END,
 		PLAYER_FIELD_BANKBAG_SLOT_1 = 0x1a8 + UNIT_END, // Size:12
-		PLAYER_FIELD_BANKBAG_SLOT_LAST = 0xab2 + UNIT_END,
+		PLAYER_FIELD_BANKBAG_SLOT_LAST = 0x1b3 + UNIT_END,
 		PLAYER_FIELD_VENDORBUYBACK_SLOT_1 = 0x1b4 + UNIT_END, // Size:24
 		PLAYER_FIELD_VENDORBUYBACK_SLOT_LAST = 0x1ca + UNIT_END,
 		PLAYER_FIELD_KEYRING_SLOT_1 = 0x1cc + UNIT_END, // Size:64
