@@ -42,6 +42,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConverterTests\VanillaToWotlkConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\Capture\VanillaPacketCaptureTestCaseBuilder.cs" />
     <Compile Include="Tests\Capture\WotlkPacketCaptureTestCaseBuilder.cs" />
