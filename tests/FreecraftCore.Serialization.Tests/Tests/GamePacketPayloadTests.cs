@@ -15,7 +15,7 @@ namespace FreecraftCore.Tests
 	}
 
 	[TestFixture]
-	public class CoreGamePayloadTests : AutomatedReflectionTests<GamePacketPayload, NameQueryRequest>
+	public class CoreGamePayloadTests : AutomatedReflectionTests<GamePacketPayload, CMSG_NAME_QUERY_Payload>
 	{
 
 	}
