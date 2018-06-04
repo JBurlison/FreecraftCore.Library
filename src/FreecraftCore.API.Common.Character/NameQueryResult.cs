@@ -1,24 +1,24 @@
-﻿using FreecraftCore.Serializer;
+﻿using System;
+using FreecraftCore.Serializer;
+using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
+	/// <summary>
+	/// The name query result model.
+	/// </summary>
 	[WireDataContract]
-	public class KnownNameQueryResult : NameQueryResult
+	public class NameQueryResult
 	{
-		/// <inheritdoc />
-		public override bool Successful { get; } = true;
-
-		[WireMember(1)]
-		private readonly string _name;
-
 		/// <summary>
-		/// The name of the result.
+		/// Indicates the name of the unit.
 		/// </summary>
-		public override string Name => _name;
+		[WireMember(1)]
+		public string Name { get; }
 
 		/// <summary>
 		/// The name of the realm they're on.
-		/// (used for cross-realm)
+		/// (used for cross-realm; will likely be null)
 		/// </summary>
 		[WireMember(2)]
 		public string RealmName { get; private set; }
@@ -41,11 +41,19 @@ namespace FreecraftCore
 		[WireMember(5)]
 		public CharacterClass Class { get; private set; }
 
-		//TODO: Implement Declined name
-
-		protected KnownNameQueryResult()
+		/// <inheritdoc />
+		public NameQueryResult([NotNull] string name, [CanBeNull] string realmName, CharacterRace race, CharacterGender gender, CharacterClass @class)
 		{
-			//serializer ctor
+			Name = name ?? throw new ArgumentNullException(nameof(name));
+			RealmName = realmName; //don't check nullness
+			Race = race;
+			Gender = gender;
+			Class = @class;
+		}
+
+		protected NameQueryResult()
+		{
+			
 		}
 	}
 }
