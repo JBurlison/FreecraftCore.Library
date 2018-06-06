@@ -35,9 +35,9 @@ namespace FreecraftCore
 			PlayerRank = playerRank;
 		}
 
-		protected NetworkChatChannelMessageDetails_Vanilla(int playerRank)
+		protected NetworkChatChannelMessageDetails_Vanilla()
 		{
-			PlayerRank = playerRank;
+
 		}
 	}
 }

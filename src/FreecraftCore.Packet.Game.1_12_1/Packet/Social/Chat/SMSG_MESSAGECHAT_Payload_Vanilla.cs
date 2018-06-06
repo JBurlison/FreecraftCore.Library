@@ -127,7 +127,7 @@ namespace FreecraftCore
 		/// </summary>
 		[CanBeNull]
 		[Optional(nameof(IsChatChannelMessage))]
-		[WireMember(8)]
+		[WireMember(9)]
 		public NetworkChatChannelMessageDetails_Vanilla ChannelMessageDetails { get; }
 
 		/// <summary>
@@ -135,12 +135,12 @@ namespace FreecraftCore
 		/// </summary>
 		[CanBeNull]
 		[Optional(nameof(IsRegularChatMessage))]
-		[WireMember(9)]
+		[WireMember(10)]
 		public MessageAddressingDetails<ObjectGuid> RegularMessageDetails { get; }
 
 		[CanBeNull]
 		[Optional(nameof(IsDefaultChatMessage))]
-		[WireMember(9)]
+		[WireMember(11)]
 		public NetworkChatDefaultMessageDetails DefaultMessageDetails { get; }
 
 		/// <summary>
