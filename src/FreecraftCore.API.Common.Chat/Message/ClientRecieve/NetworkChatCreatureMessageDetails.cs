@@ -14,7 +14,7 @@ namespace FreecraftCore
 		/// To and From about the message.
 		/// </summary>
 		[WireMember(1)]
-		public MessageAddressingDetails AddressingDetails { get; }
+		public MessageAddressingDetails<string> AddressingDetails { get; }
 
 		//Optional data depending on the object type
 		public bool HasRecieverName => !AddressingDetails.RecieverGuid.isEmpty()
@@ -29,14 +29,14 @@ namespace FreecraftCore
 
 		//TODO: Validate CTOR inputs
 		/// <inheritdoc />
-		public NetworkChatCreatureMessageDetails([NotNull] MessageAddressingDetails addressingDetails, string recieverName)
+		public NetworkChatCreatureMessageDetails([NotNull] MessageAddressingDetails<string> addressingDetails, string recieverName)
 		{
 			AddressingDetails = addressingDetails ?? throw new ArgumentNullException(nameof(addressingDetails));
 			RecieverName = recieverName;
 		}
 
 		/// <inheritdoc />
-		public NetworkChatCreatureMessageDetails(MessageAddressingDetails addressingDetails)
+		public NetworkChatCreatureMessageDetails(MessageAddressingDetails<string> addressingDetails)
 		{
 			AddressingDetails = addressingDetails;
 		}

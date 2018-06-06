@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 namespace FreecraftCore
 {
 	[WireDataContract]
-	public sealed class MessageAddressingDetails
+	public sealed class MessageAddressingDetails<TSenderDataType>
 	{
 		/// <summary>
 		/// The name of the sender.
@@ -15,7 +15,7 @@ namespace FreecraftCore
 		[Encoding(EncodingType.ASCII)]
 		[SendSize(SendSizeAttribute.SizeType.Int32)]
 		[WireMember(1)]
-		public string SenderName { get; }
+		public TSenderDataType SenderInfo { get; }
 
 		//TODO: Why is this sent to the reciever? Shouldn't it be himself?
 		/// <summary>
@@ -25,9 +25,9 @@ namespace FreecraftCore
 		public ObjectGuid RecieverGuid { get; }
 
 		/// <inheritdoc />
-		public MessageAddressingDetails([NotNull] string senderName, [NotNull] ObjectGuid recieverGuid)
+		public MessageAddressingDetails([CanBeNull] TSenderDataType senderInfo, [NotNull] ObjectGuid recieverGuid)
 		{
-			SenderName = senderName ?? throw new ArgumentNullException(nameof(senderName));
+			SenderInfo = senderInfo;
 			RecieverGuid = recieverGuid ?? throw new ArgumentNullException(nameof(recieverGuid));
 		}
 
