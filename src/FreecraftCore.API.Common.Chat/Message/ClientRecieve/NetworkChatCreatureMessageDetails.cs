@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using FreecraftCore.Serializer;
+using JetBrains.Annotations;
+
+namespace FreecraftCore
+{
+	[WireDataContract]
+	public sealed class NetworkChatCreatureMessageDetails
+	{
+		/// <summary>
+		/// The addressing details containing the
+		/// To and From about the message.
+		/// </summary>
+		[WireMember(1)]
+		public MessageAddressingDetails AddressingDetails { get; }
+
+		//Optional data depending on the object type
+		public bool HasRecieverName => !AddressingDetails.RecieverGuid.isEmpty()
+			&& !AddressingDetails.RecieverGuid.isType(EntityGuidMask.Player)
+			&& !AddressingDetails.RecieverGuid.isType(EntityGuidMask.Pet);
+
+		[SendSize(SendSizeAttribute.SizeType.Int32)]
+		[Encoding(EncodingType.ASCII)]
+		[Optional(nameof(HasRecieverName))]
+		[WireMember(3)]
+		public string RecieverName { get; }
+
+		//TODO: Validate CTOR inputs
+		/// <inheritdoc />
+		public NetworkChatCreatureMessageDetails([NotNull] MessageAddressingDetails addressingDetails, string recieverName)
+		{
+			AddressingDetails = addressingDetails ?? throw new ArgumentNullException(nameof(addressingDetails));
+			RecieverName = recieverName;
+		}
+
+		/// <inheritdoc />
+		public NetworkChatCreatureMessageDetails(MessageAddressingDetails addressingDetails)
+		{
+			AddressingDetails = addressingDetails;
+		}
+
+		public NetworkChatCreatureMessageDetails()
+		{
+			
+		}
+	}
+}

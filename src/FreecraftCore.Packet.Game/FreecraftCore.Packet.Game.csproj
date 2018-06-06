@@ -23,4 +23,8 @@
     <ProjectReference Include="..\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Packets\Chat\" />
+  </ItemGroup>
+
 </Project>

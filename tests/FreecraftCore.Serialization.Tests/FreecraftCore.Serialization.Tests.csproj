@@ -224,6 +224,9 @@
     <None Include="PacketCaptures\Vanilla\SMSG_UPDATE_OBJECT\SMSG_UPDATE_OBJECT_f91b778b-6b21-4078-bbce-f4053a9dcf5d">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_ADDON_INFO\SMSG_ADDON_INFO_c993ce16-2420-4664-87ea-25d1f354b755">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="PacketCaptures\WrathOfTheLichKing\SMSG_COMPRESSED_UPDATE_OBJECT\SMSG_COMPRESSED_UPDATE_OBJECT_0d18639f-176f-4fd7-89cd-f51a3e1c76ab">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
