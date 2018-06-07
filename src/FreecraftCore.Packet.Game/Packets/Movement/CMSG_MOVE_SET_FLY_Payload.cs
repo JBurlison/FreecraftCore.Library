@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_MOVE_SET_FLY)]
-	public sealed class CMSG_MOVE_SET_FLY_Payload : GamePacketPayload
+	public sealed class CMSG_MOVE_SET_FLY_Payload : GamePacketPayload, IPlayerMovementPayload<PlayerMoveInfo, MovementFlag>
 	{
 		/// <summary>
 		/// The movement information.

@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 namespace FreecraftCore
 {
 	[WireDataContract]
-	public sealed class PlayerMoveInfo_Vanilla
+	public sealed class PlayerMoveInfo_Vanilla : IPlayerMovementDatable<PackedGuid, MovementFlags_Vanilla>
 	{
 		/// <summary>
 		/// Indicates if the move info contains
@@ -19,7 +19,7 @@ namespace FreecraftCore
 		/// The GUID of the mover.
 		/// </summary>
 		[WireMember(1)]
-		public PackedGuid MoveGuid { get; }
+		public PackedGuid MovementGuid { get; }
 
 		/// <summary>
 		/// The movement flags.
@@ -69,7 +69,7 @@ namespace FreecraftCore
 			if(moveGuid == null)
 				HasGuid = false;
 
-			MoveGuid = moveGuid;
+			MovementGuid = moveGuid;
 			MoveFlags = moveFlags;
 			OptionalTransportInfo = optionalTransportInfo;
 			OptionalTransportTime = optionalTransportTime;

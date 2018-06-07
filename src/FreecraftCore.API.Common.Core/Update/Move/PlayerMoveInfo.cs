@@ -10,7 +10,7 @@ namespace FreecraftCore
 	/// It is slightly different than <see cref="MovementInfo"/>.
 	/// </summary>
 	[WireDataContract]
-	public sealed class PlayerMoveInfo
+	public sealed class PlayerMoveInfo : IPlayerMovementDatable<PackedGuid, MovementFlag>
 	{
 		//Why is this sent? Shouldn't the server know who is moving us?
 		/// <summary>

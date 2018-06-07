@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.MSG_MOVE_HEARTBEAT)]
-	public sealed class MSG_MOVE_HEARTBEAT_Payload : GamePacketPayload
+	public sealed class MSG_MOVE_HEARTBEAT_Payload : GamePacketPayload, IPlayerMovementPayload<PlayerMoveInfo, MovementFlag>
 	{
 		/// <summary>
 		/// The movement information.

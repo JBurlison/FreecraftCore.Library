@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.MSG_MOVE_STOP_STRAFE)]
-	public sealed class MSG_MOVE_STOP_STRAFE_Payload_Vanilla : GamePacketPayload
+	public sealed class MSG_MOVE_STOP_STRAFE_Payload_Vanilla : GamePacketPayload, IPlayerMovementPayload<PlayerMoveInfo_Vanilla, MovementFlags_Vanilla>
 	{
 		/// <summary>
 		/// The movement information.
