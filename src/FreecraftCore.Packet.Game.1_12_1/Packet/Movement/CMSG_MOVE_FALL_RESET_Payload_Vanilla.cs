@@ -8,20 +8,20 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_MOVE_FALL_RESET)]
-	public sealed class CMSG_MOVE_FALL_RESET_Payload : GamePacketPayload
+	public sealed class CMSG_MOVE_FALL_RESET_Payload_Vanilla : GamePacketPayload
 	{
 		/// <summary>
 		/// The movement information.
 		/// </summary>
 		[WireMember(1)]
-		public PlayerMoveInfo MoveInfo { get; }
+		public PlayerMoveInfo_Vanilla MoveInfo { get; }
 
-		public CMSG_MOVE_FALL_RESET_Payload([NotNull] PlayerMoveInfo moveInfo)
+		public CMSG_MOVE_FALL_RESET_Payload_Vanilla([NotNull] PlayerMoveInfo_Vanilla moveInfo)
 		{
 			MoveInfo = moveInfo ?? throw new ArgumentNullException(nameof(moveInfo));
 		}
 
-		protected CMSG_MOVE_FALL_RESET_Payload()
+		protected CMSG_MOVE_FALL_RESET_Payload_Vanilla()
 		{
 
 		}

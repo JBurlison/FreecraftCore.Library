@@ -7,21 +7,21 @@ using JetBrains.Annotations;
 namespace FreecraftCore
 {
 	[WireDataContract]
-	[GamePayloadOperationCode(NetworkOperationCode.CMSG_MOVE_FALL_RESET)]
-	public sealed class CMSG_MOVE_FALL_RESET_Payload : GamePacketPayload
+	[GamePayloadOperationCode(NetworkOperationCode.MSG_MOVE_FALL_LAND)]
+	public sealed class MSG_MOVE_FALL_LAND_Payload_Vanilla : GamePacketPayload
 	{
 		/// <summary>
 		/// The movement information.
 		/// </summary>
 		[WireMember(1)]
-		public PlayerMoveInfo MoveInfo { get; }
+		public PlayerMoveInfo_Vanilla MoveInfo { get; }
 
-		public CMSG_MOVE_FALL_RESET_Payload([NotNull] PlayerMoveInfo moveInfo)
+		public MSG_MOVE_FALL_LAND_Payload_Vanilla([NotNull] PlayerMoveInfo_Vanilla moveInfo)
 		{
 			MoveInfo = moveInfo ?? throw new ArgumentNullException(nameof(moveInfo));
 		}
 
-		protected CMSG_MOVE_FALL_RESET_Payload()
+		protected MSG_MOVE_FALL_LAND_Payload_Vanilla()
 		{
 
 		}
