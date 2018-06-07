@@ -3,13 +3,13 @@
 namespace FreecraftCore
 {
 	[WireDataContract]
-	public sealed class MovementInfo
+	public sealed class MovementInfo : IPlayerMovementDatable<MovementFlag>
 	{
 		/// <summary>
 		/// TODO DOC
 		/// </summary>
 		[WireMember(1)]
-		public MovementFlag MovementFlags { get; }
+		public MovementFlag MoveFlags { get; }
 
 		//ClientVersion.AddedInVersion(ClientVersionBuild.V3_0_2_9056) previous to 3.0 it was a byte.
 		[WireMember(2)]
@@ -31,16 +31,16 @@ namespace FreecraftCore
 		[WireMember(5)]
 		public float Orientation { get; }
 
-		private bool IsOnTransport => MovementFlags.HasFlag(MovementFlag.MOVEMENTFLAG_ONTRANSPORT);
+		private bool IsOnTransport => MoveFlags.HasFlag(MovementFlag.MOVEMENTFLAG_ONTRANSPORT);
 
 		private bool HasTransportationTime => IsOnTransport && ExtraFlags.HasFlag(MovementFlagExtra.InterpolateMove);
 
-		private bool HasMovementPitch => MovementFlags.HasFlag(MovementFlag.MOVEMENTFLAG_SWIMMING | MovementFlag.MOVEMENTFLAG_FLYING)
+		private bool HasMovementPitch => MoveFlags.HasFlag(MovementFlag.MOVEMENTFLAG_SWIMMING | MovementFlag.MOVEMENTFLAG_FLYING)
 			|| ExtraFlags.HasFlag(MovementFlagExtra.AlwaysAllowPitching);
 
-		private bool IsFalling => MovementFlags.HasFlag(MovementFlag.MOVEMENTFLAG_FALLING);
+		private bool IsFalling => MoveFlags.HasFlag(MovementFlag.MOVEMENTFLAG_FALLING);
 
-		private bool HasSplineElevation => MovementFlags.HasFlag(MovementFlag.MOVEMENTFLAG_SPLINE_ELEVATION);
+		private bool HasSplineElevation => MoveFlags.HasFlag(MovementFlag.MOVEMENTFLAG_SPLINE_ELEVATION);
 
 		[Optional(nameof(IsOnTransport))]
 		[WireMember(6)]
@@ -74,7 +74,7 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		public MovementInfo(MovementFlag movementFlags, MovementFlagExtra extraFlags, uint timeStamp, Vector3<float> position, float orientation, TransportationInfo transportationInformation, int transportationTime, float movePitch, int fallTime, Vector4<float> fallData, float splineElevation)
 		{
-			MovementFlags = movementFlags;
+			MoveFlags = movementFlags;
 			ExtraFlags = extraFlags;
 			TimeStamp = timeStamp;
 			Position = position;

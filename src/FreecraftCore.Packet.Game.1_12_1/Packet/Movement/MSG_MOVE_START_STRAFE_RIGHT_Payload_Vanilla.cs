@@ -8,16 +8,35 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.MSG_MOVE_START_STRAFE_RIGHT)]
-	public sealed class MSG_MOVE_START_STRAFE_RIGHT_Payload_Vanilla : GamePacketPayload, IPlayerMovementPayload<PlayerMoveInfo_Vanilla, MovementFlags_Vanilla>
+	public sealed class MSG_MOVE_START_STRAFE_RIGHT_Payload_Vanilla : GamePacketPayload, IPlayerMovementPayload<MovementInfo_Vanilla, MovementFlags_Vanilla, PackedGuid>
 	{
+		/// <summary>
+		/// Indicates if it has a packed guid.
+		/// Only servers should send guid in 1.12.1
+		/// </summary>
+		public bool HasGuid { get; } = true;
+
+		/// <inheritdoc />
+		[Optional(nameof(HasGuid))]
+		[WireMember(1)]
+		public PackedGuid MovementGuid { get; }
+
 		/// <summary>
 		/// The movement information.
 		/// </summary>
-		[WireMember(1)]
-		public PlayerMoveInfo_Vanilla MoveInfo { get; }
+		[WireMember(2)]
+		public MovementInfo_Vanilla MoveInfo { get; }
 
-		public MSG_MOVE_START_STRAFE_RIGHT_Payload_Vanilla([NotNull] PlayerMoveInfo_Vanilla moveInfo)
+		public MSG_MOVE_START_STRAFE_RIGHT_Payload_Vanilla([NotNull] MovementInfo_Vanilla moveInfo)
 		{
+			MoveInfo = moveInfo ?? throw new ArgumentNullException(nameof(moveInfo));
+			HasGuid = false;
+		}
+
+		/// <inheritdoc />
+		public MSG_MOVE_START_STRAFE_RIGHT_Payload_Vanilla([NotNull] PackedGuid movementGuid, [NotNull] MovementInfo_Vanilla moveInfo)
+		{
+			MovementGuid = movementGuid ?? throw new ArgumentNullException(nameof(movementGuid));
 			MoveInfo = moveInfo ?? throw new ArgumentNullException(nameof(moveInfo));
 		}
 

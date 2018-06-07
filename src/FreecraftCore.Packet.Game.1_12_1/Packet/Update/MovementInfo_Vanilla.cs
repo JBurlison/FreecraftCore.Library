@@ -3,13 +3,13 @@
 namespace FreecraftCore
 {
 	[WireDataContract]
-	public sealed class MovementInfo_Vanilla
+	public sealed class MovementInfo_Vanilla : IPlayerMovementDatable<MovementFlags_Vanilla>
 	{
 		/// <summary>
 		/// TODO DOC
 		/// </summary>
 		[WireMember(1)]
-		public MovementFlags_Vanilla MovementFlags { get; }
+		public MovementFlags_Vanilla MoveFlags { get; }
 
 		//TODO: Support packed date time? Or is this milliseconds?
 		[WireMember(3)]
@@ -27,18 +27,23 @@ namespace FreecraftCore
 		[WireMember(5)]
 		public float Orientation { get; }
 
-		private bool IsOnTransport => MovementFlags.HasFlag(MovementFlags_Vanilla.MOVEFLAG_ONTRANSPORT);
+		private bool IsOnTransport => MoveFlags.HasFlag(MovementFlags_Vanilla.MOVEFLAG_ONTRANSPORT);
 
 		//TODO: 1.12.1 doesn't have flying?
-		private bool HasMovementPitch => MovementFlags.HasFlag(MovementFlags_Vanilla.MOVEFLAG_SWIMMING);
+		private bool HasMovementPitch => MoveFlags.HasFlag(MovementFlags_Vanilla.MOVEFLAG_SWIMMING);
 
-		private bool IsFalling => MovementFlags.HasFlag(MovementFlags_Vanilla.MOVEFLAG_FALLING);
+		private bool IsFalling => MoveFlags.HasFlag(MovementFlags_Vanilla.MOVEFLAG_FALLING);
 
-		private bool HasSplineElevation => MovementFlags.HasFlag(MovementFlags_Vanilla.MOVEFLAG_SPLINE_ELEVATION);
+		private bool HasSplineElevation => MoveFlags.HasFlag(MovementFlags_Vanilla.MOVEFLAG_SPLINE_ELEVATION);
 
 		[Optional(nameof(IsOnTransport))]
 		[WireMember(6)]
 		public TransportationInfo_Vanilla TransportationInformation { get; }
+
+		//This was missing, it is always here on IsOnTransport
+		[Optional(nameof(IsOnTransport))]
+		[WireMember(7)]
+		public int TransportTime { get; }
 
 		//AKA: Swim Pitch
 		[Optional(nameof(HasMovementPitch))]
@@ -62,13 +67,14 @@ namespace FreecraftCore
 
 		//TODO: Parameter validation
 		/// <inheritdoc />
-		public MovementInfo_Vanilla(MovementFlags_Vanilla movementFlags, uint timeStamp, Vector3<float> position, float orientation, TransportationInfo_Vanilla transportationInformation, float movePitch, int fallTime, Vector4<float> fallData, float splineElevation)
+		public MovementInfo_Vanilla(MovementFlags_Vanilla movementFlags, uint timeStamp, Vector3<float> position, float orientation, TransportationInfo_Vanilla transportationInformation, int transportTime, float movePitch, int fallTime, Vector4<float> fallData, float splineElevation)
 		{
-			MovementFlags = movementFlags;
+			MoveFlags = movementFlags;
 			TimeStamp = timeStamp;
 			Position = position;
 			Orientation = orientation;
 			TransportationInformation = transportationInformation;
+			TransportTime = transportTime;
 			MovePitch = movePitch;
 			FallTime = fallTime;
 			FallData = fallData;
