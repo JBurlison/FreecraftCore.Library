@@ -18,6 +18,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// The GUID of the mover.
 		/// </summary>
+		[Optional(nameof(HasGuid))]
 		[WireMember(1)]
 		public PackedGuid MovementGuid { get; }
 
