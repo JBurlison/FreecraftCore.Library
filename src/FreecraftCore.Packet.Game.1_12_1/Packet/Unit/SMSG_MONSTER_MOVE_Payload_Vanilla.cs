@@ -30,7 +30,7 @@ namespace FreecraftCore
 		public MonsterMoveInfo MoveInfo { get; }
 
 		[WireMember(6)]
-		public SplineFlags_Vanilla SplineFlags { get; }
+		public SplineMoveFlags_Vanilla SplineFlags { get; }
 
 		/// <summary>
 		/// The duration of the spline.
@@ -38,7 +38,7 @@ namespace FreecraftCore
 		[WireMember(8)]
 		public int SplineDuration { get; }
 
-		public bool HasLinearPath => !SplineFlags.HasFlag(SplineFlags_Vanilla.Mask_CatmullRom);
+		public bool HasLinearPath => !SplineFlags.HasFlag(SplineMoveFlags_Vanilla.Mask_CatmullRom);
 
 		/// <summary>
 		/// Indicates if the optional cyclic catmulrom spline path information
@@ -57,7 +57,7 @@ namespace FreecraftCore
 		//TODO: Additonal ctors
 		//TODO: Validate parameters.
 		/// <inheritdoc />
-		public SMSG_MONSTER_MOVE_Payload_Vanilla(PackedGuid monsterGuid, Vector3<float> initialMovePoint, int splineId, MonsterMoveInfo moveInfo, SplineFlags_Vanilla splineFlags, int splineDuration, Vector3<float>[] optionalCatMulRomSplinePoints, LinearPathMoveInfo optionalLinearPathInformation)
+		public SMSG_MONSTER_MOVE_Payload_Vanilla(PackedGuid monsterGuid, Vector3<float> initialMovePoint, int splineId, MonsterMoveInfo moveInfo, SplineMoveFlags_Vanilla splineFlags, int splineDuration, Vector3<float>[] optionalCatMulRomSplinePoints, LinearPathMoveInfo optionalLinearPathInformation)
 		{
 			MonsterGuid = monsterGuid;
 			InitialMovePoint = initialMovePoint;

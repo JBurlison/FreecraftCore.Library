@@ -1,6 +1,6 @@
 ﻿namespace FreecraftCore
 {
-	public enum SplineFlags_Vanilla : uint
+	public enum SplineMoveFlags_Vanilla : uint
 	{
 		None = 0x00000000,
 		Done = 0x00000001,

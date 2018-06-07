@@ -9,11 +9,11 @@ namespace FreecraftCore
 		/// Represents all the set spline flags.
 		/// </summary>
 		[WireMember(1)]
-		public SplineFlags_Vanilla SplineFlags { get; }
+		public SplineMoveFlags_Vanilla SplineFlags { get; }
 
-		public bool HasFinalPoint => SplineFlags.HasFlag(SplineFlags_Vanilla.Final_Point);
-		public bool HasFinalTarget => !HasFinalPoint && SplineFlags.HasFlag(SplineFlags_Vanilla.Final_Target);
-		public bool HasFinalOrientation => !HasFinalTarget && SplineFlags.HasFlag(SplineFlags_Vanilla.Final_Angle);
+		public bool HasFinalPoint => SplineFlags.HasFlag(SplineMoveFlags_Vanilla.Final_Point);
+		public bool HasFinalTarget => !HasFinalPoint && SplineFlags.HasFlag(SplineMoveFlags_Vanilla.Final_Target);
+		public bool HasFinalOrientation => !HasFinalTarget && SplineFlags.HasFlag(SplineMoveFlags_Vanilla.Final_Angle);
 
 		/// <summary>
 		/// Optional: Exists if <see cref="SplineFlag.FinalTarget"/> is set.
@@ -68,7 +68,7 @@ namespace FreecraftCore
 
 		//TODO: Validation
 		/// <inheritdoc />
-		public SplineInfo_Vanilla(SplineFlags_Vanilla splineFlags, ObjectGuid finalTarget, float finalOrientation, Vector3<float> finalPoint, int splineTime, int splineFullTime, int splineId, Vector3<float>[] wayPoints, Vector3<float> splineEndpoint)
+		public SplineInfo_Vanilla(SplineMoveFlags_Vanilla splineFlags, ObjectGuid finalTarget, float finalOrientation, Vector3<float> finalPoint, int splineTime, int splineFullTime, int splineId, Vector3<float>[] wayPoints, Vector3<float> splineEndpoint)
 		{
 			SplineFlags = splineFlags;
 			FinalTarget = finalTarget;
