@@ -14,7 +14,7 @@ namespace FreecraftCore
 		//MovementInfo is only sent if the unit is living.
 		public bool IsLiving => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_LIVING);
 
-		public bool HasSplineData => IsLiving && MoveInfo.MovementFlags.HasFlag(MovementFlag.SplineEnabled);
+		public bool HasSplineData => IsLiving && MoveInfo.MovementFlags.HasFlag(MovementFlag.MOVEMENTFLAG_SPLINE_ENABLED);
 
 		public bool IsDead => !IsLiving;
 

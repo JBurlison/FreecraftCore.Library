@@ -31,16 +31,16 @@ namespace FreecraftCore
 		[WireMember(5)]
 		public float Orientation { get; }
 
-		private bool IsOnTransport => MovementFlags.HasFlag(MovementFlag.OnTransport);
+		private bool IsOnTransport => MovementFlags.HasFlag(MovementFlag.MOVEMENTFLAG_ONTRANSPORT);
 
 		private bool HasTransportationTime => IsOnTransport && ExtraFlags.HasFlag(MovementFlagExtra.InterpolateMove);
 
-		private bool HasMovementPitch => MovementFlags.HasFlag(MovementFlag.Swimming | MovementFlag.Flying)
+		private bool HasMovementPitch => MovementFlags.HasFlag(MovementFlag.MOVEMENTFLAG_SWIMMING | MovementFlag.MOVEMENTFLAG_FLYING)
 			|| ExtraFlags.HasFlag(MovementFlagExtra.AlwaysAllowPitching);
 
-		private bool IsFalling => MovementFlags.HasFlag(MovementFlag.Falling);
+		private bool IsFalling => MovementFlags.HasFlag(MovementFlag.MOVEMENTFLAG_FALLING);
 
-		private bool HasSplineElevation => MovementFlags.HasFlag(MovementFlag.SplineElevation);
+		private bool HasSplineElevation => MovementFlags.HasFlag(MovementFlag.MOVEMENTFLAG_SPLINE_ELEVATION);
 
 		[Optional(nameof(IsOnTransport))]
 		[WireMember(6)]
