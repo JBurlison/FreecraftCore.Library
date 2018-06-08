@@ -74,7 +74,7 @@ namespace FreecraftCore
 			Assert.AreEqual(entry.BinaryData.Length, serializedBytes.Length);
 
 			for(int i = 0; i < entry.BinaryData.Length; i++)
-				Assert.AreEqual(entry.BinaryData[i], serializedBytes[i]);
+				Assert.AreEqual(entry.BinaryData[i], serializedBytes[i], $"Mismatched bytes on OpCode: {entry.OpCode} Type: {payload.GetType().Name}");
 		}
 	}
 }
