@@ -14,9 +14,9 @@ namespace FreecraftCore
 		[WireMember(1)]
 		public MonsterMoveType MoveType { get; }
 
-		public bool HasFinalOrientation => MoveType.HasFlag(MonsterMoveType.MonsterMoveFacingAngle);
-		public bool HasFinalTarget => MoveType.HasFlag(MonsterMoveType.MonsterMoveFacingTarget);
-		public bool HasFinalPoint => MoveType.HasFlag(MonsterMoveType.MonsterMoveFacingSpot);
+		public bool HasFinalOrientation => MoveType == MonsterMoveType.MonsterMoveFacingAngle;
+		public bool HasFinalTarget => MoveType == MonsterMoveType.MonsterMoveFacingTarget;
+		public bool HasFinalPoint => MoveType == MonsterMoveType.MonsterMoveFacingSpot;
 
 		/// <summary>
 		/// Optional: Exists if <see cref="MonsterMoveType.MonsterMoveFacingTarget"/> is set.

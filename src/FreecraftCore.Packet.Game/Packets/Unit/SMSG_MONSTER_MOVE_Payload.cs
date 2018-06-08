@@ -66,6 +66,7 @@ namespace FreecraftCore
 		/// </summary>
 		public bool HasCatMulRomSpline => !HasLinearPath;
 
+		[SendSize(SendSizeAttribute.SizeType.Int32)]
 		[Optional(nameof(HasCatMulRomSpline))]
 		[WireMember(10)]
 		public Vector3<float>[] OptionalCatMulRomSplinePoints { get; }
