@@ -71,10 +71,23 @@ namespace FreecraftCore
 			byte[] serializedBytes = serializer.Serialize(payload);
 
 			//assert
-			Assert.AreEqual(entry.BinaryData.Length, serializedBytes.Length);
+			try
+			{
+				Assert.AreEqual(entry.BinaryData.Length, serializedBytes.Length, $"Mismatched length on OpCode: {entry.OpCode} Type: {payload.GetType().Name}");
+			}
+			catch(AssertionException e)
+			{
+				Assert.Fail($"Failed: {e.Message} {PrintFailureBytes(entry.BinaryData, serializedBytes)}");
+			}
+			
 
 			for(int i = 0; i < entry.BinaryData.Length; i++)
-				Assert.AreEqual(entry.BinaryData[i], serializedBytes[i], $"Mismatched bytes on OpCode: {entry.OpCode} Type: {payload.GetType().Name}");
+				Assert.AreEqual(entry.BinaryData[i], serializedBytes[i], $"Mismatched byte value at Index: {i} on OpCode: {entry.OpCode} Type: {payload.GetType().Name}");
+		}
+
+		public static string PrintFailureBytes(byte[] original, byte[] result)
+		{
+			return $"Original bytes: {original.Aggregate("", (s, b) => $"{s} {b:X}")} Result: {result.Aggregate("", (s, b) => $"{s} {b:X}")}";
 		}
 	}
 }

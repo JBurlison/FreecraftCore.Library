@@ -27,17 +27,35 @@ namespace FreecraftCore
 		[WireMember(4)]
 		public int SplineId { get; }
 
+		/// <summary>
+		/// The movement information for the monster.
+		/// If the <see cref="MonsterMoveType"/> is set to <see cref="MonsterMoveType.MonsterMoveStop"/>
+		/// is set then it will NOT contain any information after the byte enum.
+		/// The rest of the packet will be empty.
+		/// </summary>
 		[WireMember(5)]
 		public MonsterMoveInfo MoveInfo { get; }
 
+		/// <summary>
+		/// Some "Move" packets are stop moves.
+		/// This is will be true when it's a move packet and when it's a stop packet
+		/// then it will be false. Stop packets do not have the last half of the packet included
+		/// at all.
+		/// </summary>
+		public bool IsMovePacket => MoveInfo.MoveType != MonsterMoveType.MonsterMoveStop;
+
+		/// <summary>
+		/// Default value (or stop value) is <see cref="SplineMoveFlags.None"/>
+		/// </summary>
+		[Optional(nameof(IsMovePacket))]
 		[WireMember(6)]
-		public SplineMoveFlags SplineFlags { get; }
-		
+		public SplineMoveFlags SplineFlags { get; } = SplineMoveFlags.None;
+
 		/// <summary>
 		/// Indicates if the move information has animation
 		/// data <see cref="OptionalAnimationInformation"/>
 		/// </summary>
-		public bool HasAnimationInformation => SplineFlags.HasFlag(SplineMoveFlags.Animation);
+		public bool HasAnimationInformation => IsMovePacket && SplineFlags.HasFlag(SplineMoveFlags.Animation);
 
 		[Optional(nameof(HasAnimationInformation))]
 		[WireMember(7)]
@@ -46,27 +64,28 @@ namespace FreecraftCore
 		/// <summary>
 		/// The duration of the spline.
 		/// </summary>
+		[Optional(nameof(IsMovePacket))]
 		[WireMember(8)]
 		public int SplineDuration { get; }
 
 		/// <summary>
 		/// Indicates if the move information has parabolic spline information.
 		/// </summary>
-		public bool HasParabolicSplineInfo => SplineFlags.HasFlag(SplineMoveFlags.Parabolic);
+		public bool HasParabolicSplineInfo => IsMovePacket && SplineFlags.HasFlag(SplineMoveFlags.Parabolic);
 
 		[Optional(nameof(HasParabolicSplineInfo))]
 		[WireMember(9)]
 		public ParabolicMoveInfo OptionalParabolicSplineInformation { get; }
 
-		public bool HasLinearPath => !SplineFlags.HasFlag(SplineMoveFlags.Mask_CatmullRom);
+		public bool HasLinearPath => IsMovePacket && !HasCatMulRomSpline;
 
 		/// <summary>
 		/// Indicates if the optional cyclic catmulrom spline path information
 		/// is in the packet.
 		/// </summary>
-		public bool HasCatMulRomSpline => !HasLinearPath;
+		public bool HasCatMulRomSpline => IsMovePacket && (SplineFlags & SplineMoveFlags.Mask_CatmullRom) != 0;
 
-		[SendSize(SendSizeAttribute.SizeType.Int32)]
+		[SendSize(SendSizeAttribute.SizeType.Int32)] //we have to add 1 to the size, it's what TC does
 		[Optional(nameof(HasCatMulRomSpline))]
 		[WireMember(10)]
 		public Vector3<float>[] OptionalCatMulRomSplinePoints { get; }
@@ -93,6 +112,7 @@ namespace FreecraftCore
 			OptionalLinearPathInformation = optionalLinearPathInformation;
 		}
 
+		/// <inheritdoc />
 		protected SMSG_MONSTER_MOVE_Payload()
 		{
 			
