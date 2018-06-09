@@ -8,6 +8,49 @@ namespace FreecraftCore
 	{
 		/// <summary>
 		/// Produces a shift value offset that can be used to
+		/// map the provided <see cref="itemFieldValue"/> to the
+		/// <see cref="EItemFields"/> for wotlk.
+		/// </summary>
+		/// <param name="itemFieldValue">The item field value to shift.</param>
+		/// <param name="shiftValue">The value of the shift.</param>
+		/// <returns>Indicates if the value should be written. This return is important. Don't write it if this returns false.</returns>
+		public static bool ConvertUpdateFieldsItem(EItemFields_Vanilla itemFieldValue, out int shiftValue)
+		{
+			//TODO: Do we need this initial shift anymore?
+			int shiftAmount = 0;
+			bool shouldWrite = true;
+			int i = (int)itemFieldValue;
+
+
+			//It doesn't start to desync until after ITEM_FIELD_ENCHANTMENT
+			if(i < (int)EItemFields_Vanilla.ITEM_FIELD_PROPERTY_SEED)
+			{
+				//Do nothing. It's correct.
+			}
+			else if(i >= (int)EItemFields_Vanilla.ITEM_FIELD_PROPERTY_SEED && i <= (int)EItemFields_Vanilla.ITEM_FIELD_RANDOM_PROPERTIES_ID)
+			{
+				//15
+				shiftAmount = (int)EItemFields.ITEM_FIELD_PROPERTY_SEED - (int)EItemFields_Vanilla.ITEM_FIELD_PROPERTY_SEED;
+			}
+			else if(i == (int)EItemFields_Vanilla.ITEM_FIELD_ITEM_TEXT_ID)
+			{
+				//We don't write ITEM_FIELD_ITEM_TEXT_ID
+				shouldWrite = false;
+			}
+			else if(i >= (int)EItemFields_Vanilla.ITEM_FIELD_DURABILITY)
+			{
+				//14
+				shiftAmount = (int)EItemFields.ITEM_FIELD_DURABILITY - (int)EItemFields_Vanilla.ITEM_FIELD_DURABILITY;
+			}
+			else
+				throw new InvalidOperationException($"Unhandled field: {((EItemFields_Vanilla)i).ToString()}:{i}:{i:X}");
+
+			shiftValue = shiftAmount;
+			return shouldWrite;
+		}
+
+		/// <summary>
+		/// Produces a shift value offset that can be used to
 		/// map the provided <see cref="unitFieldValue"/> to the
 		/// <see cref="EUnitFields"/> for wotlk.
 		/// </summary>
@@ -116,9 +159,26 @@ namespace FreecraftCore
 				//-40
 				shiftAmount = (int)EUnitFields.UNIT_FIELD_PADDING - (int)EUnitFields_Vanilla.UNIT_FIELD_PADDING;
 			}
-			else if(i >= (int)EUnitFields_Vanilla.PLAYER_QUEST_LOG_1_1 && i <= (int)EUnitFields_Vanilla.PLAYER_VISIBLE_ITEM_LAST_PAD)
+			else if(i >= (int)EUnitFields_Vanilla.PLAYER_QUEST_LOG_1_1 && i <= (int)EUnitFields_Vanilla.PLAYER_QUEST_LOG_LAST_3)
 			{
-				//TODO: Handle quests and visible item fields
+				//TC quests:
+				/*SetUInt32Value(PLAYER_QUEST_LOG_1_1 + slot * MAX_QUEST_OFFSET + QUEST_ID_OFFSET, quest_id);
+				SetUInt32Value(PLAYER_QUEST_LOG_1_1 + slot * MAX_QUEST_OFFSET + QUEST_STATE_OFFSET, 0);
+				SetUInt32Value(PLAYER_QUEST_LOG_1_1 + slot * MAX_QUEST_OFFSET + QUEST_COUNTS_OFFSET, 0);
+				SetUInt32Value(PLAYER_QUEST_LOG_1_1 + slot * MAX_QUEST_OFFSET + QUEST_COUNTS_OFFSET + 1, 0);
+				SetUInt32Value(PLAYER_QUEST_LOG_1_1 + slot * MAX_QUEST_OFFSET + QUEST_TIME_OFFSET, timer);*/
+
+				//Mangos quests:
+				/*SetUInt32Value(PLAYER_QUEST_LOG_1_1 + slot * MAX_QUEST_OFFSET + QUEST_ID_OFFSET, quest_id);
+				 SetUInt32Value(PLAYER_QUEST_LOG_1_1 + slot * MAX_QUEST_OFFSET + QUEST_COUNT_STATE_OFFSET, 0);
+				 SetUInt32Value(PLAYER_QUEST_LOG_1_1 + slot * MAX_QUEST_OFFSET + QUEST_TIME_OFFSET, timer);*/
+
+				//TODO: Handle quests
+				shouldWrite = false;
+			}
+			else if(i >= (int)EUnitFields_Vanilla.PLAYER_VISIBLE_ITEM_1_CREATOR && i <= (int)EUnitFields_Vanilla.PLAYER_VISIBLE_ITEM_LAST_PAD)
+			{
+				//TODO: Handle visible items
 				shouldWrite = false;
 			}
 			else if(i >= (int)EUnitFields_Vanilla.PLAYER_FIELD_INV_SLOT_HEAD && i <= (int)EUnitFields_Vanilla.PLAYER_FIELD_BANK_SLOT_LAST + 1) //added an extra 1 because it is a 2 slot field
