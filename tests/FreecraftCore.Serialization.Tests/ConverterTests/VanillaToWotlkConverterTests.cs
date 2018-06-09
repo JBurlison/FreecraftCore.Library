@@ -43,5 +43,22 @@ namespace FreecraftCore
 			Assert.NotNull(result);
 			Assert.True(newFieldNumber >= (int)EObjectFields.OBJECT_END && newFieldNumber <= (int)EItemFields.ITEM_END);
 		}
+
+		[Test]
+		public static void Test_ConvertUpdateFieldContainer_Converts_All_Values([Range((int)EItemFields_Vanilla.ITEM_END, (int)EContainerFields_Vanilla.CONTAINER_END - 1)] int fieldNumber)
+		{
+			//arrange
+			EContainerFields_Vanilla vanillaContainerField = (EContainerFields_Vanilla)fieldNumber;
+
+			//act
+			bool? result = null;
+			int shiftValue = 0;
+			Assert.DoesNotThrow(() => result = VanillaToWotlkConverter.ConvertUpdateFieldsContainer(vanillaContainerField, out shiftValue), $"Field: {fieldNumber}:{vanillaContainerField}:{fieldNumber:X} is not converted.");
+			int newFieldNumber = (shiftValue + fieldNumber);
+
+			//Assert
+			Assert.NotNull(result);
+			Assert.True(newFieldNumber >= (int)EItemFields.ITEM_END && newFieldNumber <= (int)EContainerFields.CONTAINER_END, $"Failed for {fieldNumber}:0x{fieldNumber:X}:{((EContainerFields_Vanilla)fieldNumber).ToString()}");
+		}
 	}
 }

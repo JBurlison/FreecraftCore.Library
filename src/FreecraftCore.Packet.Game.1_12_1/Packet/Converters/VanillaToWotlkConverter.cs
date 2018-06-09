@@ -8,6 +8,22 @@ namespace FreecraftCore
 	{
 		/// <summary>
 		/// Produces a shift value offset that can be used to
+		/// map the provided <see cref="containerFieldValue"/> to the
+		/// <see cref="EContainerFields"/> for wotlk.
+		/// </summary>
+		/// <param name="containerFieldValue">The container field value to shift.</param>
+		/// <param name="shiftValue">The value of the shift.</param>
+		/// <returns>Indicates if the value should be written. This return is important. Don't write it if this returns false.</returns>
+		public static bool ConvertUpdateFieldsContainer(EContainerFields_Vanilla containerFieldValue, out int shiftValue)
+		{
+			//Only need a static shift amount. 3.3.5 has more fields but we just don't write them
+			shiftValue = (int)EContainerFields.CONTAINER_FIELD_NUM_SLOTS - (int)EContainerFields_Vanilla.CONTAINER_FIELD_NUM_SLOTS;
+
+			return true;
+		}
+
+		/// <summary>
+		/// Produces a shift value offset that can be used to
 		/// map the provided <see cref="itemFieldValue"/> to the
 		/// <see cref="EItemFields"/> for wotlk.
 		/// </summary>
@@ -16,11 +32,9 @@ namespace FreecraftCore
 		/// <returns>Indicates if the value should be written. This return is important. Don't write it if this returns false.</returns>
 		public static bool ConvertUpdateFieldsItem(EItemFields_Vanilla itemFieldValue, out int shiftValue)
 		{
-			//TODO: Do we need this initial shift anymore?
 			int shiftAmount = 0;
 			bool shouldWrite = true;
 			int i = (int)itemFieldValue;
-
 
 			//It doesn't start to desync until after ITEM_FIELD_ENCHANTMENT
 			if(i < (int)EItemFields_Vanilla.ITEM_FIELD_PROPERTY_SEED)
