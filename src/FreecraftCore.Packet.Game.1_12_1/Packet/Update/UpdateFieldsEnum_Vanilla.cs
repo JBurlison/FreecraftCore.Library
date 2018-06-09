@@ -250,7 +250,7 @@ namespace FreecraftCore
 		PLAYER_END = 0x446 + UNIT_END
 	};
 
-	public enum EGamEObjectFields_Vanilla
+	public enum EGameObjectFields_Vanilla
 	{
 		OBJECT_FIELD_CREATED_BY = EObjectFields_Vanilla.OBJECT_END + 0x00,
 		GAMEOBJECT_DISPLAYID = EObjectFields_Vanilla.OBJECT_END + 0x02,

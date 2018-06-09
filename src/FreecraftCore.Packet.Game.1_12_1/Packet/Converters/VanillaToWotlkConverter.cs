@@ -65,6 +65,29 @@ namespace FreecraftCore
 
 		/// <summary>
 		/// Produces a shift value offset that can be used to
+		/// map the provided <see cref="gameObjectFieldValue"/> to the
+		/// <see cref="EGameObjectFields"/> for wotlk.
+		/// </summary>
+		/// <param name="gameObjectFieldValue">The unit field value to shift.</param>
+		/// <param name="shiftValue">The value of the shift.</param>
+		/// <returns>Indicates if the value should be written. This return is important. Don't write it if this returns false.</returns>
+		public static bool ConvertUpdateFieldsGameObject(EGameObjectFields_Vanilla gameObjectFieldValue, out int shiftValue)
+		{
+			int shiftAmount = 0;
+			bool shouldWrite = true;
+			int i = (int)gameObjectFieldValue;
+
+			//Gameobject fields don't need to be shifted but many don't exist in 3.3.5
+			//TODO: Handle the rest of the game object fields. Can't do POS_X, POS_Y and etc.
+			if(i >= (int)EGameObjectFields_Vanilla.GAMEOBJECT_STATE)
+				shouldWrite = false;
+
+			shiftValue = shiftAmount;
+			return shouldWrite;
+		}
+
+		/// <summary>
+		/// Produces a shift value offset that can be used to
 		/// map the provided <see cref="unitFieldValue"/> to the
 		/// <see cref="EUnitFields"/> for wotlk.
 		/// </summary>
