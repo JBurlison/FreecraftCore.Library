@@ -13,6 +13,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Indicates the name of the unit.
 		/// </summary>
+		[Encoding(EncodingType.ASCII)]
 		[WireMember(1)]
 		public string Name { get; }
 
@@ -20,8 +21,9 @@ namespace FreecraftCore
 		/// The name of the realm they're on.
 		/// (used for cross-realm; will likely be null)
 		/// </summary>
+		[Encoding(EncodingType.ASCII)]
 		[WireMember(2)]
-		public string RealmName { get; private set; }
+		public string RealmName { get; private set; } = "";
 
 		/// <summary>
 		/// Indicates the race associated with the guid.
@@ -41,11 +43,15 @@ namespace FreecraftCore
 		[WireMember(5)]
 		public CharacterClass Class { get; private set; }
 
+		//TODO: Handle declined names
+		[WireMember(6)]
+		public bool IsNameDeclined { get; }
+
 		/// <inheritdoc />
 		public NameQueryResult([NotNull] string name, [CanBeNull] string realmName, CharacterRace race, CharacterGender gender, CharacterClass @class)
 		{
 			Name = name ?? throw new ArgumentNullException(nameof(name));
-			RealmName = realmName; //don't check nullness
+			RealmName = realmName ?? ""; //don't check nullness
 			Race = race;
 			Gender = gender;
 			Class = @class;
@@ -53,7 +59,7 @@ namespace FreecraftCore
 
 		protected NameQueryResult()
 		{
-			
+			RealmName = "";
 		}
 	}
 }
