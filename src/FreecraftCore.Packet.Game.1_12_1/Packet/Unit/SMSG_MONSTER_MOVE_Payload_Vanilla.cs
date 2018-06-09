@@ -29,47 +29,35 @@ namespace FreecraftCore
 		[WireMember(5)]
 		public MonsterMoveInfo MoveInfo { get; }
 
+		/// <summary>
+		/// Some "Move" packets are stop moves.
+		/// This is will be true when it's a move packet and when it's a stop packet
+		/// then it will be false. Stop packets do not have the last half of the packet included
+		/// at all.
+		/// </summary>
+		public bool IsMovePacket => MoveInfo.MoveType != MonsterMoveType.MonsterMoveStop;
+
+		/// <summary>
+		/// Optional spline data sent if <see cref="IsMovePacket"/> is true.
+		/// Meaning the monster state isn't <see cref="MonsterMoveType.MonsterMoveStop"/>.
+		/// </summary>
+		[Optional(nameof(IsMovePacket))]
 		[WireMember(6)]
-		public SplineMoveFlags_Vanilla SplineFlags { get; }
-
-		/// <summary>
-		/// The duration of the spline.
-		/// </summary>
-		[WireMember(8)]
-		public int SplineDuration { get; }
-
-		public bool HasLinearPath => !SplineFlags.HasFlag(SplineMoveFlags_Vanilla.Mask_CatmullRom);
-
-		/// <summary>
-		/// Indicates if the optional cyclic catmulrom spline path information
-		/// is in the packet.
-		/// </summary>
-		public bool HasCatMulRomSpline => !HasLinearPath;
-
-		[Optional(nameof(HasCatMulRomSpline))]
-		[WireMember(10)]
-		public Vector3<float>[] OptionalCatMulRomSplinePoints { get; }
-
-		[Optional(nameof(HasLinearPath))]
-		[WireMember(11)]
-		public LinearPathMoveInfo OptionalLinearPathInformation { get; }
+		public MonsterSplineInfo_Vanilla OptionalSplineInformation { get; }
 
 		//TODO: Additonal ctors
 		//TODO: Validate parameters.
 		/// <inheritdoc />
-		public SMSG_MONSTER_MOVE_Payload_Vanilla(PackedGuid monsterGuid, Vector3<float> initialMovePoint, int splineId, MonsterMoveInfo moveInfo, SplineMoveFlags_Vanilla splineFlags, int splineDuration, Vector3<float>[] optionalCatMulRomSplinePoints, LinearPathMoveInfo optionalLinearPathInformation)
+		public SMSG_MONSTER_MOVE_Payload_Vanilla(PackedGuid monsterGuid, Vector3<float> initialMovePoint, int splineId, MonsterMoveInfo moveInfo, MonsterSplineInfo_Vanilla optionalSplineInformation)
 		{
 			MonsterGuid = monsterGuid;
 			InitialMovePoint = initialMovePoint;
 			SplineId = splineId;
 			MoveInfo = moveInfo;
-			SplineFlags = splineFlags;
-			SplineDuration = splineDuration;
-			OptionalCatMulRomSplinePoints = optionalCatMulRomSplinePoints;
-			OptionalLinearPathInformation = optionalLinearPathInformation;
+			OptionalSplineInformation = optionalSplineInformation;
 		}
 
-		protected SMSG_MONSTER_MOVE_Payload_Vanilla()
+		public SMSG_MONSTER_MOVE_Payload_Vanilla()
 		{
 			
 		}
