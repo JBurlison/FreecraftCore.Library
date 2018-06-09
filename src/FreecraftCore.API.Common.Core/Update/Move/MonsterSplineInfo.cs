@@ -63,8 +63,9 @@ namespace FreecraftCore
 		//TODO: Overload ctors/builders
 		//TODO: Validate params
 		/// <inheritdoc />
-		public MonsterSplineInfo(AnimationInfo optionalAnimationInformation, int splineDuration, ParabolicMoveInfo optionalParabolicSplineInformation, Vector3<float>[] optionalCatMulRomSplinePoints, LinearPathMoveInfo optionalLinearPathInformation)
+		public MonsterSplineInfo(SplineMoveFlags splineFlags, AnimationInfo optionalAnimationInformation, int splineDuration, ParabolicMoveInfo optionalParabolicSplineInformation, Vector3<float>[] optionalCatMulRomSplinePoints, LinearPathMoveInfo optionalLinearPathInformation)
 		{
+			SplineFlags = splineFlags;
 			OptionalAnimationInformation = optionalAnimationInformation;
 			SplineDuration = splineDuration;
 			OptionalParabolicSplineInformation = optionalParabolicSplineInformation;
