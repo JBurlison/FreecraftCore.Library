@@ -5,6 +5,7 @@ using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
+	//TODO: Refactor this, it's TERRIBLE!
 	public sealed class ItemQueryResponseInfo
 	{
 		[WireMember(1)]
