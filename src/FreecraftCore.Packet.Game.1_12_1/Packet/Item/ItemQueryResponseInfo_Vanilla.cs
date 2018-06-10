@@ -5,8 +5,8 @@ using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
-	//TODO: Refactor this, it's TERRIBLE!
-	public sealed class ItemQueryResponseInfo
+	[WireDataContract]
+	public sealed class ItemQueryResponseInfo_Vanilla
 	{
 		[WireMember(1)]
 		public ItemClassType ClassType { get; }
@@ -17,12 +17,6 @@ namespace FreecraftCore
 		/// </summary>
 		[WireMember(2)]
 		public int SubClassType { get; }
-
-		/// <summary>
-		/// TODO: What is this?
-		/// </summary>
-		[WireMember(3)]
-		public int SoundOverrideSubclass { get; }
 
 		[KnownSize(4)]
 		[WireMember(4)]
@@ -35,17 +29,10 @@ namespace FreecraftCore
 		public ItemQuality Quality { get; }
 
 		/// <summary>
-		/// TODO: Find the flags enum for this
+		/// TODO: Is this same flags as 3.3.5?
 		/// </summary>
 		[WireMember(7)]
 		public ItemFlags ItemFlags { get; }
-
-		//1.12.1 does not send an extra flag.
-		/// <summary>
-		/// TODO: Find the flags enum for this.
-		/// </summary>
-		[WireMember(8)]
-		public ItemFlags2 ItemFlags2 { get; }
 
 		[WireMember(9)]
 		public int BuyPrice { get; }
@@ -87,6 +74,7 @@ namespace FreecraftCore
 		[WireMember(20)]
 		public int RequiredCityRank { get; }
 
+		//TODO: Mangos warns: (pProto->RequiredReputationFaction > 0  ? pProto->RequiredReputationRank : 0);   // send value only if reputation faction id setted ( needed for some items)
 		[WireMember(21)]
 		public int RequiredReptuationFaction { get; }
 
@@ -102,17 +90,11 @@ namespace FreecraftCore
 		[WireMember(25)]
 		public int ContainerSlots { get; }
 
-		[SendSize(SendSizeAttribute.SizeType.Int32)]
+		[KnownSize(10)] //static size on 1.2.1
 		[WireMember(26)]
 		public StatInfo[] StatInfos { get; }
 
-		[WireMember(27)]
-		public int ScalingStatDistribution { get; }
-
-		[WireMember(28)]
-		public int ScalingStatValue { get; }
-
-		[KnownSize(2)]
+		[KnownSize(5)] //5 on 1.12.1 instead of 2 on 3.3.5
 		[WireMember(29)]
 		public ItemDamageDefinition[] ItemDamageMods { get; }
 
@@ -130,7 +112,7 @@ namespace FreecraftCore
 		[WireMember(33)]
 		public float RangedModRange { get; }
 
-		[KnownSize(5)]
+		[KnownSize(5)] //same on 3.3.5
 		[WireMember(34)]
 		public ItemSpellInfo[] SpellInfos { get; }
 
@@ -141,8 +123,9 @@ namespace FreecraftCore
 		[WireMember(36)]
 		public string ItemDescription { get; }
 
+		[Encoding(EncodingType.ASCII)]
 		[WireMember(37)]
-		public int PageText { get; }
+		public string PageText { get; }
 
 		[WireMember(38)]
 		public int LanguageId { get; }
@@ -165,9 +148,6 @@ namespace FreecraftCore
 		[WireMember(44)]
 		public int RandomProperty { get; }
 
-		[WireMember(45)]
-		public int RandomSuffix { get; }
-
 		[WireMember(46)]
 		public int Block { get; }
 
@@ -186,35 +166,15 @@ namespace FreecraftCore
 		[WireMember(51)]
 		public BAG_FAMILY_MASK BagFamily { get; }
 
-		[WireMember(52)]
-		public ItemSocketInfo SocketInformation { get; }
-
-		[WireMember(53)]
-		public int RequiredDisenchantSkill { get; }
-
-		[WireMember(54)]
-		public int ArmorDamageModifier { get; }
-
-		[WireMember(55)]
-		public int Duration { get; }
-
-		[WireMember(56)]
-		public int ItemLimitCategory { get; }
-
-		[WireMember(57)]
-		public int HolidayId { get; }
-
 		/// <inheritdoc />
-		public ItemQueryResponseInfo(ItemClassType classType, int subClassType, int soundOverrideSubclass, string[] itemNames, int displayId, ItemQuality quality, ItemFlags itemFlags, ItemFlags2 itemFlags2, int buyPrice, int sellPrice, int inventoryType, uint allowableClass, int allowableRace, int itemLevel, int requiredLevel, int requiredSkill, int requiredSkillRank, int requiredSpell, int requiredHonorRank, int requiredCityRank, int requiredReptuationFaction, int requiredReptuationRank, int maxCount, int maxStackable, int containerSlots, StatInfo[] statInfos, int scalingStatDistribution, int scalingStatValue, ItemDamageDefinition[] itemDamageMods, int[] resistances, int delay, int ammoType, float rangedModRange, ItemSpellInfo[] spellInfos, ItemBondingType bondingType, string itemDescription, int pageText, int languageId, int pageMaterial, int startQuest, int lockId, int material, int sheath, int randomProperty, int randomSuffix, int block, int itemSet, int maxdurability, int area, int map, BAG_FAMILY_MASK bagFamily, ItemSocketInfo socketInformation, int requiredDisenchantSkill, int armorDamageModifier, int duration, int itemLimitCategory, int holidayId)
+		public ItemQueryResponseInfo_Vanilla(ItemClassType classType, int subClassType, string[] itemNames, int displayId, ItemQuality quality, ItemFlags itemFlags, int buyPrice, int sellPrice, int inventoryType, uint allowableClass, int allowableRace, int itemLevel, int requiredLevel, int requiredSkill, int requiredSkillRank, int requiredSpell, int requiredHonorRank, int requiredCityRank, int requiredReptuationFaction, int requiredReptuationRank, int maxCount, int maxStackable, int containerSlots, StatInfo[] statInfos, ItemDamageDefinition[] itemDamageMods, int[] resistances, int delay, int ammoType, float rangedModRange, ItemSpellInfo[] spellInfos, ItemBondingType bondingType, string itemDescription, string pageText, int languageId, int pageMaterial, int startQuest, int lockId, int material, int sheath, int randomProperty, int block, int itemSet, int maxdurability, int area, int map, BAG_FAMILY_MASK bagFamily)
 		{
 			ClassType = classType;
 			SubClassType = subClassType;
-			SoundOverrideSubclass = soundOverrideSubclass;
 			ItemNames = itemNames;
 			DisplayId = displayId;
 			Quality = quality;
 			ItemFlags = itemFlags;
-			ItemFlags2 = itemFlags2;
 			BuyPrice = buyPrice;
 			SellPrice = sellPrice;
 			InventoryType = inventoryType;
@@ -233,8 +193,6 @@ namespace FreecraftCore
 			MaxStackable = maxStackable;
 			ContainerSlots = containerSlots;
 			StatInfos = statInfos;
-			ScalingStatDistribution = scalingStatDistribution;
-			ScalingStatValue = scalingStatValue;
 			ItemDamageMods = itemDamageMods;
 			Resistances = resistances;
 			Delay = delay;
@@ -251,22 +209,15 @@ namespace FreecraftCore
 			Material = material;
 			Sheath = sheath;
 			RandomProperty = randomProperty;
-			RandomSuffix = randomSuffix;
 			Block = block;
 			ItemSet = itemSet;
 			Maxdurability = maxdurability;
 			Area = area;
 			Map = map;
 			BagFamily = bagFamily;
-			SocketInformation = socketInformation;
-			RequiredDisenchantSkill = requiredDisenchantSkill;
-			ArmorDamageModifier = armorDamageModifier;
-			Duration = duration;
-			ItemLimitCategory = itemLimitCategory;
-			HolidayId = holidayId;
 		}
 
-		protected ItemQueryResponseInfo()
+		protected ItemQueryResponseInfo_Vanilla()
 		{
 			
 		}

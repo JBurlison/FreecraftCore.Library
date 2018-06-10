@@ -6,7 +6,7 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore
 {
 	[WireDataContract]
-	public sealed class ItemDamageDefition
+	public sealed class ItemDamageDefinition
 	{
 		[WireMember(1)]
 		public int DamageMinimum { get; }
@@ -19,14 +19,14 @@ namespace FreecraftCore
 		public int ResistId { get; }
 
 		/// <inheritdoc />
-		public ItemDamageDefition(int damageMinimum, int damageMaximum, int resistId)
+		public ItemDamageDefinition(int damageMinimum, int damageMaximum, int resistId)
 		{
 			DamageMinimum = damageMinimum;
 			DamageMaximum = damageMaximum;
 			ResistId = resistId;
 		}
 
-		protected ItemDamageDefition()
+		protected ItemDamageDefinition()
 		{
 			
 		}
