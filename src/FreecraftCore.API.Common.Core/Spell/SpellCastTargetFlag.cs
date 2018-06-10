@@ -4,6 +4,7 @@ using System.Text;
 
 namespace FreecraftCore
 {
+	//Same in 1.12.1
 	//Based on TC's: enum SpellCastTargetFlags
 	/// <summary>
 	/// Enumeration of spell cast target flags.
