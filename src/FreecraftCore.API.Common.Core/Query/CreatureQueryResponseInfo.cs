@@ -59,7 +59,28 @@ namespace FreecraftCore
 		[WireMember(14)]
 		public int CreatureMovementInfoId { get; }
 
-		public CreatureQueryResponseInfo()
+		//TODO: Validate parameters
+		//TODO: Ctor overloads
+		/// <inheritdoc />
+		public CreatureQueryResponseInfo(string[] creatureNames, string alternativeName, string cursorName, CreatureTypeFlags flags, CreatureType creatureType, CreatureFamily family, CreatureEliteType classification, int[] proxyCreatureIds, int[] creatureDisplayIds, float healthMultiplier, float energyMultiplier, bool isLeader, int[] questItemIds, int creatureMovementInfoId)
+		{
+			CreatureNames = creatureNames;
+			AlternativeName = alternativeName;
+			CursorName = cursorName;
+			Flags = flags;
+			CreatureType = creatureType;
+			Family = family;
+			Classification = classification;
+			ProxyCreatureIds = proxyCreatureIds;
+			CreatureDisplayIds = creatureDisplayIds;
+			HealthMultiplier = healthMultiplier;
+			EnergyMultiplier = energyMultiplier;
+			IsLeader = isLeader;
+			QuestItemIds = questItemIds;
+			CreatureMovementInfoId = creatureMovementInfoId;
+		}
+
+		protected CreatureQueryResponseInfo()
 		{
 			
 		}
