@@ -123,9 +123,9 @@ namespace FreecraftCore
 		[WireMember(36)]
 		public string ItemDescription { get; }
 
-		[Encoding(EncodingType.ASCII)]
+		//This is an int, not a string.
 		[WireMember(37)]
-		public string PageText { get; }
+		public int PageText { get; }
 
 		[WireMember(38)]
 		public int LanguageId { get; }
@@ -167,7 +167,7 @@ namespace FreecraftCore
 		public BAG_FAMILY_MASK BagFamily { get; }
 
 		/// <inheritdoc />
-		public ItemQueryResponseInfo_Vanilla(ItemClassType classType, int subClassType, string[] itemNames, int displayId, ItemQuality quality, ItemFlags itemFlags, int buyPrice, int sellPrice, int inventoryType, uint allowableClass, int allowableRace, int itemLevel, int requiredLevel, int requiredSkill, int requiredSkillRank, int requiredSpell, int requiredHonorRank, int requiredCityRank, int requiredReptuationFaction, int requiredReptuationRank, int maxCount, int maxStackable, int containerSlots, StatInfo[] statInfos, ItemDamageDefinition[] itemDamageMods, int[] resistances, int delay, int ammoType, float rangedModRange, ItemSpellInfo[] spellInfos, ItemBondingType bondingType, string itemDescription, string pageText, int languageId, int pageMaterial, int startQuest, int lockId, int material, int sheath, int randomProperty, int block, int itemSet, int maxdurability, int area, int map, BAG_FAMILY_MASK bagFamily)
+		public ItemQueryResponseInfo_Vanilla(ItemClassType classType, int subClassType, string[] itemNames, int displayId, ItemQuality quality, ItemFlags itemFlags, int buyPrice, int sellPrice, int inventoryType, uint allowableClass, int allowableRace, int itemLevel, int requiredLevel, int requiredSkill, int requiredSkillRank, int requiredSpell, int requiredHonorRank, int requiredCityRank, int requiredReptuationFaction, int requiredReptuationRank, int maxCount, int maxStackable, int containerSlots, StatInfo[] statInfos, ItemDamageDefinition[] itemDamageMods, int[] resistances, int delay, int ammoType, float rangedModRange, ItemSpellInfo[] spellInfos, ItemBondingType bondingType, string itemDescription, int pageText, int languageId, int pageMaterial, int startQuest, int lockId, int material, int sheath, int randomProperty, int block, int itemSet, int maxdurability, int area, int map, BAG_FAMILY_MASK bagFamily)
 		{
 			ClassType = classType;
 			SubClassType = subClassType;
