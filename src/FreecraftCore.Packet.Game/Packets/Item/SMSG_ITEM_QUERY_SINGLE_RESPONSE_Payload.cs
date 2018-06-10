@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
+using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
@@ -25,10 +26,20 @@ namespace FreecraftCore
 		public ItemQueryResponseInfo Result { get; }
 
 		/// <inheritdoc />
-		public SMSG_ITEM_QUERY_SINGLE_RESPONSE_Payload(uint packedResponseId, ItemQueryResponseInfo result)
+		public SMSG_ITEM_QUERY_SINGLE_RESPONSE_Payload(int queryId, [NotNull] ItemQueryResponseInfo result)
 		{
-			PackedResponseId = packedResponseId;
-			Result = result;
+			//No bitwise math needed since success if 0x0
+			PackedResponseId = (uint)queryId;
+			Result = result ?? throw new ArgumentNullException(nameof(result));
+		}
+
+		/// <summary>
+		/// Creates a failing response.
+		/// </summary>
+		/// <param name="queryId">The query id.</param>
+		public SMSG_ITEM_QUERY_SINGLE_RESPONSE_Payload(uint queryId)
+		{
+			PackedResponseId = queryId & 0x80000000;
 		}
 
 		protected SMSG_ITEM_QUERY_SINGLE_RESPONSE_Payload()
