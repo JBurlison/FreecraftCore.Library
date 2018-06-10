@@ -79,8 +79,14 @@ namespace FreecraftCore
 
 			//Gameobject fields don't need to be shifted but many don't exist in 3.3.5
 			//TODO: Handle the rest of the game object fields. Can't do POS_X, POS_Y and etc.
-			if(i >= (int)EGameObjectFields_Vanilla.GAMEOBJECT_STATE)
+			if(i >= (int)EGameObjectFields_Vanilla.GAMEOBJECT_STATE && i <= (int)EGameObjectFields_Vanilla.GAMEOBJECT_DYN_FLAGS)
 				shouldWrite = false;
+			else if(i >= (int)EGameObjectFields_Vanilla.GAMEOBJECT_DYN_FLAGS && i <= (int)EGameObjectFields_Vanilla.GAMEOBJECT_FACTION)
+			{
+				shiftAmount = (int)EGameObjectFields.GAMEOBJECT_DYNAMIC - (int)EGameObjectFields_Vanilla.GAMEOBJECT_DYN_FLAGS;
+			}
+			else if(i == (int)EGameObjectFields_Vanilla.GAMEOBJECT_LEVEL)
+				shiftAmount = (int)EGameObjectFields.GAMEOBJECT_LEVEL - (int)EGameObjectFields_Vanilla.GAMEOBJECT_LEVEL;
 
 			shiftValue = shiftAmount;
 			return shouldWrite;
