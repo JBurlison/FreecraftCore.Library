@@ -21,25 +21,26 @@ namespace FreecraftCore
 		public string[] Names { get; }
 
 		[Encoding(EncodingType.ASCII)]
-		[WireMember(3)]
+		[WireMember(4)]
 		public string IconName { get; }
 
 		[Encoding(EncodingType.ASCII)]
-		[WireMember(4)]
+		[WireMember(5)]
 		public string CastBarCaption { get; }
 
 		[Encoding(EncodingType.ASCII)]
-		[WireMember(5)]
+		[WireMember(6)]
 		public string UnkString { get; }
 
+		[WireMember(7)]
 		[KnownSize(sizeof(int) * 24)]
 		public byte[] Data { get; }
 
-		[WireMember(6)]
+		[WireMember(8)]
 		public float Size { get; }
 
 		[KnownSize(6)]
-		[WireMember(7)]
+		[WireMember(9)]
 		public int[] QuestItemIds { get; }
 
 		/// <inheritdoc />
