@@ -58,9 +58,11 @@ namespace Authentication.TestClient
 				if(!await client.ConnectAsync("127.0.0.1", 5050).ConfigureAwait(false))
 					Console.WriteLine("Failed to connect");
 
-				await client.SendMessage(new AuthLogonChallengeRequest(ProtocolVersion.ProtocolVersionTwo, GameType.WoW, ExpansionType.WrathOfTheLichKing, 3, 5,
-						ClientBuild.Wotlk_3_3_5a, PlatformType.x86, OperatingSystemType.Win, LocaleType.enUS,
-						IPAddress.Parse("127.0.0.1"), "Glader"))
+				AuthChallengeData challenge = new AuthChallengeData(ProtocolVersion.ProtocolVersionTwo, GameType.WoW, ExpansionType.WrathOfTheLichKing, 3, 5,
+					ClientBuild.Wotlk_3_3_5a, PlatformType.x86, OperatingSystemType.Win, LocaleType.enUS,
+					IPAddress.Parse("127.0.0.1"), "Glader");
+
+				await client.SendMessage(new AuthLogonChallengeRequest(challenge))
 					.ConfigureAwait(false);
 			}
 			catch(Exception e)

@@ -41,15 +41,17 @@ namespace Authentication.TestServer
 		{
 			using(var repo = AccountRepository.Create())
 			{
-				bool accountExists = await repo.DoesAccountExists(payload.Identity)
+				AuthChallengeData challenge = payload.Challenge;
+
+				bool accountExists = await repo.DoesAccountExists(challenge.Identity)
 					.ConfigureAwait(false);
 
 				if(Logger.IsDebugEnabled)
-					Logger.Debug($"Account: {payload.Identity} Exists: {accountExists} ConnectionId: {context.Details.ConnectionId}");
+					Logger.Debug($"Account: {challenge.Identity} Exists: {accountExists} ConnectionId: {context.Details.ConnectionId}");
 
 				//Depending on if it exists we build an appropriate response
 				AuthLogonChallengeResponse response = accountExists
-					? await BuildSuccessResponse(await repo.GetAccount(payload.Identity).ConfigureAwait(false), context.Details.ConnectionId)
+					? await BuildSuccessResponse(await repo.GetAccount(challenge.Identity).ConfigureAwait(false), context.Details.ConnectionId)
 					: BuildFailureResponse();
 
 				await context.PayloadSendService.SendMessage(response)
