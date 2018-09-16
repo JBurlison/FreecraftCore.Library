@@ -1,4 +1,7 @@
-﻿namespace FreecraftCore
+﻿using System;
+using System.Collections.Generic;
+
+namespace FreecraftCore
 {
     public partial class Autobroadcast
     {

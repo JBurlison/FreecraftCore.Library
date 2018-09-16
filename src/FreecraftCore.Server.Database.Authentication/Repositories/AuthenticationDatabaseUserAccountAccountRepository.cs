@@ -50,7 +50,7 @@ namespace FreecraftCore
 		{
 			Account account = await AuthenticationDatabaseContext
 				.Account
-				.FindAsync(accountId);
+				.FindAsync((uint)accountId); //EF now requires uint for this TC table mapping
 
 			account.Sessionkey = sessionKey.ToHexString();
 

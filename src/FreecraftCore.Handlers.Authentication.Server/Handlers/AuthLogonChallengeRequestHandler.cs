@@ -81,7 +81,7 @@ namespace Authentication.TestServer
 				SRPToken srpToken = new SRPToken(PublicB.ToCleanByteArray(), G, N, salt);
 
 				//TODO: Check if entry already exists.
-				await ChallengeRepository.TryCreate(connectionId, new AuthenticationChallengeModel(PublicB, srp.V, PrivateB, salt.ToBigInteger(), account.Username, account.Id));
+				await ChallengeRepository.TryCreate(connectionId, new AuthenticationChallengeModel(PublicB, srp.V, PrivateB, salt.ToBigInteger(), account.Username, (int)account.Id));
 
 				return new AuthLogonChallengeResponse(srpToken);
 			}

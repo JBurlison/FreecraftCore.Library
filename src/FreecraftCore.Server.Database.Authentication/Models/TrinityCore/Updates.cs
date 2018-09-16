@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FreecraftCore
 {
@@ -6,8 +7,7 @@ namespace FreecraftCore
     {
         public string Name { get; set; }
         public string Hash { get; set; }
-        public string State { get; set; }
         public DateTime Timestamp { get; set; }
-        public int Speed { get; set; }
+        public uint Speed { get; set; }
     }
 }

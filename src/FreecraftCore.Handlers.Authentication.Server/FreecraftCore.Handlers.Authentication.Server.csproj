@@ -13,13 +13,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="Common.Logging" Version="3.4.1" />
-    <PackageReference Include="GladNet3.Handler.API" Version="3.0.30" />
-    <PackageReference Include="GladNet3.Serializer.API" Version="3.0.30" />
-    <PackageReference Include="GladNet3.Server.API" Version="3.0.30" />
+    <PackageReference Include="GladNet3.Handler.API" Version="3.0.41" />
+    <PackageReference Include="GladNet3.Serializer.API" Version="3.0.41" />
+    <PackageReference Include="GladNet3.Server.API" Version="3.0.41" />
     <PackageReference Include="Reinterpret.Net" Version="2.0.5" />
-    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.4.0" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.5.1" />
   </ItemGroup>
 
   <ItemGroup>

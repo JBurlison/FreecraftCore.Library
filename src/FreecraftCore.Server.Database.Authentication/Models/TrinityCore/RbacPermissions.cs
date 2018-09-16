@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace FreecraftCore
 {
@@ -12,12 +13,12 @@ namespace FreecraftCore
             RbacLinkedPermissionsLinked = new HashSet<RbacLinkedPermissions>();
         }
 
-        public int Id { get; set; }
+        public uint Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<RbacAccountPermissions> RbacAccountPermissions { get; set; }
-        public virtual ICollection<RbacDefaultPermissions> RbacDefaultPermissions { get; set; }
-        public virtual ICollection<RbacLinkedPermissions> RbacLinkedPermissionsIdNavigation { get; set; }
-        public virtual ICollection<RbacLinkedPermissions> RbacLinkedPermissionsLinked { get; set; }
+        public ICollection<RbacAccountPermissions> RbacAccountPermissions { get; set; }
+        public ICollection<RbacDefaultPermissions> RbacDefaultPermissions { get; set; }
+        public ICollection<RbacLinkedPermissions> RbacLinkedPermissionsIdNavigation { get; set; }
+        public ICollection<RbacLinkedPermissions> RbacLinkedPermissionsLinked { get; set; }
     }
 }

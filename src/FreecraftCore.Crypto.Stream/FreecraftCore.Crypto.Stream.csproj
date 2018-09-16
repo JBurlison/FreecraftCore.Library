@@ -4,17 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
-  </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.Serializer.Stream" Version="3.0.33" />
-    <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
+    <PackageReference Include="FreecraftCore.Serializer.Stream" Version="3.0.34" />
   </ItemGroup>
 
   <ItemGroup>

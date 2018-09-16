@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace FreecraftCore
 {
-    public partial class AccountAccess
+    public partial class QuestCompleter
     {
         public uint Id { get; set; }
-        public byte Gmlevel { get; set; }
-        public int RealmId { get; set; }
     }
 }

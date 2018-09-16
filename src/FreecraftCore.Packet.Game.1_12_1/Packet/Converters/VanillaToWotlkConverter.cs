@@ -81,7 +81,7 @@ namespace FreecraftCore
 			//TODO: Handle the rest of the game object fields. Can't do POS_X, POS_Y and etc.
 			if(i >= (int)EGameObjectFields_Vanilla.GAMEOBJECT_STATE && i <= (int)EGameObjectFields_Vanilla.GAMEOBJECT_DYN_FLAGS)
 				shouldWrite = false;
-			else if(i >= (int)EGameObjectFields_Vanilla.GAMEOBJECT_DYN_FLAGS && i <= (int)EGameObjectFields_Vanilla.GAMEOBJECT_FACTION)
+			else if(i > (int)EGameObjectFields_Vanilla.GAMEOBJECT_DYN_FLAGS && i <= (int)EGameObjectFields_Vanilla.GAMEOBJECT_FACTION)
 			{
 				shiftAmount = (int)EGameObjectFields.GAMEOBJECT_DYNAMIC - (int)EGameObjectFields_Vanilla.GAMEOBJECT_DYN_FLAGS;
 			}

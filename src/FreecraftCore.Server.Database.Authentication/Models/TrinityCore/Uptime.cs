@@ -1,11 +1,14 @@
-﻿namespace FreecraftCore
+﻿using System;
+using System.Collections.Generic;
+
+namespace FreecraftCore
 {
     public partial class Uptime
     {
-        public int Realmid { get; set; }
-        public int Starttime { get; set; }
-        public int Uptime1 { get; set; }
-        public short Maxplayers { get; set; }
+        public uint Realmid { get; set; }
+        public uint Starttime { get; set; }
+        public uint Uptime1 { get; set; }
+        public ushort Maxplayers { get; set; }
         public string Revision { get; set; }
     }
 }

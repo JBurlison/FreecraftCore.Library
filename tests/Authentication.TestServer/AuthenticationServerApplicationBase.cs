@@ -25,7 +25,7 @@ namespace Authentication.TestServer
 
 		/// <inheritdoc />
 		public AuthenticationServerApplicationBase([NotNull] NetworkAddressInfo serverAddress, [NotNull] ILog logger) 
-			: base(serverAddress)
+			: base(serverAddress, logger)
 		{
 			if(serverAddress == null) throw new ArgumentNullException(nameof(serverAddress));
 			if(logger == null) throw new ArgumentNullException(nameof(logger));
@@ -55,7 +55,7 @@ namespace Authentication.TestServer
 
 			//TODO: Maybe use ASP Core DI service so we can hide this stuff
 			DbContextOptionsBuilder<authContext> authDatabaseBuilder = new DbContextOptionsBuilder<authContext>();
-			authDatabaseBuilder.UseMySQL(@"server=localhost;port=3306;user=root;password=test;database=auth");
+			authDatabaseBuilder.UseMySql(@"server=kurthoswow-test-db.c7tnrjczj0de.us-east-2.rds.amazonaws.com;port=3306;user=root;password=KurthosWoW;database=auth");
 
 			//Add the database stuff
 			builder.RegisterType<authContext>()

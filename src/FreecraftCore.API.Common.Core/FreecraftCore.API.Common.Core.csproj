@@ -13,8 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.Serializer.API" Version="3.0.33" />
-    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.33" />
+    <PackageReference Include="FreecraftCore.Serializer.API" Version="3.0.34" />
+    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.34" />
     <PackageReference Include="Reinterpret.Net" Version="2.0.5" />
   </ItemGroup>
 

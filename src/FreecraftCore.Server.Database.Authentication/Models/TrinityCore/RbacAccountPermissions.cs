@@ -1,13 +1,16 @@
-﻿namespace FreecraftCore
+﻿using System;
+using System.Collections.Generic;
+
+namespace FreecraftCore
 {
     public partial class RbacAccountPermissions
     {
-        public int AccountId { get; set; }
-        public int PermissionId { get; set; }
-        public byte Granted { get; set; }
+        public uint AccountId { get; set; }
+        public uint PermissionId { get; set; }
+        public sbyte Granted { get; set; }
         public int RealmId { get; set; }
 
-        public virtual Account Account { get; set; }
-        public virtual RbacPermissions Permission { get; set; }
+        public Account Account { get; set; }
+        public RbacPermissions Permission { get; set; }
     }
 }
