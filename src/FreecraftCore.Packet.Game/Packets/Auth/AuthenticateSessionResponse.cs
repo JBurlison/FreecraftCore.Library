@@ -22,6 +22,22 @@ namespace FreecraftCore
 		[WireMember(1)]
 		public SessionAuthenticationResult AuthenticationResult { get; private set; }
 
+		//TODO: Doc
+		//TODO: We don't support queue/realmtransfer data in the packet because there is no way to determine it outside of length
+		[WireMember(2)]
+		public uint BillingTimeRemaining { get; }
+
+		//TODO: Handle flags
+		[WireMember(3)]
+		public byte BillingPlanFlags { get; }
+
+		//TODO: What is this?
+		[WireMember(4)]
+		public uint BillingTimeRested { get; }
+
+		[WireMember(5)]
+		public ExpansionType AccountExpansion { get; }
+
 		public AuthenticateSessionResponse()
 		{
 			//TODO: If we ever run a server add a ctor
