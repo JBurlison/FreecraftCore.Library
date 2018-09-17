@@ -18,7 +18,7 @@
     <PackageReference Include="GladNet3.Handler.API" Version="3.0.41" />
     <PackageReference Include="GladNet3.Serializer.API" Version="3.0.41" />
     <PackageReference Include="GladNet3.Server.API" Version="3.0.41" />
-    <PackageReference Include="Reinterpret.Net" Version="2.0.5" />
+    <PackageReference Include="Reinterpret.Net" Version="2.0.7" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.5.1" />
   </ItemGroup>
 
