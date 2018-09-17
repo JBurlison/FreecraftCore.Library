@@ -19,12 +19,19 @@ namespace FreecraftCore
 		/// <summary>
 		/// The data related to the authentication challenge.
 		/// </summary>
+		[WireMember(1)]
 		public AuthChallengeData Challenge { get; }
 
 		/// <inheritdoc />
 		public AuthLogonChallengeRequest([NotNull] AuthChallengeData challenge)
 		{
 			Challenge = challenge ?? throw new ArgumentNullException(nameof(challenge));
+		}
+
+		//Serializer ctor.
+		private AuthLogonChallengeRequest()
+		{
+			
 		}
 	}
 }
