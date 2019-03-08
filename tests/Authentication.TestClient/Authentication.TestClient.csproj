@@ -56,13 +56,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="GladNet3.Client.DotNetTcpClient">
-      <Version>3.0.41</Version>
+      <Version>3.0.46</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Crypto.API">
-      <Version>3.0.41</Version>
+      <Version>3.0.46</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Serializer.FreecraftCore">
-      <Version>3.0.41</Version>
+      <Version>3.0.46</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

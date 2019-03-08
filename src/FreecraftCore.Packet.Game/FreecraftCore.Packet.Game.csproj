@@ -6,8 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.3.1" />
-    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.36" />
-    <PackageReference Include="GladNet3.Common.API" Version="3.0.41" />
+    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.38" />
+    <PackageReference Include="GladNet3.Common.API" Version="3.0.46" />
     <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.3.0" />
   </ItemGroup>
 

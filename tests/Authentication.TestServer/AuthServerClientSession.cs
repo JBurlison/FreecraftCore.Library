@@ -37,11 +37,5 @@ namespace Authentication.TestServer
 			//TODO: How should we handle server not having interceptor
 			return AuthMessageHandlerService.TryHandleMessage(new AuthSessionMessageContext(Connection, SendService, MockedInterceptor, Details), message);
 		}
-
-		/// <inheritdoc />
-		protected override void OnSessionDisconnected()
-		{
-			//TODO: Do session cleanup if we need it
-		}
 	}
 }

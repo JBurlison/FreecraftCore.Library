@@ -68,16 +68,16 @@
       <Version>3.4.1</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Client.DotNetTcpClient">
-      <Version>3.0.41</Version>
+      <Version>3.0.46</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Handler.API">
-      <Version>3.0.41</Version>
+      <Version>3.0.46</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Serializer.FreecraftCore">
-      <Version>3.0.41</Version>
+      <Version>3.0.46</Version>
     </PackageReference>
     <PackageReference Include="GladNet3.Server.DotNetTcpServer">
-      <Version>3.0.41</Version>
+      <Version>3.0.47</Version>
     </PackageReference>
     <PackageReference Include="Moq">
       <Version>4.10.0</Version>

@@ -25,7 +25,11 @@ namespace FreecraftCore
 
 			//TODO: Change this console logging
 			if(payload.Result != AuthenticationResult.Success)
+			{
 				Console.WriteLine($"Failed Auth: {payload.Result}");
+				return Task.CompletedTask;
+			}
+				
 
 			using(WoWSRP6ClientCryptoServiceProvider srpProvider = new WoWSRP6ClientCryptoServiceProvider(payload.Challenge.B.ToBigInteger(), payload.Challenge.N.ToBigInteger(), payload.Challenge.g.ToBigInteger()))
 			{
@@ -33,11 +37,11 @@ namespace FreecraftCore
 				{
 					//TODO: Remove hardcoded name/pass
 					//Set the session key in the store for usage
-					BigInteger unhashedKey = srpProvider.ComputeSessionKey("Glader".ToUpper(), "test", payload.Challenge.salt);
+					BigInteger unhashedKey = srpProvider.ComputeSessionKey("Admin".ToUpper(), "test", payload.Challenge.salt);
 
 					Console.WriteLine($"SessionKey: {unhashedKey} KeySize: {unhashedKey.ToCleanByteArray().Length}");
 
-					proof = new AuthLogonProofRequest(srpProvider.A.ToCleanByteArray(), hashingService.ComputeSRP6M1(srpProvider.g, srpProvider.N, "Glader".ToUpper(), payload.Challenge.salt, srpProvider.A, srpProvider.B, unhashedKey));
+					proof = new AuthLogonProofRequest(srpProvider.A.ToCleanByteArray(), hashingService.ComputeSRP6M1(srpProvider.g, srpProvider.N, "Admin".ToUpper(), payload.Challenge.salt, srpProvider.A, srpProvider.B, unhashedKey));
 
 					//Set the session key as a hashed session key
 					//SessionKeyStorage.SessionKey = hashingService.HashSessionKey(unhashedKey);
