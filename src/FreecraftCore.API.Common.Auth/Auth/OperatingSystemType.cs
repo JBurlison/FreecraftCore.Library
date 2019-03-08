@@ -14,5 +14,10 @@
 		/// Unix operating system.
 		/// </summary>
 		Mac = 2,
+	
+		/// <summary>
+		/// Indicates a mobile client.
+		/// </summary>
+		Mob = 3
 	}
 }
