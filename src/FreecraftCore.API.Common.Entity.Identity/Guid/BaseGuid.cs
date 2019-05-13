@@ -35,5 +35,17 @@
 		{
 			return guidType == ObjectType;
 		}
+
+		//TODO: Doc
+		public bool HasType(EntityGuidMask guidType)
+		{
+			return (guidType & ObjectType) == guidType;
+		}
+
+		//TODO: Doc
+		public bool HasAnyType(EntityGuidMask guidType)
+		{
+			return (guidType & ObjectType) != 0;
+		}
 	}
 }

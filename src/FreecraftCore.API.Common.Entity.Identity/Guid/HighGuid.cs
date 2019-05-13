@@ -1,8 +1,11 @@
-﻿namespace FreecraftCore
+﻿using System;
+
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Masking flags for Entity GUIDs.
 	/// </summary>
+	[Flags]
 	public enum EntityGuidMask
 	{
 		//From Trinitycore
