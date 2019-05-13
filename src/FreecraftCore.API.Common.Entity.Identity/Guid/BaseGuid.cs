@@ -10,7 +10,7 @@
 		/// <summary>
 		/// Indicates the object Type that the <see cref="GUID"/> is associated with.
 		/// </summary>
-		EntityGuidMask ObjectType => (EntityGuidMask)((RawGuidValue >> 48) & 0x0000FFFF);
+		public EntityGuidMask ObjectType => (EntityGuidMask)((RawGuidValue >> 48) & 0x0000FFFF);
 
 		/// <summary>
 		/// Indiciates the current GUID of the object. This is the last chunk represents the id that the world server assigned to the object. (The rest is just maskable flags about the object)
