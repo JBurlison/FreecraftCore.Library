@@ -65,6 +65,9 @@
     <Compile Include="Tests\Capture\PacketCaptureTestEntry.cs" />
     <Compile Include="Tests\Capture\VanillaPacketCaptureGenericTests.cs" />
     <Compile Include="Tests\Capture\WotlkPacketCaptureGenericTests.cs" />
+    <Compile Include="WireReadyBitArray\WireReadyBitArrayGetSetTests.cs" />
+    <Compile Include="WireReadyBitArray\WireReadyBitArrayCustomTests.cs" />
+    <Compile Include="WireReadyBitArray\WireReadyBitArrayCtorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DotNetZip">

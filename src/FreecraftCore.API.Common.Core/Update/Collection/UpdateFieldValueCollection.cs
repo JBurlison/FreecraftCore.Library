@@ -15,7 +15,7 @@ namespace FreecraftCore
 		/// The update field mask that can be used to determine
 		/// what values are in the <see cref="UpdateDiffValues"/>.
 		/// </summary>
-		public BitArray UpdateMask { get; }
+		public WireReadyBitArray UpdateMask { get; }
 
 		/// <summary>
 		/// The new values (diff) based on the provided mask.
@@ -24,7 +24,7 @@ namespace FreecraftCore
 		public byte[] UpdateDiffValues { get; }
 
 		/// <inheritdoc />
-		public UpdateFieldValueCollection([NotNull] BitArray updateMask, [NotNull] byte[] updateDiffValues)
+		public UpdateFieldValueCollection([NotNull] WireReadyBitArray updateMask, [NotNull] byte[] updateDiffValues)
 		{
 			UpdateMask = updateMask ?? throw new ArgumentNullException(nameof(updateMask));
 			UpdateDiffValues = updateDiffValues ?? throw new ArgumentNullException(nameof(updateDiffValues));
