@@ -40,7 +40,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// List of group member data contains all member data EXCEPT the local player.
 		/// </summary>
-		private IReadOnlyCollection<GroupListMemberData> GroupMemberDataList => _GroupMemberDataList;
+		public IReadOnlyCollection<GroupListMemberData> GroupMemberDataList => _GroupMemberDataList;
 
 		[WireMember(10)]
 		public ObjectGuid LeaderGuid { get; private set; }
