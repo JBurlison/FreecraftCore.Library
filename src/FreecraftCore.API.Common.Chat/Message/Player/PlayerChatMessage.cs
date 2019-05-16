@@ -3,10 +3,12 @@ using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
+	//TODO: Rewrite this so that we don't need 40 chat packet classes.
 	[DefaultChild(typeof(DefaultPlayerChatMessage))]
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_GUILD, typeof(GuildPlayerChatMessage))] //for guild chat
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_CHANNEL, typeof(ChannelPlayerChatMessage))] //for channel messages
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_WHISPER, typeof(WhisperPlayerChatMessage))] //for player whispers
+	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_SAY, typeof(SayPlayerChatMessage))]
 	[WireDataContract(WireDataContractAttribute.KeyType.Int32, InformationHandlingFlags.DontConsumeRead | InformationHandlingFlags.DontWrite)]
 	public abstract class PlayerChatMessage
 	{
