@@ -15,6 +15,10 @@ namespace FreecraftCore
 		[WireMember(1)]
 		public string PlayerToInvite { get; private set; }
 
+		//TC just discards this.
+		[WireMember(2)]
+		private int Unk1 { get; set; }
+
 		/// <inheritdoc />
 		public ClientGroupInviteRequest([NotNull] string playerToInvite)
 		{
