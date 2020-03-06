@@ -1,6 +1,8 @@
-﻿namespace FreecraftCore
+﻿using System;
+
+namespace FreecraftCore
 {
-	public abstract class BaseGuid
+	public abstract class BaseGuid : IEquatable<BaseGuid>
 	{
 		/// <summary>
 		/// GUID value.
@@ -46,6 +48,27 @@
 		public bool HasAnyType(EntityGuidMask guidType)
 		{
 			return (guidType & ObjectType) != 0;
+		}
+
+		public bool Equals(BaseGuid other)
+		{
+			if (other == null)
+				return false;
+			else
+				return other.RawGuidValue == this.RawGuidValue;
+		}
+
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			if (obj.GetType() != this.GetType()) return false;
+			return Equals((BaseGuid) obj);
+		}
+
+		public override int GetHashCode()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

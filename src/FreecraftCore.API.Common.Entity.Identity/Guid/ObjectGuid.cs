@@ -1,11 +1,12 @@
-﻿using FreecraftCore.Serializer;
+﻿using System;
+using FreecraftCore.Serializer;
 
 
 namespace FreecraftCore
 {
 	//value-type wrapper for the object GUID from Trinitycore
 	[WireDataContract]
-	public class ObjectGuid : BaseGuid//using a class reduces GC pressure but this object should be treated as a value-type and is immutable
+	public class ObjectGuid : BaseGuid, IEquatable<ObjectGuid>//using a class reduces GC pressure but this object should be treated as a value-type and is immutable
 	{
 		/// <summary>
 		/// Represents an Empty or uninitialized <see cref="ObjectGuid"/>.
@@ -48,6 +49,29 @@ namespace FreecraftCore
 		public static implicit operator ObjectGuid(ulong guid)
 		{
 			return new ObjectGuid(guid);
+		}
+
+		public bool Equals(ObjectGuid other)
+		{
+			if (ReferenceEquals(null, other)) return false;
+			if (ReferenceEquals(this, other)) return true;
+			return base.Equals(other) && RawGuidValue == other.RawGuidValue;
+		}
+
+		public override bool Equals(object obj)
+		{
+			if (ReferenceEquals(null, obj)) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			if (obj.GetType() != this.GetType()) return false;
+			return Equals((ObjectGuid) obj);
+		}
+
+		public override int GetHashCode()
+		{
+			unchecked
+			{
+				return (base.GetHashCode() * 397) ^ RawGuidValue.GetHashCode();
+			}
 		}
 	}
 }
