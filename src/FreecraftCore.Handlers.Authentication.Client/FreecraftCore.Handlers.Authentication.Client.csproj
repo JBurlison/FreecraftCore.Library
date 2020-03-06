@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FreecraftCore.Crypto.BigInteger\FreecraftCore.Crypto.BigInteger.csproj" />
-    <ProjectReference Include="..\FreecraftCore.Crypto.SRP6\FreecraftCore.Crypto.SRP6.csproj" />
     <ProjectReference Include="..\FreecraftCore.Packet.Auth\FreecraftCore.Packet.Auth.csproj" />
   </ItemGroup>
 
