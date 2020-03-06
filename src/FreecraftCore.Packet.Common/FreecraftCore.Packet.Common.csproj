@@ -10,8 +10,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.csproj" />
     <ProjectReference Include="..\FreecraftCore.API.Common\FreecraftCore.API.Common.csproj" />
+    <ProjectReference Include="..\FreecraftCore.API.Data\FreecraftCore.API.Data.csproj" />
   </ItemGroup>
 
 </Project>

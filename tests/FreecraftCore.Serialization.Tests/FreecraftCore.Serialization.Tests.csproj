@@ -84,21 +84,13 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FreecraftCore.API.Common.Auth\FreecraftCore.API.Common.Auth.csproj">
-      <Project>{8579CD34-8B4F-4578-AC53-1EA46A92A67E}</Project>
-      <Name>FreecraftCore.API.Common.Auth</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.API.Common.Core\FreecraftCore.API.Common.Core.csproj">
-      <Project>{6ffa57d5-a090-4d52-9d70-22d2cbdd00b1}</Project>
-      <Name>FreecraftCore.API.Common.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.csproj">
-      <Project>{D2FF6BD2-9756-4B05-B141-0847BBD15B78}</Project>
-      <Name>FreecraftCore.API.Common.Entity.Identity</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.API.Common\FreecraftCore.API.Common.csproj">
       <Project>{28a02f90-c0d9-444b-b455-783260f63f85}</Project>
       <Name>FreecraftCore.API.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.API.Data\FreecraftCore.API.Data.csproj">
+      <Project>{B38B8063-ED2D-47FB-8586-75F8290263AF}</Project>
+      <Name>FreecraftCore.API.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Auth\FreecraftCore.Packet.Auth.csproj">
       <Project>{FE9B9306-281B-4134-AA8F-B995F6098B91}</Project>

@@ -292,17 +292,13 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FreecraftCore.API.Common.Core\FreecraftCore.API.Common.Core.csproj">
-      <Project>{6FFA57D5-A090-4D52-9D70-22D2CBDD00B1}</Project>
-      <Name>FreecraftCore.API.Common.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.csproj">
-      <Project>{D2FF6BD2-9756-4B05-B141-0847BBD15B78}</Project>
-      <Name>FreecraftCore.API.Common.Entity.Identity</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.API.Common\FreecraftCore.API.Common.csproj">
       <Project>{28a02f90-c0d9-444b-b455-783260f63f85}</Project>
       <Name>FreecraftCore.API.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.API.Data\FreecraftCore.API.Data.csproj">
+      <Project>{B38B8063-ED2D-47FB-8586-75F8290263AF}</Project>
+      <Name>FreecraftCore.API.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj">
       <Project>{EB22A6AE-5098-40CD-9A58-EF989075FB22}</Project>

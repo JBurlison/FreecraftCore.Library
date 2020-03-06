@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FreecraftCore.API.Common.Auth\FreecraftCore.API.Common.Auth.csproj" />
     <ProjectReference Include="..\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj" />
   </ItemGroup>
 

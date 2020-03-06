@@ -25,8 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.csproj" />
-    <ProjectReference Include="..\FreecraftCore.API.Common.Movement\FreecraftCore.API.Common.Movement.csproj" />
     <ProjectReference Include="..\FreecraftCore.API.Common\FreecraftCore.API.Common.csproj" />
   </ItemGroup>
 

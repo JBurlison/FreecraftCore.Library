@@ -2,7 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreecraftCore.Serializer.API" Version="3.0.38" />
+    <PackageReference Include="Reinterpret.Net" Version="2.0.7" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FreecraftCore.API.Common\FreecraftCore.API.Common.csproj" />

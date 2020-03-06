@@ -9,8 +9,4 @@
     <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="3.0.38" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.csproj" />
-  </ItemGroup>
-
 </Project>

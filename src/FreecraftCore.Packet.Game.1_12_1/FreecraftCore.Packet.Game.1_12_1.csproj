@@ -11,14 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FreecraftCore.API.Common.Addon\FreecraftCore.API.Common.Addon.csproj" />
-    <ProjectReference Include="..\FreecraftCore.API.Common.Auth\FreecraftCore.API.Common.Auth.csproj" />
-    <ProjectReference Include="..\FreecraftCore.API.Common.Character\FreecraftCore.API.Common.Character.csproj" />
-    <ProjectReference Include="..\FreecraftCore.API.Common.Chat\FreecraftCore.API.Common.Chat.csproj" />
-    <ProjectReference Include="..\FreecraftCore.API.Common.Core\FreecraftCore.API.Common.Core.csproj" />
-    <ProjectReference Include="..\FreecraftCore.API.Common.Entity.Identity\FreecraftCore.API.Common.Entity.Identity.csproj" />
-    <ProjectReference Include="..\FreecraftCore.API.Common.Movement\FreecraftCore.API.Common.Movement.csproj" />
-    <ProjectReference Include="..\FreecraftCore.API.Common.Warden\FreecraftCore.API.Common.Warden.csproj" />
+    <ProjectReference Include="..\FreecraftCore.API.Data\FreecraftCore.API.Data.csproj" />
     <ProjectReference Include="..\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj" />
   </ItemGroup>
 
