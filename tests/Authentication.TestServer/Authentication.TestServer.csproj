@@ -103,10 +103,6 @@
       <Project>{8579cd34-8b4f-4578-ac53-1ea46a92a67e}</Project>
       <Name>FreecraftCore.API.Common.Auth</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.Handlers.Authentication.Server\FreecraftCore.Handlers.Authentication.Server.csproj">
-      <Project>{b1b47be4-dccd-4900-8f85-8d039f56996f}</Project>
-      <Name>FreecraftCore.Handlers.Authentication.Server</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Auth\FreecraftCore.Packet.Auth.csproj">
       <Project>{fe9b9306-281b-4134-aa8f-b995f6098b91}</Project>
       <Name>FreecraftCore.Packet.Auth</Name>
