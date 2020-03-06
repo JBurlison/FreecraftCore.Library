@@ -70,6 +70,10 @@
       <Project>{9B65D1B2-F81E-4A8B-9F7B-6343D7F3E4CC}</Project>
       <Name>FreecraftCore.Crypto.BigInteger</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\FreecraftCore.Crypto.Common\FreecraftCore.Crypto.Common.csproj">
+      <Project>{721B7FFE-B749-4569-8CB4-A00C63E65F36}</Project>
+      <Name>FreecraftCore.Crypto.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
