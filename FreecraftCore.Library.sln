@@ -65,6 +65,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Common", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.ObjectUpdatePacketSerializer.PerfTest", "tests\FreecraftCore.ObjectUpdatePacketSerializer.PerfTest\FreecraftCore.ObjectUpdatePacketSerializer.PerfTest.csproj", "{C94EC33B-CCC8-4FE0-B852-30F675017A12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.API.Data", "src\FreecraftCore.API.Data\FreecraftCore.API.Data.csproj", "{B38B8063-ED2D-47FB-8586-75F8290263AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -210,6 +212,12 @@ Global
 		{C94EC33B-CCC8-4FE0-B852-30F675017A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C94EC33B-CCC8-4FE0-B852-30F675017A12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C94EC33B-CCC8-4FE0-B852-30F675017A12}.Release-Library|Any CPU.ActiveCfg = Release-Library|Any CPU
+		{B38B8063-ED2D-47FB-8586-75F8290263AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B38B8063-ED2D-47FB-8586-75F8290263AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B38B8063-ED2D-47FB-8586-75F8290263AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B38B8063-ED2D-47FB-8586-75F8290263AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B38B8063-ED2D-47FB-8586-75F8290263AF}.Release-Library|Any CPU.ActiveCfg = Release|Any CPU
+		{B38B8063-ED2D-47FB-8586-75F8290263AF}.Release-Library|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -243,6 +251,7 @@ Global
 		{54942DA8-4C1F-4766-AE56-424F9384FA8E} = {64D61A43-6570-4F17-BE2D-78CFF756EC24}
 		{28A02F90-C0D9-444B-B455-783260F63F85} = {C5D14933-7D5B-4185-9B9F-38AB1A8A40E6}
 		{C94EC33B-CCC8-4FE0-B852-30F675017A12} = {2E903AB5-E882-49A7-A612-FCCB9F11D540}
+		{B38B8063-ED2D-47FB-8586-75F8290263AF} = {C5D14933-7D5B-4185-9B9F-38AB1A8A40E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77340858-04C1-4169-93A3-121A82FA6670}
