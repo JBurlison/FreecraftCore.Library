@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace FreecraftCore
 {
@@ -36,6 +37,49 @@ namespace FreecraftCore
 		public bool isType(EntityGuidMask guidType)
 		{
 			return guidType == ObjectType;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public bool isType(EntityTypeId typeId)
+		{
+			return TypeId == typeId;
+		}
+
+		/// <summary>
+		/// Based on TrinityCore: ObjectGuid::GetTypeId
+		/// </summary>
+		public EntityTypeId TypeId
+		{
+			get
+			{
+				switch (ObjectType)
+				{
+					case EntityGuidMask.Item:
+						return EntityTypeId.TYPEID_ITEM;
+					//case HighGuid::Container:    return TYPEID_CONTAINER; HighGuid::Container == HighGuid::Item currently
+					case EntityGuidMask.Unit:
+						return EntityTypeId.TYPEID_UNIT;
+					case EntityGuidMask.Pet:
+						return EntityTypeId.TYPEID_UNIT;
+					case EntityGuidMask.Player:
+						return EntityTypeId.TYPEID_PLAYER;
+					case EntityGuidMask.GameObject:
+						return EntityTypeId.TYPEID_GAMEOBJECT;
+					case EntityGuidMask.DynamicObject:
+						return EntityTypeId.TYPEID_DYNAMICOBJECT;
+					case EntityGuidMask.Corpse:
+						return EntityTypeId.TYPEID_CORPSE;
+					case EntityGuidMask.Mo_Transport:
+						return EntityTypeId.TYPEID_GAMEOBJECT;
+					case EntityGuidMask.Vehicle:
+						return EntityTypeId.TYPEID_UNIT;
+					// unknown
+					case EntityGuidMask.Instance:
+					case EntityGuidMask.Group:
+					default:
+						return EntityTypeId.TYPEID_OBJECT;
+				}
+			}
 		}
 
 		//TODO: Doc
