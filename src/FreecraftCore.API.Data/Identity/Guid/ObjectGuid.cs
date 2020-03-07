@@ -75,6 +75,31 @@ namespace FreecraftCore
 			return Equals((ObjectGuid) obj);
 		}
 
+		public static bool operator ==(ObjectGuid lhs, ObjectGuid rhs)
+		{
+			// Check for null on left side.
+			if(Object.ReferenceEquals(lhs, null))
+			{
+				if(Object.ReferenceEquals(rhs, null))
+				{
+					// null == null = true.
+					return true;
+				}
+
+				// Only the left side is null.
+				return false;
+			}
+
+
+			// Equals handles case of null on right side.
+			return lhs.Equals(rhs);
+		}
+
+		public static bool operator !=(ObjectGuid lhs, ObjectGuid rhs)
+		{
+			return !(lhs == rhs);
+		}
+
 		public override int GetHashCode()
 		{
 			unchecked
