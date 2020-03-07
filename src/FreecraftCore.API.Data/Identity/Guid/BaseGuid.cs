@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace FreecraftCore
@@ -19,6 +20,16 @@ namespace FreecraftCore
 		/// Indiciates the current GUID of the object. This is the last chunk represents the id that the world server assigned to the object. (The rest is just maskable flags about the object)
 		/// </summary>
 		public int CurrentObjectGuid => (int)(RawGuidValue & 0x0000000000FFFFFF);
+
+		/// <summary>
+		/// Based on ObjectGuid::GetEntry
+		/// </summary>
+		public int Entry => (int) (HasEntry ? (RawGuidValue >> 24) & 0x0000000000FFFFFF : 0);
+
+		/// <summary>
+		/// Base on ObjectGuid::HasEntry
+		/// </summary>
+		public bool HasEntry => EntityGuidMaskHasEntry(ObjectType);
 
 		/// <summary>
 		/// Indiciates if the GUID is an empty or unitialized GUID.
@@ -43,6 +54,30 @@ namespace FreecraftCore
 		public bool isType(EntityTypeId typeId)
 		{
 			return TypeId == typeId;
+		}
+
+		private static bool EntityGuidMaskHasEntry(EntityGuidMask guidMask)
+		{
+			if (!Enum.IsDefined(typeof(EntityGuidMask), guidMask)) throw new InvalidEnumArgumentException(nameof(guidMask), (int) guidMask, typeof(EntityGuidMask));
+
+			switch(guidMask)
+			{
+				case EntityGuidMask.Item:
+				case EntityGuidMask.Player:
+				case EntityGuidMask.DynamicObject:
+				case EntityGuidMask.Corpse:
+				case EntityGuidMask.Mo_Transport:
+				case EntityGuidMask.Instance:
+				case EntityGuidMask.Group:
+					return false;
+				case EntityGuidMask.GameObject:
+				case EntityGuidMask.Transport:
+				case EntityGuidMask.Unit:
+				case EntityGuidMask.Pet:
+				case EntityGuidMask.Vehicle:
+				default:
+					return true;
+			}
 		}
 
 		/// <summary>
