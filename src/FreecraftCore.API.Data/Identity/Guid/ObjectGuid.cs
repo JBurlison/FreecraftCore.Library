@@ -51,6 +51,15 @@ namespace FreecraftCore
 			return new ObjectGuid(guid);
 		}
 
+		/// <summary>
+		/// Implict cast to from <see cref="PackedGuid"/> to <see cref="ObjectGuid"/>
+		/// </summary>
+		/// <param name="guid"></param>
+		public static implicit operator ObjectGuid(PackedGuid guid)
+		{
+			return new ObjectGuid(guid.RawGuidValue);
+		}
+
 		public bool Equals(ObjectGuid other)
 		{
 			if (ReferenceEquals(null, other)) return false;
