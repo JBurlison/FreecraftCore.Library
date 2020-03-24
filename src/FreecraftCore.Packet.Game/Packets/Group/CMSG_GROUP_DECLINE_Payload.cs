@@ -7,12 +7,12 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_GROUP_DECLINE)]
-	public sealed class ClientGroupDeclinePayload : GamePacketPayload
+	public sealed class CMSG_GROUP_DECLINE_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// This just sends an empty group decline packet.
 		/// </summary>
-		public ClientGroupDeclinePayload()
+		public CMSG_GROUP_DECLINE_Payload()
 		{
 
 		}

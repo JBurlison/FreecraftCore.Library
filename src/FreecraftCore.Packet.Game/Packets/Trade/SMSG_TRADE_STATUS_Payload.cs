@@ -8,13 +8,13 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_TRADE_STATUS)]
-	public sealed class ServerTradeStatusPayload : GamePacketPayload
+	public sealed class SMSG_TRADE_STATUS_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public TradeStatus Status { get; }
 
 		/// <inheritdoc />
-		public ServerTradeStatusPayload(TradeStatus status)
+		public SMSG_TRADE_STATUS_Payload(TradeStatus status)
 		{
 			if(!Enum.IsDefined(typeof(TradeStatus), status)) throw new InvalidEnumArgumentException(nameof(status), (int)status, typeof(TradeStatus));
 
@@ -24,7 +24,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		private ServerTradeStatusPayload()
+		private SMSG_TRADE_STATUS_Payload()
 		{
 
 		}

@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FreecraftCore.Serializer;
+﻿using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_BEGIN_TRADE)]
-	public sealed class ClientBeginTradePayload : GamePacketPayload
+	public sealed class CMSG_BEGIN_TRADE_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// This packet is just empty?? TC handles no data from it.
 		/// </summary>
-		public ClientBeginTradePayload()
+		public CMSG_BEGIN_TRADE_Payload()
 		{
 
 		}
