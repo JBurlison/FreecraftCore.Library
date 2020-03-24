@@ -12,11 +12,15 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		public override bool isValid => true;
 
-		[ReadToEnd]
 		[WireMember(1)]
-		public byte[] Data { get; }
+		public uint Ping { get; private set; }
 
-		public PongResponse()
+		public PongResponse(uint ping)
+		{
+			Ping = ping;
+		}
+
+		private PongResponse()
 		{
 			
 		}

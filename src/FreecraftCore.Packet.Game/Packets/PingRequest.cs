@@ -9,11 +9,22 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		public override bool isValid => true;
 
-		[ReadToEnd]
 		[WireMember(1)]
-		public byte[] Data { get; }
+		public uint Ping { get; private set; }
 
-		public PingRequest()
+		[WireMember(2)]
+		public uint Latency { get; private set; }
+
+		public PingRequest(uint ping, uint latency)
+		{
+			Ping = ping;
+			Latency = latency;
+		}
+
+		/// <summary>
+		/// Serializer ctor.
+		/// </summary>
+		private PingRequest()
 		{
 			
 		}
