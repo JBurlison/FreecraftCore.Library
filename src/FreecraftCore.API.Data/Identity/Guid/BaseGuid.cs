@@ -83,37 +83,69 @@ namespace FreecraftCore
 		/// <summary>
 		/// Based on TrinityCore: ObjectGuid::GetTypeId
 		/// </summary>
-		public EntityTypeId TypeId
+		public EntityTypeId TypeId => MaskToTypeId(ObjectType);
+
+		/// <summary>
+		/// Converts the provided <see cref="EntityGuidMask"/> to <see cref="EntityTypeId"/>.
+		/// </summary>
+		/// <param name="mask">The mask value.</param>
+		/// <returns></returns>
+		public static EntityTypeId MaskToTypeId(EntityGuidMask mask)
 		{
-			get
+			switch (mask)
 			{
-				switch (ObjectType)
-				{
-					case EntityGuidMask.Item:
-						return EntityTypeId.TYPEID_ITEM;
-					//case HighGuid::Container:    return TYPEID_CONTAINER; HighGuid::Container == HighGuid::Item currently
-					case EntityGuidMask.Unit:
-						return EntityTypeId.TYPEID_UNIT;
-					case EntityGuidMask.Pet:
-						return EntityTypeId.TYPEID_UNIT;
-					case EntityGuidMask.Player:
-						return EntityTypeId.TYPEID_PLAYER;
-					case EntityGuidMask.GameObject:
-						return EntityTypeId.TYPEID_GAMEOBJECT;
-					case EntityGuidMask.DynamicObject:
-						return EntityTypeId.TYPEID_DYNAMICOBJECT;
-					case EntityGuidMask.Corpse:
-						return EntityTypeId.TYPEID_CORPSE;
-					case EntityGuidMask.Mo_Transport:
-						return EntityTypeId.TYPEID_GAMEOBJECT;
-					case EntityGuidMask.Vehicle:
-						return EntityTypeId.TYPEID_UNIT;
-					// unknown
-					case EntityGuidMask.Instance:
-					case EntityGuidMask.Group:
-					default:
-						return EntityTypeId.TYPEID_OBJECT;
-				}
+				case EntityGuidMask.Item:
+					return EntityTypeId.TYPEID_ITEM;
+				//case HighGuid::Container:    return TYPEID_CONTAINER; HighGuid::Container == HighGuid::Item currently
+				case EntityGuidMask.Unit:
+					return EntityTypeId.TYPEID_UNIT;
+				case EntityGuidMask.Pet:
+					return EntityTypeId.TYPEID_UNIT;
+				case EntityGuidMask.Player:
+					return EntityTypeId.TYPEID_PLAYER;
+				case EntityGuidMask.GameObject:
+					return EntityTypeId.TYPEID_GAMEOBJECT;
+				case EntityGuidMask.DynamicObject:
+					return EntityTypeId.TYPEID_DYNAMICOBJECT;
+				case EntityGuidMask.Corpse:
+					return EntityTypeId.TYPEID_CORPSE;
+				case EntityGuidMask.Mo_Transport:
+					return EntityTypeId.TYPEID_GAMEOBJECT;
+				case EntityGuidMask.Vehicle:
+					return EntityTypeId.TYPEID_UNIT;
+				// unknown
+				case EntityGuidMask.Instance:
+				case EntityGuidMask.Group:
+				default:
+					return EntityTypeId.TYPEID_OBJECT;
+			}
+		}
+
+		/// <summary>
+		/// Converts the provided <see cref="EntityTypeId"/> to <see cref="EntityGuidMask"/>.
+		/// </summary>
+		/// <param name="type">The type id value.</param>
+		/// <returns></returns>
+		public static EntityGuidMask TypeIdToMask(EntityTypeId type)
+		{
+			switch(type)
+			{
+				case EntityTypeId.TYPEID_ITEM:
+					return EntityGuidMask.Item;
+				//case HighGuid::Container:    return TYPEID_CONTAINER; HighGuid::Container == HighGuid::Item currently
+				case EntityTypeId.TYPEID_UNIT:
+					return EntityGuidMask.Unit;
+				case EntityTypeId.TYPEID_PLAYER:
+					return EntityGuidMask.Player;
+				case EntityTypeId.TYPEID_GAMEOBJECT:
+					return EntityGuidMask.GameObject;
+				case EntityTypeId.TYPEID_DYNAMICOBJECT:
+					return EntityGuidMask.DynamicObject;
+				case EntityTypeId.TYPEID_CORPSE:
+					return EntityGuidMask.Corpse;
+				// unknown
+				default:
+					throw new InvalidOperationException($"Cannot convert: {type} to {nameof(EntityGuidMask)} value.");
 			}
 		}
 

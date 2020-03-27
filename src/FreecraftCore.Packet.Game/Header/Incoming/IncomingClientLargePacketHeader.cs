@@ -71,6 +71,7 @@ namespace FreecraftCore
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static int DecodePacketSize(byte firstByte, byte[] followingBytes)
 		{
+			//(int)(((((uint)data[0]) & 0x7F) << 16) | (((uint)data[1]) << 8) | data[2])
 			return (int)(((((uint)firstByte) & 0x7F) << 16) | (((uint)followingBytes[0]) << 8) | followingBytes[1]);
 		}
 
