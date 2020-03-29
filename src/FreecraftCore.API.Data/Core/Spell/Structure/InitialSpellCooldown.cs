@@ -6,11 +6,11 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore
 {
 	[WireDataContract]
-	public sealed class InitialSpellCooldown<TSpellIdTpye>
-		where TSpellIdTpye : struct
+	public sealed class InitialSpellCooldown<TSpellIdType>
+		where TSpellIdType : struct
 	{
 		[WireMember(1)]
-		public TSpellIdTpye SpellId { get; }
+		public TSpellIdType SpellId { get; }
 
 		[WireMember(2)]
 		public short ItemId { get; }
@@ -27,7 +27,7 @@ namespace FreecraftCore
 		public bool IsInfiteCooldown => SpellCooldown == 1 && CategoryCooldown == 0x80000000;
 
 		/// <inheritdoc />
-		public InitialSpellCooldown(TSpellIdTpye spellId, short itemId, short categoryId, uint spellCooldown, uint categoryCooldown)
+		public InitialSpellCooldown(TSpellIdType spellId, short itemId, short categoryId, uint spellCooldown, uint categoryCooldown)
 		{
 			SpellId = spellId;
 			ItemId = itemId;
