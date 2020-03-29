@@ -8,7 +8,7 @@ namespace FreecraftCore
 	/// Enumeration of all WoW locales.
 	/// See: https://wowdev.wiki/Localization
 	/// </summary>
-	public enum WoWLocale
+	public enum LocaleType : int
 	{
 		enUS = 0,
 		enGB = enUS,
