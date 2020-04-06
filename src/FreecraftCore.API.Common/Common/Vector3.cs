@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FreecraftCore.Serializer;
+using Microsoft.EntityFrameworkCore;
 
 namespace FreecraftCore
 {
+	[Owned]
 	[WireDataContract]
 	public class Vector3<T> : Vector2<T>
 	{
@@ -14,7 +16,7 @@ namespace FreecraftCore
 		/// X value.
 		/// </summary>
 		[WireMember(1)]
-		public T Z { get; }
+		public T Z { get; private set; }
 
 		public Vector3(T x, T y, T z)
 			: base(x, y)
