@@ -8,16 +8,27 @@ namespace FreecraftCore
 	[WireDataContract]
 	public enum CharacterRace : byte
 	{
-		Human = 1,
-		Orc = 2,
-		Dwarf = 3,
-		Nightelf = 4,
-		Undead = 5,
-		Tauren = 6,
-		Gnome = 7,
-		Troll = 8,
-		Goblin = 9,
-		Bloodelf = 10,
-		Draenei = 11,
+		NONE = 0,
+		HUMAN = 1,
+		ORC = 2,
+		DWARF = 3,
+		NIGHTELF = 4,
+		UNDEAD_PLAYER = 5,
+		TAUREN = 6,
+		GNOME = 7,
+		TROLL = 8,
+		//GOBLIN              = 9,
+		BLOODELF = 10,
+		DRAENEI = 11
+		//FEL_ORC            = 12,
+		//NAGA               = 13,
+		//BROKEN             = 14,
+		//SKELETON           = 15,
+		//VRYKUL             = 16,
+		//TUSKARR            = 17,
+		//FOREST_TROLL       = 18,
+		//TAUNKA             = 19,
+		//NORTHREND_SKELETON = 20,
+		//ICE_TROLL          = 21
 	}
 }
