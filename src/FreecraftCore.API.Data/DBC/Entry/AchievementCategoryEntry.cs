@@ -16,9 +16,9 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[JsonObject]
-	[StringDBC(typeof(AchievementCategory<>))]
+	[StringDBC(typeof(AchievementCategoryEntry<>))]
 	[Table("Achievement_Category")]
-	public sealed class AchievementCategory<TStringType> : IDBCEntryIdentifiable
+	public sealed class AchievementCategoryEntry<TStringType> : IDBCEntryIdentifiable
 	{
 		[NotMapped]
 		[JsonIgnore]
@@ -38,7 +38,7 @@ namespace FreecraftCore
 		[WireMember(4)]
 		public int UIOrder { get; private set; }
 
-		public AchievementCategory(int achievementCategoryId, int parentId, [NotNull] LocalizedStringDBC<TStringType> name, int uiOrder)
+		public AchievementCategoryEntry(int achievementCategoryId, int parentId, [NotNull] LocalizedStringDBC<TStringType> name, int uiOrder)
 		{
 			AchievementCategoryId = achievementCategoryId;
 			ParentId = parentId;
@@ -50,7 +50,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		public AchievementCategory()
+		public AchievementCategoryEntry()
 		{
 			
 		}
