@@ -19,6 +19,8 @@ namespace FreecraftCore
 	[Table("Map")]
 	public sealed class MapEntry<TStringType> : IDBCEntryIdentifiable
 	{
+		public static readonly string[] INTERNAL_FIELD_NAMES = new string[2] {nameof(PvP), nameof(ExpansionId)};
+
 		/// <summary>
 		/// The index.
 		/// </summary>
