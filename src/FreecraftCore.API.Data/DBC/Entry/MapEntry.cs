@@ -78,7 +78,7 @@ namespace FreecraftCore
 		public int TimeOfDayOverride { get; private set; }
 
 		[WireMember(15)]
-		public int ExpansionId { get; private set; }
+		internal int ExpansionId { get; private set; }
 
 		[NotMapped]
 		[JsonIgnore]
