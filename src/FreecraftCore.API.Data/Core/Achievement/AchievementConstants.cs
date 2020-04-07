@@ -10,5 +10,7 @@ namespace FreecraftCore
 		public const int ACHIEVEMENT_CRITERIA_TYPE_TOTAL = 124;
 
 		public const int ACHIEVEMENT_CRITERIA_CONDITION_MAX = 14;
+
+		public const int ACHIEVEMENT_TIMED_TYPE_MAX = 10;
 	}
 }
