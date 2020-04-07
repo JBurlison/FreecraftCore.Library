@@ -18,7 +18,7 @@ namespace FreecraftCore
 	[JsonObject]
 	[StringDBC(typeof(AchievementCategoryEntry<>))]
 	[Table("Achievement_Category")]
-	public sealed class AchievementCategoryEntry<TStringType> : IDBCEntryIdentifiable
+	public sealed class AchievementCategoryEntry<TStringType> : IDBCEntryIdentifiable, IDBCUIOrderable
 	{
 		[NotMapped]
 		[JsonIgnore]
