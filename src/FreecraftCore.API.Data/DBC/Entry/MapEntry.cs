@@ -114,7 +114,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		private MapEntry()
+		public MapEntry()
 		{
 
 		}
