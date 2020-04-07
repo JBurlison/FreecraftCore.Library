@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 namespace FreecraftCore
 {
 	[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
-	public sealed class GenericDbcModelAttribute : Attribute
+	public class GenericDbcModelAttribute : Attribute
 	{
 		/// <summary>
 		/// Indicates the closed generic type
