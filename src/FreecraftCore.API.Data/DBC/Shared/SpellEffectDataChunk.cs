@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -8,7 +9,7 @@ namespace FreecraftCore
 {
 	[Owned]
 	[WireDataContract]
-	public sealed class SpellEffectDataChunk<TDataType>
+	public sealed class SpellEffectDataChunk<TDataType> : IEnumerable<TDataType>
 	{
 		//This might seem ridiclous that we don't use arrays BUT EF does not support arrays
 		//for the models so we MUST use seperate fields.
@@ -35,6 +36,18 @@ namespace FreecraftCore
 		protected SpellEffectDataChunk()
 		{
 			
+		}
+
+		public IEnumerator<TDataType> GetEnumerator()
+		{
+			yield return Effect1;
+			yield return Effect2;
+			yield return Effect3;
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return GetEnumerator();
 		}
 	}
 }
