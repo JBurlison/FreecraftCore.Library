@@ -11,7 +11,7 @@ namespace FreecraftCore
 	//Exists because EF Core doesn't support arrays.
 	[Owned]
 	[WireDataContract]
-	public sealed class GenericStaticallySizedArrayChunkThree<T> : IEnumerable<T>, IReadOnlyList<T>
+	public sealed class GenericStaticallySizedArrayChunkThree<T>// : IEnumerable<T>, IReadOnlyList<T> TODO: Owned types cannot have interfaces
 	{
 		[Column("1")]
 		[WireMember(1)]
@@ -45,11 +45,6 @@ namespace FreecraftCore
 			yield return One;
 			yield return Two;
 			yield return Three;
-		}
-
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return GetEnumerator();
 		}
 
 		public int Count => 3;
