@@ -13,15 +13,12 @@ namespace FreecraftCore
 	[WireDataContract]
 	public sealed class GenericStaticallySizedArrayChunkThree<T>// : IEnumerable<T>, IReadOnlyList<T> TODO: Owned types cannot have interfaces
 	{
-		[Column("1")]
 		[WireMember(1)]
 		public T One { get; private set; }
 
-		[Column("2")]
 		[WireMember(2)]
 		public T Two { get; private set; }
 
-		[Column("3")]
 		[WireMember(3)]
 		public T Three { get; private set; }
 

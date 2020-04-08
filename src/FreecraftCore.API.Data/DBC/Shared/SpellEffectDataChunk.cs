@@ -35,7 +35,7 @@ namespace FreecraftCore
 		/// </summary>
 		protected SpellEffectDataChunk()
 		{
-			
+
 		}
 
 		public IEnumerator<TDataType> GetEnumerator()

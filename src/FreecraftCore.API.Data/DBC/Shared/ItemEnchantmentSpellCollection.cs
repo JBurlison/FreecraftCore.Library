@@ -16,18 +16,21 @@ namespace FreecraftCore
 		[WireMember(1)]
 		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> Types { get; private set; }
 
-		[Column("Amount")]
 		[WireMember(2)]
-		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> Amounts { get; private set; }
+		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> PointsMinimum { get; private set; }
+
+		[WireMember(3)]
+		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> PointsMaximum { get; private set; }
 
 		[Column("SpellId")]
-		[WireMember(3)]
+		[WireMember(4)]
 		public GenericStaticallySizedArrayChunkThree<int> SpellIds { get; private set; }
 
-		public ItemEnchantmentSpellCollection([NotNull] GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> types, [NotNull] GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> amounts, [NotNull] GenericStaticallySizedArrayChunkThree<int> spellIds)
+		public ItemEnchantmentSpellCollection([NotNull] GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> types, [NotNull] GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> pointsMinimum, [NotNull] GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> pointsMaximum, [NotNull] GenericStaticallySizedArrayChunkThree<int> spellIds)
 		{
 			Types = types ?? throw new ArgumentNullException(nameof(types));
-			Amounts = amounts ?? throw new ArgumentNullException(nameof(amounts));
+			PointsMinimum = pointsMinimum ?? throw new ArgumentNullException(nameof(pointsMinimum));
+			PointsMaximum = pointsMaximum ?? throw new ArgumentNullException(nameof(pointsMaximum));
 			SpellIds = spellIds ?? throw new ArgumentNullException(nameof(spellIds));
 		}
 
