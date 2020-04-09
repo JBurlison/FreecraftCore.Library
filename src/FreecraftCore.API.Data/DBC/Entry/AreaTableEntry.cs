@@ -41,7 +41,6 @@ namespace FreecraftCore
 		/// </summary>
 		[JsonIgnore]
 		[ForeignKey(nameof(MapId))]
-		[WireMember(3)]
 		public virtual MapEntry<TStringType> Map { get; private set; }
 
 		//TODO: Support nav property. 0 == null in blizzlike.
