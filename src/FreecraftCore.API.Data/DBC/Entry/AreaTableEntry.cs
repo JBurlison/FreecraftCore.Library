@@ -144,12 +144,13 @@ namespace FreecraftCore
 			return areaEntry.ParentAreaId == 0;
 		}
 
+		//FreecraftCore has its own BigInteger implementation so we must be careful here with namespace.
 		//Requires 128bit number.
-		public static BigInteger GetAreaMaskValue<TStringType>([NotNull] this AreaTableEntry<TStringType> areaEntry)
+		public static System.Numerics.BigInteger GetAreaMaskValue<TStringType>([NotNull] this AreaTableEntry<TStringType> areaEntry)
 		{
 			if(areaEntry == null) throw new ArgumentNullException(nameof(areaEntry));
 
-			return new BigInteger(1) << areaEntry.AreaBit;
+			return new System.Numerics.BigInteger(1) << areaEntry.AreaBit;
 		}
 
 		public static bool RewardsExplorationExperience<TStringType>([NotNull] this AreaTableEntry<TStringType> areaEntry)
