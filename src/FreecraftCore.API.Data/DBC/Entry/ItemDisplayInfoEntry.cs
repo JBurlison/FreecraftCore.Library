@@ -17,11 +17,14 @@ namespace FreecraftCore
 	[DBC]
 	[WireDataContract]
 	[JsonObject]
+	[StringDBC(typeof(ItemDisplayInfoEntry<>))]
 	[Table("ItemDisplayInfo")]
-	public sealed class ItemDisplayInfoEntry : IDBCEntryIdentifiable
+	public sealed class ItemDisplayInfoEntry<TStringType> : IDBCEntryIdentifiable
+		where TStringType : class
 	{
 		/// <inheritdoc />
 		[JsonIgnore]
+		[NotMapped]
 		public uint EntryId => (uint)ItemDisplayId;
 
 		[Key]
@@ -29,95 +32,99 @@ namespace FreecraftCore
 		public int ItemDisplayId { get; private set; }
 
 		[WireMember(2)]
-		public string LeftModelName { get; private set; }
+		public TStringType LeftModelName { get; private set; }
 
 		[WireMember(3)]
-		public string RightModelName { get; private set; }
+		public TStringType RightModelName { get; private set; }
 
 		[WireMember(4)]
-		public string LeftModelTextureName { get; private set; }
+		public TStringType LeftModelTextureName { get; private set; }
 
 		[WireMember(5)]
-		public string RightModelTextureName { get; private set; }
+		public TStringType RightModelTextureName { get; private set; }
 
 		/// <summary>
 		/// First icon is actually 
 		/// </summary>
 		[WireMember(6)]
-		public Vector2<string> InventoryIcon { get; private set; }
+		public TStringType InventoryIcon1 { get; private set; }
+
+		[WireMember(7)]
+		public TStringType InventoryIcon2 { get; private set; }
 
 		//TODO: Don't understand these, probably not going to bother using them for emulation.
-		[WireMember(7)]
+		[WireMember(8)]
 		public Vector3<int> GeosetGroup { get; private set; }
 
 		/// <summary>
 		/// TODO: Unknown flags.
 		/// </summary>
-		[WireMember(8)]
+		[WireMember(9)]
 		public int Flags { get; private set; }
 
-		[WireMember(9)]
+		[WireMember(10)]
 		public int SpellVisualId { get; private set; }
 
 		/// <summary>
 		/// ItemGroupSounds.dbc
 		/// </summary>
-		[WireMember(10)]
+		[WireMember(11)]
 		public int GroupSoundId { get; private set; }
 
 		/// <summary>
 		/// HelmetGeosetVisData.dbc
 		/// </summary>
-		[WireMember(11)]
+		[WireMember(12)]
 		public int HelmentGeosetVisualMale { get; private set; }
 
 		/// <summary>
 		/// HelmetGeosetVisData.dbc
 		/// </summary>
-		[WireMember(12)]
+		[WireMember(13)]
 		public int HelmentGeosetVisualFemale { get; private set; }
 
-		[WireMember(13)]
-		public string UpperArmTextureName { get; private set; }
-
 		[WireMember(14)]
-		public string LowerArmTextureName { get; private set; }
+		public TStringType UpperArmTextureName { get; private set; }
 
 		[WireMember(15)]
-		public string HandsTextureName { get; private set; }
+		public TStringType LowerArmTextureName { get; private set; }
 
 		[WireMember(16)]
-		public string UpperTorsoTextureName { get; private set; }
+		public TStringType HandsTextureName { get; private set; }
 
 		[WireMember(17)]
-		public string LowerTorsoTextureName { get; private set; }
+		public TStringType UpperTorsoTextureName { get; private set; }
 
 		[WireMember(18)]
-		public string UpperLegTextureName { get; private set; }
+		public TStringType LowerTorsoTextureName { get; private set; }
 
 		[WireMember(19)]
-		public string LowerLegTextureName { get; private set; }
+		public TStringType UpperLegTextureName { get; private set; }
 
 		[WireMember(20)]
-		public string FootTextureName { get; private set; }
+		public TStringType LowerLegTextureName { get; private set; }
+
+		[WireMember(21)]
+		public TStringType FootTextureName { get; private set; }
 
 		/// <summary>
 		/// ItemVisuals.dbc
 		/// </summary>
-		[WireMember(21)]
+		[WireMember(22)]
 		public int ItemVisualId { get; private set; }
 
-		[WireMember(22)]
+		[WireMember(23)]
 		public int ParticleColorId { get; private set; }
 
-		public ItemDisplayInfoEntry(int itemDisplayId, [NotNull] string leftModelName, [NotNull] string rightModelName, [NotNull] string leftModelTextureName, [NotNull] string rightModelTextureName, [NotNull] Vector2<string> inventoryIcon, [NotNull] Vector3<int> geosetGroup, int flags, int spellVisualId, int groupSoundId, int helmentGeosetVisualMale, int helmentGeosetVisualFemale, [NotNull] string upperArmTextureName, [NotNull] string lowerArmTextureName, [NotNull] string handsTextureName, [NotNull] string upperTorsoTextureName, [NotNull] string lowerTorsoTextureName, [NotNull] string upperLegTextureName, [NotNull] string lowerLegTextureName, [NotNull] string footTextureName, int itemVisualId, int particleColorId)
+		public ItemDisplayInfoEntry(int itemDisplayId, [NotNull] TStringType leftModelName, [NotNull] TStringType rightModelName, [NotNull] TStringType leftModelTextureName, [NotNull] TStringType rightModelTextureName, [NotNull] TStringType inventoryIcon1, [NotNull] TStringType inventoryIcon2, [NotNull] Vector3<int> geosetGroup, int flags, int spellVisualId, int groupSoundId, int helmentGeosetVisualMale, int helmentGeosetVisualFemale, [NotNull] TStringType upperArmTextureName, [NotNull] TStringType lowerArmTextureName, [NotNull] TStringType handsTextureName, [NotNull] TStringType upperTorsoTextureName, [NotNull] TStringType lowerTorsoTextureName, [NotNull] TStringType upperLegTextureName, [NotNull] TStringType lowerLegTextureName, [NotNull] TStringType footTextureName, int itemVisualId, int particleColorId)
 		{
 			ItemDisplayId = itemDisplayId;
 			LeftModelName = leftModelName ?? throw new ArgumentNullException(nameof(leftModelName));
 			RightModelName = rightModelName ?? throw new ArgumentNullException(nameof(rightModelName));
 			LeftModelTextureName = leftModelTextureName ?? throw new ArgumentNullException(nameof(leftModelTextureName));
 			RightModelTextureName = rightModelTextureName ?? throw new ArgumentNullException(nameof(rightModelTextureName));
-			InventoryIcon = inventoryIcon ?? throw new ArgumentNullException(nameof(inventoryIcon));
+			InventoryIcon1 = inventoryIcon1 ?? throw new ArgumentNullException(nameof(inventoryIcon1));
+			InventoryIcon2 = inventoryIcon2 ?? throw new ArgumentNullException(nameof(inventoryIcon2));
 			GeosetGroup = geosetGroup ?? throw new ArgumentNullException(nameof(geosetGroup));
 			Flags = flags;
 			SpellVisualId = spellVisualId;
