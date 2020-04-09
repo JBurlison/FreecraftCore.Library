@@ -19,7 +19,7 @@ namespace FreecraftCore
 	[WireDataContract]
 	[JsonObject]
 	[StringDBC(typeof(AreaTableEntry<>))]
-	[Table("AreaTableE")]
+	[Table("AreaTable")]
 	public class AreaTableEntry<TStringType> : IDBCEntryIdentifiable
 	{
 		[NotMapped]
