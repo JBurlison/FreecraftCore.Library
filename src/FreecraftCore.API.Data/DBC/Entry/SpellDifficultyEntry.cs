@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 namespace FreecraftCore
 {
 	//TODO: Look into how this works
+	[DBC]
 	[JsonObject]
 	[WireDataContract]
 	[Table("SpellDifficulty")]

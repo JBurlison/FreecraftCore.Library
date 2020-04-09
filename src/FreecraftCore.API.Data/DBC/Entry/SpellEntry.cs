@@ -13,6 +13,7 @@ namespace FreecraftCore
 	/// <summary>
 	/// The structure for the Spell DBC entry.
 	/// </summary>
+	[DBC]
 	[GenericDbcModel(typeof(SpellEntry<StringDBCReference>), typeof(SpellEntry<string>))]
 	[Table("Spell")]
 	[JsonObject]

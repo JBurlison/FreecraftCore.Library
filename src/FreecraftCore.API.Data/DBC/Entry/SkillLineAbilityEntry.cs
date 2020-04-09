@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 
 namespace FreecraftCore
 {
+	[DBC]
 	[WireDataContract]
 	[JsonObject]
 	[Table("SkillLineAbility")]

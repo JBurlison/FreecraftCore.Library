@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 namespace FreecraftCore
 {
 	//Item.dbc
+	[DBC]
 	[WireDataContract]
 	[JsonObject]
 	[Table("Item")]

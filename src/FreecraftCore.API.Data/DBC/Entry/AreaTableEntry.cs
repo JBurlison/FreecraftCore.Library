@@ -16,6 +16,7 @@ namespace FreecraftCore
 	/// Table model for AreaTable.dbc
 	/// https://wowdev.wiki/DB/AreaTable
 	/// </summary>
+	[DBC]
 	[WireDataContract]
 	[JsonObject]
 	[StringDBC(typeof(AreaTableEntry<>))]

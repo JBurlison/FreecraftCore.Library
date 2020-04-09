@@ -13,6 +13,7 @@ namespace FreecraftCore
 	/// Table model for Map.dbc
 	/// https://wowdev.wiki/DB/Map
 	/// </summary>
+	[DBC]
 	[GenericDbcModel(typeof(MapEntry<StringDBCReference>), typeof(MapEntry<string>))]
 	[WireDataContract]
 	[JsonObject]

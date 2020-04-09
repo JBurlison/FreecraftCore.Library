@@ -14,6 +14,7 @@ namespace FreecraftCore
 	/// Table model for SpellItemEnchantment.dbc
 	/// https://wowdev.wiki/DB/SpellItemEnchantment
 	/// </summary>
+	[DBC]
 	[WireDataContract]
 	[JsonObject]
 	[StringDBC(typeof(SpellItemEnchantmentEntry<>))]

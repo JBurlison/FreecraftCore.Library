@@ -14,6 +14,7 @@ namespace FreecraftCore
 	/// Table model for Achievement_Category.dbc
 	/// https://wowdev.wiki/DB/Achievement_Category
 	/// </summary>
+	[DBC]
 	[WireDataContract]
 	[JsonObject]
 	[StringDBC(typeof(AchievementCategoryEntry<>))]

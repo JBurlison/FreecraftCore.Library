@@ -13,6 +13,7 @@ namespace FreecraftCore
 	/// Table model for AreTrigger.dbc
 	/// https://wowdev.wiki/DB/AreaTrigger
 	/// </summary>
+	[DBC]
 	[WireDataContract]
 	[JsonObject]
 	[Table("AreaTrigger")]

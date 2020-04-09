@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 namespace FreecraftCore
 {
 	//Referenced in Spell.dbc as CastingTimeIndex
+	[DBC]
 	[JsonObject]
 	[WireDataContract]
 	[Table("SpellCastTimes")]

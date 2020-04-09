@@ -13,6 +13,7 @@ namespace FreecraftCore
 	/// Table model for NamesProfanity.dbc
 	/// https://wowdev.wiki/DB/NamesProfanity
 	/// </summary>
+	[DBC]
 	[GenericDbcModel(typeof(ProfanityNamesEntry<StringDBCReference>), typeof(ProfanityNamesEntry<string>))]
 	[WireDataContract]
 	[JsonObject]
