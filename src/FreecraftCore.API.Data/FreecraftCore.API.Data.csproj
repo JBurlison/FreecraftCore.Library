@@ -17,4 +17,8 @@
     <ProjectReference Include="..\FreecraftCore.API.Common\FreecraftCore.API.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DBC\Reader\" />
+  </ItemGroup>
+
 </Project>
