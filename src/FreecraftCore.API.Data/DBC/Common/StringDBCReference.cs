@@ -5,6 +5,11 @@ using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
+	public interface IStringPointerReferenceable
+	{
+		uint StringReferenceOffset { get; }
+	}
+
 	[WireDataContract]
 	public sealed class StringDBCReference
 	{
