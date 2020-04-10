@@ -10,7 +10,7 @@ namespace FreecraftCore
 {
 	//Referenced by Spell.dbc
 	[DBC]
-	[GenericDbcModel(typeof(SpellRangeEntry<StringDBCReference>), typeof(SpellRangeEntry<string>))]
+	[StringDBC(typeof(SpellRangeEntry<>))]
 	[Table("SpellRange")]
 	[JsonObject]
 	[WireDataContract]
