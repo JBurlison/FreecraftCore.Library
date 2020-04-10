@@ -11,7 +11,7 @@ namespace FreecraftCore
 	}
 
 	[WireDataContract]
-	public sealed class StringDBCReference
+	public sealed class StringDBCReference : IStringPointerReferenceable
 	{
 		[WireMember(1)]
 		public uint StringReferenceOffset { get; private set; }
@@ -28,6 +28,28 @@ namespace FreecraftCore
 		protected StringDBCReference()
 		{
 			
+		}
+	}
+
+	//TContainedType is there to carry DBC type information.
+	[WireDataContract]
+	public sealed class StringDBCReference<TContainedType> : IStringPointerReferenceable
+	{
+		[WireMember(1)]
+		public uint StringReferenceOffset { get; private set; }
+
+		/// <inheritdoc />
+		public StringDBCReference(uint stringReferenceOffset)
+		{
+			StringReferenceOffset = stringReferenceOffset;
+		}
+
+		/// <summary>
+		/// Serializer ctor.
+		/// </summary>
+		protected StringDBCReference()
+		{
+
 		}
 	}
 }
