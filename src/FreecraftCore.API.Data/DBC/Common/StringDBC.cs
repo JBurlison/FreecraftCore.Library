@@ -11,7 +11,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Null terminated ASCII string.
 		/// </summary>
-		[Encoding(EncodingType.ASCII)]
+		[Encoding(EncodingType.UTF8)]
 		[WireMember(1)]
 		public string StringValue { get; private set; }
 

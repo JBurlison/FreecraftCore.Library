@@ -45,7 +45,7 @@ namespace FreecraftCore
 				stringMap.Add((uint)currentOffset, readString);
 
 				//We must move the offset forward length + null terminator
-				currentOffset += readString.Length + 1;
+				currentOffset += Encoding.UTF8.GetByteCount(readString) + 1;
 			}
 
 			return stringMap;

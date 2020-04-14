@@ -288,7 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FreecraftCore.Serializer">
-      <Version>3.0.38</Version>
+      <Version>3.0.39</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
