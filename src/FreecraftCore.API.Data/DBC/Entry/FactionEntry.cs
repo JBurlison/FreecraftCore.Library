@@ -80,10 +80,10 @@ namespace FreecraftCore
 		public int ParentFactionId { get; private set; }
 
 		[WireMember(5)]
-		public int ParentFactionSpillInMod { get; private set; }
+		public float ParentFactionSpillInMod { get; private set; }
 
 		[WireMember(6)]
-		public int ParentFactionSpillOutMod { get; private set; }
+		public float ParentFactionSpillOutMod { get; private set; }
 
 		[WireMember(7)]
 		public int ParentFactionSpillInMaxRank { get; private set; }
