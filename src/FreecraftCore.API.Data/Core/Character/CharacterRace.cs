@@ -1,4 +1,5 @@
-﻿using FreecraftCore.Serializer;
+﻿using System;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -30,5 +31,23 @@ namespace FreecraftCore
 		//TAUNKA             = 19,
 		//NORTHREND_SKELETON = 20,
 		//ICE_TROLL          = 21
+	}
+
+	[Flags]
+	[WireDataContract]
+	public enum CharacterRaceMask : int
+	{
+		NONE = 0,
+		HUMAN = 1 << CharacterRace.HUMAN - 1,
+		ORC = 1 << CharacterRace.ORC - 1,
+		DWARF = 1 << CharacterRace.DWARF - 1,
+		NIGHTELF = 1 << CharacterRace.NIGHTELF - 1,
+		UNDEAD_PLAYER = 1 << CharacterRace.UNDEAD_PLAYER - 1,
+		TAUREN = 1 << CharacterRace.TAUREN - 1,
+		GNOME = 1 << CharacterRace.GNOME - 1,
+		TROLL = 1 << CharacterRace.TROLL - 1,
+		//GOBLIN              = 9,
+		BLOODELF = 1 << CharacterRace.BLOODELF - 1,
+		DRAENEI = 1 << CharacterRace.DRAENEI - 1
 	}
 }
