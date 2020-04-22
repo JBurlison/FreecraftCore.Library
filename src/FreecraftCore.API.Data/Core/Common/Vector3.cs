@@ -10,17 +10,30 @@ namespace FreecraftCore
 {
 	[Owned]
 	[WireDataContract]
-	public class Vector3<T> : Vector2<T>
+	public class Vector3<T>// : Vector2<T> TODO: For compatibility with EF Core owned types we cannot use inheritence
 	{
 		/// <summary>
 		/// X value.
 		/// </summary>
 		[WireMember(1)]
+		public T X { get; private set; }
+
+		/// <summary>
+		/// Y value.
+		/// </summary>
+		[WireMember(2)]
+		public T Y { get; private set; }
+
+		/// <summary>
+		/// Z value.
+		/// </summary>
+		[WireMember(3)]
 		public T Z { get; private set; }
 
 		public Vector3(T x, T y, T z)
-			: base(x, y)
 		{
+			X = x;
+			Y = y;
 			Z = z;
 		}
 
@@ -32,7 +45,7 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		public override string ToString()
 		{
-			return $"{base.ToString()} Z: {Z}";
+			return $"X: {X} Y: {Y} Z: {Z}";
 		}
 	}
 }
