@@ -58,7 +58,7 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		internal int FactionId { get; private set; }
+		public int FactionId { get; private set; }
 
 		/// <summary>
 		/// Each faction that has gainable rep has a unique number. All factions that you can not gain rep with have -1. Max value 127.
