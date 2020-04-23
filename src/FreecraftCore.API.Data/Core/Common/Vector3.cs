@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FreecraftCore.Serializer;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace FreecraftCore
 {
@@ -29,6 +31,26 @@ namespace FreecraftCore
 		/// </summary>
 		[WireMember(3)]
 		public T Z { get; private set; }
+
+		[JsonIgnore]
+		[NotMapped]
+		public T this[int index]
+		{
+			get
+			{
+				switch(index)
+				{
+					case 0:
+						return X;
+					case 1:
+						return Y;
+					case 2:
+						return Z;
+					default:
+						throw new ArgumentOutOfRangeException($"Index: {index} is out of the bounds of {nameof(Vector4<T>)}");
+				}
+			}
+		}
 
 		public Vector3(T x, T y, T z)
 		{

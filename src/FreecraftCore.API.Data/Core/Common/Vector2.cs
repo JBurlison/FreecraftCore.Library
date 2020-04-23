@@ -1,5 +1,8 @@
-﻿using FreecraftCore.Serializer;
+﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using FreecraftCore.Serializer;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace FreecraftCore
 {
@@ -22,6 +25,24 @@ namespace FreecraftCore
 		/// </summary>
 		[WireMember(2)]
 		public T Y { get; private set; }
+
+		[JsonIgnore]
+		[NotMapped]
+		public T this[int index]
+		{
+			get
+			{
+				switch(index)
+				{
+					case 0:
+						return X;
+					case 1:
+						return Y;
+					default:
+						throw new ArgumentOutOfRangeException($"Index: {index} is out of the bounds of {nameof(Vector4<T>)}");
+				}
+			}
+		}
 
 		/// <inheritdoc />
 		public Vector2(T x, T y)
