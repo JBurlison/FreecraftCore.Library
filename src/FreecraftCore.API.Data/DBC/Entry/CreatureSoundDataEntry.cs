@@ -56,6 +56,8 @@ namespace FreecraftCore
 		/// <summary>
 		/// NOT SoundEntries.dbc, but FootstepTerrainLookupRec.m_CreatureFootstepID
 		/// AKA FootstepTerrainLookup.dbc
+		///
+		/// TODO: Implement FootstepTerrainLookup dbc.
 		/// </summary>
 		[WireMember(10)]
 		public int SoundFootstepId { get; private set; }
