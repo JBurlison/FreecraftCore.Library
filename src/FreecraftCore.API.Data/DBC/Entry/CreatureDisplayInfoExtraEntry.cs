@@ -189,4 +189,114 @@ namespace FreecraftCore
 			
 		}
 	}
+
+	public static class CreatureDisplayInfoExtraExtensions
+	{
+		public static bool CanEquipPlayerEquipment<TStringType>([NotNull] this CreatureDisplayInfoExtraEntry<TStringType> entry)
+			where TStringType : class
+		{
+			if (entry == null) throw new ArgumentNullException(nameof(entry));
+
+			return entry.Flags.HasFlag(CreatureDisplayInfoExtraFlags.CanEquipPlayerEquipment);
+		}
+
+		public static bool HasEquipment<TStringType>([NotNull] this CreatureDisplayInfoExtraEntry<TStringType> entry, EquipmentSlots slot)
+			where TStringType : class
+		{
+			if (entry == null) throw new ArgumentNullException(nameof(entry));
+			if (!Enum.IsDefined(typeof(EquipmentSlots), slot)) throw new InvalidEnumArgumentException(nameof(slot), (int) slot, typeof(EquipmentSlots));
+
+			switch (slot)
+			{
+				case EquipmentSlots.HEAD:
+					return entry.HelmItemId > 0;
+				case EquipmentSlots.SHOULDERS:
+					return entry.ShoulderItemId > 0;
+				case EquipmentSlots.BODY:
+					return entry.ShirtItemId > 0;
+				case EquipmentSlots.CHEST:
+					return entry.CuirassItemId > 0;
+				case EquipmentSlots.WAIST:
+					return entry.BeltItemId > 0;
+				case EquipmentSlots.LEGS:
+					return entry.LegsItemId > 0;
+				case EquipmentSlots.FEET:
+					return entry.BootsItemId > 0;
+				case EquipmentSlots.WRISTS:
+					return entry.WristItemId > 0;
+				case EquipmentSlots.HANDS:
+					return entry.GlovesItemId > 0;
+				case EquipmentSlots.BACK:
+					return entry.CapeItemId > 0;
+				case EquipmentSlots.TABARD:
+					return entry.TabardItemId > 0;
+
+				//These are not on creature display info extra entry.
+				case EquipmentSlots.FINGER1:
+				case EquipmentSlots.FINGER2:
+				case EquipmentSlots.TRINKET1:
+				case EquipmentSlots.TRINKET2:
+				case EquipmentSlots.MAINHAND:
+				case EquipmentSlots.OFFHAND:
+				case EquipmentSlots.RANGED:
+				case EquipmentSlots.NECK:
+					return false;
+				default:
+					throw new ArgumentOutOfRangeException(nameof(slot), slot, null);
+			}
+		}
+
+		/// <summary>
+		/// Check <see cref="HasEquipment{TStringType}"/> first.
+		/// </summary>
+		/// <typeparam name="TStringType"></typeparam>
+		/// <param name="entry"></param>
+		/// <param name="slot"></param>
+		/// <returns></returns>
+		public static int GetEquipmentId<TStringType>([NotNull] this CreatureDisplayInfoExtraEntry<TStringType> entry, EquipmentSlots slot)
+			where TStringType : class
+		{
+			if(entry == null) throw new ArgumentNullException(nameof(entry));
+			if(!Enum.IsDefined(typeof(EquipmentSlots), slot)) throw new InvalidEnumArgumentException(nameof(slot), (int)slot, typeof(EquipmentSlots));
+
+			switch(slot)
+			{
+				case EquipmentSlots.HEAD:
+					return entry.HelmItemId;
+				case EquipmentSlots.SHOULDERS:
+					return entry.ShoulderItemId;
+				case EquipmentSlots.BODY:
+					return entry.ShirtItemId;
+				case EquipmentSlots.CHEST:
+					return entry.CuirassItemId;
+				case EquipmentSlots.WAIST:
+					return entry.BeltItemId;
+				case EquipmentSlots.LEGS:
+					return entry.LegsItemId;
+				case EquipmentSlots.FEET:
+					return entry.BootsItemId;
+				case EquipmentSlots.WRISTS:
+					return entry.WristItemId;
+				case EquipmentSlots.HANDS:
+					return entry.GlovesItemId;
+				case EquipmentSlots.BACK:
+					return entry.CapeItemId;
+				case EquipmentSlots.TABARD:
+					return entry.TabardItemId;
+
+				//These are not on creature display info extra entry.
+				case EquipmentSlots.FINGER1:
+				case EquipmentSlots.FINGER2:
+				case EquipmentSlots.TRINKET1:
+				case EquipmentSlots.TRINKET2:
+				case EquipmentSlots.MAINHAND:
+				case EquipmentSlots.OFFHAND:
+				case EquipmentSlots.RANGED:
+				case EquipmentSlots.NECK:
+					throw new InvalidOperationException($"Creature does not have Slot: {slot} item id defined. Check {nameof(HasEquipment)} first.");
+				default:
+					throw new ArgumentOutOfRangeException(nameof(slot), slot, null);
+			}
+		}
+	}
 }
