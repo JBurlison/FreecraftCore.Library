@@ -1,5 +1,7 @@
 ﻿using FreecraftCore.Serializer;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using Newtonsoft.Json;
 
 namespace FreecraftCore
 {
@@ -7,7 +9,11 @@ namespace FreecraftCore
 	public class RealmBuildInformation
 	{
 		[WireMember(1)]
-		public ExpansionType Expansion { get; }
+		public int ExpansionVersionId { get; }
+
+		[NotMapped]
+		[JsonIgnore]
+		public Expansions Expansion => (Expansions) (ExpansionVersionId - 1);
 
 		[WireMember(2)]
 		public byte MajorVersion { get; }
@@ -19,11 +25,11 @@ namespace FreecraftCore
 		public short BuildNumber { get; }
 
 		/// <inheritdoc />
-		public RealmBuildInformation(ExpansionType expansion, byte majorVersion, byte minorVersion, short buildNumber)
+		public RealmBuildInformation(Expansions expansion, byte majorVersion, byte minorVersion, short buildNumber)
 		{
-			if(!Enum.IsDefined(typeof(ExpansionType), expansion)) throw new ArgumentOutOfRangeException(nameof(expansion), "Value should be defined in the ExpansionType enum.");
+			if(!Enum.IsDefined(typeof(Expansions), expansion)) throw new ArgumentOutOfRangeException(nameof(expansion), "Value should be defined in the ExpansionType enum.");
 
-			Expansion = expansion;
+			ExpansionVersionId = (int) (expansion + 1);
 			MajorVersion = majorVersion;
 			MinorVersion = minorVersion;
 			BuildNumber = buildNumber;

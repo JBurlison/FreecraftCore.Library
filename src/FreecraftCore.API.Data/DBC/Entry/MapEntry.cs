@@ -86,7 +86,7 @@ namespace FreecraftCore
 
 		[NotMapped]
 		[JsonIgnore]
-		public ExpansionType Expansion => (ExpansionType) ExpansionId;
+		public Expansions Expansion => (Expansions) ExpansionId;
 
 		[WireMember(16)]
 		public int RaidOffset { get; private set; }
@@ -94,7 +94,7 @@ namespace FreecraftCore
 		[WireMember(17)]
 		public int MaxPlayers { get; private set; }
 
-		public MapEntry(int mapId, TStringType directory, MapTypes mapType, AreaFlags flags, bool isPvPMap, LocalizedStringDBC<TStringType> mapName, int areaTableId, LocalizedStringDBC<TStringType> mapDescription0, LocalizedStringDBC<TStringType> mapDescription1, int loadingScreenId, float minimapIconScale, int corpseMapId, Vector2<int> corpse, int timeOfDayOverride, ExpansionType expansion, int raidOffset, int maxPlayers)
+		public MapEntry(int mapId, TStringType directory, MapTypes mapType, AreaFlags flags, bool isPvPMap, LocalizedStringDBC<TStringType> mapName, int areaTableId, LocalizedStringDBC<TStringType> mapDescription0, LocalizedStringDBC<TStringType> mapDescription1, int loadingScreenId, float minimapIconScale, int corpseMapId, Vector2<int> corpse, int timeOfDayOverride, Expansions expansion, int raidOffset, int maxPlayers)
 		{
 			MapId = mapId;
 			Directory = directory;

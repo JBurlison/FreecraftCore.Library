@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using System.Text;
 using FreecraftCore.Serializer;
+using Newtonsoft.Json;
 
 namespace FreecraftCore
 {
@@ -42,7 +44,11 @@ namespace FreecraftCore
 		/// Indicates the expansion this client is authenticating for.
 		/// </summary>
 		[WireMember(4)]
-		public ExpansionType Expansion { get; private set; }
+		public byte ExpansionVersionId { get; private set; }
+
+		[NotMapped]
+		[JsonIgnore]
+		public Expansions Expansion => (Expansions) (ExpansionVersionId - 1);
 
 		/// <summary>
 		/// Indicates the major patch version (Ex. x.3.x)
@@ -117,13 +123,13 @@ namespace FreecraftCore
 		[WireMember(13)]
 		public string Identity { get; private set; }
 
-		public AuthChallengeData(ProtocolVersion protocol, GameType game, ExpansionType expansion, byte majorPatch, byte minorPatch, ClientBuild build, PlatformType platform, OperatingSystemType operatingSystem, LocaleType locale, IPAddress clientIp, string identity)
+		public AuthChallengeData(ProtocolVersion protocol, GameType game, Expansions expansion, byte majorPatch, byte minorPatch, ClientBuild build, PlatformType platform, OperatingSystemType operatingSystem, LocaleType locale, IPAddress clientIp, string identity)
 			: this()
 		{
 			//TODO: Very long ctor. Maybe use builder in the future.
 			Protocol = protocol;
 			Game = game;
-			Expansion = expansion;
+			ExpansionVersionId = (byte) (expansion + 1);
 			MajorPatchVersion = majorPatch;
 			MinorPatchVersion = minorPatch;
 			Build = build;

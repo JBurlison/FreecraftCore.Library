@@ -8,7 +8,7 @@ namespace FreecraftCore
 	public sealed class VanillaPacketCaptureTestCaseBuilder : PacketCaptureTestCaseCaptureBuilder
 	{
 		/// <inheritdoc />
-		public override ExpansionType Expac { get; } = ExpansionType.Vanilla;
+		public override Expansions Expac { get; } = Expansions.CLASSIC;
 
 		public VanillaPacketCaptureTestCaseBuilder()
 		{

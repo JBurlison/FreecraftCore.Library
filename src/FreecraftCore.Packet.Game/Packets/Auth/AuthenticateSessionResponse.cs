@@ -36,7 +36,7 @@ namespace FreecraftCore
 		public uint BillingTimeRested { get; }
 
 		[WireMember(5)]
-		public ExpansionType AccountExpansion { get; }
+		public Expansions AccountExpansion { get; }
 
 		public AuthenticateSessionResponse()
 		{

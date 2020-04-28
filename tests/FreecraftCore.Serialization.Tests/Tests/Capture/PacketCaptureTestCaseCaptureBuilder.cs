@@ -9,7 +9,7 @@ namespace FreecraftCore
 {
 	public abstract class PacketCaptureTestCaseCaptureBuilder
 	{
-		public abstract ExpansionType Expac { get; }
+		public abstract Expansions Expac { get; }
 
 		protected PacketCaptureTestCaseCaptureBuilder()
 		{
@@ -22,7 +22,7 @@ namespace FreecraftCore
 		/// <returns></returns>
 		public abstract IEnumerable<Type> BuildSerializableTypes();
 
-		public IReadOnlyCollection<PacketCaptureTestEntry> BuildCaptureEntries(ExpansionType expacType, ISerializerService serializer, IEnumerable<Type> typesToRegister)
+		public IReadOnlyCollection<PacketCaptureTestEntry> BuildCaptureEntries(Expansions expacType, ISerializerService serializer, IEnumerable<Type> typesToRegister)
 		{
 			List<PacketCaptureTestEntry> testSource = new List<PacketCaptureTestEntry>(500);
 

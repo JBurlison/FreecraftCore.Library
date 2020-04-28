@@ -8,7 +8,7 @@ namespace FreecraftCore
 	public sealed class WotlkPacketCaptureTestCaseBuilder : PacketCaptureTestCaseCaptureBuilder
 	{
 		/// <inheritdoc />
-		public override ExpansionType Expac { get; } = ExpansionType.WrathOfTheLichKing;
+		public override Expansions Expac { get; } = Expansions.WRATH_OF_THE_LICH_KING;
 
 		public WotlkPacketCaptureTestCaseBuilder()
 		{
