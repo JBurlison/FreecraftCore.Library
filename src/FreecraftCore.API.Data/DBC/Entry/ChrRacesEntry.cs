@@ -209,8 +209,8 @@ namespace FreecraftCore
 
 		public ChrRacesEntry(int raceId, CharacterRaceFlags flags, int factionTemplateId, int explorationSoundId, int defaultMaleDisplayInfoId, int defaultFemaleDisplayInfoId, [NotNull] TStringType racePrefix, int baseLanguageId, int creatureTypeId, int resSicknessSpellId, int splashSoundId, [NotNull] TStringType clientFileString, int cinematicSequenceId, int alliance, [NotNull] LocalizedStringDBC<TStringType> name, [NotNull] LocalizedStringDBC<TStringType> femaleName, [NotNull] LocalizedStringDBC<TStringType> maleName, [NotNull] TStringType facialCustomizationNameInternal, [NotNull] TStringType facialCustomizationInternalName, [NotNull] TStringType hairCustomizationName, int expansionId)
 		{
-			if(raceId <= 0) throw new ArgumentOutOfRangeException(nameof(raceId));
-			if(factionTemplateId <= 0) throw new ArgumentOutOfRangeException(nameof(factionTemplateId));
+			if (raceId <= 0) throw new ArgumentOutOfRangeException(nameof(raceId));
+			if (factionTemplateId <= 0) throw new ArgumentOutOfRangeException(nameof(factionTemplateId));
 			if (defaultMaleDisplayInfoId <= 0) throw new ArgumentOutOfRangeException(nameof(defaultMaleDisplayInfoId));
 			if (defaultFemaleDisplayInfoId <= 0) throw new ArgumentOutOfRangeException(nameof(defaultFemaleDisplayInfoId));
 			if (baseLanguageId <= 0) throw new ArgumentOutOfRangeException(nameof(baseLanguageId));

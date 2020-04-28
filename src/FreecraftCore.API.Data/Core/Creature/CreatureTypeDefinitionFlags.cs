@@ -14,8 +14,9 @@ namespace FreecraftCore
 		None = 0,
 		
 		/// <summary>
-		/// Flag indicates that the creature type should reward no experience.
+		/// Flag indicates that this creature type should be ignored
+		/// for tab targetting searching.
 		/// </summary>
-		NoExperience = 1 << 0,
+		IgnoreTabTargetting = 1 << 0,
 	}
 }
