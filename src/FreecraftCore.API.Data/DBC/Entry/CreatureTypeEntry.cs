@@ -58,16 +58,16 @@ namespace FreecraftCore
 	{
 		/// <summary>
 		/// Indicates if the creature type <see cref="CreatureTypeEntry{TStringType}"/> <see cref="entry"/>
-		/// is able to reward experience.
+		/// is selectable via tab target selection.
 		/// </summary>
 		/// <typeparam name="TStringType">String type.</typeparam>
 		/// <param name="entry">The creature type entry.</param>
-		/// <returns>True if the creature type can reward experience.</returns>
-		public static bool IsExperienceRewardable<TStringType>([NotNull] this CreatureTypeEntry<TStringType> entry)
+		/// <returns>True if the creature type can be tab targeted to.</returns>
+		public static bool IsTabTargetable<TStringType>([NotNull] this CreatureTypeEntry<TStringType> entry)
 		{
 			if (entry == null) throw new ArgumentNullException(nameof(entry));
 
-			return !entry.Flags.HasFlag(CreatureTypeDefinitionFlags.NoExperience);
+			return !entry.Flags.HasFlag(CreatureTypeDefinitionFlags.IgnoreTabTargetting);
 		}
 
 		public static CreatureType ToCreatureTypeEnum<TStringType>([NotNull] this CreatureTypeEntry<TStringType> entry)
