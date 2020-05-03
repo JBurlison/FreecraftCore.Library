@@ -28,7 +28,11 @@ namespace FreecraftCore
 		[JsonIgnore]
 		public uint EntryId => (uint) RaceId;
 
+		/// <summary>
+		/// Clamped between 1-255 due to <see cref="CharBaseInfoEntry"/> byte limitation.
+		/// </summary>
 		[Key]
+		[Range(1, 255)]
 		[WireMember(1)]
 		internal int RaceId { get; private set; }
 
