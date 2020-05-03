@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using System.Threading;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
@@ -21,33 +22,46 @@ namespace FreecraftCore
 	[Table("CharBaseInfo")]
 	public class CharBaseInfoEntry : IDBCEntryIdentifiable
 	{
-		public static readonly string[] INTERNAL_FIELD_NAMES = new string[] { nameof(ClassId), nameof(RaceId) };
+		internal static int IdentityId = 0;
 
+		//Unique case where there is no id and we need to increment if we're loading from file.
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint) Id;
+		public uint EntryId => (uint) (Id == 0 ? Id = Interlocked.Increment(ref IdentityId) : Id);
 
 		/// <summary>
 		/// Unique entry key, doesn't mean anything important.
 		/// </summary>
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		[WireMember(1)]
+		//[WireMember(1)] // Unique DBC that does not have a unique key and does not really have an ID.
 		public int Id { get; private set; }
 
+		/// <summary>
+		/// Foreign key to: <see cref="ChrRacesEntry{TStringType}"/>
+		/// Foreign key is manually configured.
+		/// </summary>
+		[Column(TypeName = "int")]
 		[WireMember(2)]
-		internal byte ClassId { get; private set; }
+		public byte RaceId { get; private set; } //not internal due to EF Core limitations
 
-		[JsonIgnore]
-		[ForeignKey(nameof(ClassId))]
-		public virtual ChrClassesEntry<string> Class { get; private set; }
-
+		/// <summary>
+		/// Foreign key to: <see cref="ChrClassesEntry{TStringType}"/>
+		/// Foreign key is manually configured.
+		/// </summary>
+		[Column(TypeName = "int")]
 		[WireMember(3)]
-		internal byte RaceId { get; private set; }
+		public byte ClassId { get; private set; } //not internal due to EF Core limitations
 
+		//Don't think there is a padding in 3.3.5
+		/*/// <summary>
+		/// 2 bytes of padding that is unused by the the DBC reading. Always 0.
+		/// First 2 bytes are ClassRace mask.
+		/// </summary>
 		[JsonIgnore]
-		[ForeignKey(nameof(RaceId))]
-		public virtual ChrRacesEntry<string> Race { get; private set; }
+		[NotMapped]
+		[WireMember(4)]
+		internal short Padding { get; private set; }*/
 
 		public CharBaseInfoEntry(int id, byte classId, byte raceId)
 			: this(classId, raceId)
