@@ -31,7 +31,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint)ParticleColorId;
+		public int EntryId => ParticleColorId;
 
 		/// <summary>
 		/// Corresponds to ParticleColorID in CreatureDisplayInfo.dbc or ItemDisplayInfo.dbc.

@@ -21,7 +21,7 @@ namespace FreecraftCore
 	public sealed class SpellEntry<TStringType> : IDBCEntryIdentifiable
 	{
 		/// <inheritdoc />
-		public uint EntryId => (uint)SpellId;
+		public int EntryId => SpellId;
 
 		/// <summary>
 		/// 0 m_ID

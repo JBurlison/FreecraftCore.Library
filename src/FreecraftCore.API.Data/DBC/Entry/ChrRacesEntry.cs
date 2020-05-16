@@ -26,7 +26,7 @@ namespace FreecraftCore
 
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint) RaceId;
+		public int EntryId => RaceId;
 
 		/// <summary>
 		/// Clamped between 1-255 due to <see cref="CharBaseInfoEntry"/> byte limitation.

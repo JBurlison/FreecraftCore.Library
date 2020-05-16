@@ -24,7 +24,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint)FootprintTextureId;
+		public int EntryId => FootprintTextureId;
 
 		[Key]
 		[WireMember(1)]

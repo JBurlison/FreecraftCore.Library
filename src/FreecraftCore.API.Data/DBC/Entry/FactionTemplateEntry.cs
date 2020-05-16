@@ -77,7 +77,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint) FactionTemplateId;
+		public int EntryId => FactionTemplateId;
 
 		[Key]
 		[WireMember(1)]

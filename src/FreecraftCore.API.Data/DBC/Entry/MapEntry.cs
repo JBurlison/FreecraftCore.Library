@@ -27,7 +27,7 @@ namespace FreecraftCore
 		/// </summary>
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint) MapId;
+		public int EntryId => MapId;
 
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)] //Blizzard fucked us and uses 0 as a map. MySQL does not support 0 insert https://bugs.mysql.com/bug.php?id=21465

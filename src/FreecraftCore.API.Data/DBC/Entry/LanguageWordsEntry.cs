@@ -24,7 +24,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint) Id;
+		public int EntryId => Id;
 
 		/// <summary>
 		/// Unique key for the entry.

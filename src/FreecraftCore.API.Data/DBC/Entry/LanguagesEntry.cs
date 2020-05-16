@@ -24,7 +24,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint)LanguageId;
+		public int EntryId => LanguageId;
 
 		[Key]
 		[WireMember(1)]

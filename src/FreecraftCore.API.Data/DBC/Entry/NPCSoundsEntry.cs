@@ -25,7 +25,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint)NpcSoundId;
+		public int EntryId => NpcSoundId;
 
 		[Key]
 		[WireMember(1)]

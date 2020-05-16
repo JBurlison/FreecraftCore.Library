@@ -21,7 +21,7 @@ namespace FreecraftCore
 	{
 		/// <inheritdoc />
 		[JsonIgnore]
-		public uint EntryId => (uint)AreaTriggerId;
+		public int EntryId => AreaTriggerId;
 
 		[Key]
 		[WireMember(1)]

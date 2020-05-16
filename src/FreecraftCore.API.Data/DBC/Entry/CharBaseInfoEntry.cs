@@ -27,7 +27,7 @@ namespace FreecraftCore
 		//Unique case where there is no id and we need to increment if we're loading from file.
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint) (Id == 0 ? Id = Interlocked.Increment(ref IdentityId) : Id);
+		public int EntryId => (Id == 0 ? Id = Interlocked.Increment(ref IdentityId) : Id);
 
 		/// <summary>
 		/// Unique entry key, doesn't mean anything important.

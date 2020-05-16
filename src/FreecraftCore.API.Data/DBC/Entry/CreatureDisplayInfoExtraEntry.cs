@@ -29,7 +29,7 @@ namespace FreecraftCore
 
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint)CreatureDisplayInfoExtraId;
+		public int EntryId => CreatureDisplayInfoExtraId;
 
 		[Key]
 		[WireMember(1)]

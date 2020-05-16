@@ -18,7 +18,7 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		[JsonIgnore]
 		[NotMapped]
-		public uint EntryId => (uint)SpellDifficultyId;
+		public int EntryId => SpellDifficultyId;
 
 		[Key]
 		[WireMember(1)]

@@ -25,7 +25,7 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		[JsonIgnore]
 		[NotMapped]
-		public uint EntryId => (uint)ItemDisplayId;
+		public int EntryId => ItemDisplayId;
 
 		[Key]
 		[WireMember(1)]

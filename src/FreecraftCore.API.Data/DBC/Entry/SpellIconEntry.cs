@@ -27,7 +27,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint) IconId;
+		public int EntryId => IconId;
 
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]

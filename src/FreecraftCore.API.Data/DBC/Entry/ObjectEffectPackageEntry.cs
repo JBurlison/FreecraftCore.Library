@@ -27,7 +27,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint)ObjectEffectPackageId;
+		public int EntryId => ObjectEffectPackageId;
 
 		[Key]
 		[WireMember(1)]

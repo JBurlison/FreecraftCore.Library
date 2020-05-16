@@ -26,7 +26,7 @@ namespace FreecraftCore
 
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint)LoadingScreenId;
+		public int EntryId => LoadingScreenId;
 
 		[Key]
 		[WireMember(1)]

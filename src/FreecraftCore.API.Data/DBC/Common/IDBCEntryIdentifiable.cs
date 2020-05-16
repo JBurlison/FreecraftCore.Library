@@ -19,6 +19,6 @@ namespace FreecraftCore
 		/// </summary>
 		[JsonIgnore]
 		[NotMapped]
-		uint EntryId { get; }
+		int EntryId { get; }
 	}
 }

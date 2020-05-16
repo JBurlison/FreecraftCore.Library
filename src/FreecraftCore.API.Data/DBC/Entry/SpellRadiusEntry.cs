@@ -18,11 +18,11 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => SpellRadiusId;
+		public int EntryId => SpellRadiusId;
 
 		[Key]
 		[WireMember(1)]
-		public uint SpellRadiusId { get; private set; }
+		public int SpellRadiusId { get; private set; }
 
 		[WireMember(2)]
 		public float Radius { get; private set; }
@@ -34,7 +34,7 @@ namespace FreecraftCore
 		public float Radius2 { get; private set; }
 
 		/// <inheritdoc />
-		public SpellRadiusEntry(uint spellRadiusId, float radius, int zero, float radius2)
+		public SpellRadiusEntry(int spellRadiusId, float radius, int zero, float radius2)
 		{
 			SpellRadiusId = spellRadiusId;
 			Radius = radius;

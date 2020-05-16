@@ -20,11 +20,11 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		[JsonIgnore]
 		[NotMapped]
-		public uint EntryId => SpellRangeId;
+		public int EntryId => SpellRangeId;
 
 		[Key]
 		[WireMember(1)]
-		public uint SpellRangeId { get; private set; }
+		public int SpellRangeId { get; private set; }
 
 		[WireMember(2)]
 		public float MinRange { get; private set; }
@@ -50,7 +50,7 @@ namespace FreecraftCore
 		public LocalizedStringDBC<TStringType> Description2 { get; private set; }
 
 		/// <inheritdoc />
-		public SpellRangeEntry(uint spellRangeId, float minRange, float minRangeFriendly, float maxRange, float maxRangeFriendly, uint field5, LocalizedStringDBC<TStringType> description1, LocalizedStringDBC<TStringType> description2)
+		public SpellRangeEntry(int spellRangeId, float minRange, float minRangeFriendly, float maxRange, float maxRangeFriendly, uint field5, LocalizedStringDBC<TStringType> description1, LocalizedStringDBC<TStringType> description2)
 		{
 			SpellRangeId = spellRangeId;
 			MinRange = minRange;

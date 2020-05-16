@@ -21,11 +21,11 @@ namespace FreecraftCore
 	public sealed class ProfanityNamesEntry<TStringType> : IDBCEntryIdentifiable
 	{
 		/// <inheritdoc />
-		public uint EntryId => ProfanityNamesId;
+		public int EntryId => ProfanityNamesId;
 
 		[Key]
 		[WireMember(1)]
-		public uint ProfanityNamesId { get; private set; }
+		public int ProfanityNamesId { get; private set; }
 
 		[WireMember(2)]
 		public TStringType Pattern { get; private set; }
@@ -34,7 +34,7 @@ namespace FreecraftCore
 		public uint LanguageID { get; private set; }
 
 		/// <inheritdoc />
-		public ProfanityNamesEntry(uint profanityNamesId, TStringType pattern, uint languageId)
+		public ProfanityNamesEntry(int profanityNamesId, TStringType pattern, uint languageId)
 		{
 			ProfanityNamesId = profanityNamesId;
 			Pattern = pattern;

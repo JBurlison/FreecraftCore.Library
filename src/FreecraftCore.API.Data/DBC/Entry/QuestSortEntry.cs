@@ -26,7 +26,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint) QuestSortId;
+		public int EntryId => QuestSortId;
 
 		[Key]
 		[WireMember(1)]

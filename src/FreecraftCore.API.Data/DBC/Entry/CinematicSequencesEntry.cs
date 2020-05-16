@@ -24,7 +24,7 @@ namespace FreecraftCore
 
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint) SequenceId;
+		public int EntryId => SequenceId;
 
 		[Key]
 		[WireMember(1)]

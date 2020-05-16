@@ -19,7 +19,7 @@ namespace FreecraftCore
 	{
 		/// <inheritdoc />
 		[JsonIgnore]
-		public uint EntryId => (uint)UnitBloodLevelId;
+		public int EntryId => UnitBloodLevelId;
 
 		[Key]
 		[WireMember(1)]

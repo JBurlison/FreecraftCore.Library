@@ -23,7 +23,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint)CameraShakeId;
+		public int EntryId => CameraShakeId;
 
 		[Key]
 		[WireMember(1)]

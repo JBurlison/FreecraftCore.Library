@@ -17,7 +17,7 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		[JsonIgnore]
 		[NotMapped]
-		public uint EntryId => (uint)SkillLineAbilityId;
+		public int EntryId => SkillLineAbilityId;
 
 		/// <summary>
 		/// 0        m_ID

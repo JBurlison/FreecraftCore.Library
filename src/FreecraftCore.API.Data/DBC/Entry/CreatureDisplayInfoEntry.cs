@@ -26,7 +26,7 @@ namespace FreecraftCore
 	{
 		[NotMapped]
 		[JsonIgnore]
-		public uint EntryId => (uint)CreatureDisplayInfoId;
+		public int EntryId => CreatureDisplayInfoId;
 
 		/// <summary>
 		/// 65536 is maximum value on WotLK TC2 for .morph command. For NPCs, higher IDs should be still fine.
