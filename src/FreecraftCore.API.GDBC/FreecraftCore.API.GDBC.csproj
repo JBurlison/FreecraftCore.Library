@@ -8,4 +8,8 @@
     <ProjectReference Include="..\FreecraftCore.API.Data\FreecraftCore.API.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GDBC\Reader\" />
+  </ItemGroup>
+
 </Project>

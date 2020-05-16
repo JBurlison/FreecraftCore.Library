@@ -17,6 +17,7 @@ namespace FreecraftCore
 	/// array of WoW DBC entries/rows.
 	/// </summary>
 	/// <typeparam name="TEntryType">The DBC entry type.</typeparam>
+	[WireDataContract]
 	public sealed class GDBCCollection<TEntryType> : IGDBCCollection<TEntryType>
 		where TEntryType : IDBCEntryIdentifiable
 	{
