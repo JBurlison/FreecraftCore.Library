@@ -1,3 +1,5 @@
+using System;
+
 namespace FreecraftCore
 {
 	/// <summary>
@@ -5,37 +7,76 @@ namespace FreecraftCore
 	/// </summary>
 	public enum SpellMechanic
 	{
-		MECHANIC_NONE = 0,
-		MECHANIC_CHARM = 1,
-		MECHANIC_DISORIENTED = 2,
-		MECHANIC_DISARM = 3,
-		MECHANIC_DISTRACT = 4,
-		MECHANIC_FEAR = 5,
-		MECHANIC_GRIP = 6,
-		MECHANIC_ROOT = 7,
-		MECHANIC_SLOW_ATTACK = 8,
-		MECHANIC_SILENCE = 9,
-		MECHANIC_SLEEP = 10,
-		MECHANIC_SNARE = 11,
-		MECHANIC_STUN = 12,
-		MECHANIC_FREEZE = 13,
-		MECHANIC_KNOCKOUT = 14,
-		MECHANIC_BLEED = 15,
-		MECHANIC_BANDAGE = 16,
-		MECHANIC_POLYMORPH = 17,
-		MECHANIC_BANISH = 18,
-		MECHANIC_SHIELD = 19,
-		MECHANIC_SHACKLE = 20,
-		MECHANIC_MOUNT = 21,
-		MECHANIC_INFECTED = 22,
-		MECHANIC_TURN = 23,
-		MECHANIC_HORROR = 24,
-		MECHANIC_INVULNERABILITY = 25,
-		MECHANIC_INTERRUPT = 26,
-		MECHANIC_DAZE = 27,
-		MECHANIC_DISCOVERY = 28,
-		MECHANIC_IMMUNE_SHIELD = 29,  // Divine (Blessing) Shield/Protection and Ice Block
-		MECHANIC_SAPPED = 30,
-		MECHANIC_ENRAGED = 31
+		NONE = 0,
+		CHARM = 1,
+		DISORIENTED = 2,
+		DISARM = 3,
+		DISTRACT = 4,
+		FEAR = 5,
+		GRIP = 6,
+		ROOT = 7,
+		SLOW_ATTACK = 8,
+		SILENCE = 9,
+		SLEEP = 10,
+		SNARE = 11,
+		STUN = 12,
+		FREEZE = 13,
+		KNOCKOUT = 14,
+		BLEED = 15,
+		BANDAGE = 16,
+		POLYMORPH = 17,
+		BANISH = 18,
+		SHIELD = 19,
+		SHACKLE = 20,
+		MOUNT = 21,
+		INFECTED = 22,
+		TURN = 23,
+		HORROR = 24,
+		INVULNERABILITY = 25,
+		INTERRUPT = 26,
+		DAZE = 27,
+		DISCOVERY = 28,
+		IMMUNE_SHIELD = 29,  // Divine (Blessing) Shield/Protection and Ice Block
+		SAPPED = 30,
+		ENRAGED = 31
+	};
+
+	/// <summary>
+	/// Enumeration of all spell mechanics
+	/// </summary>
+	[Flags]
+	public enum SpellMechanicMask
+	{
+		CHARM = 1 << SpellMechanic.CHARM - 1,
+		DISORIENTED = 1 << SpellMechanic.DISORIENTED - 1,
+		DISARM = 1 << SpellMechanic.DISARM - 1,
+		DISTRACT = 1 << SpellMechanic.DISTRACT - 1,
+		FEAR = 1 << SpellMechanic.FEAR - 1,
+		GRIP = 1 << SpellMechanic.GRIP - 1,
+		ROOT = 1 << SpellMechanic.ROOT - 1,
+		SLOW_ATTACK = 1 << SpellMechanic.SLOW_ATTACK - 1,
+		SILENCE = 1 << SpellMechanic.SILENCE - 1,
+		SLEEP = 1 << SpellMechanic.SLEEP - 1,
+		SNARE = 1 << SpellMechanic.SNARE - 1,
+		STUN = 1 << SpellMechanic.STUN - 1,
+		FREEZE = 1 << SpellMechanic.FREEZE - 1,
+		KNOCKOUT = 1 << SpellMechanic.KNOCKOUT - 1,
+		BLEED = 1 << SpellMechanic.BLEED - 1,
+		BANDAGE = 1 << SpellMechanic.BANDAGE - 1,
+		POLYMORPH = 1 << SpellMechanic.POLYMORPH - 1,
+		BANISH = 1 << SpellMechanic.BANISH - 1,
+		SHIELD = 1 << SpellMechanic.SHIELD - 1,
+		SHACKLE = 1 << SpellMechanic.SHACKLE - 1,
+		MOUNT = 1 << SpellMechanic.MOUNT - 1,
+		INFECTED = 1 << SpellMechanic.INFECTED - 1,
+		TURN = 1 << SpellMechanic.TURN - 1,
+		HORROR = 1 << SpellMechanic.HORROR - 1,
+		INVULNERABILITY = 1 << SpellMechanic.INVULNERABILITY - 1,
+		INTERRUPT = 1 << SpellMechanic.INTERRUPT - 1,
+		DAZE = 1 << SpellMechanic.DAZE - 1,
+		DISCOVERY = 1 << SpellMechanic.DISCOVERY - 1,
+		IMMUNE_SHIELD = 1 << SpellMechanic.IMMUNE_SHIELD - 1,  // Divine (Blessing) Shield/Protection and Ice Block
+		SAPPED = 1 << SpellMechanic.SAPPED - 1,
+		ENRAGED = 1 << SpellMechanic.ENRAGED - 1,
 	};
 }
