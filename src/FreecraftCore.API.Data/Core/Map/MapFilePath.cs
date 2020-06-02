@@ -22,7 +22,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// The path to the map file asset.
 		/// </summary>
-		public string Path { get; }
+		public string Path => _Path.Value;
 
 		public MapFilePath([NotNull] string fileName)
 		{
@@ -42,7 +42,7 @@ namespace FreecraftCore
 
 		protected virtual string Build()
 		{
-			return $"World/Map/{FileName}";
+			return $"World/Map/{FileName}/{FileName}";
 		}
 	}
 }
