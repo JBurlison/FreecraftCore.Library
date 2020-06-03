@@ -42,7 +42,7 @@ namespace FreecraftCore
 
 		protected virtual string Build()
 		{
-			return $"World/Map/{FileName}/{FileName}";
+			return $"World/Maps/{FileName}/{FileName}";
 		}
 	}
 }
