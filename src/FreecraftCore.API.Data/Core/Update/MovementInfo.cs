@@ -16,6 +16,10 @@ namespace FreecraftCore
 		public MovementFlagExtra ExtraFlags { get; }
 
 		//TODO: Support packed date time? Or is this milliseconds?
+		/// <summary>
+		/// Went sent by the player (client) this is MILLISECONDS
+		/// and it represents the milliseconds since the local system (client's PC) started.
+		/// </summary>
 		[WireMember(3)]
 		public uint TimeStamp { get; }
 

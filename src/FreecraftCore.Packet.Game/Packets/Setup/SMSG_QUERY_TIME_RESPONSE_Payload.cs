@@ -15,6 +15,9 @@ namespace FreecraftCore
 	{
 		/// <summary>
 		/// The current time.
+		/// This is effectively the Unix Timestamp.
+		/// The current calendar time (seconds since Jan 1, 1970).
+		/// See: https://stackoverflow.com/questions/7550269/what-is-timenull-in-c#.
 		/// </summary>
 		[WireMember(1)]
 		public uint CurrentTime { get; }

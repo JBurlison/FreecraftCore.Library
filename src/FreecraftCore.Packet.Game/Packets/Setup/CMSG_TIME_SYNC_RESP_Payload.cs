@@ -22,6 +22,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Represents the time at which the client has handled
 		/// the matching <see cref="SMSG_TIME_SYNC_REQ_Payload"/>.
+		/// Gets the number of milliseconds elapsed since the system (client) started.
 		/// </summary>
 		[WireMember(2)]
 		public uint ClientTimestamp { get; private set; }
