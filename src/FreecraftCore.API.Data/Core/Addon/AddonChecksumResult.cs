@@ -16,7 +16,7 @@ namespace FreecraftCore
 		/// TODO: What does this mean?
 		/// </summary>
 		[WireMember(1)]
-		public byte AddonState { get; } = 2; //TC sends 2 with valid check
+		public SecureAddonStatus AddonState { get; private set; }
 
 		/// <summary>
 		/// I think this indicates if the client should do
