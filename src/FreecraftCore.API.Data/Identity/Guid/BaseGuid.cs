@@ -206,5 +206,10 @@ namespace FreecraftCore
 		{
 			return RawGuidValue.GetHashCode();
 		}
+
+		public override string ToString()
+		{
+			return $"{RawGuidValue} 0x{RawGuidValue:X} Type: {TypeId} Entry: {Entry} Id: {CurrentObjectGuid}";
+		}
 	}
 }
