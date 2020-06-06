@@ -38,12 +38,12 @@ namespace FreecraftCore
 			return guid.RawGuidValue;
 		}
 
-		public static implicit operator ObjectGuid(PackedGuid guid)
+		public static implicit operator PackedGuid(ObjectGuid guid)
 		{
-			if(guid == null)
+			if (guid == null)
 				return null;
 
-			return new ObjectGuid(guid.RawGuidValue);
+			return new PackedGuid(guid.RawGuidValue);
 		}
 	}
 }

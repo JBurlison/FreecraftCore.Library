@@ -100,14 +100,6 @@ namespace FreecraftCore
 			return !(lhs == rhs);
 		}
 
-		public static implicit operator PackedGuid(ObjectGuid guid)
-		{
-			if (guid == null)
-				return null;
-
-			return new PackedGuid(guid.RawGuidValue);
-		}
-
 		public override int GetHashCode()
 		{
 			unchecked
