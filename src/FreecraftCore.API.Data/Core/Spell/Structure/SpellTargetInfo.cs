@@ -71,7 +71,15 @@ namespace FreecraftCore
 			OptionalTargetString = optionalTargetString;
 		}
 
-		protected SpellTargetInfo()
+		public static SpellTargetInfo CreateSingleTargetUnitCast(ObjectGuid targetGuid)
+		{
+			return new SpellTargetInfo(SpellCastTargetFlag.TARGET_FLAG_UNIT, targetGuid, null, null, null, null, null, null);
+		}
+
+		/// <summary>
+		/// Serializer ctor.
+		/// </summary>
+		internal SpellTargetInfo()
 		{
 			
 		}
