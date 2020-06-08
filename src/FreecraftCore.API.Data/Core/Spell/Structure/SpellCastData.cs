@@ -7,7 +7,7 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore
 {
 	[WireDataContract]
-	public class SpellCastData
+	public class SpellCastData : ITemporallyUniqueSpellDataIdentifiable
 	{
 		//TODO: Are these named right??
 		[WireMember(1)]
