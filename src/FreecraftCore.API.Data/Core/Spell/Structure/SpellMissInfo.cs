@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
+	[WireDataContract]
 	public sealed class SpellMissInfo
 	{
 		[WireMember(1)]

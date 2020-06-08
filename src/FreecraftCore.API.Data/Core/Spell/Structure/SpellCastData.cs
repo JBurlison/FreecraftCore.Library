@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
 	[WireDataContract]
-	public sealed class SpellCastData
+	public class SpellCastData
 	{
 		//TODO: Are these named right??
 		[WireMember(1)]
@@ -31,13 +32,18 @@ namespace FreecraftCore
 		[WireMember(6)]
 		public uint TimeDiff { get; internal set; }
 
+		[NotMapped]
+		public virtual bool HasHitInformation { get; } = true;
+
 		//Spell targets written now.
 		//Targets are sent byte prefixed
 		//Both a miss and hit block
+		[Optional(nameof(HasHitInformation))]
 		[SendSize(SendSizeAttribute.SizeType.Byte)]
 		[WireMember(7)]
 		public ObjectGuid[] HitTargets { get; internal set; }
 
+		[Optional(nameof(HasHitInformation))]
 		[SendSize(SendSizeAttribute.SizeType.Byte)]
 		[WireMember(8)]
 		public SpellMissInfo[] SpellMisses { get; internal set; }

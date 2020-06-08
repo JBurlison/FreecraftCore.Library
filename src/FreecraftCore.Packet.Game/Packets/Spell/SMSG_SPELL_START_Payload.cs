@@ -11,9 +11,9 @@ namespace FreecraftCore
 	public sealed class SMSG_SPELL_START_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
-		public SpellCastData CastData { get; internal set; }
+		public StartSpellCastData CastData { get; internal set; }
 
-		public SMSG_SPELL_START_Payload([NotNull] SpellCastData castData)
+		public SMSG_SPELL_START_Payload([NotNull] StartSpellCastData castData)
 		{
 			CastData = castData ?? throw new ArgumentNullException(nameof(castData));
 		}
