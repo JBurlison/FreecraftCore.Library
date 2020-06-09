@@ -51,7 +51,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.ObjectUpdateP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.Data", "src\FreecraftCore.API.Data\FreecraftCore.API.Data.csproj", "{B38B8063-ED2D-47FB-8586-75F8290263AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreecraftCore.API.GDBC", "src\FreecraftCore.API.GDBC\FreecraftCore.API.GDBC.csproj", "{B2997A5D-6372-4F95-9F69-56405AB062E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.API.GDBC", "src\FreecraftCore.API.GDBC\FreecraftCore.API.GDBC.csproj", "{B2997A5D-6372-4F95-9F69-56405AB062E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreecraftCore.Tools.AutoFixAttributes", "tools\FreecraftCore.Tools.AutoFixAttributes\FreecraftCore.Tools.AutoFixAttributes.csproj", "{7405FACE-D8EE-4C46-A820-19F42FFCA035}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -162,6 +164,12 @@ Global
 		{B2997A5D-6372-4F95-9F69-56405AB062E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B2997A5D-6372-4F95-9F69-56405AB062E4}.Release-Library|Any CPU.ActiveCfg = Release|Any CPU
 		{B2997A5D-6372-4F95-9F69-56405AB062E4}.Release-Library|Any CPU.Build.0 = Release|Any CPU
+		{7405FACE-D8EE-4C46-A820-19F42FFCA035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7405FACE-D8EE-4C46-A820-19F42FFCA035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7405FACE-D8EE-4C46-A820-19F42FFCA035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7405FACE-D8EE-4C46-A820-19F42FFCA035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7405FACE-D8EE-4C46-A820-19F42FFCA035}.Release-Library|Any CPU.ActiveCfg = Release-Library|Any CPU
+		{7405FACE-D8EE-4C46-A820-19F42FFCA035}.Release-Library|Any CPU.Build.0 = Release-Library|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,6 +197,7 @@ Global
 		{C94EC33B-CCC8-4FE0-B852-30F675017A12} = {2E903AB5-E882-49A7-A612-FCCB9F11D540}
 		{B38B8063-ED2D-47FB-8586-75F8290263AF} = {C5D14933-7D5B-4185-9B9F-38AB1A8A40E6}
 		{B2997A5D-6372-4F95-9F69-56405AB062E4} = {C5D14933-7D5B-4185-9B9F-38AB1A8A40E6}
+		{7405FACE-D8EE-4C46-A820-19F42FFCA035} = {78CBA3CF-28F2-464F-892A-3FB745AC735E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77340858-04C1-4169-93A3-121A82FA6670}
