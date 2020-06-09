@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -14,17 +14,17 @@ namespace FreecraftCore
 	{
 		[Column("Type")]
 		[WireMember(1)]
-		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> Types { get; private set; }
+		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> Types { get; internal set; }
 
 		[WireMember(2)]
-		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> PointsMinimum { get; private set; }
+		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> PointsMinimum { get; internal set; }
 
 		[WireMember(3)]
-		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> PointsMaximum { get; private set; }
+		public GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> PointsMaximum { get; internal set; }
 
 		[Column("SpellId")]
 		[WireMember(4)]
-		public GenericStaticallySizedArrayChunkThree<int> SpellIds { get; private set; }
+		public GenericStaticallySizedArrayChunkThree<int> SpellIds { get; internal set; }
 
 		public ItemEnchantmentSpellCollection([NotNull] GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> types, [NotNull] GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> pointsMinimum, [NotNull] GenericStaticallySizedArrayChunkThree<ItemEnchantmentType> pointsMaximum, [NotNull] GenericStaticallySizedArrayChunkThree<int> spellIds)
 		{

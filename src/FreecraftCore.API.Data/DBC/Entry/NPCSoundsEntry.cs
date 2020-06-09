@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -29,10 +29,10 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int NpcSoundId { get; private set; }
+		public int NpcSoundId { get; internal set; }
 
 		[WireMember(2)]
-		public int GreetingsSoundId { get; private set; }
+		public int GreetingsSoundId { get; internal set; }
 
 		/// <summary>
 		/// All NPCSounds definitions contain a valid non-null
@@ -47,21 +47,21 @@ namespace FreecraftCore
 		/// See: <see cref="SoundEntriesEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(3)]
-		public int GoodbyeSoundId { get; private set; }
+		public int GoodbyeSoundId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: <see cref="SoundEntriesEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(4)]
-		public int AnnoyedSoundId { get; private set; }
+		public int AnnoyedSoundId { get; internal set; }
 
 		/// <summary>
 		/// Unknown/TODO.
 		/// Q: stores last sound file? memory allocation when table is loaded.
 		/// </summary>
 		[WireMember(5)]
-		public int UnknownSoundId { get; private set; }
+		public int UnknownSoundId { get; internal set; }
 
 		public NPCSoundsEntry(int npcSoundId, int greetingsSoundId, int goodbyeSoundId, int annoyedSoundId, int unknownSoundId)
 		{

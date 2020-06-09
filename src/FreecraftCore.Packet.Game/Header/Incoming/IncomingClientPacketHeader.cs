@@ -24,7 +24,7 @@ namespace FreecraftCore
 		public int PayloadSize { get; private set; }
 
 		/// <inheritdoc />
-		public abstract NetworkOperationCode OperationCode { get; protected set; }
+		public abstract NetworkOperationCode OperationCode { get; internal set; }
 
 		protected IncomingClientPacketHeader()
 		{

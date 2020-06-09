@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,23 +22,23 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int SpellDifficultyId { get; private set; }
+		public int SpellDifficultyId { get; internal set; }
 
 		//Reference to a Spell.dbc entry.
 		[WireMember(2)]
-		public int Normal10manSpellId { get; private set; }
+		public int Normal10manSpellId { get; internal set; }
 
 		//Reference to a Spell.dbc entry.
 		[WireMember(3)]
-		public int Normal25manSpellId { get; private set; }
+		public int Normal25manSpellId { get; internal set; }
 
 		//Reference to a Spell.dbc entry.
 		[WireMember(4)]
-		public int Heroic10manSpellId { get; private set; }
+		public int Heroic10manSpellId { get; internal set; }
 
 		//Reference to a Spell.dbc entry.
 		[WireMember(5)]
-		public int Heroic25manSpellId { get; private set; }
+		public int Heroic25manSpellId { get; internal set; }
 
 		/// <inheritdoc />
 		public SpellDifficultyEntry(int spellDifficultyId, int normal10ManSpellId, int normal25ManSpellId, int heroic10ManSpellId, int heroic25ManSpellId)

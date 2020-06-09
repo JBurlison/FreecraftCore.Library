@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 
 namespace FreecraftCore
@@ -15,7 +15,7 @@ namespace FreecraftCore
 		/// </summary>
 		[KnownSize(32)] //The size is not sent. It is known by both clients
 		[WireMember(1)]
-		public byte[] B { get; private set; }
+		public byte[] B { get; internal set; }
 
 		/// <summary>
 		/// A generator modulo N.
@@ -23,14 +23,14 @@ namespace FreecraftCore
 		/// </summary>
 		[SendSize(SendSizeAttribute.SizeType.Byte)] //Size is sent as a uint8. Trinitycore always sends 1
 		[WireMember(2)]
-		public byte[] g { get; private set; }
+		public byte[] g { get; internal set; }
 
 		/// <summary>
 		/// A large safe prime (N = 2q+1, where q is prime)
 		/// </summary>
 		[SendSize(SendSizeAttribute.SizeType.Byte)] //Trinitycore always send 32
 		[WireMember(3)]
-		public byte[] N { get; private set; }
+		public byte[] N { get; internal set; }
 
 		//SRP_6_S
 		/// <summary>
@@ -38,7 +38,7 @@ namespace FreecraftCore
 		/// </summary>
 		[KnownSize(32)] //trinitycore sends 32 byte salt
 		[WireMember(4)]
-		public byte[] salt { get; private set; }
+		public byte[] salt { get; internal set; }
 
 		/// <summary>
 		/// 

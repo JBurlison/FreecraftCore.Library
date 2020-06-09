@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -18,7 +18,7 @@ namespace FreecraftCore
 		public override bool isValid => true;
 
 		[WireMember(1)]
-		public AuthChallengeData ChallengeData { get; }
+		public AuthChallengeData ChallengeData { get; internal set; }
 
 		/// <inheritdoc />
 		public AuthReconnectChallengeRequest([NotNull] AuthChallengeData challengeData)

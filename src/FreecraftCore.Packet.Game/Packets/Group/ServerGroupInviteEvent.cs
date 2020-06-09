@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -15,23 +15,23 @@ namespace FreecraftCore
 		/// Indicates if the invite is a success.
 		/// </summary>
 		[WireMember(1)]
-		public bool isInviteSuccessful { get; private set; }
+		public bool isInviteSuccessful { get; internal set; }
 
 		/// <summary>
 		/// The player's name inviting.
 		/// </summary>
 		[WireMember(2)]
-		public string InvitingPlayer { get; private set; }
+		public string InvitingPlayer { get; internal set; }
 
 		[WireMember(3)]
-		private int Unk1 { get; set; }
+		internal int Unk1 { get; set; }
 
 		//TrinityCore says this is count??
 		[WireMember(4)]
-		private byte Unk2 { get; set; }
+		internal byte Unk2 { get; set; }
 
 		[WireMember(5)]
-		private int Unk3 { get; set; }
+		internal int Unk3 { get; set; }
 
 		/// <inheritdoc />
 		public ServerGroupInviteEvent(bool isInviteSuccessful, [NotNull] string invitingPlayer)

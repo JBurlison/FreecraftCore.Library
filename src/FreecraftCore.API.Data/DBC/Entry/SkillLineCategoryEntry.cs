@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -29,16 +29,16 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int CategoryId { get; private set; }
+		public int CategoryId { get; internal set; }
 
 		[WireMember(2)]
-		public LocalizedStringDBC<TStringType> Name { get; private set; }
+		public LocalizedStringDBC<TStringType> Name { get; internal set; }
 
 		/// <summary>
 		/// DisplayOrder
 		/// </summary>
 		[WireMember(3)]
-		public int SortIndex { get; private set; }
+		public int SortIndex { get; internal set; }
 
 		public SkillLineCategoryEntry(int categoryId, [NotNull] LocalizedStringDBC<TStringType> name, int sortIndex)
 		{

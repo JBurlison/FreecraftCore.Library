@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,34 +34,34 @@ namespace FreecraftCore
 		[Key]
 		[Range(1, 255)]
 		[WireMember(1)] 
-		public int ClassId { get; private set; }
+		public int ClassId { get; internal set; }
 
 		[WireMember(2)] 
-		internal int Unk1 { get; private set; }
+		internal int Unk1 { get; set; }
 
 		[WireMember(3)] 
-		public SpellCostPower DisplayPower { get; private set; }
+		public SpellCostPower DisplayPower { get; internal set; }
 
 		[WireMember(4)] 
-		public int PetNameToken { get; private set; }
+		public int PetNameToken { get; internal set; }
 
 		[WireMember(5)] 
-		public LocalizedStringDBC<TStringType> Name { get; private set; }
+		public LocalizedStringDBC<TStringType> Name { get; internal set; }
 
 		[WireMember(6)] 
-		public LocalizedStringDBC<TStringType> FemaleName { get; private set; }
+		public LocalizedStringDBC<TStringType> FemaleName { get; internal set; }
 
 		[WireMember(7)] 
-		public LocalizedStringDBC<TStringType> MaleName { get; private set; }
+		public LocalizedStringDBC<TStringType> MaleName { get; internal set; }
 
 		[WireMember(8)] 
-		public TStringType FileName { get; private set; }
+		public TStringType FileName { get; internal set; }
 
 		[WireMember(9)] 
-		public SpellFamilyName SpellClassSet { get; private set; }
+		public SpellFamilyName SpellClassSet { get; internal set; }
 
 		[WireMember(10)] 
-		public CharacterClassEquipmentFlags Flags { get; private set; }
+		public CharacterClassEquipmentFlags Flags { get; internal set; }
 
 		/// <summary>
 		/// Nullable
@@ -69,10 +69,10 @@ namespace FreecraftCore
 		/// Optionally overrides the cinematic sequence in <see cref="ChrRacesEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(11)]
-		public int CinematicSequenceId { get; private set; }
+		public int CinematicSequenceId { get; internal set; }
 
 		[WireMember(12)] 
-		internal int RequiredExpansion { get; private set; }
+		internal int RequiredExpansion { get; set; }
 
 		public ChrClassesEntry(int classId, int unk1, SpellCostPower displayPower, int petNameToken, [NotNull] LocalizedStringDBC<TStringType> name, [NotNull] LocalizedStringDBC<TStringType> femaleName, [NotNull] LocalizedStringDBC<TStringType> maleName, [NotNull] TStringType fileName, SpellFamilyName spellClassSet, CharacterClassEquipmentFlags flags, int cinematicSequenceId, int requiredExpansion)
 		{

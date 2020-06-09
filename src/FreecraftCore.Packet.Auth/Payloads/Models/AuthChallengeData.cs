@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
@@ -21,7 +21,7 @@ namespace FreecraftCore
 		/// marked as the protocol field.
 		/// </summary>
 		[WireMember(1)]
-		public ProtocolVersion Protocol { get; private set; }
+		public ProtocolVersion Protocol { get; internal set; }
 
 		//We don't need to expose this really. Shouldn't need to be checked. This isn't C++
 		/// <summary>
@@ -38,13 +38,13 @@ namespace FreecraftCore
 		[EnumString]
 		[KnownSize(4)]
 		[WireMember(3)]
-		public GameType Game { get; private set; }
+		public GameType Game { get; internal set; }
 
 		/// <summary>
 		/// Indicates the expansion this client is authenticating for.
 		/// </summary>
 		[WireMember(4)]
-		public byte ExpansionVersionId { get; private set; }
+		public byte ExpansionVersionId { get; internal set; }
 
 		[NotMapped]
 		[JsonIgnore]
@@ -54,17 +54,17 @@ namespace FreecraftCore
 		/// Indicates the major patch version (Ex. x.3.x)
 		/// </summary>
 		[WireMember(5)]
-		public byte MajorPatchVersion { get; private set; }
+		public byte MajorPatchVersion { get; internal set; }
 
 		/// <summary>
 		/// Indicates the major patch version (Ex. x.x.5)
 		/// </summary>
 		[WireMember(6)]
-		public byte MinorPatchVersion { get; private set; }
+		public byte MinorPatchVersion { get; internal set; }
 
 		//TODO: Enumerate this maybe?
 		[WireMember(7)]
-		public ClientBuild Build { get; private set; }
+		public ClientBuild Build { get; internal set; }
 
 		/// <summary>
 		/// Indicates the platform/arc (Ex. 32bit or 64bit)
@@ -74,7 +74,7 @@ namespace FreecraftCore
 		[ReverseData]
 		[KnownSize(4)]
 		[WireMember(8)]
-		public PlatformType Platform { get; private set; }
+		public PlatformType Platform { get; internal set; }
 
 		/// <summary>
 		/// Indicates the operating system the client is running on (Ex. Win or Mac)
@@ -84,7 +84,7 @@ namespace FreecraftCore
 		[ReverseData]
 		[KnownSize(4)]
 		[WireMember(9)]
-		public OperatingSystemType OperatingSystem { get; private set; }
+		public OperatingSystemType OperatingSystem { get; internal set; }
 
 		/// <summary>
 		/// Indicates the Locale of the client. (Ex. En-US)
@@ -95,18 +95,18 @@ namespace FreecraftCore
 		[DontTerminate] //Locale also doesn't terminate. It is a char[4] like "SUne" without a terminator.
 		[KnownSize(4)]
 		[WireMember(10)]
-		public LocaleType Locale { get; private set; }
+		public LocaleType Locale { get; internal set; }
 
 		//TODO: Timezone bias? Investigate values.
 		[WireMember(11)]
-		private uint TimeZoneBias { get; set; }
+		internal uint TimeZoneBias { get; set; }
 
 		[KnownSize(4)]
 		[WireMember(12)]
 		private readonly byte[] ipAddressInBytes;
 
 		//Lazily cached Ip built from wired bytes
-		private Lazy<IPAddress> cachedIp { get; }
+		internal Lazy<IPAddress> cachedIp { get; set; }
 
 		//TODO: Thread safety
 		/// <summary>
@@ -121,7 +121,7 @@ namespace FreecraftCore
 		[DontTerminate] //JackPoz doesn't terminate and it looks like Trinitycore doesn't really expect a null terminator either.
 		[SendSize(SendSizeAttribute.SizeType.Byte)]
 		[WireMember(13)]
-		public string Identity { get; private set; }
+		public string Identity { get; internal set; }
 
 		public AuthChallengeData(ProtocolVersion protocol, GameType game, Expansions expansion, byte majorPatch, byte minorPatch, ClientBuild build, PlatformType platform, OperatingSystemType operatingSystem, LocaleType locale, IPAddress clientIp, string identity)
 			: this()

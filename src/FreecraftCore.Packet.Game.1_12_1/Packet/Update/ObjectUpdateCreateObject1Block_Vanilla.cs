@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -12,7 +12,7 @@ namespace FreecraftCore
 		/// The creation data.
 		/// </summary>
 		[WireMember(1)]
-		public ObjectCreationData_Vanilla CreationData { get; }
+		public ObjectCreationData_Vanilla CreationData { get; internal set; }
 
 		/// <inheritdoc />
 		public ObjectUpdateCreateObject1Block_Vanilla(ObjectCreationData_Vanilla creationData)
@@ -39,7 +39,7 @@ namespace FreecraftCore
 		/// The creation data.
 		/// </summary>
 		[WireMember(1)]
-		public ObjectCreationData_Vanilla CreationData { get; }
+		public ObjectCreationData_Vanilla CreationData { get; internal set; }
 
 		/// <inheritdoc />
 		public ObjectUpdateCreateObject2Block_Vanilla(ObjectCreationData_Vanilla creationData)

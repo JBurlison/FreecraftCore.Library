@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -9,11 +9,11 @@ namespace FreecraftCore
 		/// TODO DOC
 		/// </summary>
 		[WireMember(1)]
-		public MovementFlag MoveFlags { get; }
+		public MovementFlag MoveFlags { get; internal set; }
 
 		//ClientVersion.AddedInVersion(ClientVersionBuild.V3_0_2_9056) previous to 3.0 it was a byte.
 		[WireMember(2)]
-		public MovementFlagExtra ExtraFlags { get; }
+		public MovementFlagExtra ExtraFlags { get; internal set; }
 
 		//TODO: Support packed date time? Or is this milliseconds?
 		/// <summary>
@@ -21,19 +21,19 @@ namespace FreecraftCore
 		/// and it represents the milliseconds since the local system (client's PC) started.
 		/// </summary>
 		[WireMember(3)]
-		public uint TimeStamp { get; }
+		public uint TimeStamp { get; internal set; }
 
 		/// <summary>
 		/// The Vector3 x,y,z position.
 		/// </summary>
 		[WireMember(4)]
-		public Vector3<float> Position { get; }
+		public Vector3<float> Position { get; internal set; }
 
 		/// <summary>
 		/// Probably Y axis rotation.
 		/// </summary>
 		[WireMember(5)]
-		public float Orientation { get; }
+		public float Orientation { get; internal set; }
 
 		private bool IsOnTransport => MoveFlags.HasFlag(MovementFlag.MOVEMENTFLAG_ONTRANSPORT);
 
@@ -48,31 +48,31 @@ namespace FreecraftCore
 
 		[Optional(nameof(IsOnTransport))]
 		[WireMember(6)]
-		public TransportationInfo TransportationInformation { get; }
+		public TransportationInfo TransportationInformation { get; internal set; }
 
 		[Optional(nameof(HasTransportationTime))]
 		[WireMember(7)]
-		public int TransportationTime { get; }
+		public int TransportationTime { get; internal set; }
 
 		//AKA: Swim Pitch
 		[Optional(nameof(HasMovementPitch))]
 		[WireMember(8)]
-		public float MovePitch { get; }
+		public float MovePitch { get; internal set; }
 
 		//Always read for some reason
 		[WireMember(9)]
-		public int FallTime { get; }
+		public int FallTime { get; internal set; }
 
 		//TODO: Refactor/encapsulate
 		//Optional fall data
 		[Optional(nameof(IsFalling))]
 		[WireMember(10)]
-		public Vector4<float> FallData { get; }
+		public Vector4<float> FallData { get; internal set; }
 
 		//This is a hack though?
 		[Optional(nameof(HasSplineElevation))]
 		[WireMember(11)]
-		public float SplineElevation { get; }
+		public float SplineElevation { get; internal set; }
 
 		//TODO: Parameter validation
 		/// <inheritdoc />

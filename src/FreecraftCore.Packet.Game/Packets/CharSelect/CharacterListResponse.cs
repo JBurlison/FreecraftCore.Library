@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -14,7 +14,7 @@ namespace FreecraftCore
 
 		[WireMember(1)]
 		[SendSize(SendSizeAttribute.SizeType.Byte)] //Jackpoz's bot shows it sends count as byte
-		public CharacterScreenCharacter[] Characters { get; private set; }
+		public CharacterScreenCharacter[] Characters { get; internal set; }
 
 		/// <inheritdoc />
 		public CharacterListResponse([NotNull] CharacterScreenCharacter[] characters)

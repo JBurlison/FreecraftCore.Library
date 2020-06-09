@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -15,11 +15,11 @@ namespace FreecraftCore
 		/// The item ID this query is for.
 		/// </summary>
 		[WireMember(1)]
-		public int QueryId { get; }
+		public int QueryId { get; internal set; }
 
 		/// <inheritdoc />
 		[WireMember(2)]
-		public ObjectGuid QueryGuid { get; }
+		public ObjectGuid QueryGuid { get; internal set; }
 
 		/// <inheritdoc />
 		public CMSG_ITEM_QUERY_SINGLE_Payload(int itemId)

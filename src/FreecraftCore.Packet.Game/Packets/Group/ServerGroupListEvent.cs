@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,31 +11,31 @@ namespace FreecraftCore
 	public sealed class ServerGroupListEvent : GamePacketPayload
 	{
 		[WireMember(1)]
-		public GroupType PartyType { get; private set; }
+		public GroupType PartyType { get; internal set; }
 
 		//TODO: Consolidate since other things use this pattern
 		[WireMember(2)]
-		public byte LocalPlayerGroupId { get; private set; }
+		public byte LocalPlayerGroupId { get; internal set; }
 
 		[WireMember(3)]
-		public GroupMemberFlags LocalPlayerGroupMemberFlags { get; private set; }
+		public GroupMemberFlags LocalPlayerGroupMemberFlags { get; internal set; }
 
 		[WireMember(4)]
-		public LfgRoles OptionalDungeonLFGRoles { get; private set; }
+		public LfgRoles OptionalDungeonLFGRoles { get; internal set; }
 
 		//TODO: This packet does NOT handle LFG, there can be 5 bytes here if the PartyType indicates it's LFG.
 
 		[WireMember(7)]
-		public ObjectGuid GroupGuid { get; private set; } //EntityGuidMask.Group
+		public ObjectGuid GroupGuid { get; internal set; } //EntityGuidMask.Group
 
 		//TrinityCore increments this every time, for some reason. Useless to us.
 		[WireMember(8)]
-		public int UpdateCounter { get; private set; }
+		public int UpdateCounter { get; internal set; }
 
 		//Follow is a collection of group member data. Similar to above.
 		[SendSize(SendSizeAttribute.SizeType.Int32)] //for some reason Blizzard wasted 3 bytes here.
 		[WireMember(9)]
-		private GroupListMemberData[] _GroupMemberDataList { get; set; }
+		internal GroupListMemberData[] _GroupMemberDataList { get; set; }
 
 		/// <summary>
 		/// List of group member data contains all member data EXCEPT the local player.
@@ -43,7 +43,7 @@ namespace FreecraftCore
 		public IReadOnlyCollection<GroupListMemberData> GroupMemberDataList => _GroupMemberDataList;
 
 		[WireMember(10)]
-		public ObjectGuid LeaderGuid { get; private set; }
+		public ObjectGuid LeaderGuid { get; internal set; }
 
 		public bool isGroupHaveAnyMembers => _GroupMemberDataList != null && _GroupMemberDataList.Any();
 
@@ -54,7 +54,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Optional(nameof(isGroupHaveAnyMembers))]
 		[WireMember(11)]
-		public GroupSettingsData OptionalGroupSettings { get; private set; }
+		public GroupSettingsData OptionalGroupSettings { get; internal set; }
 
 		/// <summary>
 		/// Serializer ctor.

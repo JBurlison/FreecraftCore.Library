@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(1)]
 		[SendSize(SendSizeAttribute.SizeType.Int32)]
-		private string[] MessageOfTheDayByLines { get; }
+		internal string[] MessageOfTheDayByLines { get; set; }
 
 		/// <summary>
 		/// The message of the day split onto individual lines.

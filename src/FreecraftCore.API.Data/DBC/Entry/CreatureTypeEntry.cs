@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,13 +28,13 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int CreatureTypeId { get; private set; }
+		public int CreatureTypeId { get; internal set; }
 
 		[WireMember(2)]
-		public LocalizedStringDBC<TStringType> Name { get; private set; }
+		public LocalizedStringDBC<TStringType> Name { get; internal set; }
 
 		[WireMember(3)]
-		public CreatureTypeDefinitionFlags Flags { get; private set; }
+		public CreatureTypeDefinitionFlags Flags { get; internal set; }
 
 		public CreatureTypeEntry(int creatureTypeId, [NotNull] LocalizedStringDBC<TStringType> name, CreatureTypeDefinitionFlags flags)
 		{

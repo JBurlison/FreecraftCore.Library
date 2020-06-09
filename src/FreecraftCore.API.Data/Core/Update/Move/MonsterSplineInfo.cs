@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -16,7 +16,7 @@ namespace FreecraftCore
 		/// Default value (or stop value) is <see cref="SplineMoveFlags.None"/>
 		/// </summary>
 		[WireMember(6)]
-		public SplineMoveFlags SplineFlags { get; } = SplineMoveFlags.None;
+		public SplineMoveFlags SplineFlags { get; internal set; } = SplineMoveFlags.None;
 
 		/// <summary>
 		/// Indicates if the move information has animation
@@ -26,13 +26,13 @@ namespace FreecraftCore
 
 		[Optional(nameof(HasAnimationInformation))]
 		[WireMember(7)]
-		public AnimationInfo OptionalAnimationInformation { get; }
+		public AnimationInfo OptionalAnimationInformation { get; internal set; }
 
 		/// <summary>
 		/// The duration of the spline.
 		/// </summary>
 		[WireMember(8)]
-		public int SplineDuration { get; }
+		public int SplineDuration { get; internal set; }
 
 		/// <summary>
 		/// Indicates if the move information has parabolic spline information.
@@ -41,7 +41,7 @@ namespace FreecraftCore
 
 		[Optional(nameof(HasParabolicSplineInfo))]
 		[WireMember(9)]
-		public ParabolicMoveInfo OptionalParabolicSplineInformation { get; }
+		public ParabolicMoveInfo OptionalParabolicSplineInformation { get; internal set; }
 
 		public bool HasLinearPath => !HasCatMulRomSpline;
 
@@ -54,11 +54,11 @@ namespace FreecraftCore
 		[SendSize(SendSizeAttribute.SizeType.Int32)] //we have to add 1 to the size, it's what TC does
 		[Optional(nameof(HasCatMulRomSpline))]
 		[WireMember(10)]
-		public Vector3<float>[] OptionalCatMulRomSplinePoints { get; }
+		public Vector3<float>[] OptionalCatMulRomSplinePoints { get; internal set; }
 
 		[Optional(nameof(HasLinearPath))]
 		[WireMember(11)]
-		public LinearPathMoveInfo OptionalLinearPathInformation { get; }
+		public LinearPathMoveInfo OptionalLinearPathInformation { get; internal set; }
 
 		//TODO: Overload ctors/builders
 		//TODO: Validate params

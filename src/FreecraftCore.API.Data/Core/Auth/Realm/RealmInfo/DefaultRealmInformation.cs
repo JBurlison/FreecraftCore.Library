@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 using System;
 using JetBrains.Annotations;
 
@@ -13,7 +13,7 @@ namespace FreecraftCore
 		/// Packed information about the realm.
 		/// </summary>
 		[WireMember(1)]
-		public RealmFlags Flags { get; }
+		public RealmFlags Flags { get; internal set; }
 
 		/// <summary>
 		/// The string the realm should display on the realmlist tab.
@@ -21,30 +21,30 @@ namespace FreecraftCore
 		/// </summary>
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(2)]
-		public string RealmString { get; }
+		public string RealmString { get; internal set; }
 
 		/// <summary>
 		/// Endpoint information for the realm.
 		/// </summary>
 		[WireMember(3)]
-		public RealmEndpoint RealmAddress { get; }
+		public RealmEndpoint RealmAddress { get; internal set; }
 
 		//Maybe wrap this into something? Query it for realm pop info? I don't know
 		//TODO: Research Mangos and Ember to find out why this is a float.
 		//Odd that this is a float.
 		[WireMember(4)]
-		public float PopulationLevel { get; }
+		public float PopulationLevel { get; internal set; }
 
 		/// <summary>
 		/// Indicates how many character's the account of the client has
 		/// on this realm.
 		/// </summary>
 		[WireMember(5)]
-		public byte CharacterCount { get; }
+		public byte CharacterCount { get; internal set; }
 
 		//TODO: Ok, which time zone maps to which byte?
 		[WireMember(6)]
-		public byte RealmTimeZone { get; }
+		public byte RealmTimeZone { get; internal set; }
 
 		//2.x and 3.x clients expect the realm index.
 		//1.12.1 just expect a byte-sized 0
@@ -52,7 +52,7 @@ namespace FreecraftCore
 		/// Indicates the ID of the realm.
 		/// </summary>
 		[WireMember(7)]
-		public byte RealmId { get; }
+		public byte RealmId { get; internal set; }
 
 		/// <inheritdoc />
 		public DefaultRealmInformation(RealmFlags flags, [NotNull] string realmString, [NotNull] RealmEndpoint realmAddress, float populationLevel, byte characterCount, byte realmTimeZone, byte realmId)

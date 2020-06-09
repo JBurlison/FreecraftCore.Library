@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -16,17 +16,17 @@ namespace FreecraftCore
 	{
 		//TODO: Implement packed DateTime support.
 		[WireMember(1)]
-		public uint GameTimeStamp { get; }
+		public uint GameTimeStamp { get; internal set; }
 
 		/// <summary>
 		/// The tick rate of the game simulation maybe???
 		/// </summary>
 		[WireMember(2)]
-		public float GameTickRate { get; }
+		public float GameTickRate { get; internal set; }
 
 		//Sent only in 3.3.5 // added in 3.1.2 (TC)
 		[WireMember(3)]
-		private int Unk { get; } = 0;
+		internal int Unk { get; set; } = 0;
 
 		/// <inheritdoc />
 		public SMSG_LOGIN_SETTIMESPEED_Payload(uint gameTimeStamp, float gameTickRate)

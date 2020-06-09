@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -32,67 +32,67 @@ namespace FreecraftCore
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.None)] //Blizzard fucked us and uses 0 as a map. MySQL does not support 0 insert https://bugs.mysql.com/bug.php?id=21465
 		[WireMember(1)]
-		public int MapId { get; private set; }
+		public int MapId { get; internal set; }
 
 		[WireMember(2)]
-		public TStringType Directory { get; private set; }
+		public TStringType Directory { get; internal set; }
 
 		[WireMember(3)]
-		public MapTypes MapType { get; private set; }
+		public MapTypes MapType { get; internal set; }
 
 		[WireMember(4)]
-		public AreaFlags Flags { get; private set; }
+		public AreaFlags Flags { get; internal set; }
 
 		[WireMember(5)]
-		internal int PvP { get; private set; }
+		internal int PvP { get; set; }
 
 		[NotMapped]
 		[JsonIgnore]
 		public bool isPvPMap => PvP == 1;
 
 		[WireMember(6)]
-		public LocalizedStringDBC<TStringType> MapName { get; private set; }
+		public LocalizedStringDBC<TStringType> MapName { get; internal set; }
 
 		//TODO: Nav prop to AreaTable.
 		/// <summary>
 		/// AreaTable.dbc reference.
 		/// </summary>
 		[WireMember(7)]
-		public int AreaTableId { get; private set; }
+		public int AreaTableId { get; internal set; }
 
 		[WireMember(8)]
-		public LocalizedStringDBC<TStringType> MapDescription0 { get; private set; }
+		public LocalizedStringDBC<TStringType> MapDescription0 { get; internal set; }
 
 		[WireMember(9)]
-		public LocalizedStringDBC<TStringType> MapDescription1 { get; private set; }
+		public LocalizedStringDBC<TStringType> MapDescription1 { get; internal set; }
 
 		[WireMember(10)]
-		public int LoadingScreenId { get; private set; }
+		public int LoadingScreenId { get; internal set; }
 
 		[WireMember(11)]
-		public float MinimapIconScale { get; private set; }
+		public float MinimapIconScale { get; internal set; }
 
 		[WireMember(12)]
-		public int CorpseMapId { get; private set; }
+		public int CorpseMapId { get; internal set; }
 
 		[WireMember(13)]
-		public Vector2<int> Corpse { get; private set; }
+		public Vector2<int> Corpse { get; internal set; }
 
 		[WireMember(14)]
-		public int TimeOfDayOverride { get; private set; }
+		public int TimeOfDayOverride { get; internal set; }
 
 		[WireMember(15)]
-		internal int ExpansionId { get; private set; }
+		internal int ExpansionId { get; set; }
 
 		[NotMapped]
 		[JsonIgnore]
 		public Expansions Expansion => (Expansions) ExpansionId;
 
 		[WireMember(16)]
-		public int RaidOffset { get; private set; }
+		public int RaidOffset { get; internal set; }
 
 		[WireMember(17)]
-		public int MaxPlayers { get; private set; }
+		public int MaxPlayers { get; internal set; }
 
 		public MapEntry(int mapId, TStringType directory, MapTypes mapType, AreaFlags flags, bool isPvPMap, LocalizedStringDBC<TStringType> mapName, int areaTableId, LocalizedStringDBC<TStringType> mapDescription0, LocalizedStringDBC<TStringType> mapDescription1, int loadingScreenId, float minimapIconScale, int corpseMapId, Vector2<int> corpse, int timeOfDayOverride, Expansions expansion, int raidOffset, int maxPlayers)
 		{

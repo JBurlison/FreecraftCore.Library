@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -40,13 +40,13 @@ namespace FreecraftCore
 		/// Don't know if it has to.
 		/// </summary>
 		[WireMember(1)]
-		public int Unk { get; }
+		public int Unk { get; internal set; }
 
 		/// <summary>
 		/// Indicates the split state.
 		/// </summary>
 		[WireMember(2)]
-		public RealmSplitState SplitState { get; } = RealmSplitState.Normal;
+		public RealmSplitState SplitState { get; internal set; } = RealmSplitState.Normal;
 	
 		//TC default to "01/01/01"
 		/// <summary>
@@ -55,7 +55,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(3)]
-		public string SplitDate { get; } = "01/01/01";
+		public string SplitDate { get; internal set; } = "01/01/01";
 
 		/// <summary>
 		/// 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,17 +27,17 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int AchievementCategoryId { get; private set; }
+		public int AchievementCategoryId { get; internal set; }
 
 		//TODO: nav property
 		[WireMember(2)]
-		public int ParentId { get; private set; }
+		public int ParentId { get; internal set; }
 
 		[WireMember(3)]
-		public LocalizedStringDBC<TStringType> Name { get; private set; }
+		public LocalizedStringDBC<TStringType> Name { get; internal set; }
 
 		[WireMember(4)]
-		public int UIOrder { get; private set; }
+		public int UIOrder { get; internal set; }
 
 		public AchievementCategoryEntry(int achievementCategoryId, int parentId, [NotNull] LocalizedStringDBC<TStringType> name, int uiOrder)
 		{

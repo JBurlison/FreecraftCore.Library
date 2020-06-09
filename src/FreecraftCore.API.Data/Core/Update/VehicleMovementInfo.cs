@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -9,10 +9,10 @@ namespace FreecraftCore
 		/// 
 		/// </summary>
 		[WireMember(1)]
-		public uint VehicleId { get; }
+		public uint VehicleId { get; internal set; }
 
 		[WireMember(2)]
-		public float VehicleOrientation { get; }
+		public float VehicleOrientation { get; internal set; }
 
 		/// <inheritdoc />
 		public VehicleMovementInfo(uint vehicleId, float vehicleOrientation)

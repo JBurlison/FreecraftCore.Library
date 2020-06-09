@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -24,19 +24,19 @@ namespace FreecraftCore
 		/// The Map Id to load the character into.
 		/// </summary>
 		[WireMember(1)]
-		public int MapId { get; private set; }
+		public int MapId { get; internal set; }
 
 		/// <summary>
 		/// The position of the character.
 		/// </summary>
 		[WireMember(2)]
-		public Vector3<float> Position { get; private set; }
+		public Vector3<float> Position { get; internal set; }
 
 		/// <summary>
 		/// The orientation of the player.
 		/// </summary>
 		[WireMember(3)]
-		public float Orientation { get; private set; }
+		public float Orientation { get; internal set; }
 
 		/// <summary>
 		/// Serializer ctor.

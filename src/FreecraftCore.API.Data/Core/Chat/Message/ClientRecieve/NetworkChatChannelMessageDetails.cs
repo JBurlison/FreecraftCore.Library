@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -14,11 +14,11 @@ namespace FreecraftCore
 		/// </summary>
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(1)]
-		public string ChannelName { get; }
+		public string ChannelName { get; internal set; }
 
 		//TODO: Why is this reciever?
 		[WireMember(2)]
-		public ObjectGuid RecieverGuid { get; }
+		public ObjectGuid RecieverGuid { get; internal set; }
 
 		/// <inheritdoc />
 		public NetworkChatChannelMessageDetails([NotNull] string channelName, [NotNull] ObjectGuid recieverGuid)

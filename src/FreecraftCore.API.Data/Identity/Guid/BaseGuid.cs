@@ -9,7 +9,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// GUID value.
 		/// </summary>
-		public abstract ulong RawGuidValue { get; } //setter only for serialization
+		public abstract ulong RawGuidValue { get; internal set; } //setter only for serialization
 
 		/// <summary>
 		/// Indicates the object Type that the <see cref="GUID"/> is associated with.

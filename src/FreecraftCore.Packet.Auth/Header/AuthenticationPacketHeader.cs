@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
@@ -16,7 +16,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		[WireMember(1)]
-		public AuthOperationCode OperationCode { get; private set; }
+		public AuthOperationCode OperationCode { get; internal set; }
 
 		public AuthenticationPacketHeader(AuthOperationCode authenticationOpCode)
 		{

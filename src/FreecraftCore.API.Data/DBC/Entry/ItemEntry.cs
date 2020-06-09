@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,37 +21,37 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int ItemId { get; private set; }
+		public int ItemId { get; internal set; }
 
 		[WireMember(2)]
-		public int ItemClassId { get; private set; }
+		public int ItemClassId { get; internal set; }
 
 		[WireMember(3)]
-		public int ItemSubClassId { get; private set; }
+		public int ItemSubClassId { get; internal set; }
 
 		[WireMember(4)]
-		public int SoundOverride { get; private set; }
+		public int SoundOverride { get; internal set; }
 
 		//See: https://wowdev.wiki/DB/Material
 		[WireMember(5)]
-		public int MaterialId { get; private set; }
+		public int MaterialId { get; internal set; }
 
 		//See: https://wowdev.wiki/DB/ItemDisplayInfo
 		[WireMember(6)]
-		public int ItemDisplayId { get; private set; }
+		public int ItemDisplayId { get; internal set; }
 
 		/// <summary>
 		/// Indicates the slot this item should be equipped in.
 		/// </summary>
 		[WireMember(7)]
-		public InventoryType InventorySlotType { get; private set; }
+		public InventoryType InventorySlotType { get; internal set; }
 
 		/// <summary>
 		/// Wiki says: 0 -4, mostly 0
 		/// See: https://wowdev.wiki/DB/Item
 		/// </summary>
 		[WireMember(8)]
-		public int SheathType { get; private set; }
+		public int SheathType { get; internal set; }
 
 		/// <inheritdoc />
 		public ItemEntry(int itemId, int itemClassId, int itemSubClassId, int soundOverride, int materialId, int itemDisplayId, InventoryType inventorySlotType, int sheathType)

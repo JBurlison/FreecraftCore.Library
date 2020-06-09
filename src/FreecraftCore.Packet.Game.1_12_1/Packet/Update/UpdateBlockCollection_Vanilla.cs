@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		//Pre 3.0.2 they make the dumb mistake of NOT length prefixing this array.
 		//So dumb.
 		[WireMember(1)]
-		public int UpdateBlockSize { get; }
+		public int UpdateBlockSize { get; internal set; }
 
 		//TODO: Add CTOR for this
 		//ClientVersion.RemovedInVersion(ClientVersionBuild.V3_0_2_9056) there was a bool inbetween count and array for HasTransport.
@@ -26,7 +26,7 @@ namespace FreecraftCore
 		/// Removed in 3.0.2
 		/// </summary>
 		[WireMember(2)]
-		public bool HasTransport { get; }
+		public bool HasTransport { get; internal set; }
 
 		//We do this because the serializer currently chokes
 		[SendSize(SendSizeAttribute.SizeType.Int32)]

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -19,32 +19,32 @@ namespace FreecraftCore
 		/// The build number of the client.
 		/// </summary>
 		[WireMember(1)]
-		public ClientBuild ClientBuildNumber { get; private set; }
+		public ClientBuild ClientBuildNumber { get; internal set; }
 
 		//For some reason Trinitycore expects a 4 byte clientbuild number
 		//But clientbuild number is only a short, on the authentication process,
 		//so it's likely these are unknown bytes
 		[WireMember(2)]
-		private short unknownOne { get; set; } = 0;
+		internal short unknownOne { get; set; } = 0;
 
 		//Not checked on Trinitycore
 		//Was probably used for loadbalancing so it knows
 		//which server to ask for the session key.
 		//Skipped on Mangos too, with read_skip<uint32>()
 		[WireMember(3)]
-		private int LoginServiceId { get; set; } = 0;
+		internal int LoginServiceId { get; set; } = 0;
 
 		/// <summary>
 		/// The account name attempting to authentication their session.
 		/// </summary>
 		[WireMember(4)]
-		public string AccountName { get; private set; } //is a null terminated string
+		public string AccountName { get; internal set; } //is a null terminated string
 
 		//Not check on trinitycore
 		//Don't know what the type of login server would mean.
 		//Not in the 1.12.1 packet
 		[WireMember(5)]
-		private uint LoginServerType { get; set; } = 0; // 0 GRUNT, 1 Battle.net
+		internal uint LoginServerType { get; set; } = 0; // 0 GRUNT, 1 Battle.net
 
 		/// <summary>
 		/// The client's randomly generated seed.
@@ -52,7 +52,7 @@ namespace FreecraftCore
 		[NotNull]
 		[KnownSize(4)]
 		[WireMember(6)]
-		public byte[] RandomSeedBytes { get; private set; }
+		public byte[] RandomSeedBytes { get; internal set; }
 
 		/// <summary>
 		/// The realm indentify containing information about ID
@@ -60,12 +60,12 @@ namespace FreecraftCore
 		/// </summary>
 		[NotNull]
 		[WireMember(7)]
-		public RealmIdentification RealmIdentity { get; private set; }
+		public RealmIdentification RealmIdentity { get; internal set; }
 
 		//Don't know what this is
 		//Trinitycore doesn't use it
 		[WireMember(8)]
-		private ulong DosResponse { get; set; }
+		internal ulong DosResponse { get; set; }
 
 		/// <summary>
 		/// The client's computed digest for session authentication.
@@ -73,14 +73,14 @@ namespace FreecraftCore
 		[NotNull]
 		[KnownSize(20)]
 		[WireMember(9)]
-		public byte[] SessionDigest { get; private set; }
+		public byte[] SessionDigest { get; internal set; }
 
 		//Trintycore will crash if you don't at least send the size on newer versions
 		//Though it'll probably be fixed soon
 		[NotNull]
 		[Compress] //compressed with zlib
 		[WireMember(10)]
-		public AddonChecksumsContainer BlizzardAddonVerificationContainer { get; private set; }
+		public AddonChecksumsContainer BlizzardAddonVerificationContainer { get; internal set; }
 		
 		public SessionAuthProofRequest(ClientBuild clientBuildNumber, [NotNull] string accountName, [NotNull] byte[] randomSeedBytes,
 			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest, [NotNull] AddonChecksumInfo[] addonChecksums)

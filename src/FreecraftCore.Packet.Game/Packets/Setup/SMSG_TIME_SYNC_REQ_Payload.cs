@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -18,7 +18,7 @@ namespace FreecraftCore
 		/// Incremented each time a sync is sent.
 		/// </summary>
 		[WireMember(1)]
-		public int SynchronizationCounter { get; private set; }
+		public int SynchronizationCounter { get; internal set; }
 
 		public SMSG_TIME_SYNC_REQ_Payload(int synchronizationCounter)
 		{

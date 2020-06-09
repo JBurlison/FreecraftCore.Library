@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -14,18 +14,18 @@ namespace FreecraftCore
 		/// </summary>
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(1)]
-		public string ChannelName { get; }
+		public string ChannelName { get; internal set; }
 
 		//TODO: Create enum
 		/// <summary>
 		/// The player's rank in the channel
 		/// </summary>
 		[WireMember(2)]
-		public int PlayerRank { get; }
+		public int PlayerRank { get; internal set; }
 
 		//TODO: Why is this reciever?
 		[WireMember(3)]
-		public ObjectGuid RecieverGuid { get; }
+		public ObjectGuid RecieverGuid { get; internal set; }
 
 		/// <inheritdoc />
 		public NetworkChatChannelMessageDetails_Vanilla([NotNull] string channelName, [NotNull] ObjectGuid recieverGuid, int playerRank)

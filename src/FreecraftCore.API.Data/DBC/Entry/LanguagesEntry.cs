@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,13 +28,13 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int LanguageId { get; private set; }
+		public int LanguageId { get; internal set; }
 
 		/// <summary>
 		/// The localized name of the language.
 		/// </summary>
 		[WireMember(2)]
-		public LocalizedStringDBC<TStringType> Name { get; private set; }
+		public LocalizedStringDBC<TStringType> Name { get; internal set; }
 
 		public LanguagesEntry(int languageId, [NotNull] LocalizedStringDBC<TStringType> name)
 		{

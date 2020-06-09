@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -14,7 +14,7 @@ namespace FreecraftCore
 	public sealed class StringDBCReference : IStringPointerReferenceable
 	{
 		[WireMember(1)]
-		public uint StringReferenceOffset { get; private set; }
+		public uint StringReferenceOffset { get; internal set; }
 
 		/// <inheritdoc />
 		public StringDBCReference(uint stringReferenceOffset)
@@ -36,7 +36,7 @@ namespace FreecraftCore
 	public sealed class StringDBCReference<TContainedType> : IStringPointerReferenceable
 	{
 		[WireMember(1)]
-		public uint StringReferenceOffset { get; private set; }
+		public uint StringReferenceOffset { get; internal set; }
 
 		/// <inheritdoc />
 		public StringDBCReference(uint stringReferenceOffset)

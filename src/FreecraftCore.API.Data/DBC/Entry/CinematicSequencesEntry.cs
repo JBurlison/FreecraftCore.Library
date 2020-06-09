@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,7 +28,7 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int SequenceId { get; private set; }
+		public int SequenceId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
@@ -36,14 +36,14 @@ namespace FreecraftCore
 		/// See: <see cref="SoundEntriesEntry{TStringType}"/>.
 		/// </summary>
 		[WireMember(2)]
-		public int SoundId { get; private set; }
+		public int SoundId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable.
 		/// See: <see cref="CinematicCameraEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(3)]
-		public int CameraId { get; private set; }
+		public int CameraId { get; internal set; }
 
 		[JsonIgnore]
 		[ForeignKey(nameof(CameraId))]
@@ -53,7 +53,7 @@ namespace FreecraftCore
 		/// Never used in Blizzlike DBC.
 		/// </summary>
 		[WireMember(4)]
-		internal GenericStaticallySizedArrayChunkSeven<int> UnusedCameraId { get; private set; }
+		internal GenericStaticallySizedArrayChunkSeven<int> UnusedCameraId { get; set; }
 
 		public CinematicSequencesEntry(int sequenceId, int soundId, int cameraId, [NotNull] GenericStaticallySizedArrayChunkSeven<int> unusedCameraId)
 		{

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,10 +27,10 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int QuestInfoId { get; private set; }
+		public int QuestInfoId { get; internal set; }
 
 		[WireMember(2)]
-		public LocalizedStringDBC<TStringType> Name { get; private set; }
+		public LocalizedStringDBC<TStringType> Name { get; internal set; }
 
 		public QuestInfoEntry(int questInfoId, [NotNull] LocalizedStringDBC<TStringType> name)
 		{

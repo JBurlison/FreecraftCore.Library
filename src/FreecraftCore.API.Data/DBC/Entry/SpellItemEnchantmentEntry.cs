@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,38 +27,38 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int EnchantmentId { get; private set; }
+		public int EnchantmentId { get; internal set; }
 
 		[WireMember(2)]
-		public int Charges { get; private set; }
+		public int Charges { get; internal set; }
 
 		[Column("Effect")]
 		[WireMember(3)]
-		public ItemEnchantmentSpellCollection Effects { get; private set; }
+		public ItemEnchantmentSpellCollection Effects { get; internal set; }
 
 		[WireMember(4)]
-		public LocalizedStringDBC<TStringType> Description { get; private set; }
+		public LocalizedStringDBC<TStringType> Description { get; internal set; }
 
 		[WireMember(5)]
-		public int ItemVisual { get; private set; }
+		public int ItemVisual { get; internal set; }
 
 		[WireMember(6)]
-		public EnchantmentSlotMask Flags { get; private set; }
+		public EnchantmentSlotMask Flags { get; internal set; }
 
 		[WireMember(7)]
-		public int GemItemId { get; private set; }
+		public int GemItemId { get; internal set; }
 
 		[WireMember(8)]
-		public int EnchantmentConditionId { get; private set; }
+		public int EnchantmentConditionId { get; internal set; }
 
 		[WireMember(9)]
-		public int RequiredSkillId { get; private set; }
+		public int RequiredSkillId { get; internal set; }
 
 		[WireMember(10)]
-		public int RequiredSkillValue { get; private set; }
+		public int RequiredSkillValue { get; internal set; }
 
 		[WireMember(11)]
-		public int RequiredLevel { get; private set; }
+		public int RequiredLevel { get; internal set; }
 
 		public SpellItemEnchantmentEntry(int enchantmentId, int charges, [NotNull] ItemEnchantmentSpellCollection effects, [NotNull] LocalizedStringDBC<TStringType> description, int itemVisual, EnchantmentSlotMask flags, int gemItemId, int enchantmentConditionId, int requiredSkillId, int requiredSkillValue, int requiredLevel)
 		{

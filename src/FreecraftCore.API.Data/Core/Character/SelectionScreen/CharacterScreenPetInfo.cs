@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -7,13 +7,13 @@ namespace FreecraftCore
 	{
 		//TODO: Figure out what any of this means
 		[WireMember(1)]
-		public uint PetInformationId { get; }
+		public uint PetInformationId { get; internal set; }
 
 		[WireMember(2)]
-		public uint PetLevel { get; }
+		public uint PetLevel { get; internal set; }
 
 		[WireMember(3)]
-		public uint PetFamilyId { get; }
+		public uint PetFamilyId { get; internal set; }
 
 		protected CharacterScreenPetInfo()
 		{

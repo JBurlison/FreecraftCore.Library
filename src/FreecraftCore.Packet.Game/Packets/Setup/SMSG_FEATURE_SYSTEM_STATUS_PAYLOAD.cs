@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -19,13 +19,13 @@ namespace FreecraftCore
 		/// Unknown value. Maybe the feature type.
 		/// </summary>
 		[WireMember(1)]
-		public byte Unk { get; } = 2;
+		public byte Unk { get; internal set; } = 2;
 
 		/// <summary>
 		/// Indicates if the feature is enabled.
 		/// </summary>
 		[WireMember(2)]
-		public bool isFeatureEnabled { get; }
+		public bool isFeatureEnabled { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_FEATURE_SYSTEM_STATUS_PAYLOAD(bool isFeatureEnabled)

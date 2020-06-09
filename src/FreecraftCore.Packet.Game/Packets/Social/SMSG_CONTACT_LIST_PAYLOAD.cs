@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -30,14 +30,14 @@ namespace FreecraftCore
 		/// TODO: Implement flags enumeration for social type
 		/// </summary>
 		[WireMember(1)]
-		public SocialFlag Flags { get; } = SocialFlag.SOCIAL_FLAG_ALL;
+		public SocialFlag Flags { get; internal set; } = SocialFlag.SOCIAL_FLAG_ALL;
 
 		/// <summary>
 		/// TODO: Implement the actual friends data
 		/// </summary>
 		[ReadToEnd]
 		[WireMember(2)]
-		public byte[] Data { get; } = new byte[4]; //TODO: Don't autoset like this
+		public byte[] Data { get; internal set; } = new byte[4]; //TODO: Don't autoset like this
 
 		/// <summary>
 		/// Creates an empty friends list packet.

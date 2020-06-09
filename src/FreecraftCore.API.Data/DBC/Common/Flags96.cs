@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -18,13 +18,13 @@ namespace FreecraftCore
 		//This might seem ridiclous that we don't use arrays BUT EF does not support arrays
 		//for the models so we MUST use seperate fields.
 		[WireMember(1)]
-		public TFlagsType One { get; private set; }
+		public TFlagsType One { get; internal set; }
 
 		[WireMember(2)]
-		public TFlagsType Two { get; private set; }
+		public TFlagsType Two { get; internal set; }
 
 		[WireMember(3)]
-		public TFlagsType Three { get; private set; }
+		public TFlagsType Three { get; internal set; }
 
 		/// <inheritdoc />
 		public Flags96(TFlagsType one, TFlagsType two, TFlagsType three)

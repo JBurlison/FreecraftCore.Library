@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using FreecraftCore.Serializer;
 using Microsoft.EntityFrameworkCore;
@@ -18,13 +18,13 @@ namespace FreecraftCore
 		/// X value.
 		/// </summary>
 		[WireMember(1)]
-		public T X { get; private set; }
+		public T X { get; internal set; }
 
 		/// <summary>
 		/// Y value.
 		/// </summary>
 		[WireMember(2)]
-		public T Y { get; private set; }
+		public T Y { get; internal set; }
 
 		[JsonIgnore]
 		[NotMapped]

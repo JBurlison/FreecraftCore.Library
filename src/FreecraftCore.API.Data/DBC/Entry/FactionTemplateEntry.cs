@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -81,10 +81,10 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int FactionTemplateId { get; private set; }
+		public int FactionTemplateId { get; internal set; }
 
 		[WireMember(2)]
-		public int FactionId { get; private set; }
+		public int FactionId { get; internal set; }
 
 		/// <summary>
 		/// Navigation property linked by <see cref="FactionId"/>.
@@ -94,27 +94,27 @@ namespace FreecraftCore
 		public virtual FactionEntry<string> Faction { get; private set; }
 
 		[WireMember(3)]
-		public FactionTemplateFlags FactionFlags { get; private set; }
+		public FactionTemplateFlags FactionFlags { get; internal set; }
 
 		/// <summary>
 		/// If 0 the faction template is not associated with any group.
 		/// </summary>
 		[WireMember(4)]
-		public FactionGroupMask OwnFactionGroupMask { get; private set; }
+		public FactionGroupMask OwnFactionGroupMask { get; internal set; }
 
 		/// <summary>
 		/// Bitmask of <see cref="FactionGroupMask"/> defined in FactionGroup DBC
 		/// that controls friendly groups of factions (if any).
 		/// </summary>
 		[WireMember(5)]
-		public FactionGroupMask FriendlyFactionGroupMask { get; private set; }
+		public FactionGroupMask FriendlyFactionGroupMask { get; internal set; }
 
 		/// <summary>
 		/// Bitmask of <see cref="FactionGroupMask"/> defined in FactionGroup DBC
 		/// that controls enemy groups of factions (if any).
 		/// </summary>
 		[WireMember(6)]
-		public FactionGroupMask EnemyFactionGroupMask { get; private set; }
+		public FactionGroupMask EnemyFactionGroupMask { get; internal set; }
 
 		/// <summary>
 		/// Explicit additional enemy faction template ids that this template
@@ -122,7 +122,7 @@ namespace FreecraftCore
 		/// These are either 0 or are valid ids of <see cref="FactionEntry{TStringType}"/>.
 		/// </summary>
 		[WireMember(7)]
-		public Vector4<int> EnemyFaction { get; private set; }
+		public Vector4<int> EnemyFaction { get; internal set; }
 
 		/// <summary>
 		/// Explicit additional enemy faction template ids that this template
@@ -130,7 +130,7 @@ namespace FreecraftCore
 		/// These are either 0 or are valid ids of <see cref="FactionEntry{TStringType}"/>.
 		/// </summary>
 		[WireMember(8)]
-		public Vector4<int> FriendlyFaction { get; private set; }
+		public Vector4<int> FriendlyFaction { get; internal set; }
 
 		public FactionTemplateEntry(int factionTemplateId, int factionId, FactionTemplateFlags factionFlags, FactionGroupMask ownFactionGroupMask, FactionGroupMask friendlyFactionGroupMask, FactionGroupMask enemyFactionGroupMask, [NotNull] Vector4<int> enemyFaction, [NotNull] Vector4<int> friendlyFaction)
 		{

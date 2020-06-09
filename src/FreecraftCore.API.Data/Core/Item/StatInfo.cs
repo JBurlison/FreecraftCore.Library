@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -10,7 +10,7 @@ namespace FreecraftCore
 	public sealed class StatInfo
 	{
 		[WireMember(1)]
-		public ItemModType StatType { get; }
+		public ItemModType StatType { get; internal set; }
 
 		public int StatValue { get; }
 

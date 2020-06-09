@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 using System;
 using JetBrains.Annotations;
 
@@ -18,7 +18,7 @@ namespace FreecraftCore
 		/// </summary>
 		[KnownSize(32)]
 		[WireMember(1)]
-		public byte[] A { get; private set; }
+		public byte[] A { get; internal set; }
 
 		/// <summary>
 		/// SRP6 M. Essentially a hash of the provided token data and SRP generated data on the client.
@@ -26,7 +26,7 @@ namespace FreecraftCore
 		/// </summary>
 		[KnownSize(20)]
 		[WireMember(2)]
-		public byte[] M1 { get; private set; }
+		public byte[] M1 { get; internal set; }
 
 		//TODO: Implement clientside hash response. Is this in 1.12.1?
 		//This is not a CRC. http://www.ownedcore.com/forums/world-of-warcraft/world-of-warcraft-emulator-servers/wow-emu-questions-requests/236273-auth-proof-crc-hash.html
@@ -37,7 +37,7 @@ namespace FreecraftCore
 		/// </summary>
 		[KnownSize(20)]
 		[WireMember(3)]
-		public byte[] EphemeralClientFileHash { get; private set; } = new byte[20]; //TODO: When we actually implement this remove this empty array
+		public byte[] EphemeralClientFileHash { get; internal set; } = new byte[20]; //TODO: When we actually implement this remove this empty array
 
 		//Documentation says it's never used
 		//TODO: Find out what this is. Trinitycore doesn't seem to reference it. Neither does Mangos.

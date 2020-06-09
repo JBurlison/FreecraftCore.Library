@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -15,7 +15,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(1)]
-		public string Name { get; }
+		public string Name { get; internal set; }
 
 		/// <summary>
 		/// The name of the realm they're on.
@@ -23,29 +23,29 @@ namespace FreecraftCore
 		/// </summary>
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(2)]
-		public string RealmName { get; private set; } = "";
+		public string RealmName { get; internal set; } = "";
 
 		/// <summary>
 		/// Indicates the race associated with the guid.
 		/// </summary>
 		[WireMember(3)]
-		public CharacterRace Race { get; private set; }
+		public CharacterRace Race { get; internal set; }
 
 		/// <summary>
 		/// Indicates the gender associated with the guid.
 		/// </summary>
 		[WireMember(4)]
-		public CharacterGender Gender { get; private set; }
+		public CharacterGender Gender { get; internal set; }
 
 		/// <summary>
 		/// Indicates the class associated with the guid.
 		/// </summary>
 		[WireMember(5)]
-		public CharacterClass Class { get; private set; }
+		public CharacterClass Class { get; internal set; }
 
 		//TODO: Handle declined names
 		[WireMember(6)]
-		public bool IsNameDeclined { get; }
+		public bool IsNameDeclined { get; internal set; }
 
 		/// <inheritdoc />
 		public NameQueryResult([NotNull] string name, [CanBeNull] string realmName, CharacterRace race, CharacterGender gender, CharacterClass @class)

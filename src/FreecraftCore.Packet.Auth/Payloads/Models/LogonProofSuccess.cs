@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -22,22 +22,22 @@ namespace FreecraftCore
 		/// </summary>
 		[WireMember(1)]
 		[KnownSize(20)]
-		public byte[] M2 { get; private set; }
+		public byte[] M2 { get; internal set; }
 
 		//TODO: Accountflags? Trinitycore says this is:  0x01 = GM, 0x08 = Trial, 0x00800000 = Pro pass (arena tournament) but they always send "Pro Pass"?
 		/// <summary>
 		/// Indicates the authorization the client was granted.
 		/// </summary>
 		[WireMember(2)] //sent as a uint32
-		public AccountAuthorizationFlags AccountAuthorization { get; private set; }
+		public AccountAuthorizationFlags AccountAuthorization { get; internal set; }
 
 		//TODO: What is survey ID? Always 0 on Trinitycore. Check mangos and EmberEmu
 		[WireMember(3)]
-		private uint surveyId { get; } = 0;
+		internal uint surveyId { get; set; } = 0;
 
 		//TODO: What is this? Always 0 from Trinitycore.
 		[WireMember(4)]
-		private ushort unk3 { get; } = 0;
+		internal ushort unk3 { get; set; } = 0;
 
 		//TODO: Proper Ctor. Right now we only implement client stuff. Server sends this.
 

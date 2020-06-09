@@ -1,4 +1,4 @@
-﻿//Orginally based on: https://github.com/dotnet/corefx/blob/e0ba7aa8026280ee3571179cc06431baf1dfaaac/src/System.Collections/src/System/Collections/BitArray.cs
+//Orginally based on: https://github.com/dotnet/corefx/blob/e0ba7aa8026280ee3571179cc06431baf1dfaaac/src/System.Collections/src/System/Collections/BitArray.cs
 //License for the original below, the new version is licensed under the MIT license too.
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
@@ -29,7 +29,7 @@ namespace FreecraftCore
 		//WoW sends a byte-prefixed int array representing the bitarray.
 		[SendSize(SendSizeAttribute.SizeType.Byte)]
 		[WireMember(1)]
-		internal byte[] InternalArray { get; }
+		internal byte[] InternalArray { get; set; }
 
 		/// <summary>
 		/// The internal integer array representing the bitmask.

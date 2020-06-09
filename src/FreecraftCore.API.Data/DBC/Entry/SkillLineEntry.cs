@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -31,14 +31,14 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int SkillLineId { get; private set; }
+		public int SkillLineId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable
 		/// See: <see cref="SkillCategoryEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(2)]
-		public int CategoryId { get; private set; }
+		public int CategoryId { get; internal set; }
 
 		[JsonIgnore]
 		[ForeignKey(nameof(CategoryId))]
@@ -49,23 +49,23 @@ namespace FreecraftCore
 		/// TODO: Which DBC does this point too?
 		/// </summary>
 		[WireMember(3)]
-		public int SkillCostId { get; private set; }
+		public int SkillCostId { get; internal set; }
 
 		[WireMember(4)]
-		public LocalizedStringDBC<TStringType> DisplayName { get; private set; }
+		public LocalizedStringDBC<TStringType> DisplayName { get; internal set; }
 
 		[WireMember(5)]
-		public LocalizedStringDBC<TStringType> Description { get; private set; }
+		public LocalizedStringDBC<TStringType> Description { get; internal set; }
 
 		/// <summary>
 		/// Nullable
 		/// See: <see cref="SpellIconEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(6)]
-		public int SpellIconId { get; private set; }
+		public int SpellIconId { get; internal set; }
 
 		[WireMember(7)]
-		public LocalizedStringDBC<TStringType> AlternativeVerb { get; private set; }
+		public LocalizedStringDBC<TStringType> AlternativeVerb { get; internal set; }
 
 		/// <summary>
 		/// prof. with recipes
@@ -73,7 +73,7 @@ namespace FreecraftCore
 		[Column("CanLink")]
 		[JsonProperty(PropertyName = "CanLink")]
 		[WireMember(8)]
-		internal int CanLink { get; private set; }
+		internal int CanLink { get; set; }
 
 		public SkillLineEntry(int skillLineId, int categoryId, int skillCostId, [NotNull] LocalizedStringDBC<TStringType> displayName, [NotNull] LocalizedStringDBC<TStringType> description, int spellIconId, [NotNull] LocalizedStringDBC<TStringType> alternativeVerb, bool canLink)
 		{

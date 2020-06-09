@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -13,27 +13,27 @@ namespace FreecraftCore
 		/// </summary>
 		[NotNull]
 		[WireMember(1)]
-		public string AddonName { get; }
+		public string AddonName { get; internal set; }
 
 		/// <summary>
 		/// Indicates if the addon is enabled.
 		/// </summary>
 		[WireMember(2)]
-		private bool UsesPublicKeyCRC { get; } = true; //sniffed as true
+		internal bool UsesPublicKeyCRC { get; set; } = true; //sniffed as true
 
 		//TODO: How do we compute this? It looks the same for every addon in the auth packet.
 		/// <summary>
 		/// The CRC hash of the addon.
 		/// </summary>
 		[WireMember(3)]
-		private uint CRCHash { get; } = 1276933997; //sniffed from real client auth
+		internal uint CRCHash { get; set; } = 1276933997; //sniffed from real client auth
 
 		//TODO: What is this?
 		/// <summary>
 		/// The something?
 		/// </summary>
 		[WireMember(4)]
-		private uint URLFileCRC { get; } = 0; //sniffed as 0 but I don't know what this is
+		internal uint URLFileCRC { get; set; } = 0; //sniffed as 0 but I don't know what this is
 
 		public AddonChecksumInfo([NotNull] string addonName)
 		{

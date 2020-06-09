@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -33,13 +33,13 @@ namespace FreecraftCore
 		/// </summary>
 		[Key]
 		[WireMember(1)]
-		public int CreatureDisplayInfoId { get; private set; }
+		public int CreatureDisplayInfoId { get; internal set; }
 
 		/// <summary>
 		/// A model to be used.
 		/// </summary>
 		[WireMember(2)]
-		public int ModelId { get; private set; }
+		public int ModelId { get; internal set; }
 
 		/// <summary>
 		/// A model to be used.
@@ -55,7 +55,7 @@ namespace FreecraftCore
 		/// Otherwise, overrides generic model settings for this displayID.
 		/// </summary>
 		[WireMember(3)]
-		public int SoundIdOverride { get; private set; }
+		public int SoundIdOverride { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
@@ -64,20 +64,20 @@ namespace FreecraftCore
 		/// Not used for creatures.
 		/// </summary>
 		[WireMember(4)]
-		public int ExtraDisplayInformationId { get; private set; }
+		public int ExtraDisplayInformationId { get; internal set; }
 
 		/// <summary>
 		/// Default scale. Stacks (by multiplying) with other scale settings (in creature_template, applied auras...).
 		/// </summary>
 		[WireMember(5)]
-		public float CreatureModelScale { get; private set; }
+		public float CreatureModelScale { get; internal set; }
 
 		/// <summary>
 		/// 0 (transparent) to 255 (opaque).
 		/// </summary>
 		[Range(0, 255)]
 		[WireMember(6)]
-		public int CreatureModelAlpha { get; private set; }
+		public int CreatureModelAlpha { get; internal set; }
 
 		/// <summary>
 		/// Name of texture for geoset with type 2.
@@ -88,20 +88,20 @@ namespace FreecraftCore
 		/// Three: 3rd Geoset
 		/// </summary>
 		[WireMember(7)]
-		public GenericStaticallySizedArrayChunkThree<TStringType> TextureVariation { get; private set; }
+		public GenericStaticallySizedArrayChunkThree<TStringType> TextureVariation { get; internal set; }
 
 		/// <summary>
 		/// Holding an icon like INV_Misc_Food_59. Only on a few.
 		/// </summary>
 		[WireMember(8)]
-		public TStringType PortraitTextureName { get; private set; }
+		public TStringType PortraitTextureName { get; internal set; }
 
 		/// <summary>
 		/// If 0, this is read from CreatureModelData.
 		/// (CGUnit::RefreshDataPointers) Seems to have no effect in game.
 		/// </summary>
 		[WireMember(9)]
-		public int BloodLevelIdOverride { get; private set; }
+		public int BloodLevelIdOverride { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
@@ -109,7 +109,7 @@ namespace FreecraftCore
 		/// See: <see cref="UnitBloodEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(10)]
-		public int UnitBloodId { get; private set; }
+		public int UnitBloodId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
@@ -117,7 +117,7 @@ namespace FreecraftCore
 		/// See: <see cref="NPCSoundsEntry"/>
 		/// </summary>
 		[WireMember(11)]
-		public int NpcSoundsId { get; private set; }
+		public int NpcSoundsId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
@@ -125,7 +125,7 @@ namespace FreecraftCore
 		/// See: <see cref="ParticleColorEntry"/>
 		/// </summary>
 		[WireMember(12)]
-		public int ParticleId { get; private set; }
+		public int ParticleId { get; internal set; }
 
 		//TODO: What is this??
 		/// <summary>
@@ -135,7 +135,7 @@ namespace FreecraftCore
 		/// See: https://wowdev.wiki/M2/.skin#Mesh_part_ID
 		/// </summary>
 		[WireMember(13)]
-		public int CreatureGeosetData { get; private set; }
+		public int CreatureGeosetData { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
@@ -143,7 +143,7 @@ namespace FreecraftCore
 		/// See: <see cref="ObjectEffectPackageEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(14)]
-		public int ObjectEffectPackageId { get; private set; }
+		public int ObjectEffectPackageId { get; internal set; }
 
 		public CreatureDisplayInfoEntry(int creatureDisplayInfoId, int modelId, int soundIdOverride, int extraDisplayInformationId, float creatureModelScale, int creatureModelAlpha, [NotNull] GenericStaticallySizedArrayChunkThree<TStringType> textureVariation, [NotNull] TStringType portraitTextureName, int bloodLevelIdOverride, int unitBloodId, int npcSoundsId, int particleId, int creatureGeosetData, int objectEffectPackageId)
 		{

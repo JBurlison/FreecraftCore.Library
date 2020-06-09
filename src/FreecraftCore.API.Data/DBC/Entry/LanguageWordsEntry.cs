@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -31,14 +31,14 @@ namespace FreecraftCore
 		/// </summary>
 		[Key]
 		[WireMember(1)]
-		public int Id { get; private set; }
+		public int Id { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable
 		/// See: <see cref="LanguagesEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(2)]
-		public int LanguageId { get; private set; }
+		public int LanguageId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable
@@ -52,7 +52,7 @@ namespace FreecraftCore
 		/// Replacement word.
 		/// </summary>
 		[WireMember(3)]
-		public TStringType Word { get; private set; }
+		public TStringType Word { get; internal set; }
 
 		public LanguageWordsEntry(int id, int languageId, [NotNull] TStringType word)
 		{

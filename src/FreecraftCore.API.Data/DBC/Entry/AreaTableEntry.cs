@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -29,13 +29,13 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int AreaId { get; private set; }
+		public int AreaId { get; internal set; }
 
 		/// <summary>
 		/// The root <see cref="MapEntry{TStringType}"/> id.
 		/// </summary>
 		[WireMember(2)]
-		public int MapId { get; private set; }
+		public int MapId { get; internal set; }
 
 		/// <summary>
 		/// Map nav property.
@@ -46,7 +46,7 @@ namespace FreecraftCore
 
 		//TODO: Support nav property. 0 == null in blizzlike.
 		[WireMember(4)]
-		public int ParentAreaId { get; private set; }
+		public int ParentAreaId { get; internal set; }
 
 		/// <summary>
 		/// Unique and secondary key for <see cref="AreaTableEntry{TStringType}"/> that indicates
@@ -54,55 +54,55 @@ namespace FreecraftCore
 		/// (Ex. used in Zone exploration).
 		/// </summary>
 		[WireMember(7)]
-		public int AreaBit { get; private set; }
+		public int AreaBit { get; internal set; }
 
 		[WireMember(8)]
-		public AreaFlags Flags { get; private set; }
+		public AreaFlags Flags { get; internal set; }
 
 		[WireMember(9)]
-		public int SoundProviderPreference { get; private set; }
+		public int SoundProviderPreference { get; internal set; }
 
 		[WireMember(10)]
-		public int SoundProviderPreferenceUnderwater { get; private set; }
+		public int SoundProviderPreferenceUnderwater { get; internal set; }
 
 		//TODO: What table is this pointing to?
 		[WireMember(11)]
-		public int AmbienceId { get; private set; }
+		public int AmbienceId { get; internal set; }
 
 		//TODO: What table is this pointing to?
 		[WireMember(12)]
-		public int ZoneMusicId { get; private set; }
+		public int ZoneMusicId { get; internal set; }
 
 		[WireMember(13)]
-		public int IntroSoundId { get; private set; }
+		public int IntroSoundId { get; internal set; }
 
 		/// <summary>
 		/// Negative indicates that area exploration leveling is disabled for this area.
 		/// </summary>
 		[WireMember(14)]
-		public int AreaExplorationLevel { get; private set; }
+		public int AreaExplorationLevel { get; internal set; }
 
 		[WireMember(15)]
-		public LocalizedStringDBC<TStringType> AreaName { get; private set; }
+		public LocalizedStringDBC<TStringType> AreaName { get; internal set; }
 
 		/// <summary>
 		/// See: <see cref="AreaTeams"/>.
 		/// </summary>
 		[WireMember(16)]
-		public AreaTeams FactionTeamMask { get; private set; }
+		public AreaTeams FactionTeamMask { get; internal set; }
 
 		[WireMember(17)]
-		public Vector4<int> LiquidTypeID { get; private set; }
+		public Vector4<int> LiquidTypeID { get; internal set; }
 
 		[WireMember(18)]
-		public float MinimumElevation { get; private set; }
+		public float MinimumElevation { get; internal set; }
 
 		[WireMember(19)]
-		public float AmbientMultiplier { get; private set; }
+		public float AmbientMultiplier { get; internal set; }
 
 		//TODO: Nav property to light data?
 		[WireMember(20)]
-		public int LightId { get; private set; }
+		public int LightId { get; internal set; }
 
 		public AreaTableEntry(int areaId, int mapId, int parentAreaId, int areaBit, AreaFlags flags, int soundProviderPreference, int soundProviderPreferenceUnderwater, int ambienceId, int zoneMusicId, int introSoundId, int areaExplorationLevel, [NotNull] LocalizedStringDBC<TStringType> areaName, AreaTeams factionTeamMask, [NotNull] Vector4<int> liquidTypeId, float minimumElevation, float ambientMultiplier, int lightId)
 		{

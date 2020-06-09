@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -27,31 +27,31 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int CameraShakeId { get; private set; }
+		public int CameraShakeId { get; internal set; }
 
 		[WireMember(2)]
-		public CGCameraShakeType ShakeType { get; private set; }
+		public CGCameraShakeType ShakeType { get; internal set; }
 
 		[WireMember(3)]
-		public CGCameraDir Direction { get; private set; }
+		public CGCameraDir Direction { get; internal set; }
 
 		/// <summary>
 		/// Multiplied by 0.027777778f when passed to CGCamera::AddShake.
 		/// </summary>
 		[WireMember(4)]
-		public float Amplitude { get; private set; }
+		public float Amplitude { get; internal set; }
 
 		[WireMember(5)]
-		public float Frequency { get; private set; }
+		public float Frequency { get; internal set; }
 
 		[WireMember(6)]
-		public float Duration { get; private set; }
+		public float Duration { get; internal set; }
 
 		[WireMember(7)]
-		public float Phase { get; private set; }
+		public float Phase { get; internal set; }
 
 		[WireMember(8)]
-		public float Coefficient { get; private set; }
+		public float Coefficient { get; internal set; }
 
 		public CameraShakesEntry(int cameraShakeId, CGCameraShakeType shakeType, CGCameraDir direction, float amplitude, float frequency, float duration, float phase, float coefficient)
 		{

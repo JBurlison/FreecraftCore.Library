@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 using System;
 using System.Linq;
 using System.Net;
@@ -14,7 +14,7 @@ namespace FreecraftCore
 
 		//They send IP as a string that contains both IP and the port
 		[WireMember(1)]
-		private string RealmEndpointInformation { get; }
+		internal string RealmEndpointInformation { get; set; }
 
 		private Lazy<IPAddress> lazyIP { get; }
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -9,200 +9,200 @@ namespace FreecraftCore
 	public sealed class ItemQueryResponseInfo
 	{
 		[WireMember(1)]
-		public ItemClassType ClassType { get; }
+		public ItemClassType ClassType { get; internal set; }
 
 		/// <summary>
 		/// The subclass type.
 		/// Related to the <see cref="ClassType"/>
 		/// </summary>
 		[WireMember(2)]
-		public int SubClassType { get; }
+		public int SubClassType { get; internal set; }
 
 		/// <summary>
 		/// TODO: What is this?
 		/// </summary>
 		[WireMember(3)]
-		public int SoundOverrideSubclass { get; }
+		public int SoundOverrideSubclass { get; internal set; }
 
 		[KnownSize(4)]
 		[WireMember(4)]
-		public string[] ItemNames { get; }
+		public string[] ItemNames { get; internal set; }
 
 		[WireMember(5)]
-		public int DisplayId { get; }
+		public int DisplayId { get; internal set; }
 
 		[WireMember(6)]
-		public ItemQuality Quality { get; }
+		public ItemQuality Quality { get; internal set; }
 
 		/// <summary>
 		/// TODO: Find the flags enum for this
 		/// </summary>
 		[WireMember(7)]
-		public ItemFlags ItemFlags { get; }
+		public ItemFlags ItemFlags { get; internal set; }
 
 		//1.12.1 does not send an extra flag.
 		/// <summary>
 		/// TODO: Find the flags enum for this.
 		/// </summary>
 		[WireMember(8)]
-		public ItemFlags2 ItemFlags2 { get; }
+		public ItemFlags2 ItemFlags2 { get; internal set; }
 
 		[WireMember(9)]
-		public int BuyPrice { get; }
+		public int BuyPrice { get; internal set; }
 
 		[WireMember(10)]
-		public int SellPrice { get; }
+		public int SellPrice { get; internal set; }
 
 		//TODO: Enum
 		[WireMember(11)]
-		public int InventoryType { get; }
+		public int InventoryType { get; internal set; }
 
 		/// <summary>
 		/// Indicates an allowable class.
 		/// </summary>
 		[WireMember(12)]
-		public uint AllowableClass { get; }
+		public uint AllowableClass { get; internal set; }
 
 		[WireMember(13)]
-		public int AllowableRace { get; }
+		public int AllowableRace { get; internal set; }
 
 		[WireMember(14)]
-		public int ItemLevel { get; }
+		public int ItemLevel { get; internal set; }
 
 		[WireMember(15)]
-		public int RequiredLevel { get; }
+		public int RequiredLevel { get; internal set; }
 
 		[WireMember(16)]
-		public int RequiredSkill { get; }
+		public int RequiredSkill { get; internal set; }
 
 		[WireMember(17)]
-		public int RequiredSkillRank { get; }
+		public int RequiredSkillRank { get; internal set; }
 
 		[WireMember(18)]
-		public int RequiredSpell { get; }
+		public int RequiredSpell { get; internal set; }
 
 		[WireMember(19)]
-		public int RequiredHonorRank { get; }
+		public int RequiredHonorRank { get; internal set; }
 
 		[WireMember(20)]
-		public int RequiredCityRank { get; }
+		public int RequiredCityRank { get; internal set; }
 
 		[WireMember(21)]
-		public int RequiredReptuationFaction { get; }
+		public int RequiredReptuationFaction { get; internal set; }
 
 		[WireMember(22)]
-		public int RequiredReptuationRank { get; }
+		public int RequiredReptuationRank { get; internal set; }
 
 		[WireMember(23)]
-		public int MaxCount { get; }
+		public int MaxCount { get; internal set; }
 
 		[WireMember(24)]
-		public int MaxStackable { get; }
+		public int MaxStackable { get; internal set; }
 
 		[WireMember(25)]
-		public int ContainerSlots { get; }
+		public int ContainerSlots { get; internal set; }
 
 		[SendSize(SendSizeAttribute.SizeType.Int32)]
 		[WireMember(26)]
-		public StatInfo[] StatInfos { get; }
+		public StatInfo[] StatInfos { get; internal set; }
 
 		[WireMember(27)]
-		public int ScalingStatDistribution { get; }
+		public int ScalingStatDistribution { get; internal set; }
 
 		[WireMember(28)]
-		public int ScalingStatValue { get; }
+		public int ScalingStatValue { get; internal set; }
 
 		[KnownSize(2)]
 		[WireMember(29)]
-		public ItemDamageDefinition[] ItemDamageMods { get; }
+		public ItemDamageDefinition[] ItemDamageMods { get; internal set; }
 
 		//See: SpellSchools enumeration
 		[KnownSize(7)]
 		[WireMember(30)]
-		public int[] Resistances { get; }
+		public int[] Resistances { get; internal set; }
 
 		[WireMember(31)]
-		public int Delay { get; }
+		public int Delay { get; internal set; }
 
 		[WireMember(32)]
-		public int AmmoType { get; }
+		public int AmmoType { get; internal set; }
 
 		[WireMember(33)]
-		public float RangedModRange { get; }
+		public float RangedModRange { get; internal set; }
 
 		[KnownSize(5)]
 		[WireMember(34)]
-		public ItemSpellInfo[] SpellInfos { get; }
+		public ItemSpellInfo[] SpellInfos { get; internal set; }
 
 		[WireMember(35)]
-		public ItemBondingType BondingType { get; }
+		public ItemBondingType BondingType { get; internal set; }
 
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(36)]
-		public string ItemDescription { get; }
+		public string ItemDescription { get; internal set; }
 
 		[WireMember(37)]
-		public int PageText { get; }
+		public int PageText { get; internal set; }
 
 		[WireMember(38)]
-		public int LanguageId { get; }
+		public int LanguageId { get; internal set; }
 
 		[WireMember(39)]
-		public int PageMaterial { get; }
+		public int PageMaterial { get; internal set; }
 
 		[WireMember(40)]
-		public int StartQuest { get; }
+		public int StartQuest { get; internal set; }
 
 		[WireMember(41)]
-		public int LockID { get; }
+		public int LockID { get; internal set; }
 
 		[WireMember(42)]
-		public int Material { get; }
+		public int Material { get; internal set; }
 
 		[WireMember(43)]
-		public int Sheath { get; }
+		public int Sheath { get; internal set; }
 
 		[WireMember(44)]
-		public int RandomProperty { get; }
+		public int RandomProperty { get; internal set; }
 
 		[WireMember(45)]
-		public int RandomSuffix { get; }
+		public int RandomSuffix { get; internal set; }
 
 		[WireMember(46)]
-		public int Block { get; }
+		public int Block { get; internal set; }
 
 		[WireMember(47)]
-		public int ItemSet { get; }
+		public int ItemSet { get; internal set; }
 
 		[WireMember(48)]
-		public int Maxdurability { get; }
+		public int Maxdurability { get; internal set; }
 
 		[WireMember(49)]
-		public int Area { get; }
+		public int Area { get; internal set; }
 
 		[WireMember(50)]
-		public int Map { get; }
+		public int Map { get; internal set; }
 
 		[WireMember(51)]
-		public BAG_FAMILY_MASK BagFamily { get; }
+		public BAG_FAMILY_MASK BagFamily { get; internal set; }
 
 		[WireMember(52)]
-		public ItemSocketInfo SocketInformation { get; }
+		public ItemSocketInfo SocketInformation { get; internal set; }
 
 		[WireMember(53)]
-		public int RequiredDisenchantSkill { get; }
+		public int RequiredDisenchantSkill { get; internal set; }
 
 		[WireMember(54)]
-		public int ArmorDamageModifier { get; }
+		public int ArmorDamageModifier { get; internal set; }
 
 		[WireMember(55)]
-		public int Duration { get; }
+		public int Duration { get; internal set; }
 
 		[WireMember(56)]
-		public int ItemLimitCategory { get; }
+		public int ItemLimitCategory { get; internal set; }
 
 		[WireMember(57)]
-		public int HolidayId { get; }
+		public int HolidayId { get; internal set; }
 
 		/// <inheritdoc />
 		public ItemQueryResponseInfo(ItemClassType classType, int subClassType, int soundOverrideSubclass, string[] itemNames, int displayId, ItemQuality quality, ItemFlags itemFlags, ItemFlags2 itemFlags2, int buyPrice, int sellPrice, int inventoryType, uint allowableClass, int allowableRace, int itemLevel, int requiredLevel, int requiredSkill, int requiredSkillRank, int requiredSpell, int requiredHonorRank, int requiredCityRank, int requiredReptuationFaction, int requiredReptuationRank, int maxCount, int maxStackable, int containerSlots, StatInfo[] statInfos, int scalingStatDistribution, int scalingStatValue, ItemDamageDefinition[] itemDamageMods, int[] resistances, int delay, int ammoType, float rangedModRange, ItemSpellInfo[] spellInfos, ItemBondingType bondingType, string itemDescription, int pageText, int languageId, int pageMaterial, int startQuest, int lockId, int material, int sheath, int randomProperty, int randomSuffix, int block, int itemSet, int maxdurability, int area, int map, BAG_FAMILY_MASK bagFamily, ItemSocketInfo socketInformation, int requiredDisenchantSkill, int armorDamageModifier, int duration, int itemLimitCategory, int holidayId)

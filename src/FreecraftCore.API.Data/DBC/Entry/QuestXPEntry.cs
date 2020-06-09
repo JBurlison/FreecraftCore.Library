@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,10 +27,10 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int Level { get; private set; }
+		public int Level { get; internal set; }
 
 		[WireMember(2)]
-		public GenericStaticallySizedArrayChunkTen<int> DifficultyReward { get; private set; }
+		public GenericStaticallySizedArrayChunkTen<int> DifficultyReward { get; internal set; }
 
 		public QuestXPEntry(int level, [NotNull] GenericStaticallySizedArrayChunkTen<int> difficultyReward)
 		{

@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -20,23 +20,23 @@ namespace FreecraftCore
 		/// Indicates the result of the session authentication.
 		/// </summary>
 		[WireMember(1)]
-		public SessionAuthenticationResult AuthenticationResult { get; private set; }
+		public SessionAuthenticationResult AuthenticationResult { get; internal set; }
 
 		//TODO: Doc
 		//TODO: We don't support queue/realmtransfer data in the packet because there is no way to determine it outside of length
 		[WireMember(2)]
-		public uint BillingTimeRemaining { get; }
+		public uint BillingTimeRemaining { get; internal set; }
 
 		//TODO: Handle flags
 		[WireMember(3)]
-		public byte BillingPlanFlags { get; }
+		public byte BillingPlanFlags { get; internal set; }
 
 		//TODO: What is this?
 		[WireMember(4)]
-		public uint BillingTimeRested { get; }
+		public uint BillingTimeRested { get; internal set; }
 
 		[WireMember(5)]
-		public Expansions AccountExpansion { get; }
+		public Expansions AccountExpansion { get; internal set; }
 
 		public AuthenticateSessionResponse()
 		{

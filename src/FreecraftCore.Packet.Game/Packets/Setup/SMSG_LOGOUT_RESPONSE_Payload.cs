@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -11,10 +11,10 @@ namespace FreecraftCore
 	public sealed class SMSG_LOGOUT_RESPONSE_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
-		public LogoutResultCode Result { get; private set; }
+		public LogoutResultCode Result { get; internal set; }
 
 		[WireMember(2)]
-		public bool IsInstant { get; private set; }
+		public bool IsInstant { get; internal set; }
 
 		public SMSG_LOGOUT_RESPONSE_Payload(bool isInstant)
 		{

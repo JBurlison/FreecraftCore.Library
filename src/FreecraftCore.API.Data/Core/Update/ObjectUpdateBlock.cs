@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
@@ -23,7 +23,7 @@ namespace FreecraftCore
 		/// </summary>
 		[DontWrite] //we don't want to write because we want the serializer to use the type information instead.
 		[WireMember(1)]
-		public ObjectUpdateType UpdateType { get; }
+		public ObjectUpdateType UpdateType { get; internal set; }
 
 		//While most update types do have a GUID as the next fields some
 		//do not therefore we must only read them in child types

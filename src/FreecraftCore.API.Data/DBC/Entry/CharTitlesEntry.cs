@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,26 +27,26 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int TitleId { get; private set; }
+		public int TitleId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// Unknown possible serverside condition or script id.
 		/// </summary>
 		[WireMember(2)]
-		public int ConditionId { get; private set; }
+		public int ConditionId { get; internal set; }
 
 		/// <summary>
 		/// Male version of the title.
 		/// </summary>
 		[WireMember(3)]
-		public LocalizedStringDBC<TStringType> MaleName { get; private set; }
+		public LocalizedStringDBC<TStringType> MaleName { get; internal set; }
 
 		/// <summary>
 		/// Female version of the title.
 		/// </summary>
 		[WireMember(4)]
-		public LocalizedStringDBC<TStringType> FemaleName { get; private set; }
+		public LocalizedStringDBC<TStringType> FemaleName { get; internal set; }
 
 		/// <summary>
 		/// Unique and secondary key for <see cref="CharTitlesEntry{TStringType}"/> that indicates
@@ -54,7 +54,7 @@ namespace FreecraftCore
 		/// Used ingame in the drop down menu. (186 is max value, check characters.characters structure for more info)
 		/// </summary>
 		[WireMember(5)]
-		public int TitleBit { get; private set; }
+		public int TitleBit { get; internal set; }
 
 		public CharTitlesEntry(int titleId, int conditionId, [NotNull] LocalizedStringDBC<TStringType> maleName, [NotNull] LocalizedStringDBC<TStringType> femaleName, int titleBit)
 		{

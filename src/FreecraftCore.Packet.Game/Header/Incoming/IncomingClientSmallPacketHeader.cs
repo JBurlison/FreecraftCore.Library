@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using FreecraftCore.Serializer;
 
@@ -20,7 +20,7 @@ namespace FreecraftCore
 		//See: https://github.com/FreecraftCore/FreecraftCore/blob/master/docs/WorldHeader.md
 		/// <inheritdoc />
 		[WireMember(2)] //after the 2 bytes of encoded size
-		public override NetworkOperationCode OperationCode { get; protected set; }
+		public override NetworkOperationCode OperationCode { get; internal set; }
 
 		//Should be the size of the encoded size in bytes (2) and the OpCode (2)
 		/// <inheritdoc />

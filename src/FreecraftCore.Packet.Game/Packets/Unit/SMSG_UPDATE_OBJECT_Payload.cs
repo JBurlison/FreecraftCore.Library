@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -12,7 +12,7 @@ namespace FreecraftCore
 		/// The update blocks.
 		/// </summary>
 		[WireMember(1)]
-		public UpdateBlockCollection UpdateBlocks { get; }
+		public UpdateBlockCollection UpdateBlocks { get; internal set; }
 
 		public SMSG_UPDATE_OBJECT_Payload([NotNull] UpdateBlockCollection updateBlocks)
 		{

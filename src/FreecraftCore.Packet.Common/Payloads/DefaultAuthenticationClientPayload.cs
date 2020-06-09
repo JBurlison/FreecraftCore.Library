@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		/// Byte data (excluding op code) of the unknown packet.
 		/// </summary>
 		[WireMember(1)]
-		public byte[] Data { get; }
+		public byte[] Data { get; internal set; }
 
 		/// <inheritdoc />
 		public DefaultAuthenticationClientPayload([NotNull] byte[] data)

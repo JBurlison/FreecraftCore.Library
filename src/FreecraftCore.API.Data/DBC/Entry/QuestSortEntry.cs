@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -30,13 +30,13 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int QuestSortId { get; private set; }
+		public int QuestSortId { get; internal set; }
 
 		/// <summary>
 		/// Name of the category.
 		/// </summary>
 		[WireMember(2)]
-		public LocalizedStringDBC<TStringType> CategoryName { get; private set; }
+		public LocalizedStringDBC<TStringType> CategoryName { get; internal set; }
 
 		public QuestSortEntry(int questSortId, [NotNull] LocalizedStringDBC<TStringType> categoryName)
 		{

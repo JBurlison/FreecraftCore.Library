@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -11,13 +11,13 @@ namespace FreecraftCore
 		/// The targeted reciever of the message.
 		/// </summary>
 		[WireMember(1)]
-		public string ChannelName { get; } //null terminated string reciever
+		public string ChannelName { get; internal set; } //null terminated string reciever
 
 		/// <summary>
 		/// The chat message being sent.
 		/// </summary>
 		[WireMember(2)]
-		public string Message { get; } //null terminated string message
+		public string Message { get; internal set; } //null terminated string message
 
 		/// <inheritdoc />
 		public ChannelPlayerChatMessage(ChatLanguage language, [NotNull] string message, [NotNull] string channelName) 

@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -8,10 +8,10 @@ namespace FreecraftCore
 	{
 		//ClientVersion.AddedInVersion(ClientVersionBuild.V3_1_2_9901). Pre 3.1 it was a non-packed guid
 		[WireMember(1)]
-		public PackedGuid MovementGuid { get; }
+		public PackedGuid MovementGuid { get; internal set; }
 
 		[WireMember(2)]
-		public MovementBlockData MovementData { get; }
+		public MovementBlockData MovementData { get; internal set; }
 
 		/// <inheritdoc />
 		public ObjectUpdateMovementBlock(PackedGuid movementGuid, MovementBlockData movementData)

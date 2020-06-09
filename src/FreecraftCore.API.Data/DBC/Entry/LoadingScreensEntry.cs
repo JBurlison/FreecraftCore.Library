@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -30,16 +30,16 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int LoadingScreenId { get; private set; }
+		public int LoadingScreenId { get; internal set; }
 
 		[WireMember(2)]
-		public TStringType Name { get; private set; }
+		public TStringType Name { get; internal set; }
 
 		[WireMember(3)]
-		public TStringType FilePath { get; private set; }
+		public TStringType FilePath { get; internal set; }
 
 		[WireMember(4)]
-		internal int HasWideScreen { get; private set; }
+		internal int HasWideScreen { get; set; }
 
 		[JsonIgnore]
 		[NotMapped]

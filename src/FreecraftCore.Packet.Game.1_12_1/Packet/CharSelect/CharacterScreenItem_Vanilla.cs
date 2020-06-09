@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -16,16 +16,16 @@ namespace FreecraftCore
 		//TODO: Find out what this means
 
 		[WireMember(1)]
-		public uint DisplayId { get; }
+		public uint DisplayId { get; internal set; }
 
 		//TODO: Find out what this means
 
 		[WireMember(2)]
-		public byte InventoryType { get; }
+		public byte InventoryType { get; internal set; }
 
 		//1.12.1 doesn't send enchant data
 		//[WireMember(3)]
-		//private uint EnchantDisplayId { get; }
+		//internal uint EnchantDisplayId { get; internal set; }
 
 		public CharacterScreenItem_Vanilla(uint displayId, byte inventoryType)
 		{

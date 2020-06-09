@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -12,31 +12,31 @@ namespace FreecraftCore
 	{
 		//TODO: Are these named right??
 		[WireMember(1)]
-		public PackedGuid SpellSource { get; }
+		public PackedGuid SpellSource { get; internal set; }
 
 		[WireMember(2)]
-		public PackedGuid SpellTarget { get; }
+		public PackedGuid SpellTarget { get; internal set; }
 
 		//1.12.1 doesn't have the cast count
 		[WireMember(4)]
-		public int SpellId { get; }
+		public int SpellId { get; internal set; }
 
 		[WireMember(5)]
-		public SpellCastFlags_Vanilla CastFlags { get; }
+		public SpellCastFlags_Vanilla CastFlags { get; internal set; }
 
 		//Spell targets written now.
 		//Targets are sent byte prefixed
 		//Both a miss and hit block
 		[SendSize(SendSizeAttribute.SizeType.Byte)]
 		[WireMember(7)]
-		public ObjectGuid[] HitTargets { get; }
+		public ObjectGuid[] HitTargets { get; internal set; }
 
 		//Not spell misses says Mangos
 		[WireMember(8)]
-		public byte UnknownByte { get; } = 0;
+		public byte UnknownByte { get; internal set; } = 0;
 
 		[WireMember(9)]
-		public SpellTargetInfo_Vanilla TargetInfo { get; }
+		public SpellTargetInfo_Vanilla TargetInfo { get; internal set; }
 
 		//TODO: Implement CAST_FLAG_RUNE_LIST for DK stuff
 		//Now this is some data optional
@@ -45,7 +45,7 @@ namespace FreecraftCore
 
 		[Optional(nameof(HasAmmo))]
 		[WireMember(12)]
-		public AmmoInfo AmunitionInformation { get; }
+		public AmmoInfo AmunitionInformation { get; internal set; }
 
 		//TODO: Ctor overloads/builders
 		//TODO: Validate parameters

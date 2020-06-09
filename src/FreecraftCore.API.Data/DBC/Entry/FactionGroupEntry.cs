@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,22 +28,22 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int FactionGroupId { get; private set; }
+		public int FactionGroupId { get; internal set; }
 
 		[WireMember(2)]
-		public int MaskId { get; private set; }
+		public int MaskId { get; internal set; }
 
 		/// <summary>
 		/// Unlocalized internal name for the faction group.
 		/// </summary>
 		[WireMember(3)]
-		public TStringType InternalName { get; private set; }
+		public TStringType InternalName { get; internal set; }
 
 		/// <summary>
 		/// The name of the faction.
 		/// </summary>
 		[WireMember(4)]
-		public LocalizedStringDBC<TStringType> Name { get; private set; }
+		public LocalizedStringDBC<TStringType> Name { get; internal set; }
 
 		public FactionGroupEntry(int factionGroupId, [NotNull] TStringType internalName, [NotNull] LocalizedStringDBC<TStringType> name)
 		{

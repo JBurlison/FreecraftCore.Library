@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -31,22 +31,22 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int UnitBloodId { get; private set; }
+		public int UnitBloodId { get; internal set; }
 
 		[WireMember(2)]
-		public int BloodSpurtFrontSmall { get; private set; }
+		public int BloodSpurtFrontSmall { get; internal set; }
 
 		[WireMember(3)]
-		public int BloodSpurtFrontLarge { get; private set; }
+		public int BloodSpurtFrontLarge { get; internal set; }
 
 		[WireMember(4)]
-		public int BloodSpurtBackSmall { get; private set; }
+		public int BloodSpurtBackSmall { get; internal set; }
 
 		[WireMember(5)]
-		public int BloodSpurtBackLarge { get; private set; }
+		public int BloodSpurtBackLarge { get; internal set; }
 
 		[WireMember(6)]
-		public GenericStaticallySizedArrayChunkFive<TStringType> GroundBloodFileName { get; private set; }
+		public GenericStaticallySizedArrayChunkFive<TStringType> GroundBloodFileName { get; internal set; }
 
 		public UnitBloodEntry(int unitBloodId, int bloodSpurtFrontSmall, int bloodSpurtFrontLarge, int bloodSpurtBackSmall, int bloodSpurtBackLarge, [NotNull] GenericStaticallySizedArrayChunkFive<TStringType> groundBloodFileName)
 		{

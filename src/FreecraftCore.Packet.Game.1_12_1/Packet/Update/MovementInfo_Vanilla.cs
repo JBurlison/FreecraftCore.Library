@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -9,23 +9,23 @@ namespace FreecraftCore
 		/// TODO DOC
 		/// </summary>
 		[WireMember(1)]
-		public MovementFlags_Vanilla MoveFlags { get; }
+		public MovementFlags_Vanilla MoveFlags { get; internal set; }
 
 		//TODO: Support packed date time? Or is this milliseconds?
 		[WireMember(3)]
-		public uint TimeStamp { get; }
+		public uint TimeStamp { get; internal set; }
 
 		/// <summary>
 		/// The Vector3 x,y,z position.
 		/// </summary>
 		[WireMember(4)]
-		public Vector3<float> Position { get; }
+		public Vector3<float> Position { get; internal set; }
 
 		/// <summary>
 		/// Probably Y axis rotation.
 		/// </summary>
 		[WireMember(5)]
-		public float Orientation { get; }
+		public float Orientation { get; internal set; }
 
 		private bool IsOnTransport => MoveFlags.HasFlag(MovementFlags_Vanilla.MOVEFLAG_ONTRANSPORT);
 
@@ -38,32 +38,32 @@ namespace FreecraftCore
 
 		[Optional(nameof(IsOnTransport))]
 		[WireMember(6)]
-		public TransportationInfo_Vanilla TransportationInformation { get; }
+		public TransportationInfo_Vanilla TransportationInformation { get; internal set; }
 
 		//This was missing, it is always here on IsOnTransport
 		[Optional(nameof(IsOnTransport))]
 		[WireMember(7)]
-		public int TransportTime { get; }
+		public int TransportTime { get; internal set; }
 
 		//AKA: Swim Pitch
 		[Optional(nameof(HasMovementPitch))]
 		[WireMember(8)]
-		public float MovePitch { get; }
+		public float MovePitch { get; internal set; }
 
 		//Always read for some reason
 		[WireMember(9)]
-		public int FallTime { get; }
+		public int FallTime { get; internal set; }
 
 		//TODO: Refactor/encapsulate
 		//Optional fall data
 		[Optional(nameof(IsFalling))]
 		[WireMember(10)]
-		public Vector4<float> FallData { get; }
+		public Vector4<float> FallData { get; internal set; }
 
 		//This is a hack though?
 		[Optional(nameof(HasSplineElevation))]
 		[WireMember(11)]
-		public float SplineElevation { get; }
+		public float SplineElevation { get; internal set; }
 
 		//TODO: Parameter validation
 		/// <inheritdoc />

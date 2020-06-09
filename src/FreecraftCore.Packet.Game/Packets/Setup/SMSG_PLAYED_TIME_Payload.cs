@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -16,20 +16,20 @@ namespace FreecraftCore
 		/// The total play time for the character.
 		/// </summary>
 		[WireMember(1)]
-		public uint TotalPlayTime { get; }
+		public uint TotalPlayTime { get; internal set; }
 		
 		/// <summary>
 		/// The playtime for the character at the current level.
 		/// </summary>
 		[WireMember(2)]
-		public uint PlaytimeAtLevel { get; }
+		public uint PlaytimeAtLevel { get; internal set; }
 
 		/// <summary>
 		/// Indicates if the played time should be written to the chat
 		/// frame.
 		/// </summary>
 		[WireMember(3)]
-		public bool ShowInChatFrame { get; } = false;
+		public bool ShowInChatFrame { get; internal set; } = false;
 
 		/// <inheritdoc />
 		public SMSG_PLAYED_TIME_Payload(uint totalPlayTime, uint playtimeAtLevel)

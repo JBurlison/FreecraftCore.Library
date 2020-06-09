@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
@@ -10,7 +10,7 @@ namespace FreecraftCore
 	{
 		[SendSize(SendSizeAttribute.SizeType.UShort)] //in 2.x and 3.x this is ushort but in 1.12.1 it's a uint32
 		[WireMember(1)]
-		public RealmInfo[] _Realms { get; }
+		public RealmInfo[] _Realms { get; internal set; }
 
 		/// <summary>
 		/// Collection of realm's.

@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 using System;
 using System.Linq;
 using JetBrains.Annotations;
@@ -24,7 +24,7 @@ namespace FreecraftCore
 
 		//Second piece of data sent is a result
 		[WireMember(2)]
-		public AuthenticationResult Result { get; private set; }
+		public AuthenticationResult Result { get; internal set; }
 
 		/// <summary>
 		/// Bool used to compute optional read/write for response payload fields
@@ -38,7 +38,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Optional(nameof(isAuthenticationChallengeSuccessful))]
 		[WireMember(3)]
-		public SRPToken Challenge { get; private set; }
+		public SRPToken Challenge { get; internal set; }
 
 		/// <summary>
 		/// Seed to be used during HMAC of the client files.
@@ -47,7 +47,7 @@ namespace FreecraftCore
 		[Optional(nameof(isAuthenticationChallengeSuccessful))]
 		[KnownSize(16)]
 		[WireMember(4)]
-		public byte[] ClientFileHMACSeed { get; private set; }
+		public byte[] ClientFileHMACSeed { get; internal set; }
 
 		//TODO: Create enum
 		/// <summary>
@@ -56,7 +56,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Optional(nameof(isAuthenticationChallengeSuccessful))]
 		[WireMember(5)]
-		public byte SecurityFlags { get; private set; }
+		public byte SecurityFlags { get; internal set; }
 
 		//The server is suppose to send additional info depending on the flags
 		//However, the serializer isn't capable of conditionally reading different sizes based on flags

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -9,7 +9,7 @@ namespace FreecraftCore
 	public sealed class SpellTargetInfo_Vanilla
 	{
 		[WireMember(1)]
-		private short SpellCastBackingFlag { get; }
+		internal short SpellCastBackingFlag { get; set; }
 
 		public SpellCastTargetFlag TargetFlags => (SpellCastTargetFlag)SpellCastBackingFlag;
 
@@ -29,27 +29,27 @@ namespace FreecraftCore
 		//TODO: Can this ever have both TARGET_FLAG_SOURCE_LOCATION and TARGET_FLAG_DEST_LOCATION?
 		[Optional(nameof(HasObjectTarget))]
 		[WireMember(2)]
-		public PackedGuid OptionalObjectTarget { get; }
+		public PackedGuid OptionalObjectTarget { get; internal set; }
 
 		[Optional(nameof(HasItemTarget))]
 		[WireMember(3)]
-		public PackedGuid OptionalItemTarget { get; }
+		public PackedGuid OptionalItemTarget { get; internal set; }
 
 		//Could be offset or position. It depends on if the guid is empty
 		[Optional(nameof(HasTransportSourceLocation))]
 		[WireMember(5)]
-		public Vector3<float> OptionalTransportSourcePosition { get; }
+		public Vector3<float> OptionalTransportSourcePosition { get; internal set; }
 
 		//Could be offset or position. It depends on if the dest guid is empty.
 		[Optional(nameof(HasTransportDestinationLocation))]
 		[WireMember(7)]
-		public Vector3<float> OptionalTransportDestinationPosition { get; }
+		public Vector3<float> OptionalTransportDestinationPosition { get; internal set; }
 
 		//Null terminator ASCII
 		[Encoding(EncodingType.ASCII)]
 		[Optional(nameof(HasTargetString))]
 		[WireMember(8)]
-		public string OptionalTargetString { get; }
+		public string OptionalTargetString { get; internal set; }
 
 		//TODO: Ctor overloads/builder.
 		//TODO: Validate parameters

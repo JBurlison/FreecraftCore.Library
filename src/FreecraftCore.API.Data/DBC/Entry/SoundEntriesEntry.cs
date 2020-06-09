@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -29,47 +29,47 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int SoundId { get; private set; }
+		public int SoundId { get; internal set; }
 
 		[WireMember(2)]
-		public SoundTypes SoundType { get; private set; }
+		public SoundTypes SoundType { get; internal set; }
 
 		[WireMember(3)]
-		public TStringType Name { get; private set; }
+		public TStringType Name { get; internal set; }
 
 		[WireMember(4)]
-		public GenericStaticallySizedArrayChunkTen<TStringType> File { get; private set; }
+		public GenericStaticallySizedArrayChunkTen<TStringType> File { get; internal set; }
 
 		[WireMember(5)]
-		public GenericStaticallySizedArrayChunkTen<int> Frequency { get; private set; }
+		public GenericStaticallySizedArrayChunkTen<int> Frequency { get; internal set; }
 
 		[WireMember(6)]
-		public TStringType BaseDirectory { get; private set; }
+		public TStringType BaseDirectory { get; internal set; }
 		
 		[WireMember(7)]
-		public float Volume { get; private set; }
+		public float Volume { get; internal set; }
 
 		[WireMember(8)]
-		public SoundInterfaceFlags Flags { get; private set; }
+		public SoundInterfaceFlags Flags { get; internal set; }
 
 		[WireMember(9)]
-		public float MinimumDistance { get; private set; }
+		public float MinimumDistance { get; internal set; }
 
 		[WireMember(10)]
-		public float DistanceCutoff { get; private set; }
+		public float DistanceCutoff { get; internal set; }
 
 		/// <summary>
 		/// See: https://en.wikipedia.org/wiki/Environmental_Audio_Extensions
 		/// TODO: What do the values mean??
 		/// </summary>
 		[WireMember(11)]
-		public int EAXDefinition { get; private set; }
+		public int EAXDefinition { get; internal set; }
 
 		/// <summary>
 		/// Reference to SoundEntriesAdvanced.dbc.
 		/// </summary>
 		[WireMember(12)]
-		public int SoundEntriesAdvancedId { get; private set; }
+		public int SoundEntriesAdvancedId { get; internal set; }
 
 		public SoundEntriesEntry(int soundId, SoundTypes soundType, [NotNull] TStringType name, [NotNull] GenericStaticallySizedArrayChunkTen<TStringType> file, [NotNull] GenericStaticallySizedArrayChunkTen<int> frequency, [NotNull] TStringType baseDirectory, float volume, SoundInterfaceFlags flags, float minimumDistance, float distanceCutoff, int eaxDefinition, int soundEntriesAdvancedId)
 		{

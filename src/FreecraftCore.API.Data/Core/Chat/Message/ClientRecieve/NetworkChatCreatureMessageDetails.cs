@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -14,7 +14,7 @@ namespace FreecraftCore
 		/// To and From about the message.
 		/// </summary>
 		[WireMember(1)]
-		public MessageAddressingDetails<string> AddressingDetails { get; }
+		public MessageAddressingDetails<string> AddressingDetails { get; internal set; }
 
 		//Optional data depending on the object type
 		public bool HasRecieverName => !AddressingDetails.RecieverGuid.isEmpty()
@@ -25,7 +25,7 @@ namespace FreecraftCore
 		[Encoding(EncodingType.ASCII)]
 		[Optional(nameof(HasRecieverName))]
 		[WireMember(3)]
-		public string RecieverName { get; }
+		public string RecieverName { get; internal set; }
 
 		//TODO: Validate CTOR inputs
 		/// <inheritdoc />

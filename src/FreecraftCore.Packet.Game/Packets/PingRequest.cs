@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -10,10 +10,10 @@ namespace FreecraftCore
 		public override bool isValid => true;
 
 		[WireMember(1)]
-		public uint Ping { get; private set; }
+		public uint Ping { get; internal set; }
 
 		[WireMember(2)]
-		public uint Latency { get; private set; }
+		public uint Latency { get; internal set; }
 
 		public PingRequest(uint ping, uint latency)
 		{

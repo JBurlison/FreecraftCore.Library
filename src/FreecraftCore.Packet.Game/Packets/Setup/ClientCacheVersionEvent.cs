@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -15,7 +15,7 @@ namespace FreecraftCore
 
 		[ReadToEnd]
 		[WireMember(1)]
-		public byte[] Data { get; }
+		public byte[] Data { get; internal set; }
 
 		/// <summary>
 		/// Serializer ctor.

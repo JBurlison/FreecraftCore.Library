@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,21 +24,21 @@ namespace FreecraftCore
 		/// </summary>
 		[Key]
 		[WireMember(1)]
-		public int SkillLineAbilityId { get; private set; }
+		public int SkillLineAbilityId { get; internal set; }
 
 		/// <summary>
 		/// 1        m_skillLine
 		/// SkillLine.dbc
 		/// </summary>
 		[WireMember(2)]
-		public uint SkillId { get; private set; }
+		public uint SkillId { get; internal set; }
 
 		/// <summary>
 		/// 2        m_spell
 		/// Spell.dbc
 		/// </summary>
 		[WireMember(3)]
-		public uint SpellId { get; private set; }
+		public uint SpellId { get; internal set; }
 
 		/// <summary>
 		/// 3        m_raceMask
@@ -47,7 +47,7 @@ namespace FreecraftCore
 		/// See: https://wowdev.wiki/DB/ChrRaces and TC: RACEMASK_ALL_PLAYABLE etc
 		/// </summary>
 		[WireMember(4)]
-		public uint Racemask { get; private set; }
+		public uint Racemask { get; internal set; }
 
 		/// <summary>
 		/// 4        m_classMask
@@ -56,7 +56,7 @@ namespace FreecraftCore
 		/// See: https://wowdev.wiki/DB/ChrClasses
 		/// </summary>
 		[WireMember(5)]
-		public uint Classmask { get; private set; }
+		public uint Classmask { get; internal set; }
 
 		/// <summary>
 		/// 5        m_excludeRace
@@ -64,7 +64,7 @@ namespace FreecraftCore
 		/// should be excluded.
 		/// </summary>
 		[WireMember(6)]
-		public uint RacemaskNot { get; private set; }
+		public uint RacemaskNot { get; internal set; }
 
 		/// <summary>
 		/// 6        m_excludeClass
@@ -72,13 +72,13 @@ namespace FreecraftCore
 		/// should be excluded.
 		/// </summary>
 		[WireMember(7)]
-		public uint ClassmaskNot { get; private set; }
+		public uint ClassmaskNot { get; internal set; }
 
 		/// <summary>
 		/// 7        m_minSkillLineRank
 		/// </summary>
 		[WireMember(8)]
-		public uint RequiredSkillValue { get; private set; }
+		public uint RequiredSkillValue { get; internal set; }
 
 		/// <summary>
 		/// 8        m_supercededBySpell
@@ -86,13 +86,13 @@ namespace FreecraftCore
 		/// Wiki says: Spell.dbc_parent
 		/// </summary>
 		[WireMember(9)]
-		public uint ForwardSpellid { get; private set; }
+		public uint ForwardSpellid { get; internal set; }
 
 		/// <summary>
 		/// 9        m_acquireMethod
 		/// </summary>
 		[WireMember(10)]
-		public SkillAbilityAquireMethod SkillAquireMethod { get; private set; }
+		public SkillAbilityAquireMethod SkillAquireMethod { get; internal set; }
 
 		//TODO: Consider renaming
 		/// <summary>
@@ -101,7 +101,7 @@ namespace FreecraftCore
 		/// See: https://wowdev.wiki/DB/SkillLineAbility
 		/// </summary>
 		[WireMember(11)]
-		public uint MaxValue { get; private set; }
+		public uint MaxValue { get; internal set; }
 
 		//TODO: Consider renaming
 		/// <summary>
@@ -110,14 +110,14 @@ namespace FreecraftCore
 		/// See: https://wowdev.wiki/DB/SkillLineAbility
 		/// </summary>
 		[WireMember(12)]
-		public uint MinValue { get; private set; }
+		public uint MinValue { get; internal set; }
 
 		//TODO: What does this mean?
 		/// <summary>
 		/// 12-13    m_characterPoints[2]
 		/// </summary>
 		[WireMember(13)]
-		public Vector2<uint> CharacterPoints { get; private set; }
+		public Vector2<uint> CharacterPoints { get; internal set; }
 
 		/// <inheritdoc />
 		public SkillLineAbilityEntry(int skillLineAbilityId, uint skillId, uint spellId, uint racemask, uint classmask, uint racemaskNot, uint classmaskNot, uint requiredSkillValue, uint forwardSpellid, SkillAbilityAquireMethod skillAquireMethod, uint maxValue, uint minValue, Vector2<uint> characterPoints)

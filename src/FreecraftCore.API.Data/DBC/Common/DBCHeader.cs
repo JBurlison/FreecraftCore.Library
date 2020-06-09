@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -29,31 +29,31 @@ namespace FreecraftCore
 		/// TODO what is this
 		/// </summary>
 		[WireMember(1)]
-		public int Signature { get; }
+		public int Signature { get; internal set; }
 
 		/// <summary>
 		/// Amount of entries in the DBC.
 		/// </summary>
 		[WireMember(2)]
-		public int RecordsCount { get; }
+		public int RecordsCount { get; internal set; }
 
 		/// <summary>
 		/// The amount of fields in the DBC.
 		/// </summary>
 		[WireMember(3)]
-		public int FieldsCount { get; }
+		public int FieldsCount { get; internal set; }
 
 		/// <summary>
 		/// The size of the record.
 		/// </summary>
 		[WireMember(4)]
-		public int RecordSize { get; }
+		public int RecordSize { get; internal set; }
 
 		/// <summary>
 		/// The DBC string size.
 		/// </summary>
 		[WireMember(5)]
-		public int StringTableSize { get; }
+		public int StringTableSize { get; internal set; }
 
 		/// <summary>
 		/// TODO: What is this

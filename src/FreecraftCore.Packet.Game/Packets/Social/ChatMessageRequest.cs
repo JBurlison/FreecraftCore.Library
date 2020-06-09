@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -16,7 +16,7 @@ namespace FreecraftCore
 		/// The chat message.
 		/// </summary>
 		[WireMember(1)]
-		public PlayerChatMessage Message { get; private set; }
+		public PlayerChatMessage Message { get; internal set; }
 
 		public ChatMessageRequest([NotNull] PlayerChatMessage message)
 		{

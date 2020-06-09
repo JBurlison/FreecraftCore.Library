@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -14,14 +14,14 @@ namespace FreecraftCore
 		[WireMember(1)]
 		[Encoding(EncodingType.ASCII)]
 		[SendSize(SendSizeAttribute.SizeType.Int32)] //WoW sends the size which includes the null terminator; this is likely done for efficiency
-		public string MessageText { get; }
+		public string MessageText { get; internal set; }
 
 		/// <summary>
 		/// Indicates the current chat tag.
 		/// (Ex. DND or AFK)
 		/// </summary>
 		[WireMember(2)]
-		public ChatStateTag Tag { get; }
+		public ChatStateTag Tag { get; internal set; }
 
 		/// <inheritdoc />
 		public NetworkChatMessageFooter(string messageText, ChatStateTag tag)

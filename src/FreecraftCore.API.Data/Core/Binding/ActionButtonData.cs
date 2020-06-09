@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -12,7 +12,7 @@ namespace FreecraftCore
 		/// The packed action data.
 		/// </summary>
 		[WireMember(1)]
-		public uint PackedActionData { get; }
+		public uint PackedActionData { get; internal set; }
 
 		/// <summary>
 		/// The action button state.

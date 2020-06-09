@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -21,7 +21,7 @@ namespace FreecraftCore
 		/// Random seed sent by the server.
 		/// </summary>
 		[WireMember(2)]
-		public uint AuthenticationSeed { get; private set; }
+		public uint AuthenticationSeed { get; internal set; }
 
 
 		//TODO: Major issue here. 3.3.5 TC sends these seeds. Cmangos sends these seeds. But MANGOS does not. To compensate we send ReadToEnd
@@ -32,7 +32,7 @@ namespace FreecraftCore
 		/// </summary>
 		[ReadToEnd]
 		[WireMember(3)]
-		public byte[] OptionalSeeds { get; }
+		public byte[] OptionalSeeds { get; internal set; }
 
 		/*/// <summary>
 		/// A 16 byte non-cryptographically secure BigInteger.
@@ -41,7 +41,7 @@ namespace FreecraftCore
 		/// </summary>
 		[KnownSize(16)] //jackpoz shows this is a 16 byte BigInt
 		[WireMember(3)]
-		public byte[] SeedOne { get; private set; }
+		public byte[] SeedOne { get; internal set; }
 
 		/// <summary>
 		/// A 16 byte non-cryptographically secure BigInteger.
@@ -50,7 +50,7 @@ namespace FreecraftCore
 		/// </summary>
 		[KnownSize(16)] //jackpoz shows this is a 16 byte BigInt
 		[WireMember(4)]
-		public byte[] SeedTwo { get; private set; }*/
+		public byte[] SeedTwo { get; internal set; }*/
 
 		/// <inheritdoc />
 		public SessionAuthChallengeEventData(uint authenticationSeed, byte[] optionalSeeds)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -20,14 +20,14 @@ namespace FreecraftCore
 		/// See: https://stackoverflow.com/questions/7550269/what-is-timenull-in-c#.
 		/// </summary>
 		[WireMember(1)]
-		public uint CurrentTime { get; }
+		public uint CurrentTime { get; internal set; }
 
 		/// <summary>
 		/// The time remaining between the current time and the
 		/// daily quest reset.
 		/// </summary>
 		[WireMember(2)]
-		public uint DailyQuestTime { get; }
+		public uint DailyQuestTime { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_QUERY_TIME_RESPONSE_Payload(uint currentTime, uint dailyQuestTime)

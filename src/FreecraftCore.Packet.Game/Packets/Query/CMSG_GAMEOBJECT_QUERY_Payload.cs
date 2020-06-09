@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,11 +11,11 @@ namespace FreecraftCore
 	{
 		/// <inheritdoc />
 		[WireMember(1)]
-		public int QueryId { get; }
+		public int QueryId { get; internal set; }
 
 		/// <inheritdoc />
 		[WireMember(2)]
-		public ObjectGuid QueryGuid { get; } = ObjectGuid.Empty;
+		public ObjectGuid QueryGuid { get; internal set; } = ObjectGuid.Empty;
 
 		/// <inheritdoc />
 		public CMSG_GAMEOBJECT_QUERY_Payload(int gameObjectId)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,56 +27,56 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int AchievementId { get; private set; }
+		public int AchievementId { get; internal set; }
 
 		[WireMember(2)]
-		public AchievementFaction Faction { get; private set; }
+		public AchievementFaction Faction { get; internal set; }
 
 		[WireMember(3)]
-		public int MapId { get; private set; }
+		public int MapId { get; internal set; }
 
 		//TODO: nav property to AchievementEntry.
 		/// <summary>
 		/// its Achievement parent (can`t start while parent uncomplete, use its Criteria if don`t have own, use its progress on begin)
 		/// </summary>
 		[WireMember(4)]
-		public int SupersedesId { get; private set; }
+		public int SupersedesId { get; internal set; }
 
 		[WireMember(5)]
-		public LocalizedStringDBC<TStringType> Title { get; private set; }
+		public LocalizedStringDBC<TStringType> Title { get; internal set; }
 
 		[WireMember(6)]
-		public LocalizedStringDBC<TStringType> Description { get; private set; }
+		public LocalizedStringDBC<TStringType> Description { get; internal set; }
 
 		//TODO: Nav prop to category DBC
 		[WireMember(7)]
-		public int CategoryID { get; private set; }
+		public int CategoryID { get; internal set; }
 
 		[WireMember(8)]
-		public int Points { get; private set; }
+		public int Points { get; internal set; }
 
 		[WireMember(9)]
-		public int UIOrder { get; private set; }
+		public int UIOrder { get; internal set; }
 
 		[WireMember(10)]
-		public AchievementFlags Flags { get; private set; }
+		public AchievementFlags Flags { get; internal set; }
 
 		//TODO: Nav prop to Icon dbc.
 		[WireMember(11)]
-		public int IconId { get; private set; }
+		public int IconId { get; internal set; }
 
 		[WireMember(12)]
-		public LocalizedStringDBC<TStringType> Reward { get; private set; }
+		public LocalizedStringDBC<TStringType> Reward { get; internal set; }
 
 		[WireMember(13)]
-		public int MinimumCriteriaCount { get; private set; }
+		public int MinimumCriteriaCount { get; internal set; }
 
 		/// <summary>
 		/// The ID of the <see cref="AchievementEntry{TStringType}"/> that this achievement
 		/// shares <see cref="MinimumCriteriaCount"/> with.
 		/// </summary>
 		[WireMember(14)]
-		public int SharesCriteriaId { get; private set; }
+		public int SharesCriteriaId { get; internal set; }
 
 		public AchievementEntry(int achievementId, AchievementFaction faction, int mapId, int supersedesId, [NotNull] LocalizedStringDBC<TStringType> title, [NotNull] LocalizedStringDBC<TStringType> description, int categoryId, int points, int uiOrder, AchievementFlags flags, int iconId, [NotNull] LocalizedStringDBC<TStringType> reward, int minimumCriteriaCount, int sharesCriteriaId)
 		{

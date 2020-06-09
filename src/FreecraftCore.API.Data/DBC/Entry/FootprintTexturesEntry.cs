@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,13 +28,13 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int FootprintTextureId { get; private set; }
+		public int FootprintTextureId { get; internal set; }
 
 		/// <summary>
 		/// Filename path of the footprint texture.
 		/// </summary>
 		[WireMember(2)]
-		public TStringType FootstepFilename { get; private set; }
+		public TStringType FootstepFilename { get; internal set; }
 
 		public FootprintTexturesEntry(int footprintTextureId, [NotNull] TStringType footstepFilename)
 		{

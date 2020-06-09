@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -18,7 +18,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Compress]
 		[WireMember(1)]
-		public UpdateBlockCollection_Vanilla UpdateBlocks { get; }
+		public UpdateBlockCollection_Vanilla UpdateBlocks { get; internal set; }
 
 		public SMSG_COMPRESSED_UPDATE_OBJECT_Payload_Vanilla([NotNull] UpdateBlockCollection_Vanilla updateBlocks)
 		{
@@ -44,7 +44,7 @@ namespace FreecraftCore
 		/// The update blocks.
 		/// </summary>
 		[WireMember(1)]
-		public UpdateBlockCollection_Vanilla UpdateBlocks { get; }
+		public UpdateBlockCollection_Vanilla UpdateBlocks { get; internal set; }
 
 		public SMSG_UPDATE_OBJECT_Payload_Vanilla([NotNull] UpdateBlockCollection_Vanilla updateBlocks)
 		{

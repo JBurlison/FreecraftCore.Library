@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using GladNet;
 
@@ -15,7 +15,7 @@ namespace FreecraftCore
 		//Packet size which is 4 bytes (from WoW header) + Payload.Length
 		[ReverseData] //makes bigendian
 		[WireMember(1)]
-		private ushort SerializedPacketSize { get; set; }
+		internal ushort SerializedPacketSize { get; set; }
 
 		/// <inheritdoc />
 		public int PacketSize => SerializedPacketSize;
@@ -24,7 +24,7 @@ namespace FreecraftCore
 		/// The operation code of the packet
 		/// </summary>
 		[WireMember(2)]
-		public NetworkOperationCode OperationCode { get; private set; }
+		public NetworkOperationCode OperationCode { get; internal set; }
 
 		//This is an unknown chunk of data
 		//Trinitycore has the recieval being a 32bit operation code

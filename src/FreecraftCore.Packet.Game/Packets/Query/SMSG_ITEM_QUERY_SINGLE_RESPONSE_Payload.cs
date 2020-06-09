@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,7 +11,7 @@ namespace FreecraftCore
 	public sealed class SMSG_ITEM_QUERY_SINGLE_RESPONSE_Payload : GamePacketPayload, IQueryResponsePayload<ItemQueryResponseInfo>
 	{
 		[WireMember(1)]
-		private uint PackedResponseId { get; }
+		internal uint PackedResponseId { get; set; }
 
 		/// <inheritdoc />
 		public int QueryId => (int)(PackedResponseId & ~0x80000000);
@@ -23,7 +23,7 @@ namespace FreecraftCore
 
 		[Optional(nameof(IsSuccessful))]
 		[WireMember(2)]
-		public ItemQueryResponseInfo Result { get; }
+		public ItemQueryResponseInfo Result { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_ITEM_QUERY_SINGLE_RESPONSE_Payload(int queryId, [NotNull] ItemQueryResponseInfo result)

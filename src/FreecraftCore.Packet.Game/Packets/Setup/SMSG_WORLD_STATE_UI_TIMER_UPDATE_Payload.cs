@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		/// The current time.
 		/// </summary>
 		[WireMember(1)]
-		public uint CurrentTime { get; }
+		public uint CurrentTime { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_WORLD_STATE_UI_TIMER_UPDATE_Payload(uint currentTime)

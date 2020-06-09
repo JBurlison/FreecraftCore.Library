@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -14,7 +14,7 @@ namespace FreecraftCore
 		public override bool isValid { get; } = false;
 
 		[WireMember(1)]
-		public byte[] Data { get; }
+		public byte[] Data { get; internal set; }
 
 		/// <inheritdoc />
 		public DefaultAuthenticationServerPayload([NotNull] byte[] data)

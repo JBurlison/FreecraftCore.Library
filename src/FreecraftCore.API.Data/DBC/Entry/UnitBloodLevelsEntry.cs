@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -23,10 +23,10 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int UnitBloodLevelId { get; private set; }
+		public int UnitBloodLevelId { get; internal set; }
 
 		[WireMember(2)]
-		public Vector3<int> ViolenceLevel { get; private set; }
+		public Vector3<int> ViolenceLevel { get; internal set; }
 
 		public UnitBloodLevelsEntry(int unitBloodLevelId, [NotNull] Vector3<int> violenceLevel)
 		{

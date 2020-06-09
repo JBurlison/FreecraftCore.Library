@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -58,44 +58,44 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int FactionId { get; private set; }
+		public int FactionId { get; internal set; }
 
 		/// <summary>
 		/// Each faction that has gainable rep has a unique number. All factions that you can not gain rep with have -1. Max value 127.
 		/// </summary>
 		[WireMember(2)]
-		public int ReputationIndex { get; private set; }
+		public int ReputationIndex { get; internal set; }
 
 		/// <summary>
 		/// Indicates the rate of reputation gains.
 		/// </summary>
 		[WireMember(3)]
-		public ReputationRate Rate { get; private set; }
+		public ReputationRate Rate { get; internal set; }
 
 		//Sometimes null/0.
 		/// <summary>
 		/// Recursive. i.e. Undercity lists ID 67, which is Horde
 		/// </summary>
 		[WireMember(4)]
-		public int ParentFactionId { get; private set; }
+		public int ParentFactionId { get; internal set; }
 
 		[WireMember(5)]
-		public float ParentFactionSpillInMod { get; private set; }
+		public float ParentFactionSpillInMod { get; internal set; }
 
 		[WireMember(6)]
-		public float ParentFactionSpillOutMod { get; private set; }
+		public float ParentFactionSpillOutMod { get; internal set; }
 
 		[WireMember(7)]
-		public int ParentFactionSpillInMaxRank { get; private set; }
+		public int ParentFactionSpillInMaxRank { get; internal set; }
 
 		[WireMember(8)]
-		public int ParentFactionSpillOutMaxRank { get; private set; }
+		public int ParentFactionSpillOutMaxRank { get; internal set; }
 
 		[WireMember(9)]
-		public LocalizedStringDBC<TStringType> Name { get; private set; }
+		public LocalizedStringDBC<TStringType> Name { get; internal set; }
 
 		[WireMember(10)]
-		public LocalizedStringDBC<TStringType> Description { get; private set; }
+		public LocalizedStringDBC<TStringType> Description { get; internal set; }
 
 		public FactionEntry(int factionId, int reputationIndex, [NotNull] ReputationRate rate, int parentFactionId, int parentFactionSpillInMod, int parentFactionSpillOutMod, int parentFactionSpillInMaxRank, int parentFactionSpillOutMaxRank, [NotNull] LocalizedStringDBC<TStringType> name, [NotNull] LocalizedStringDBC<TStringType> description)
 		{

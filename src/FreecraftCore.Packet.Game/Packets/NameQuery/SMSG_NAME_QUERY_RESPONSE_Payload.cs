@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using FreecraftCore.Serializer;
 
@@ -25,7 +25,7 @@ namespace FreecraftCore
 		/// The GUID requested in the name query request.
 		/// </summary>
 		[WireMember(1)]
-		public PackedGuid RequestedGuid { get; private set; }
+		public PackedGuid RequestedGuid { get; internal set; }
 
 		//TC sends this as a byte
 		/// <summary>
@@ -34,7 +34,7 @@ namespace FreecraftCore
 		/// will contain information about the queried unit.
 		/// </summary>
 		[WireMember(2)]
-		public NameQueryResponseCode ResponseCode { get; }
+		public NameQueryResponseCode ResponseCode { get; internal set; }
 
 		/// <summary>
 		/// Indicates if the response is successful.
@@ -46,7 +46,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Optional(nameof(IsSuccessful))]
 		[WireMember(3)]
-		public NameQueryResult Result { get; private set; }
+		public NameQueryResult Result { get; internal set; }
 
 		//TODO: Documentat overloads
 		/// <inheritdoc />

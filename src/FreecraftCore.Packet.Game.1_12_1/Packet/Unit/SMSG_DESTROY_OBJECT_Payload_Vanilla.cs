@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,7 +11,7 @@ namespace FreecraftCore
 	public sealed class SMSG_DESTROY_OBJECT_Payload_Vanilla : GamePacketPayload
 	{
 		[WireMember(1)]
-		public ObjectGuid DestroyedObject { get; }
+		public ObjectGuid DestroyedObject { get; internal set; }
 
 		//1.12.1 does not send the bool for OnDeath
 

@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 using System;
 using System.Net;
 using JetBrains.Annotations;
@@ -20,7 +20,7 @@ namespace FreecraftCore
 		/// The data related to the authentication challenge.
 		/// </summary>
 		[WireMember(1)]
-		public AuthChallengeData Challenge { get; }
+		public AuthChallengeData Challenge { get; internal set; }
 
 		/// <inheritdoc />
 		public AuthLogonChallengeRequest([NotNull] AuthChallengeData challenge)

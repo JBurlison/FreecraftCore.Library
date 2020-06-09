@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,16 +22,16 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int SpellRadiusId { get; private set; }
+		public int SpellRadiusId { get; internal set; }
 
 		[WireMember(2)]
-		public float Radius { get; private set; }
+		public float Radius { get; internal set; }
 
 		[WireMember(3)]
-		public int Zero { get; private set; }
+		public int Zero { get; internal set; }
 
 		[WireMember(4)]
-		public float Radius2 { get; private set; }
+		public float Radius2 { get; internal set; }
 
 		/// <inheritdoc />
 		public SpellRadiusEntry(int spellRadiusId, float radius, int zero, float radius2)

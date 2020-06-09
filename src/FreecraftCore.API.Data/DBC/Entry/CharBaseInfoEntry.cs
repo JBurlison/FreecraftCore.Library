@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,7 +35,7 @@ namespace FreecraftCore
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		//[WireMember(1)] // Unique DBC that does not have a unique key and does not really have an ID.
-		public int Id { get; private set; }
+		public int Id { get; internal set; }
 
 		/// <summary>
 		/// Foreign key to: <see cref="ChrRacesEntry{TStringType}"/>
@@ -43,7 +43,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Column(TypeName = "int")]
 		[WireMember(2)]
-		public byte RaceId { get; private set; } //not internal due to EF Core limitations
+		public byte RaceId { get; internal set; } //not internal due to EF Core limitations
 
 		/// <summary>
 		/// Foreign key to: <see cref="ChrClassesEntry{TStringType}"/>
@@ -51,7 +51,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Column(TypeName = "int")]
 		[WireMember(3)]
-		public byte ClassId { get; private set; } //not internal due to EF Core limitations
+		public byte ClassId { get; internal set; } //not internal due to EF Core limitations
 
 		//Don't think there is a padding in 3.3.5
 		/*/// <summary>
@@ -61,7 +61,7 @@ namespace FreecraftCore
 		[JsonIgnore]
 		[NotMapped]
 		[WireMember(4)]
-		internal short Padding { get; private set; }*/
+		internal short Padding { get; set; }*/
 
 		public CharBaseInfoEntry(int id, byte classId, byte raceId)
 			: this(classId, raceId)

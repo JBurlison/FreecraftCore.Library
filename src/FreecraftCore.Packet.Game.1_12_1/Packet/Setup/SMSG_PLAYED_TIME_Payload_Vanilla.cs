@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -17,13 +17,13 @@ namespace FreecraftCore
 		/// The total play time for the character.
 		/// </summary>
 		[WireMember(1)]
-		public uint TotalPlayTime { get; }
+		public uint TotalPlayTime { get; internal set; }
 		
 		/// <summary>
 		/// The playtime for the character at the current level.
 		/// </summary>
 		[WireMember(2)]
-		public uint PlaytimeAtLevel { get; }
+		public uint PlaytimeAtLevel { get; internal set; }
 
 		//1.12.1 version doesn't have the bool.
 

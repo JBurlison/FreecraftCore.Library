@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,7 +34,7 @@ namespace FreecraftCore
 		[Key]
 		[Range(1, 255)]
 		[WireMember(1)]
-		internal int RaceId { get; private set; }
+		internal int RaceId { get; set; }
 
 		/// <summary>
 		/// The race of the entry.
@@ -44,14 +44,14 @@ namespace FreecraftCore
 		public CharacterRace Race => (CharacterRace) RaceId;
 
 		[WireMember(2)]
-		public CharacterRaceFlags Flags { get; private set; }
+		public CharacterRaceFlags Flags { get; internal set; }
 
 		/// <summary>
 		/// Foreign key reference to <see cref="FactionTemplateEntry"/>.
 		/// Faction template id. The order in the creation screen depends on this.
 		/// </summary>
 		[WireMember(3)]
-		public int FactionTemplateId { get; private set; }
+		public int FactionTemplateId { get; internal set; }
 
 		[JsonIgnore]
 		[ForeignKey(nameof(FactionTemplateId))]
@@ -63,7 +63,7 @@ namespace FreecraftCore
 		/// See: <see cref="SoundEntriesEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(4)]
-		public int ExplorationSoundId { get; private set; }
+		public int ExplorationSoundId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable.
@@ -71,7 +71,7 @@ namespace FreecraftCore
 		/// only used for the char creation/selection screen. Ingame the server sets the model.
 		/// </summary>
 		[WireMember(5)]
-		public int DefaultMaleDisplayInfoId { get; private set; }
+		public int DefaultMaleDisplayInfoId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable.
@@ -88,7 +88,7 @@ namespace FreecraftCore
 		/// only used for the char creation/selection screen. Ingame the server sets the model.
 		/// </summary>
 		[WireMember(6)]
-		public int DefaultFemaleDisplayInfoId { get; private set; }
+		public int DefaultFemaleDisplayInfoId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable.
@@ -103,14 +103,14 @@ namespace FreecraftCore
 		/// A short form of the name. Used for helmet models.
 		/// </summary>
 		[WireMember(7)]
-		public TStringType RacePrefix { get; private set; }
+		public TStringType RacePrefix { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable.
 		/// See: <see cref="LanguagesEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(8)]
-		public int BaseLanguageId { get; private set; }
+		public int BaseLanguageId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable.
@@ -125,7 +125,7 @@ namespace FreecraftCore
 		/// See: <see cref="CreatureTypeEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(9)]
-		public int CreatureTypeId { get; private set; }
+		public int CreatureTypeId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable.
@@ -141,7 +141,7 @@ namespace FreecraftCore
 		/// See: <see cref="SpellEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(10)]
-		public int ResSicknessSpellId { get; private set; }
+		public int ResSicknessSpellId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable.
@@ -156,7 +156,7 @@ namespace FreecraftCore
 		/// See: <see cref="SoundEntriesEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(11)]
-		public int SplashSoundId { get; private set; }
+		public int SplashSoundId { get; internal set; }
 
 		/// <summary>
 		/// Non-nullable
@@ -167,14 +167,14 @@ namespace FreecraftCore
 		public virtual SoundEntriesEntry<TStringType> SplashSound { get; private set; }
 
 		[WireMember(12)]
-		public TStringType ClientFileString { get; private set; }
+		public TStringType ClientFileString { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: <see cref="CinematicSequencesEntry"/>
 		/// </summary>
 		[WireMember(13)]
-		public int CinematicSequenceId { get; private set; }
+		public int CinematicSequenceId { get; internal set; }
 
 		/// <summary>
 		/// For blizzlike this value is:
@@ -183,29 +183,29 @@ namespace FreecraftCore
 		/// 2 - Non-playable
 		/// </summary>
 		[WireMember(14)]
-		public int Alliance { get; private set; }
+		public int Alliance { get; internal set; }
 
 		[WireMember(15)]
-		public LocalizedStringDBC<TStringType> Name { get; private set; }
+		public LocalizedStringDBC<TStringType> Name { get; internal set; }
 
 		[WireMember(16)]
-		public LocalizedStringDBC<TStringType> FemaleName { get; private set; }
+		public LocalizedStringDBC<TStringType> FemaleName { get; internal set; }
 
 		[WireMember(17)]
-		public LocalizedStringDBC<TStringType> MaleName { get; private set; }
+		public LocalizedStringDBC<TStringType> MaleName { get; internal set; }
 
 		[Column(nameof(FacialCustomizationName) + "_Internal")]
 		[WireMember(18)]
-		public TStringType FacialCustomizationNameInternal { get; private set; }
+		public TStringType FacialCustomizationNameInternal { get; internal set; }
 
 		[WireMember(19)]
-		public TStringType FacialCustomizationName { get; private set; }
+		public TStringType FacialCustomizationName { get; internal set; }
 
 		[WireMember(20)]
-		public TStringType HairCustomizationName { get; private set; }
+		public TStringType HairCustomizationName { get; internal set; }
 
 		[WireMember(21)]
-		internal int ExpansionId { get; private set; }
+		internal int ExpansionId { get; set; }
 
 		[JsonIgnore]
 		[NotMapped]

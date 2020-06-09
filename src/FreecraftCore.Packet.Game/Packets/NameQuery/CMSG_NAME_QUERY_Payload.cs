@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -21,7 +21,7 @@ namespace FreecraftCore
 		/// The object to query information for.
 		/// </summary>
 		[WireMember(1)]
-		public ObjectGuid TargetGuid { get; private set; }
+		public ObjectGuid TargetGuid { get; internal set; }
 
 		public CMSG_NAME_QUERY_Payload([NotNull] ObjectGuid targetGuid)
 		{

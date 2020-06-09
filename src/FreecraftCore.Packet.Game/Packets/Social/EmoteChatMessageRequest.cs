@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
@@ -12,13 +12,13 @@ namespace FreecraftCore
 		public override bool isValid { get; } = true;
 
 		[WireMember(1)]
-		public TextEmotes Emote { get; private set; }
+		public TextEmotes Emote { get; internal set; }
 
 		[WireMember(2)]
-		public uint UnknownEmoteNumber { get; private set; }
+		public uint UnknownEmoteNumber { get; internal set; }
 
 		[WireMember(3)]
-		public ObjectGuid EmoteTarget { get; private set; }
+		public ObjectGuid EmoteTarget { get; internal set; }
 
 		public EmoteChatMessageRequest(TextEmotes emote, uint emoteNumber, ObjectGuid guid)
 		{

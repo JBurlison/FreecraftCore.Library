@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -19,58 +19,58 @@ namespace FreecraftCore
 		/// The EN-US localization.
 		/// </summary>
 		[WireMember(1)]
-		public TStringType enUS { get; private set; }
+		public TStringType enUS { get; internal set; }
 
 		[NotMapped]
 		[JsonIgnore]
 		public TStringType enGB => enUS;
 
 		[WireMember(2)]
-		public TStringType koKR { get; private set; }
+		public TStringType koKR { get; internal set; }
 
 		[WireMember(3)]
-		public TStringType frFR { get; private set; }
+		public TStringType frFR { get; internal set; }
 
 		[WireMember(4)]
-		public TStringType deDE { get; private set; }
+		public TStringType deDE { get; internal set; }
 
 		[WireMember(5)]
-		public TStringType enCN { get; private set; }
+		public TStringType enCN { get; internal set; }
 
 		[NotMapped]
 		[JsonIgnore]
 		public TStringType zhCN => enCN;
 
 		[WireMember(6)]
-		public TStringType enTW { get; private set; }
+		public TStringType enTW { get; internal set; }
 
 		[NotMapped]
 		[JsonIgnore]
 		public TStringType zhTW => enTW;
 
 		[WireMember(7)]
-		public TStringType esES { get; private set; }
+		public TStringType esES { get; internal set; }
 
 		[WireMember(8)]
-		public TStringType esMX { get; private set; }
+		public TStringType esMX { get; internal set; }
 
 		[WireMember(9)]
-		public TStringType ruRU { get; private set; }
+		public TStringType ruRU { get; internal set; }
 
 		[NotMapped]
 		[JsonIgnore]
 		[WireMember(10)]
-		public TStringType Unknown1 { get; private set; }
+		public TStringType Unknown1 { get; internal set; }
 
 		[WireMember(11)]
-		public TStringType ptPT { get; private set; }
+		public TStringType ptPT { get; internal set; }
 
 		[NotMapped]
 		[JsonIgnore]
 		public TStringType ptBR => ptPT;
 
 		[WireMember(12)]
-		public TStringType itIT { get; private set; }
+		public TStringType itIT { get; internal set; }
 
 		//The below fields are read but are unknown
 		/// <summary>
@@ -82,14 +82,14 @@ namespace FreecraftCore
 		[NotMapped]
 		[KnownSize(4)]
 		[WireMember(13)]
-		public TStringType[] Unknowns { get; private set; } = new TStringType[4];
+		public TStringType[] Unknowns { get; internal set; } = new TStringType[4];
 
 		/// <summary>
 		/// 4 byte bitmask for the localized string.
 		/// TODO: What is this? Does it need to be set?
 		/// </summary>
 		[WireMember(14)]
-		public uint Flags { get; private set; }
+		public uint Flags { get; internal set; }
 
 		/// <inheritdoc />
 		public LocalizedStringDBC(TStringType enUs, TStringType koKr, TStringType frFr, TStringType deDe, TStringType enCn, TStringType enTw, TStringType esEs, TStringType esMx, TStringType ruRu, TStringType unknown1, TStringType ptPt, TStringType itIt, uint flags)

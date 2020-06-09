@@ -1,4 +1,4 @@
-﻿namespace FreecraftCore
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Base contract for all Warden payloads sent by the server.
@@ -10,11 +10,11 @@
 	{
 		[DontWrite] //don't write; it's from type information
 		[WireMember(1)]
-		public WardenSubOperationCodeServer SubOperationCode { get; private set; }
+		public WardenSubOperationCodeServer SubOperationCode { get; internal set; }
 
 		[ReadToEnd]
 		[WireMember(2)]
-		public byte[] Data { get; }
+		public byte[] Data { get; internal set; }
 
 		protected WardenServerPayload()
 		{

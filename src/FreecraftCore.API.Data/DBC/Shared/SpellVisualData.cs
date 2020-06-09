@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -19,13 +19,13 @@ namespace FreecraftCore
 		/// </summary>
 		//[WireMember(75)]
 		//[KnownSize(2)]
-		//public uint[] SpellVisual { get; }
+		//public uint[] SpellVisual { get; internal set; }
 
 		[WireMember(1)]
-		public uint One { get; private set; }
+		public uint One { get; internal set; }
 
 		[WireMember(2)]
-		public uint Two { get; private set; }
+		public uint Two { get; internal set; }
 
 		/// <inheritdoc />
 		public SpellVisualData(uint one, uint two)

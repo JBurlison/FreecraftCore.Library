@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -13,19 +13,19 @@ namespace FreecraftCore
 		/// The character data.
 		/// </summary>
 		[WireMember(1)]
-		public CharacterScreenData Data { get; }
+		public CharacterScreenData Data { get; internal set; }
 
 		/// <summary>
 		/// Indicates if this is the first login by the account.
 		/// </summary>
 		[WireMember(12)]
-		public bool isFirstLogin { get; } //This may be used to tell it to go to character customization?
+		public bool isFirstLogin { get; internal set; } //This may be used to tell it to go to character customization?
 
 		/// <summary>
 		/// The visual display pet information.
 		/// </summary>
 		[WireMember(13)]
-		public CharacterScreenPetInfo PetInformation { get; }
+		public CharacterScreenPetInfo PetInformation { get; internal set; }
 
 		//This is slightly different in VanillaWoW
 		/// <summary>
@@ -34,7 +34,7 @@ namespace FreecraftCore
 		/// </summary>
 		[KnownSize(19)] //Jackpoz has this set as 20 items but reads length - 1 and Trinitycore sends 19 items. SO THERE ARE 19!!
 		[WireMember(14)]
-		private CharacterScreenItem_Vanilla[] _VisualEquipmentItems { get; }
+		internal CharacterScreenItem_Vanilla[] _VisualEquipmentItems { get; set; }
 
 		/// <summary>
 		/// Represents the display IDs of the various items equipped by a character so that
@@ -48,7 +48,7 @@ namespace FreecraftCore
 
 		[KnownSize(5)]
 		[WireMember(15)]
-		public byte[] UnknownBagData { get; } = new byte[5];
+		public byte[] UnknownBagData { get; internal set; } = new byte[5];
 
 		/// <inheritdoc />
 		public CharacterScreenCharacter_Vanilla([NotNull] CharacterScreenData data, bool isFirstLogin, [NotNull] CharacterScreenPetInfo petInformation, [NotNull] CharacterScreenItem_Vanilla[] visualEquipmentItems)

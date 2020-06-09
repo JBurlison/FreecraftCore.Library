@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -22,7 +22,7 @@ namespace FreecraftCore
 		/// Contains the information sent as a response to the Proof attempt.
 		/// </summary>
 		[WireMember(1)]
-		public LogonProofResult ProofResult { get; private set; }
+		public LogonProofResult ProofResult { get; internal set; }
 		
 		//TODO: Add real ctor. Right now we only implement client stuff and this is sent by server.
 

@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -10,11 +10,11 @@ namespace FreecraftCore
 	{
 		//Probably used to verify the correct realm has been connected to
 		[WireMember(7)]
-		private uint RegionID { get; } = 0;
+		internal uint RegionID { get; set; } = 0;
 
 		//Probably used to verify the correct realm has been connected to
 		[WireMember(8)]
-		private uint BattlegroupID { get; } = 0;
+		internal uint BattlegroupID { get; set; } = 0;
 
 		//Unused by Trinitycore aside from
 		//assigning to the database
@@ -22,7 +22,7 @@ namespace FreecraftCore
 		/// Indicates the realm that was selected.
 		/// </summary>
 		[WireMember(9)]
-		public uint RealmID { get; }
+		public uint RealmID { get; internal set; }
 
 		/// <summary>
 		/// Creates a new realm identification object

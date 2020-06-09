@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -12,22 +12,22 @@ namespace FreecraftCore
 		/// The GUID of the transport.
 		/// </summary>
 		[WireMember(1)]
-		public PackedGuid TransportGuid { get; }
+		public PackedGuid TransportGuid { get; internal set; }
 
 		//TODO: What is this?
 		[WireMember(2)]
-		public Vector4<float> TransportOffset { get; }
+		public Vector4<float> TransportOffset { get; internal set; }
 
 		//Was missing this field
 		[WireMember(3)]
-		public int TransportTime { get; }
+		public int TransportTime { get; internal set; }
 
 		//ClientVersion.AddedInVersion(ClientType.WrathOfTheLichKing)
 		/// <summary>
 		/// Indicates the id of the transportation seat.
 		/// </summary>
 		[WireMember(4)]
-		public byte TransportSeatId { get; }
+		public byte TransportSeatId { get; internal set; }
 
 		/// <inheritdoc />
 		public TransportationInfo(PackedGuid transportGuid, Vector4<float> transportOffset, int transportTime, byte transportSeatId)

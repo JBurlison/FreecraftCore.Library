@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -9,7 +9,7 @@ namespace FreecraftCore
 		/// The movement update flags.
 		/// </summary>
 		[WireMember(2)]
-		public ObjectUpdateFlags UpdateFlags { get; }
+		public ObjectUpdateFlags UpdateFlags { get; internal set; }
 
 		//MovementInfo is only sent if the unit is living.
 		public bool IsLiving => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_LIVING);
@@ -20,7 +20,7 @@ namespace FreecraftCore
 
 		[Optional(nameof(IsLiving))]
 		[WireMember(3)]
-		public MovementInfo MoveInfo { get; }
+		public MovementInfo MoveInfo { get; internal set; }
 
 		//Only sent if we're alive
 		/// <summary>
@@ -29,12 +29,12 @@ namespace FreecraftCore
 		[Optional(nameof(IsLiving))]
 		[KnownSize(9)] //length of SpeedType enum
 		[WireMember(4)]
-		public float[] MovementSpeeds { get; } //see SpeedType to understand index.
+		public float[] MovementSpeeds { get; internal set; } //see SpeedType to understand index.
 
 		//Now there is some optional spline data if we're alive. Too. Great...
 		[Optional(nameof(HasSplineData))]
 		[WireMember(5)]
-		public SplineInfo SplineInformation { get; }
+		public SplineInfo SplineInformation { get; internal set; }
 
 		private bool HasUpdatePosition => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_POSITION);
 
@@ -45,11 +45,11 @@ namespace FreecraftCore
 
 		[Optional(nameof(HasCorpseLocation))]
 		[WireMember(6)]
-		public CorpseInfo DeadMovementInformation { get; }
+		public CorpseInfo DeadMovementInformation { get; internal set; }
 
 		[Optional(nameof(IsStationaryObject))]
 		[WireMember(7)]
-		public StationaryMovementInfo StationaryObjectMovementInformation { get; }
+		public StationaryMovementInfo StationaryObjectMovementInformation { get; internal set; }
 
 		public bool HasUnknown1 => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_UNKNOWN);
 
@@ -64,30 +64,30 @@ namespace FreecraftCore
 		//ClientVersion.RemovedInVersion(ClientVersionBuild.V4_2_2_14545)
 		[Optional(nameof(HasUnknown1))]
 		[WireMember(8)]
-		public int Unk1 { get; }
+		public int Unk1 { get; internal set; }
 
 		[Optional(nameof(HasLowGuid))]
 		[WireMember(9)]
-		public uint LowGuid { get; }
+		public uint LowGuid { get; internal set; }
 
 		[Optional(nameof(IsAttackingTarget))]
 		[WireMember(10)]
-		public PackedGuid Target { get; }
+		public PackedGuid Target { get; internal set; }
 
 		[Optional(nameof(HasTransport))]
 		[WireMember(11)]
-		public uint UnknownTransportTimer { get; }
+		public uint UnknownTransportTimer { get; internal set; }
 
 		[Optional(nameof(IsInVehicle))]
 		[WireMember(12)]
-		public VehicleMovementInfo VehicleMovementInformation { get; }
+		public VehicleMovementInfo VehicleMovementInformation { get; internal set; }
 
 		private bool HasUpdateRotation => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_ROTATION);
 
 		//TODO: Handle packed quaternions. See WoWPacketParser
 		[Optional(nameof(HasUpdateRotation))]
 		[WireMember(13)]
-		public long UpdatePackedQuaternion { get; }
+		public long UpdatePackedQuaternion { get; internal set; }
 
 		//TODO: Validate
 		/// <inheritdoc />

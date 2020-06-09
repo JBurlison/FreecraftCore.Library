@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,7 +27,7 @@ namespace FreecraftCore
 		/// </summary>
 		[SendSize(SendSizeAttribute.SizeType.Int32)]
 		[WireMember(1)]
-		private TEntryType[] Entries { get; set; } //setter for serializer purposes
+		internal TEntryType[] Entries { get; set; } //setter for serializer purposes
 
 		/// <summary>
 		/// Internally managed readonly collection of DBC entries.

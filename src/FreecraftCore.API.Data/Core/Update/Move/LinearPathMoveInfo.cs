@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -13,13 +13,13 @@ namespace FreecraftCore
 		/// The final index of the path.
 		/// </summary>
 		//[WireMember(1)]
-		public int LastIndex { get; }
+		public int LastIndex { get; internal set; }
 
 		/// <summary>
 		/// The final position of the linear path.
 		/// </summary>
 		//[WireMember(2)]
-		public Vector3<float> FinalPosition { get; }
+		public Vector3<float> FinalPosition { get; internal set; }
 
 		//TODO: Actually implement the packed XYZ
 		//TODO: Is the same format on 1.12.1? I can't tell.

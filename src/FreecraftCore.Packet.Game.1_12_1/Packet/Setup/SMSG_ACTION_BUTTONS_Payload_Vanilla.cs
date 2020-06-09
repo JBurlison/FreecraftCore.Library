@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		//#define  MAX_ACTION_BUTTONS 120   // TBC 132 checked in 2.3.0
 		[KnownSize(120)] //less than TC
 		[WireMember(1)]
-		private ActionButtonData[] _ButtonData { get; }
+		internal ActionButtonData[] _ButtonData { get; set; }
 
 		/// <summary>
 		/// The binding/button data collection.

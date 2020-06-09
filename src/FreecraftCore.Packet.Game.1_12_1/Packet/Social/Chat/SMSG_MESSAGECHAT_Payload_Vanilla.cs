@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		/// The header details of the message.
 		/// </summary>
 		[WireMember(1)]
-		public NetworkChatMessageHeader_Vanilla MessageHeader { get; }
+		public NetworkChatMessageHeader_Vanilla MessageHeader { get; internal set; }
 
 		/// <summary>
 		/// Indicates if it is a creature message and
@@ -112,7 +112,7 @@ namespace FreecraftCore
 		[CanBeNull]
 		[Optional(nameof(IsCreatureSpecialMessage))]
 		[WireMember(7)]
-		public MessageAddressingDetails<string> CreatureSpecialMessageDetails { get; }
+		public MessageAddressingDetails<string> CreatureSpecialMessageDetails { get; internal set; }
 
 		/// <summary>
 		/// The creature regular message details.
@@ -120,7 +120,7 @@ namespace FreecraftCore
 		[CanBeNull]
 		[Optional(nameof(IsCreatureRegularMessage))]
 		[WireMember(8)]
-		public NetworkChatCreatureRegularMessageDetails_Vanilla CreatureRegularMessageDetails { get; }
+		public NetworkChatCreatureRegularMessageDetails_Vanilla CreatureRegularMessageDetails { get; internal set; }
 
 		/// <summary>
 		/// The channel message details.
@@ -128,7 +128,7 @@ namespace FreecraftCore
 		[CanBeNull]
 		[Optional(nameof(IsChatChannelMessage))]
 		[WireMember(9)]
-		public NetworkChatChannelMessageDetails_Vanilla ChannelMessageDetails { get; }
+		public NetworkChatChannelMessageDetails_Vanilla ChannelMessageDetails { get; internal set; }
 
 		/// <summary>
 		/// A regular message details.
@@ -136,18 +136,18 @@ namespace FreecraftCore
 		[CanBeNull]
 		[Optional(nameof(IsRegularChatMessage))]
 		[WireMember(10)]
-		public MessageAddressingDetails<ObjectGuid> RegularMessageDetails { get; }
+		public MessageAddressingDetails<ObjectGuid> RegularMessageDetails { get; internal set; }
 
 		[CanBeNull]
 		[Optional(nameof(IsDefaultChatMessage))]
 		[WireMember(11)]
-		public NetworkChatDefaultMessageDetails DefaultMessageDetails { get; }
+		public NetworkChatDefaultMessageDetails DefaultMessageDetails { get; internal set; }
 
 		/// <summary>
 		/// These details are sent in all messages.
 		/// </summary>
 		[WireMember(50)]
-		public NetworkChatMessageFooter MessageFooter { get; }
+		public NetworkChatMessageFooter MessageFooter { get; internal set; }
 
 
 		/// <inheritdoc />

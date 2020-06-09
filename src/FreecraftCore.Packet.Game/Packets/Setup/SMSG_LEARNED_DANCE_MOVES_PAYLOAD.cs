@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -16,10 +16,10 @@ namespace FreecraftCore
 	{
 		//TODO: What is this? Was this ever used...?
 		[WireMember(1)]
-		public int Unk1 { get; } = 0;
+		public int Unk1 { get; internal set; } = 0;
 
 		[WireMember(2)]
-		public int Unk2 { get; } = 0;
+		public int Unk2 { get; internal set; } = 0;
 
 		/// <summary>
 		/// Defualt ctor. Sets all to 0.

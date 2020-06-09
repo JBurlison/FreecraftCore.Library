@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -12,10 +12,10 @@ namespace FreecraftCore
 	public sealed class AchievementCriteriaConditionDefinition
 	{
 		[WireMember(6)]
-		public AchievementCriteriaCondition Condition { get; private set; }
+		public AchievementCriteriaCondition Condition { get; internal set; }
 
 		[WireMember(7)]
-		public int AssetId { get; private set; }
+		public int AssetId { get; internal set; }
 
 		public AchievementCriteriaConditionDefinition(AchievementCriteriaCondition condition, int assetId)
 		{

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -15,7 +15,7 @@ namespace FreecraftCore
 		/// Uses int spell ids in 3.3.5.
 		/// </summary>
 		[WireMember(1)]
-		public InitialSpellDataBlock<int> Data { get; }
+		public InitialSpellDataBlock<int> Data { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_INITIAL_SPELLS_Payload(InitialSpellDataBlock<int> data)

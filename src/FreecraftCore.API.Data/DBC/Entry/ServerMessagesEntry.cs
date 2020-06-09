@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,10 +27,10 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int MessageId { get; private set; }
+		public int MessageId { get; internal set; }
 
 		[WireMember(2)]
-		public LocalizedStringDBC<TStringType> Text { get; private set; }
+		public LocalizedStringDBC<TStringType> Text { get; internal set; }
 
 		public ServerMessagesEntry(int messageId, [NotNull] LocalizedStringDBC<TStringType> text)
 		{

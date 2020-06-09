@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -14,7 +14,7 @@ namespace FreecraftCore
 		/// Unknown data. Trinitycore has a 4 byte field here.
 		/// </summary>
 		[WireMember(1)]
-		public int Unk { get; }
+		public int Unk { get; internal set; }
 
 		/// <inheritdoc />
 		public RealmSplitRequest(int unk)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -28,48 +28,48 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int AchievementCriteriaId { get; private set; }
+		public int AchievementCriteriaId { get; internal set; }
 
 		/// <summary>
 		/// The referenced achievement id.
 		/// </summary>
 		[WireMember(2)]
-		public int ReferredAchievementId { get; private set; }
+		public int ReferredAchievementId { get; internal set; }
 
 		[JsonIgnore]
 		[ForeignKey(nameof(ReferredAchievementId))]
 		public virtual AchievementEntry<TStringType> AchievementEntry { get; private set; }
 
 		[WireMember(3)]
-		public AchievementCriteriaTypes Type { get; private set; }
+		public AchievementCriteriaTypes Type { get; internal set; }
 
 		//See TC DBC implementation to understand these.
 		[WireMember(4)]
-		public int AssetId { get; private set; }
+		public int AssetId { get; internal set; }
 
 		[WireMember(5)]
-		public int Amount { get; private set; }
+		public int Amount { get; internal set; }
 
 		[WireMember(6)]
-		public AchievementCriteriaConditionDefinition Start { get; private set; }
+		public AchievementCriteriaConditionDefinition Start { get; internal set; }
 
 		[WireMember(7)]
-		public AchievementCriteriaConditionDefinition Fail { get; private set; }
+		public AchievementCriteriaConditionDefinition Fail { get; internal set; }
 
 		[WireMember(8)]
-		public LocalizedStringDBC<TStringType> Description { get; private set; }
+		public LocalizedStringDBC<TStringType> Description { get; internal set; }
 
 		[WireMember(9)]
-		public AchievementFlags Flags { get; private set; }
+		public AchievementFlags Flags { get; internal set; }
 
 		[WireMember(10)]
-		public AchievementCriteriaConditionDefinition Timed { get; private set; }
+		public AchievementCriteriaConditionDefinition Timed { get; internal set; }
 
 		[WireMember(11)]
-		public int Time { get; private set; }
+		public int Time { get; internal set; }
 
 		[WireMember(12)]
-		public int UIOrder { get; private set; }
+		public int UIOrder { get; internal set; }
 
 		public AchievementCriteriaEntry(int achievementCriteriaId, int referredAchievementId, [NotNull] AchievementEntry<TStringType> achievementEntry, AchievementCriteriaTypes type, int assetId, int amount, [NotNull] AchievementCriteriaConditionDefinition start, [NotNull] AchievementCriteriaConditionDefinition fail, [NotNull] LocalizedStringDBC<TStringType> description, AchievementFlags flags, [NotNull] AchievementCriteriaConditionDefinition timed, int time, int uiOrder)
 		{

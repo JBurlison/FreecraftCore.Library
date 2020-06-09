@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -25,13 +25,13 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int ProfanityNamesId { get; private set; }
+		public int ProfanityNamesId { get; internal set; }
 
 		[WireMember(2)]
-		public TStringType Pattern { get; private set; }
+		public TStringType Pattern { get; internal set; }
 
 		[WireMember(3)]
-		public uint LanguageID { get; private set; }
+		public uint LanguageID { get; internal set; }
 
 		/// <inheritdoc />
 		public ProfanityNamesEntry(int profanityNamesId, TStringType pattern, uint languageId)

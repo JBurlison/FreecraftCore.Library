@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -6,10 +6,10 @@ namespace FreecraftCore
 	public sealed class CorpseInfo_Vanilla
 	{
 		[WireMember(2)]
-		public Vector3<float> GoLocation { get; }
+		public Vector3<float> GoLocation { get; internal set; }
 
 		[WireMember(4)]
-		public float Orientation { get; }
+		public float Orientation { get; internal set; }
 
 		/// <inheritdoc />
 		public CorpseInfo_Vanilla(Vector3<float> goLocation, float orientation)

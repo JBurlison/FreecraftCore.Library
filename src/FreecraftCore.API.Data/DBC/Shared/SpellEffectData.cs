@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -19,122 +19,122 @@ namespace FreecraftCore
 		/// 71-73    m_effect
 		/// </summary>
 		[WireMember(55)]
-		public SpellEffectDataChunk<SpellEffect> Effect { get; private set; }
+		public SpellEffectDataChunk<SpellEffect> Effect { get; internal set; }
 
 		/// <summary>
 		/// 74-76    m_effectDieSides
 		/// </summary>
 		[WireMember(56)]
-		public SpellEffectDataChunk<int> EffectDieSides { get; private set; }
+		public SpellEffectDataChunk<int> EffectDieSides { get; internal set; }
 
 		/// <summary>
 		/// 77-79    m_effectRealPointsPerLevel
 		/// </summary>
 		[WireMember(57)]
-		public SpellEffectDataChunk<float> EffectRealPointsPerLevel { get; private set; }
+		public SpellEffectDataChunk<float> EffectRealPointsPerLevel { get; internal set; }
 
 		/// <summary>
 		/// 80-82    m_effectBasePoints (don't must be used in spell/auras explicitly, must be used cached Spell::m_currentBasePoints)
 		/// </summary>
 		[WireMember(58)]
-		public SpellEffectDataChunk<int> EffectBasePoints { get; private set; }
+		public SpellEffectDataChunk<int> EffectBasePoints { get; internal set; }
 
 		/// <summary>
 		/// 83-85    m_effectMechanic
 		/// </summary>
 		[WireMember(59)]
-		public SpellEffectDataChunk<SpellMechanic> EffectMechanic { get; private set; }
+		public SpellEffectDataChunk<SpellMechanic> EffectMechanic { get; internal set; }
 
 		/// <summary>
 		/// 86-88    m_implicitTargetA
 		/// </summary>
 		[WireMember(60)]
-		public SpellEffectDataChunk<SpellTargetType> EffectImplicitTargetA { get; private set; }
+		public SpellEffectDataChunk<SpellTargetType> EffectImplicitTargetA { get; internal set; }
 
 		/// <summary>
 		/// 89-91    m_implicitTargetB
 		/// </summary>
 		[WireMember(61)]
-		public SpellEffectDataChunk<SpellTargetType> EffectImplicitTargetB { get; private set; }
+		public SpellEffectDataChunk<SpellTargetType> EffectImplicitTargetB { get; internal set; }
 
 		/// <summary>
 		/// 92-94    m_effectRadiusIndex - spellradius.dbc
 		/// </summary>
 		[WireMember(62)]
-		public SpellEffectDataChunk<uint> EffectRadiusIndex { get; private set; }
+		public SpellEffectDataChunk<uint> EffectRadiusIndex { get; internal set; }
 
 		/// <summary>
 		/// 95-97    m_effectAura
 		/// </summary>
 		[WireMember(63)]
-		public SpellEffectDataChunk<AuraType> EffectApplyAuraName { get; private set; }
+		public SpellEffectDataChunk<AuraType> EffectApplyAuraName { get; internal set; }
 
 		/// <summary>
 		/// 98-100   m_effectAuraPeriod
 		/// </summary>
 		[WireMember(64)]
-		public SpellEffectDataChunk<uint> EffectAmplitude { get; private set; }
+		public SpellEffectDataChunk<uint> EffectAmplitude { get; internal set; }
 
 		/// <summary>
 		/// 101-103  m_effectAmplitude
 		/// </summary>
 		[WireMember(65)]
-		public SpellEffectDataChunk<float> EffectMultipleValue { get; private set; }
+		public SpellEffectDataChunk<float> EffectMultipleValue { get; internal set; }
 
 		/// <summary>
 		///  104-106  m_effectChainTargets
 		/// </summary>
 		[WireMember(66)]
-		public SpellEffectDataChunk<uint> EffectChainTarget { get; private set; }
+		public SpellEffectDataChunk<uint> EffectChainTarget { get; internal set; }
 
 		/// <summary>
 		/// 107-109  m_effectItemType
 		/// </summary>
 		[WireMember(67)]
-		public SpellEffectDataChunk<uint> EffectItemType { get; private set; }
+		public SpellEffectDataChunk<uint> EffectItemType { get; internal set; }
 
 		/// <summary>
 		/// 110-112  m_effectMiscValue
 		/// </summary>
 		[WireMember(68)]
-		public SpellEffectDataChunk<int> EffectMiscValue { get; private set; }
+		public SpellEffectDataChunk<int> EffectMiscValue { get; internal set; }
 
 		/// <summary>
 		/// 113-115  m_effectMiscValueB
 		/// </summary>
 		[WireMember(69)]
-		public SpellEffectDataChunk<int> EffectMiscValueB { get; private set; }
+		public SpellEffectDataChunk<int> EffectMiscValueB { get; internal set; }
 
 		/// <summary>
 		/// 116-118  m_effectTriggerSpell
 		/// </summary>
 		[WireMember(70)]
-		public SpellEffectDataChunk<uint> EffectTriggerSpell { get; private set; }
+		public SpellEffectDataChunk<uint> EffectTriggerSpell { get; internal set; }
 
 		/// <summary>
 		/// 119-121  m_effectPointsPerCombo
 		/// </summary>
 		[WireMember(71)]
-		public SpellEffectDataChunk<float> EffectPointsPerComboPoint { get; private set; }
+		public SpellEffectDataChunk<float> EffectPointsPerComboPoint { get; internal set; }
 
 		//TODO: TC created some weird Flags96 to handle these fields
 		/// <summary>
 		/// 122-124  m_effectSpellClassMaskA, effect 0
 		/// </summary>
 		[WireMember(72)]
-		public SpellEffectDataChunk<uint> EffectSpellClassMaskA { get; private set; }
+		public SpellEffectDataChunk<uint> EffectSpellClassMaskA { get; internal set; }
 
 		/// <summary>
 		/// 125-127  m_effectSpellClassMaskB, effect 1
 		/// </summary>
 		[WireMember(73)]
-		public SpellEffectDataChunk<uint> EffectSpellClassMaskB { get; private set; }
+		public SpellEffectDataChunk<uint> EffectSpellClassMaskB { get; internal set; }
 
 		/// <summary>
 		/// 128-130  m_effectSpellClassMaskC, effect 2
 		/// </summary>
 		[WireMember(74)]
-		public SpellEffectDataChunk<uint> EffectSpellClassMaskC { get; private set; }
+		public SpellEffectDataChunk<uint> EffectSpellClassMaskC { get; internal set; }
 
 		/// <inheritdoc />
 		public SpellEffectData(SpellEffectDataChunk<SpellEffect> effect, SpellEffectDataChunk<int> effectDieSides, SpellEffectDataChunk<float> effectRealPointsPerLevel, SpellEffectDataChunk<int> effectBasePoints, SpellEffectDataChunk<SpellMechanic> effectMechanic, SpellEffectDataChunk<SpellTargetType> effectImplicitTargetA, SpellEffectDataChunk<SpellTargetType> effectImplicitTargetB, SpellEffectDataChunk<uint> effectRadiusIndex, SpellEffectDataChunk<AuraType> effectApplyAuraName, SpellEffectDataChunk<uint> effectAmplitude, SpellEffectDataChunk<float> effectMultipleValue, SpellEffectDataChunk<uint> effectChainTarget, SpellEffectDataChunk<uint> effectItemType, SpellEffectDataChunk<int> effectMiscValue, SpellEffectDataChunk<int> effectMiscValueB, SpellEffectDataChunk<uint> effectTriggerSpell, SpellEffectDataChunk<float> effectPointsPerComboPoint, SpellEffectDataChunk<uint> effectSpellClassMaskA, SpellEffectDataChunk<uint> effectSpellClassMaskB, SpellEffectDataChunk<uint> effectSpellClassMaskC)

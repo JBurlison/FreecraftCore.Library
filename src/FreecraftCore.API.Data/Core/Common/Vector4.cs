@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
@@ -19,25 +19,25 @@ namespace FreecraftCore
 		/// X value.
 		/// </summary>
 		[WireMember(1)]
-		public T X { get; private set; }
+		public T X { get; internal set; }
 
 		/// <summary>
 		/// Y value.
 		/// </summary>
 		[WireMember(2)]
-		public T Y { get; private set; }
+		public T Y { get; internal set; }
 
 		/// <summary>
 		/// Z value.
 		/// </summary>
 		[WireMember(3)]
-		public T Z { get; private set; }
+		public T Z { get; internal set; }
 
 		/// <summary>
 		/// X value.
 		/// </summary>
 		[WireMember(4)]
-		public T W { get; private set; }
+		public T W { get; internal set; }
 
 		[JsonIgnore]
 		[NotMapped]

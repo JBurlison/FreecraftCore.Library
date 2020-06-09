@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -39,28 +39,28 @@ namespace FreecraftCore
 		/// </summary>
 		[Key]
 		[WireMember(1)]
-		public int ParticleColorId { get; private set; }
+		public int ParticleColorId { get; internal set; }
 
 		/// <summary>
 		/// 0, 1 or 2 used by particle depending on whether it has a ParticleColorIndex of 11, 12 or 13.
 		/// The colours are given as 0xAARRGGBB encoded unsigned integers.
 		/// </summary>
 		[WireMember(2)]
-		public GenericStaticallySizedArrayChunkThree<int> StartColor { get; private set; }
+		public GenericStaticallySizedArrayChunkThree<int> StartColor { get; internal set; }
 
 		/// <summary>
 		/// 0, 1 or 2 used by particle depending on whether it has a ParticleColorIndex of 11, 12 or 13.
 		/// The colours are given as 0xAARRGGBB encoded unsigned integers.
 		/// </summary>
 		[WireMember(3)]
-		public GenericStaticallySizedArrayChunkThree<int> MidColor { get; private set; }
+		public GenericStaticallySizedArrayChunkThree<int> MidColor { get; internal set; }
 
 		/// <summary>
 		/// 0, 1 or 2 used by particle depending on whether it has a ParticleColorIndex of 11, 12 or 13.
 		/// The colours are given as 0xAARRGGBB encoded unsigned integers.
 		/// </summary>
 		[WireMember(4)]
-		public GenericStaticallySizedArrayChunkThree<int> EndColor { get; private set; }
+		public GenericStaticallySizedArrayChunkThree<int> EndColor { get; internal set; }
 
 		public ParticleColorEntry(int particleColorId, [NotNull] GenericStaticallySizedArrayChunkThree<int> startColor, [NotNull] GenericStaticallySizedArrayChunkThree<int> midColor, [NotNull] GenericStaticallySizedArrayChunkThree<int> endColor)
 		{

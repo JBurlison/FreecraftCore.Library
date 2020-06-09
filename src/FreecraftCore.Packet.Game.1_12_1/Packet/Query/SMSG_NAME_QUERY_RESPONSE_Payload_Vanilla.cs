@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		/// The GUID requested in the name query request.
 		/// </summary>
 		[WireMember(1)]
-		public ObjectGuid RequestedGuid { get; private set; }
+		public ObjectGuid RequestedGuid { get; internal set; }
 		
 		//1.12.1 always sends, no response code
 
@@ -25,7 +25,7 @@ namespace FreecraftCore
 		/// The name query result.
 		/// </summary>
 		[WireMember(2)]
-		public NameQueryResult Result { get; private set; }
+		public NameQueryResult Result { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_NAME_QUERY_RESPONSE_Payload_Vanilla([NotNull] ObjectGuid requestedGuid, [NotNull] NameQueryResult result)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -31,10 +31,10 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int ObjectEffectPackageId { get; private set; }
+		public int ObjectEffectPackageId { get; internal set; }
 
 		[WireMember(2)]
-		public TStringType Name { get; private set; }
+		public TStringType Name { get; internal set; }
 
 		public ObjectEffectPackageEntry(int objectEffectPackageId, [NotNull] TStringType name)
 		{

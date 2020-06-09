@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,10 +11,10 @@ namespace FreecraftCore
 	public sealed class SMSG_DESTROY_OBJECT_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
-		public ObjectGuid DestroyedObject { get; }
+		public ObjectGuid DestroyedObject { get; internal set; }
 
 		[WireMember(2)]
-		public bool IsForDeath { get; }
+		public bool IsForDeath { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_DESTROY_OBJECT_Payload([NotNull] ObjectGuid destroyedObject, bool isForDeath)

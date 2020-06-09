@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -13,7 +13,7 @@ namespace FreecraftCore
 		/// The chat message being sent.
 		/// </summary>
 		[WireMember(1)]
-		public string Message { get; } //null terminated string message
+		public string Message { get; internal set; } //null terminated string message
 
 		/// <inheritdoc />
 		public SayPlayerChatMessage(ChatLanguage language, [NotNull] string message)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -19,13 +19,13 @@ namespace FreecraftCore
 		/// The object to update control of.
 		/// </summary>
 		[WireMember(1)]
-		public PackedGuid ControlledObject { get; }
+		public PackedGuid ControlledObject { get; internal set; }
 
 		/// <summary>
 		/// Indicates if the object is enabled??? TODO: Maybe this means is controlled disbale/enable?
 		/// </summary>
 		[WireMember(2)]
-		public bool IsEnabled { get; }
+		public bool IsEnabled { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_CLIENT_CONTROL_UPDATE_Payload([NotNull] PackedGuid controlledObject, bool isEnabled)

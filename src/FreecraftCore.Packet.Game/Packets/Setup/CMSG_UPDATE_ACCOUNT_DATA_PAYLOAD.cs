@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -31,7 +31,7 @@ namespace FreecraftCore
 		/// The type of data.
 		/// </summary>
 		[WireMember(1)]
-		public AccountDataType DataType { get; }
+		public AccountDataType DataType { get; internal set; }
 
 		//TODO: Create timestamp type.
 		/// <summary>
@@ -39,7 +39,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(2)]
-		public string TimeStamp { get; }
+		public string TimeStamp { get; internal set; }
 
 		//Some compressed data here
 		//On TC it appears to be a string. Might be planitext LUA? Config text?
@@ -49,7 +49,7 @@ namespace FreecraftCore
 		[Compress]
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(3)]
-		public string ConfigData { get; }
+		public string ConfigData { get; internal set; }
 
 		/// <inheritdoc />
 		public CMSG_UPDATE_ACCOUNT_DATA_PAYLOAD(AccountDataType dataType, [NotNull] string timeStamp, [NotNull] string configData)

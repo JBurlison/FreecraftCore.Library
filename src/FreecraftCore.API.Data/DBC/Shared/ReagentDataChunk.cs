@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,28 +11,28 @@ namespace FreecraftCore
 	public sealed class ReagentDataChunk<TDataType>
 	{
 		[WireMember(1)]
-		public TDataType One { get; private set; }
+		public TDataType One { get; internal set; }
 
 		[WireMember(2)]
-		public TDataType Two { get; private set; }
+		public TDataType Two { get; internal set; }
 
 		[WireMember(3)]
-		public TDataType Three { get; private set; }
+		public TDataType Three { get; internal set; }
 
 		[WireMember(4)]
-		public TDataType Four { get; private set; }
+		public TDataType Four { get; internal set; }
 
 		[WireMember(5)]
-		public TDataType Five { get; private set; }
+		public TDataType Five { get; internal set; }
 
 		[WireMember(6)]
-		public TDataType Six { get; private set; }
+		public TDataType Six { get; internal set; }
 
 		[WireMember(7)]
-		public TDataType Seven { get; private set; }
+		public TDataType Seven { get; internal set; }
 
 		[WireMember(8)]
-		public TDataType Eight { get; private set; }
+		public TDataType Eight { get; internal set; }
 
 		/// <inheritdoc />
 		public ReagentDataChunk(TDataType one, TDataType two, TDataType three, TDataType four, TDataType five, TDataType six, TDataType seven, TDataType eight)

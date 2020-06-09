@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -14,7 +14,7 @@ namespace FreecraftCore
 		/// To and From about the message.
 		/// </summary>
 		[WireMember(1)]
-		public MessageAddressingDetails<string> AddressingDetails { get; }
+		public MessageAddressingDetails<string> AddressingDetails { get; internal set; }
 
 		/// <inheritdoc />
 		public NetworkChatWhisperMessageDetails([NotNull] MessageAddressingDetails<string> addressingDetails)

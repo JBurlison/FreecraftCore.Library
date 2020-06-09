@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -13,7 +13,7 @@ namespace FreecraftCore
 		public override bool isValid { get; } = true; //TODO: When rules/data validation engine is written implement
 
 		[WireMember(1)]
-		public ObjectGuid CharacterGuid { get; private set; }
+		public ObjectGuid CharacterGuid { get; internal set; }
 
 		public CharacterLoginRequest([NotNull] ObjectGuid characterGuid)
 		{

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -13,13 +13,13 @@ namespace FreecraftCore
 		/// Indicates the message type of the chat message.
 		/// </summary>
 		[WireMember(1)]
-		public ChatMessageType_Vanilla MessageType { get; }
+		public ChatMessageType_Vanilla MessageType { get; internal set; }
 
 		/// <summary>
 		/// Indicates the language of the chat message.
 		/// </summary>
 		[WireMember(2)]
-		public ChatLanguage Language { get; }
+		public ChatLanguage Language { get; internal set; }
 
 		/// <inheritdoc />
 		public NetworkChatMessageHeader_Vanilla(ChatMessageType_Vanilla messageType, ChatLanguage language)

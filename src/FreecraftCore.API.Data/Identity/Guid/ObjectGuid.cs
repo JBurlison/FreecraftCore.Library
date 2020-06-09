@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 
 
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		/// GUID value.
 		/// </summary>
 		[WireMember(1)]
-		public override ulong RawGuidValue { get; }
+		public override ulong RawGuidValue { get; internal set; }
 
 		/// <summary>
 		/// Creates a new value-type wrapped for the uint64 raw GUID value.

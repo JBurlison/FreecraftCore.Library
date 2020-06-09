@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		/// The header details of the message.
 		/// </summary>
 		[WireMember(1)]
-		public NetworkChatMessageHeader MessageHeader { get; }
+		public NetworkChatMessageHeader MessageHeader { get; internal set; }
 
 		/// <summary>
 		/// Indicates if it is a whisper message
@@ -95,7 +95,7 @@ namespace FreecraftCore
 		[CanBeNull]
 		[Optional(nameof(IsWhisperMessage))]
 		[WireMember(6)]
-		public NetworkChatWhisperMessageDetails WhisperMessageDetails { get; }
+		public NetworkChatWhisperMessageDetails WhisperMessageDetails { get; internal set; }
 
 		/// <summary>
 		/// The creature message details.
@@ -103,7 +103,7 @@ namespace FreecraftCore
 		[CanBeNull]
 		[Optional(nameof(IsCreatureMessage))]
 		[WireMember(7)]
-		public NetworkChatCreatureMessageDetails CreatureMessageDetails { get; }
+		public NetworkChatCreatureMessageDetails CreatureMessageDetails { get; internal set; }
 
 		/// <summary>
 		/// The channel message details.
@@ -111,18 +111,18 @@ namespace FreecraftCore
 		[CanBeNull]
 		[Optional(nameof(IsChatChannelMessage))]
 		[WireMember(8)]
-		public NetworkChatChannelMessageDetails ChannelMessageDetails { get; }
+		public NetworkChatChannelMessageDetails ChannelMessageDetails { get; internal set; }
 
 		[CanBeNull]
 		[Optional(nameof(IsDefaultChatMessage))]
 		[WireMember(9)]
-		public NetworkChatDefaultMessageDetails DefaultMessageDetails { get; }
+		public NetworkChatDefaultMessageDetails DefaultMessageDetails { get; internal set; }
 
 		/// <summary>
 		/// These details are sent in all messages.
 		/// </summary>
 		[WireMember(50)]
-		public NetworkChatMessageFooter MessageFooter { get; }
+		public NetworkChatMessageFooter MessageFooter { get; internal set; }
 
 		//TODO: Optional message data if it was a guild achievement
 		

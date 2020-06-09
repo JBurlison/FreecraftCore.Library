@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 using System;
 using JetBrains.Annotations;
 
@@ -12,7 +12,7 @@ namespace FreecraftCore
 		/// (RP, PVP, PVE etc)
 		/// </summary>
 		[WireMember(1)]
-		public RealmType RealmType { get; }
+		public RealmType RealmType { get; internal set; }
 
 		/// <summary>
 		/// Indicates if the realm list information
@@ -26,12 +26,12 @@ namespace FreecraftCore
 		/// (Only in 2.x and 3.x according to Trinitycore)
 		/// </summary>
 		[WireMember(2)]
-		public bool isLocked { get; }
+		public bool isLocked { get; internal set; }
 
 		//Switched away from flags based polymorphic serialization and uses the bool checking
 		//optional serialization.
 		[WireMember(3)]
-		private DefaultRealmInformation DefaultInformation { get; }
+		internal DefaultRealmInformation DefaultInformation { get; set; }
 
 		//No longer serialized polymorphically
 		/// <summary>
@@ -41,7 +41,7 @@ namespace FreecraftCore
 
 		[Optional(nameof(HasBuildInformation))]
 		[WireMember(4)]
-		public RealmBuildInformation BuildInfo { get; }
+		public RealmBuildInformation BuildInfo { get; internal set; }
 
 		/// <inheritdoc />
 		public RealmInfo(RealmType realmType, bool isLocked, [NotNull] DefaultRealmInformation information)

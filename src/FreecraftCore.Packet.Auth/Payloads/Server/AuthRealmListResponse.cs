@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
@@ -20,19 +20,19 @@ namespace FreecraftCore
 		/// The size of the payload.
 		/// </summary>
 		[WireMember(1)]
-		public ushort PayloadSize { get; set; }
+		public ushort PayloadSize { get; internal set; }
 
 		//Unknown field. Trinitycore always sends 0.
 		//I think EmberEmu said it's expected as 0 in the client? Can't recall
 		[WireMember(2)]
-		private uint unknownOne { get; set; }
+		internal uint unknownOne { get; set; }
 
 		/// <summary>
 		/// Realm information.
 		/// </summary>
 		[SendSize(SendSizeAttribute.SizeType.UShort)] //in 2.x and 3.x this is ushort but in 1.12.1 it's a uint32
 		[WireMember(3)]
-		private RealmInfo[] realms { get; set; }
+		internal RealmInfo[] realms { get; set; }
 
 		/// <summary>
 		/// Collection of realm's.
@@ -43,7 +43,7 @@ namespace FreecraftCore
 		//1.12.1 clients send 0 and 2.
 		//EmberEmu has no information on what it is.
 		[WireMember(4)]
-		private short unknownTwo { get; set; }
+		internal short unknownTwo { get; set; }
 
 		/// <summary>
 		/// Creates a new realm list response. Which MUST include the actual realm list payload size.

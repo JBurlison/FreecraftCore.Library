@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -12,17 +12,17 @@ namespace FreecraftCore
 		//TODO: Find out what this means
 
 		[WireMember(1)]
-		public uint DisplayId { get; }
+		public uint DisplayId { get; internal set; }
 
 		//TODO: Find out what this means
 
 		[WireMember(2)]
-		public byte InventoryType { get; }
+		public byte InventoryType { get; internal set; }
 
 		//TODO: Find out what this means
 
 		[WireMember(3)]
-		private uint EnchantDisplayId { get; }
+		internal uint EnchantDisplayId { get; set; }
 
 		public CharacterScreenItem(uint displayId, byte inventoryType, uint enchantDisplayId)
 		{

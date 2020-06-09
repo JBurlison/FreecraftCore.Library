@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -21,13 +21,13 @@ namespace FreecraftCore
 		/// The ID of the map to initialize.
 		/// </summary>
 		[WireMember(1)]
-		public int MapId { get; }
+		public int MapId { get; internal set; }
 
 		/// <summary>
 		/// The Zone ID of the map to initialize.
 		/// </summary>
 		[WireMember(2)]
-		public int ZoneId { get; }
+		public int ZoneId { get; internal set; }
 
 		public SMSG_INIT_WORLD_STATES_PAYLOAD()
 		{

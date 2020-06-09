@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -15,7 +15,7 @@ namespace FreecraftCore
 		/// UNK
 		/// </summary>
 		[WireMember(1)]
-		public byte UnkByte { get; } = 0;
+		public byte UnkByte { get; internal set; } = 0;
 
 		//TODO: Hide behind readonly collection.
 		//TC sends this as a short prefixed array
@@ -24,14 +24,14 @@ namespace FreecraftCore
 		/// </summary>
 		[SendSize(SendSizeAttribute.SizeType.UShort)]
 		[WireMember(2)]
-		public InitialSpellData<TSpellType>[] SpellIds { get; }
+		public InitialSpellData<TSpellType>[] SpellIds { get; internal set; }
 
 		/// <summary>
 		/// Spell cooldowns.
 		/// </summary>
 		[SendSize(SendSizeAttribute.SizeType.UShort)]
 		[WireMember(3)]
-		public InitialSpellCooldown<TSpellType>[] SpellCooldowns { get; }
+		public InitialSpellCooldown<TSpellType>[] SpellCooldowns { get; internal set; }
 
 		//TODO: Can cooldown be null?
 		/// <inheritdoc />

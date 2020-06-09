@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -17,7 +17,7 @@ namespace FreecraftCore
 		/// this response packet is responding to.
 		/// </summary>
 		[WireMember(1)]
-		public int SynchronizationCounter { get; private set; }
+		public int SynchronizationCounter { get; internal set; }
 
 		/// <summary>
 		/// Represents the time at which the client has handled
@@ -25,7 +25,7 @@ namespace FreecraftCore
 		/// Gets the number of milliseconds elapsed since the system (client) started.
 		/// </summary>
 		[WireMember(2)]
-		public uint ClientTimestamp { get; private set; }
+		public uint ClientTimestamp { get; internal set; }
 
 		public CMSG_TIME_SYNC_RESP_Payload(int synchronizationCounter, uint clientTimestamp)
 		{

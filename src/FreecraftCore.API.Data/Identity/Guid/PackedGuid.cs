@@ -13,7 +13,7 @@ namespace FreecraftCore
 		public static PackedGuid Empty { get; } = new PackedGuid(0);
 
 		/// <inheritdoc />
-		public override ulong RawGuidValue { get; }
+		public override ulong RawGuidValue { get; internal set; }
 
 		/// <summary>
 		/// Creates a new value-type wrapped for the uint64 raw GUID value.

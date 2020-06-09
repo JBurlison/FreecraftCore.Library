@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -9,13 +9,13 @@ namespace FreecraftCore
 	public sealed class MonsterSplineInfo_Vanilla
 	{
 		[WireMember(6)]
-		public SplineMoveFlags_Vanilla SplineFlags { get; }
+		public SplineMoveFlags_Vanilla SplineFlags { get; internal set; }
 
 		/// <summary>
 		/// The duration of the spline.
 		/// </summary>
 		[WireMember(8)]
-		public int SplineDuration { get; }
+		public int SplineDuration { get; internal set; }
 
 		public bool HasLinearPath => !HasCatMulRomSpline;
 
@@ -28,11 +28,11 @@ namespace FreecraftCore
 		[SendSize(SendSizeAttribute.SizeType.Int32)]
 		[Optional(nameof(HasCatMulRomSpline))]
 		[WireMember(10)]
-		public Vector3<float>[] OptionalCatMulRomSplinePoints { get; }
+		public Vector3<float>[] OptionalCatMulRomSplinePoints { get; internal set; }
 
 		[Optional(nameof(HasLinearPath))]
 		[WireMember(11)]
-		public LinearPathMoveInfo OptionalLinearPathInformation { get; }
+		public LinearPathMoveInfo OptionalLinearPathInformation { get; internal set; }
 
 		/// <inheritdoc />
 		public MonsterSplineInfo_Vanilla(SplineMoveFlags_Vanilla splineFlags, int splineDuration, Vector3<float>[] optionalCatMulRomSplinePoints, LinearPathMoveInfo optionalLinearPathInformation)

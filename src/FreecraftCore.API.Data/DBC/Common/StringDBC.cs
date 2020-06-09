@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -13,7 +13,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Encoding(EncodingType.UTF8)]
 		[WireMember(1)]
-		public string StringValue { get; private set; }
+		public string StringValue { get; internal set; }
 
 		/// <inheritdoc />
 		public StringDBC(string stringValue)

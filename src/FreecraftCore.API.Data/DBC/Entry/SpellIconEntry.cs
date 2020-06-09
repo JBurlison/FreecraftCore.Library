@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -32,13 +32,13 @@ namespace FreecraftCore
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		[WireMember(1)]
-		public int IconId { get; private set; }
+		public int IconId { get; internal set; }
 
 		/// <summary>
 		/// There are no extensions (.blp) in these. They mostly match "Interface\Icons\[a-z_0-9]" but there are exceptions.
 		/// </summary>
 		[WireMember(2)]
-		public TStringType TextureFileName { get; private set; }
+		public TStringType TextureFileName { get; internal set; }
 
 		public SpellIconEntry(int iconId, [NotNull] TStringType textureFileName)
 		{

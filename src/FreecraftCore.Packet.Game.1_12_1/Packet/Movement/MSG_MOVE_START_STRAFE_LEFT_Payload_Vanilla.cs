@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -19,13 +19,13 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		[Optional(nameof(HasGuid))]
 		[WireMember(1)]
-		public PackedGuid MovementGuid { get; }
+		public PackedGuid MovementGuid { get; internal set; }
 
 		/// <summary>
 		/// The movement information.
 		/// </summary>
 		[WireMember(2)]
-		public MovementInfo_Vanilla MoveInfo { get; }
+		public MovementInfo_Vanilla MoveInfo { get; internal set; }
 
 		public MSG_MOVE_START_STRAFE_LEFT_Payload_Vanilla([NotNull] MovementInfo_Vanilla moveInfo)
 		{

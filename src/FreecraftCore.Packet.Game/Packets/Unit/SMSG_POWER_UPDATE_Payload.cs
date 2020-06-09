@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -34,19 +34,19 @@ namespace FreecraftCore
 		/// The GUID that had the power update.
 		/// </summary>
 		[WireMember(1)]
-		public PackedGuid UnitGuid { get; }
+		public PackedGuid UnitGuid { get; internal set; }
 
 		/// <summary>
 		/// The power type being updated.
 		/// </summary>
 		[WireMember(2)]
-		public Powers PowerType { get; }
+		public Powers PowerType { get; internal set; }
 
 		/// <summary>
 		/// The new power value.
 		/// </summary>
 		[WireMember(3)]
-		public int NewValue { get; }
+		public int NewValue { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_POWER_UPDATE_Payload(PackedGuid unitGuid, Powers powerType, int newValue)

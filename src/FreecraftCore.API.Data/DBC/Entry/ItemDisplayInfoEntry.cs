@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -29,92 +29,92 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int ItemDisplayId { get; private set; }
+		public int ItemDisplayId { get; internal set; }
 
 		[WireMember(2)]
-		public TStringType LeftModelName { get; private set; }
+		public TStringType LeftModelName { get; internal set; }
 
 		[WireMember(3)]
-		public TStringType RightModelName { get; private set; }
+		public TStringType RightModelName { get; internal set; }
 
 		[WireMember(4)]
-		public TStringType LeftModelTextureName { get; private set; }
+		public TStringType LeftModelTextureName { get; internal set; }
 
 		[WireMember(5)]
-		public TStringType RightModelTextureName { get; private set; }
+		public TStringType RightModelTextureName { get; internal set; }
 
 		/// <summary>
 		/// First icon is actually 
 		/// </summary>
 		[WireMember(6)]
-		public TStringType InventoryIcon1 { get; private set; }
+		public TStringType InventoryIcon1 { get; internal set; }
 
 		[WireMember(7)]
-		public TStringType InventoryIcon2 { get; private set; }
+		public TStringType InventoryIcon2 { get; internal set; }
 
 		//TODO: Don't understand these, probably not going to bother using them for emulation.
 		[WireMember(8)]
-		public Vector3<int> GeosetGroup { get; private set; }
+		public Vector3<int> GeosetGroup { get; internal set; }
 
 		/// <summary>
 		/// TODO: Unknown flags.
 		/// </summary>
 		[WireMember(9)]
-		public int Flags { get; private set; }
+		public int Flags { get; internal set; }
 
 		[WireMember(10)]
-		public int SpellVisualId { get; private set; }
+		public int SpellVisualId { get; internal set; }
 
 		/// <summary>
 		/// ItemGroupSounds.dbc
 		/// </summary>
 		[WireMember(11)]
-		public int GroupSoundId { get; private set; }
+		public int GroupSoundId { get; internal set; }
 
 		/// <summary>
 		/// HelmetGeosetVisData.dbc
 		/// </summary>
 		[WireMember(12)]
-		public int HelmentGeosetVisualMale { get; private set; }
+		public int HelmentGeosetVisualMale { get; internal set; }
 
 		/// <summary>
 		/// HelmetGeosetVisData.dbc
 		/// </summary>
 		[WireMember(13)]
-		public int HelmentGeosetVisualFemale { get; private set; }
+		public int HelmentGeosetVisualFemale { get; internal set; }
 
 		[WireMember(14)]
-		public TStringType UpperArmTextureName { get; private set; }
+		public TStringType UpperArmTextureName { get; internal set; }
 
 		[WireMember(15)]
-		public TStringType LowerArmTextureName { get; private set; }
+		public TStringType LowerArmTextureName { get; internal set; }
 
 		[WireMember(16)]
-		public TStringType HandsTextureName { get; private set; }
+		public TStringType HandsTextureName { get; internal set; }
 
 		[WireMember(17)]
-		public TStringType UpperTorsoTextureName { get; private set; }
+		public TStringType UpperTorsoTextureName { get; internal set; }
 
 		[WireMember(18)]
-		public TStringType LowerTorsoTextureName { get; private set; }
+		public TStringType LowerTorsoTextureName { get; internal set; }
 
 		[WireMember(19)]
-		public TStringType UpperLegTextureName { get; private set; }
+		public TStringType UpperLegTextureName { get; internal set; }
 
 		[WireMember(20)]
-		public TStringType LowerLegTextureName { get; private set; }
+		public TStringType LowerLegTextureName { get; internal set; }
 
 		[WireMember(21)]
-		public TStringType FootTextureName { get; private set; }
+		public TStringType FootTextureName { get; internal set; }
 
 		/// <summary>
 		/// ItemVisuals.dbc
 		/// </summary>
 		[WireMember(22)]
-		public int ItemVisualId { get; private set; }
+		public int ItemVisualId { get; internal set; }
 
 		[WireMember(23)]
-		public int ParticleColorId { get; private set; }
+		public int ParticleColorId { get; internal set; }
 
 		public ItemDisplayInfoEntry(int itemDisplayId, [NotNull] TStringType leftModelName, [NotNull] TStringType rightModelName, [NotNull] TStringType leftModelTextureName, [NotNull] TStringType rightModelTextureName, [NotNull] TStringType inventoryIcon1, [NotNull] TStringType inventoryIcon2, [NotNull] Vector3<int> geosetGroup, int flags, int spellVisualId, int groupSoundId, int helmentGeosetVisualMale, int helmentGeosetVisualFemale, [NotNull] TStringType upperArmTextureName, [NotNull] TStringType lowerArmTextureName, [NotNull] TStringType handsTextureName, [NotNull] TStringType upperTorsoTextureName, [NotNull] TStringType lowerTorsoTextureName, [NotNull] TStringType upperLegTextureName, [NotNull] TStringType lowerLegTextureName, [NotNull] TStringType footTextureName, int itemVisualId, int particleColorId)
 		{

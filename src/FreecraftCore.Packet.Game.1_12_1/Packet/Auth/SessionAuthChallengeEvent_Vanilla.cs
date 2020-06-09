@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -24,7 +24,7 @@ namespace FreecraftCore
 		/// (Shared structure between 1.12.1 and 3.3.5)
 		/// </summary>
 		[WireMember(2)]
-		public SessionAuthChallengeEventData EventData { get; }
+		public SessionAuthChallengeEventData EventData { get; internal set; }
 
 		/// <inheritdoc />
 		public SessionAuthChallengeEvent_Vanilla([NotNull] SessionAuthChallengeEventData eventData)

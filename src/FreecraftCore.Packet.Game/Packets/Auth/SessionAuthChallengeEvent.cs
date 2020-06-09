@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -18,14 +18,14 @@ namespace FreecraftCore
 		//Not sure what this is
 		//It is not sent in 1.12.1 Mangos
 		[WireMember(1)]
-		private uint unknownOne { get; set; }
+		internal uint unknownOne { get; set; }
 
 		/// <summary>
 		/// The auth session challenge data.
 		/// (Shared structure between 1.12.1 and 3.3.5)
 		/// </summary>
 		[WireMember(2)]
-		public SessionAuthChallengeEventData EventData { get; }
+		public SessionAuthChallengeEventData EventData { get; internal set; }
 
 		/// <inheritdoc />
 		public SessionAuthChallengeEvent([NotNull] SessionAuthChallengeEventData eventData)

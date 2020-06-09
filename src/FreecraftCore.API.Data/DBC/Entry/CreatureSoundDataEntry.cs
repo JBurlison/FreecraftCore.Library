@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -27,31 +27,31 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int CreatureSoundDataId { get; private set; }
+		public int CreatureSoundDataId { get; internal set; }
 
 		[WireMember(2)]
-		public int SoundExertionId { get; private set; }
+		public int SoundExertionId { get; internal set; }
 
 		[WireMember(3)]
-		public int SoundExertionCriticalId { get; private set; }
+		public int SoundExertionCriticalId { get; internal set; }
 
 		[WireMember(4)]
-		public int SoundInjuryId { get; private set; }
+		public int SoundInjuryId { get; internal set; }
 
 		[WireMember(5)]
-		public int SoundInjuryCriticalId { get; private set; }
+		public int SoundInjuryCriticalId { get; internal set; }
 
 		[WireMember(6)]
-		public int SoundInjuryCrushingBlowId { get; private set; }
+		public int SoundInjuryCrushingBlowId { get; internal set; }
 
 		[WireMember(7)]
-		public int SoundDeathId { get; private set; }
+		public int SoundDeathId { get; internal set; }
 
 		[WireMember(8)]
-		public int SoundStunId { get; private set; }
+		public int SoundStunId { get; internal set; }
 
 		[WireMember(9)]
-		public int SoundStandId { get; private set; }
+		public int SoundStandId { get; internal set; }
 
 		/// <summary>
 		/// NOT SoundEntries.dbc, but FootstepTerrainLookupRec.m_CreatureFootstepID
@@ -60,87 +60,87 @@ namespace FreecraftCore
 		/// TODO: Implement FootstepTerrainLookup dbc.
 		/// </summary>
 		[WireMember(10)]
-		public int SoundFootstepId { get; private set; }
+		public int SoundFootstepId { get; internal set; }
 
 		[WireMember(11)]
-		public int SoundAggroId { get; private set; }
+		public int SoundAggroId { get; internal set; }
 
 		[WireMember(12)]
-		public int SoundWingFlapId { get; private set; }
+		public int SoundWingFlapId { get; internal set; }
 
 		[WireMember(13)]
-		public int SoundWingGlideId { get; private set; }
+		public int SoundWingGlideId { get; internal set; }
 
 		[WireMember(14)]
-		public int SoundAlertId { get; private set; }
+		public int SoundAlertId { get; internal set; }
 		
 		[WireMember(15)]
-		public GenericStaticallySizedArrayChunkFive<int> SoundFidgetId { get; private set; }
+		public GenericStaticallySizedArrayChunkFive<int> SoundFidgetId { get; internal set; }
 
 		[WireMember(16)]
-		public GenericStaticallySizedArrayChunkFour<int> CustomAttackId { get; private set; }
+		public GenericStaticallySizedArrayChunkFour<int> CustomAttackId { get; internal set; }
 
 		[WireMember(17)]
-		public int NPCSoundId { get; private set; }
+		public int NPCSoundId { get; internal set; }
 
 		[WireMember(18)]
-		public int LoopSoundId { get; private set; }
+		public int LoopSoundId { get; internal set; }
 
 		/// <summary>
 		/// It's not: <see cref="CreatureImpactSound"/>.
 		/// Call <see cref="CreatureSoundDataEntryExtensions.GetCreatureImpactType"/> to get actual value.
 		/// </summary>
 		[WireMember(19)]
-		public int CreatureImpactType { get; private set; }
+		public int CreatureImpactType { get; internal set; }
 
 		[WireMember(20)]
-		public int SoundJumpStartId { get; private set; }
+		public int SoundJumpStartId { get; internal set; }
 
 		[WireMember(21)]
-		public int SoundJumpEndId { get; private set; }
+		public int SoundJumpEndId { get; internal set; }
 
 		[WireMember(22)]
-		public int SoundPetAttackId { get; private set; }
+		public int SoundPetAttackId { get; internal set; }
 
 		[WireMember(23)]
-		public int SoundPetOrderId { get; private set; }
+		public int SoundPetOrderId { get; internal set; }
 
 		/// <summary>
 		/// Used by SMSG_PET_DISMISS_SOUND.
 		/// </summary>
 		[WireMember(24)]
-		public int SoundPetDismissId { get; private set; }
+		public int SoundPetDismissId { get; internal set; }
 
 		/// <summary>
 		/// Time / Interval? 30 seconds?
 		/// </summary>
 		[WireMember(25)]
-		public float FidgetDelaySecondsMinimum { get; private set; }
+		public float FidgetDelaySecondsMinimum { get; internal set; }
 
 		/// <summary>
 		/// Time / Interval? 60 seconds? 
 		/// </summary>
 		[WireMember(26)]
-		public float FidgetDelaySecondsMaximum { get; private set; }
+		public float FidgetDelaySecondsMaximum { get; internal set; }
 
 		[WireMember(27)]
-		public int BirthSoundId { get; private set; }
+		public int BirthSoundId { get; internal set; }
 
 		[WireMember(28)]
-		public int SpellCastDirectedSoundId { get; private set; }
+		public int SpellCastDirectedSoundId { get; internal set; }
 
 		[WireMember(29)]
-		public int SubmergeSoundId { get; private set; }
+		public int SubmergeSoundId { get; internal set; }
 
 		[WireMember(30)]
-		public int SubmergedSoundId { get; private set; }
+		public int SubmergedSoundId { get; internal set; }
 
 		/// <summary>
 		/// TODO: Unknown, is this SoundData reference or Sound id??
 		/// Only used by entry 391 and 2913.
 		/// </summary>
 		[WireMember(31)]
-		public int CreatureSoundDataIdPet { get; private set; }
+		public int CreatureSoundDataIdPet { get; internal set; }
 
 		public CreatureSoundDataEntry(int creatureSoundDataId, int soundExertionId, int soundExertionCriticalId, int soundInjuryId, int soundInjuryCriticalId, int soundInjuryCrushingBlowId, int soundDeathId, int soundStunId, int soundStandId, int soundFootstepId, int soundAggroId, int soundWingFlapId, int soundWingGlideId, int soundAlertId, [NotNull] GenericStaticallySizedArrayChunkFive<int> soundFidgetId, [NotNull] GenericStaticallySizedArrayChunkFour<int> customAttackId, int npcSoundId, int loopSoundId, int creatureImpactType, int soundJumpStartId, int soundJumpEndId, int soundPetAttackId, int soundPetOrderId, int soundPetDismissId, float fidgetDelaySecondsMinimum, float fidgetDelaySecondsMaximum, int birthSoundId, int spellCastDirectedSoundId, int submergeSoundId, int submergedSoundId, int creatureSoundDataIdPet)
 		{

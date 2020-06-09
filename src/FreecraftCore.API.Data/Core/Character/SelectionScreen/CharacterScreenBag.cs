@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -11,13 +11,13 @@ namespace FreecraftCore
 	{
 		//TODO: Figure out what these values are or do
 		[WireMember(1)]
-		private uint UnknownOne { get; }
+		internal uint UnknownOne { get; set; }
 
 		[WireMember(2)]
-		private byte UnknownTwo { get; }
+		internal byte UnknownTwo { get; set; }
 
 		[WireMember(3)]
-		private uint UnknownThree { get; }
+		internal uint UnknownThree { get; set; }
 
 		/// <inheritdoc />
 		public CharacterScreenBag(uint unknownOne, byte unknownTwo, uint unknownThree)

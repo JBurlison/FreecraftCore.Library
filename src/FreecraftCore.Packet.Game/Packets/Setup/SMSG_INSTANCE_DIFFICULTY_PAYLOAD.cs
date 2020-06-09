@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -35,13 +35,13 @@ namespace FreecraftCore
 		/// Difficulty of the map.
 		/// </summary>
 		[WireMember(1)]
-		public Difficulty MapDifficulty { get; } = Difficulty.REGULAR_DIFFICULTY;
+		public Difficulty MapDifficulty { get; internal set; } = Difficulty.REGULAR_DIFFICULTY;
 
 		/// <summary>
 		/// TODO: What and how does this work?
 		/// </summary>
 		[WireMember(2)]
-		public int MapFlags { get; } = 0;
+		public int MapFlags { get; internal set; } = 0;
 
 		/// <summary>
 		/// Creates a normal map.

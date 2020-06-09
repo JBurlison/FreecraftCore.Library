@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -14,7 +14,7 @@ namespace FreecraftCore
 		/// The reciever guid.
 		/// </summary>
 		[WireMember(1)]
-		public ObjectGuid RecieverGuid { get; }
+		public ObjectGuid RecieverGuid { get; internal set; }
 
 		/// <inheritdoc />
 		public NetworkChatDefaultMessageDetails([NotNull] ObjectGuid recieverGuid)

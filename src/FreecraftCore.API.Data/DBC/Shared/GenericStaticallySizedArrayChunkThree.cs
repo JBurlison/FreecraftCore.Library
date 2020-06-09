@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,13 +14,13 @@ namespace FreecraftCore
 	public sealed class GenericStaticallySizedArrayChunkThree<T>// : IEnumerable<T>, IReadOnlyList<T> TODO: Owned types cannot have interfaces
 	{
 		[WireMember(1)]
-		public T One { get; private set; }
+		public T One { get; internal set; }
 
 		[WireMember(2)]
-		public T Two { get; private set; }
+		public T Two { get; internal set; }
 
 		[WireMember(3)]
-		public T Three { get; private set; }
+		public T Three { get; internal set; }
 
 		public GenericStaticallySizedArrayChunkThree(T one, T two, T three)
 		{

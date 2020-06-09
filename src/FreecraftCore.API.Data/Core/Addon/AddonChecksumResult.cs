@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -16,7 +16,7 @@ namespace FreecraftCore
 		/// TODO: What does this mean?
 		/// </summary>
 		[WireMember(1)]
-		public SecureAddonStatus AddonState { get; private set; }
+		public SecureAddonStatus AddonState { get; internal set; }
 
 		/// <summary>
 		/// I think this indicates if the client should do
@@ -24,26 +24,26 @@ namespace FreecraftCore
 		/// Blizzard addons? I don't know.
 		/// </summary>
 		[WireMember(2)]
-		public bool UseCrc { get; }
+		public bool UseCrc { get; internal set; }
 
 		[WireMember(3)]
-		public bool UsePublicKey { get; }
+		public bool UsePublicKey { get; internal set; }
 
 		[Optional(nameof(UsePublicKey))]
 		[KnownSize(256)]
 		[WireMember(4)]
-		public byte[] PublicKey { get; }
+		public byte[] PublicKey { get; internal set; }
 
 		/// <summary>
 		/// Unknown value sent if use CRC is enabled.
 		/// </summary>
 		[Optional(nameof(UseCrc))]
 		[WireMember(5)]
-		public int Unk { get; }
+		public int Unk { get; internal set; }
 
 		//TODO: What does this mean?
 		[WireMember(6)]
-		public bool UseUrl { get; }
+		public bool UseUrl { get; internal set; }
 
 		/// <summary>
 		/// Serializer ctor.

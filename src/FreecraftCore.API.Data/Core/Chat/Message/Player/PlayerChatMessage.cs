@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
@@ -14,7 +14,7 @@ namespace FreecraftCore
 	{
 		//for some reason Blizzard sends uint32s for message type instead of the byte for enum.
 		[WireMember(1)]
-		private uint _messageType { get; }
+		internal uint _messageType { get; set; }
 
 		/// <summary>
 		/// Indicates the message type of the chat message.
@@ -25,7 +25,7 @@ namespace FreecraftCore
 		/// Indicates the language of the chat message.
 		/// </summary>	
 		[WireMember(2)]
-		public ChatLanguage Language { get; }
+		public ChatLanguage Language { get; internal set; }
 
 		protected PlayerChatMessage(ChatMessageType messageType, ChatLanguage language)
 		{

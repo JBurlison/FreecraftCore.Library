@@ -1,4 +1,4 @@
-﻿using FreecraftCore.Serializer;
+using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
@@ -14,7 +14,7 @@ namespace FreecraftCore
 		/// The movement update flags.
 		/// </summary>
 		[WireMember(1)]
-		public ObjectUpdateFlags_Vanilla UpdateFlags { get; }
+		public ObjectUpdateFlags_Vanilla UpdateFlags { get; internal set; }
 
 		//MovementInfo is only sent if the unit is living.
 		public bool IsLiving => UpdateFlags.HasFlag(ObjectUpdateFlags_Vanilla.UPDATEFLAG_LIVING);
@@ -25,7 +25,7 @@ namespace FreecraftCore
 
 		[Optional(nameof(IsLiving))]
 		[WireMember(3)]
-		public MovementInfo_Vanilla MoveInfo { get; }
+		public MovementInfo_Vanilla MoveInfo { get; internal set; }
 
 		//Only sent if we're alive
 		/// <summary>
@@ -34,12 +34,12 @@ namespace FreecraftCore
 		[Optional(nameof(IsLiving))]
 		[KnownSize(6)] //length of SpeedType enum in VanillaWoW is only 6, or only sends 6 here.
 		[WireMember(4)]
-		public float[] MovementSpeeds { get; } //see SpeedType to understand index.
+		public float[] MovementSpeeds { get; internal set; } //see SpeedType to understand index.
 
 		//Now there is some optional spline data if we're alive. Too. Great...
 		[Optional(nameof(HasSplineData))]
 		[WireMember(5)]
-		public SplineInfo_Vanilla SplineInformation { get; }
+		public SplineInfo_Vanilla SplineInformation { get; internal set; }
 
 		private bool HasUpdatePosition => UpdateFlags.HasFlag(ObjectUpdateFlags_Vanilla.UPDATEFLAG_HAS_POSITION);
 
@@ -48,7 +48,7 @@ namespace FreecraftCore
 
 		[Optional(nameof(HasCorpseLocation))]
 		[WireMember(6)]
-		public CorpseInfo_Vanilla DeadMovementInformation { get; }
+		public CorpseInfo_Vanilla DeadMovementInformation { get; internal set; }
 
 		public bool HasHighGuid => UpdateFlags.HasFlag(ObjectUpdateFlags_Vanilla.UPDATEFLAG_HIGHGUID);
 
@@ -60,20 +60,20 @@ namespace FreecraftCore
 
 		[Optional(nameof(HasHighGuid))]
 		[WireMember(7)]
-		public uint HighGuid { get; }
+		public uint HighGuid { get; internal set; }
 
 		//ClientVersion.RemovedInVersion(ClientVersionBuild.V4_2_2_14545)
 		[Optional(nameof(UpdateAll))]
 		[WireMember(8)]
-		public uint Unk1 { get; } //mangos always send 0x1?
+		public uint Unk1 { get; internal set; } //mangos always send 0x1?
 
 		[Optional(nameof(IncludesFullGuid))]
 		[WireMember(9)]
-		public PackedGuid FullGuid { get; }
+		public PackedGuid FullGuid { get; internal set; }
 
 		[Optional(nameof(HasTransportTimer))]
 		[WireMember(10)]
-		public uint TransportTime { get; }
+		public uint TransportTime { get; internal set; }
 
 		//TODO: Validate
 		/// <inheritdoc />

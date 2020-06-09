@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -14,7 +14,7 @@ namespace FreecraftCore
 		/// Collection of object GUIDS that have been destroyed.
 		/// </summary>
 		[WireMember(1)]
-		public PackedGuidCollection DestroyedGuids { get; }
+		public PackedGuidCollection DestroyedGuids { get; internal set; }
 
 		/// <inheritdoc />
 		public ObjectUpdateDestroyObjectBlock([NotNull] PackedGuidCollection destroyedGuids)

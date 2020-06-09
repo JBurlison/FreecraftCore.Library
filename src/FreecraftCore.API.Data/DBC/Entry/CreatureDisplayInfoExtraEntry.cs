@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -33,127 +33,127 @@ namespace FreecraftCore
 
 		[Key]
 		[WireMember(1)]
-		public int CreatureDisplayInfoExtraId { get; private set; }
+		public int CreatureDisplayInfoExtraId { get; internal set; }
 
 		/// <summary>
 		/// ChrRaces.dbc
 		/// TODO: Foreign key reference.
 		/// </summary>
 		[WireMember(2)]
-		public int RaceId { get; private set; }
+		public int RaceId { get; internal set; }
 
 		[WireMember(3)]
-		internal int Sex { get; private set; }
+		internal int Sex { get; set; }
 
 		[NotMapped]
 		[JsonIgnore]
 		public CharacterGender CreatureSex => (CharacterGender) Sex;
 
 		[WireMember(4)]
-		public int SkinId { get; private set; }
+		public int SkinId { get; internal set; }
 
 		[WireMember(5)]
-		public int FaceId { get; private set; }
+		public int FaceId { get; internal set; }
 
 		/// <summary>
 		/// See: CharHairGeosets.dbc
 		/// TODO: Implement DBC.
 		/// </summary>
 		[WireMember(6)]
-		public int HairId { get; private set; }
+		public int HairId { get; internal set; }
 
 		/// <summary>
 		/// See: CharSections.dbc
 		/// TODO: Implement DBC.
 		/// </summary>
 		[WireMember(7)]
-		public int HairColorId { get; private set; }
+		public int HairColorId { get; internal set; }
 
 		[WireMember(8)]
-		public int FacialHairId { get; private set; }
+		public int FacialHairId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(9)]
-		public int HelmItemId { get; private set; }
+		public int HelmItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(10)]
-		public int ShoulderItemId { get; private set; }
+		public int ShoulderItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(11)]
-		public int ShirtItemId { get; private set; }
+		public int ShirtItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(12)]
-		public int CuirassItemId { get; private set; }
+		public int CuirassItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(13)]
-		public int BeltItemId { get; private set; }
+		public int BeltItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(14)]
-		public int LegsItemId { get; private set; }
+		public int LegsItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(15)]
-		public int BootsItemId { get; private set; }
+		public int BootsItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(16)]
-		public int WristItemId { get; private set; }
+		public int WristItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(17)]
-		public int GlovesItemId { get; private set; }
+		public int GlovesItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(18)]
-		public int TabardItemId { get; private set; }
+		public int TabardItemId { get; internal set; }
 
 		/// <summary>
 		/// Nullable.
 		/// See: ItemDisplayInfo <see cref="ItemDisplayInfoEntry{TStringType}"/>
 		/// </summary>
 		[WireMember(19)]
-		public int CapeItemId { get; private set; }
+		public int CapeItemId { get; internal set; }
 
 		[WireMember(20)]
-		public CreatureDisplayInfoExtraFlags Flags { get; private set; }
+		public CreatureDisplayInfoExtraFlags Flags { get; internal set; }
 
 		[WireMember(21)]
-		public TStringType BakedTextureName { get; private set; }
+		public TStringType BakedTextureName { get; internal set; }
 
 		public CreatureDisplayInfoExtraEntry(int creatureDisplayInfoExtraId, int raceId, int sex, int skinId, int faceId, int hairId, int hairColorId, int facialHairId, int helmItemId, int shoulderItemId, int shirtItemId, int cuirassItemId, int beltItemId, int legsItemId, int bootsItemId, int wristItemId, int glovesItemId, int tabardItemId, int capeItemId, CreatureDisplayInfoExtraFlags flags, [NotNull] TStringType bakedTextureName)
 		{

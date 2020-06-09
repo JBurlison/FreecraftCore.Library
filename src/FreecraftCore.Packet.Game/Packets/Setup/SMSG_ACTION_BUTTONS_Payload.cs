@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -22,7 +22,7 @@ namespace FreecraftCore
 		}
 
 		[WireMember(1)]
-		public State ActionBarUpdateState { get; }
+		public State ActionBarUpdateState { get; internal set; }
 
 		public bool HasBindingData => ActionBarUpdateState != State.Clear;
 
@@ -30,7 +30,7 @@ namespace FreecraftCore
 		[Optional(nameof(HasBindingData))]
 		[KnownSize(144)]
 		[WireMember(2)]
-		private ActionButtonData[] _ButtonData { get; }
+		internal ActionButtonData[] _ButtonData { get; set; }
 
 		/// <summary>
 		/// The binding/button data collection.

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -12,16 +12,16 @@ namespace FreecraftCore
 	public sealed class ReputationRate
 	{
 		[WireMember(1)]
-		public Vector4<CharacterRaceMask> RaceMask { get; private set; }
+		public Vector4<CharacterRaceMask> RaceMask { get; internal set; }
 
 		[WireMember(2)]
-		public Vector4<CharacterClassMask> ClassMask { get; private set; }
+		public Vector4<CharacterClassMask> ClassMask { get; internal set; }
 
 		[WireMember(3)]
-		public Vector4<int> BaseReputation { get; private set; }
+		public Vector4<int> BaseReputation { get; internal set; }
 
 		[WireMember(4)]
-		public Vector4<FactionFlags> FactionFlag { get; private set; }
+		public Vector4<FactionFlags> FactionFlag { get; internal set; }
 
 		public ReputationRate([NotNull] Vector4<CharacterRaceMask> raceMask, [NotNull] Vector4<CharacterClassMask> classMask, [NotNull] Vector4<int> baseReputation, [NotNull] Vector4<FactionFlags> factionFlag)
 		{

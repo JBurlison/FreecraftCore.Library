@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -10,13 +10,13 @@ namespace FreecraftCore
 	public sealed class ServerPartyCommandResultResponse : GamePacketPayload
 	{
 		[WireMember(1)]
-		public PartyOperation Operation { get; private set; }
+		public PartyOperation Operation { get; internal set; }
 
 		[WireMember(2)]
-		public string PlayerName { get; private set; }
+		public string PlayerName { get; internal set; }
 
 		[WireMember(3)]
-		public PartyResult Result { get; private set; }
+		public PartyResult Result { get; internal set; }
 
 		/// <summary>
 		/// Indicates if it the command was successful.
@@ -26,7 +26,7 @@ namespace FreecraftCore
 		//WorldSession::SendPartyResult(PartyOperation operation, const std::string& member, PartyResult res, uint32 val /* = 0 */)
 		//But VAL never used?!
 		[WireMember(4)]
-		private int Unk1 { get; set; } //TC calls this Val.
+		internal int Unk1 { get; set; } //TC calls this Val.
 
 		/// <summary>
 		/// Serializer ctor.

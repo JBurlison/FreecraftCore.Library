@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -15,10 +15,10 @@ namespace FreecraftCore
 		/// The ID of the quest query.
 		/// </summary>
 		[WireMember(1)]
-		public ObjectGuid QueryId { get; }
+		public ObjectGuid QueryId { get; internal set; }
 
 		[WireMember(2)]
-		public QuestGiverStatus Status { get; }
+		public QuestGiverStatus Status { get; internal set; }
 
 		/// <inheritdoc />
 		public SMSG_QUESTGIVER_STATUS_Payload([NotNull] ObjectGuid queryId, QuestGiverStatus status)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -13,11 +13,11 @@ namespace FreecraftCore
 		//For some reason Blizzard ONLY supports the option to invite based on string
 		//I think that's silly
 		[WireMember(1)]
-		public string PlayerToInvite { get; private set; }
+		public string PlayerToInvite { get; internal set; }
 
 		//TC just discards this.
 		[WireMember(2)]
-		private int Unk1 { get; set; }
+		internal int Unk1 { get; set; }
 
 		/// <inheritdoc />
 		public ClientGroupInviteRequest([NotNull] string playerToInvite)

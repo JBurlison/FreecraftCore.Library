@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -13,11 +13,11 @@ namespace FreecraftCore
 		/// (Unpacked)
 		/// </summary>
 		[WireMember(1)]
-		public ObjectGuid TransportGuid { get; }
+		public ObjectGuid TransportGuid { get; internal set; }
 
 		//TODO: What is this?
 		[WireMember(2)]
-		public Vector4<float> TransportOffset { get; }
+		public Vector4<float> TransportOffset { get; internal set; }
 		
 		//1.12.1 only sends guid and offset
 

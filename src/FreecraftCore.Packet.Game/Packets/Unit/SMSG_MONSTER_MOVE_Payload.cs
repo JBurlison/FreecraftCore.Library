@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -10,22 +10,22 @@ namespace FreecraftCore
 	public sealed class SMSG_MONSTER_MOVE_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
-		public PackedGuid MonsterGuid { get; }
+		public PackedGuid MonsterGuid { get; internal set; }
 
 		[WireMember(2)]
-		public byte Unk1 { get; } //TC says: sets/unsets MOVEMENTFLAG2_UNK7 (0x40)
+		public byte Unk1 { get; internal set; } //TC says: sets/unsets MOVEMENTFLAG2_UNK7 (0x40)
 
 		/// <summary>
 		/// The initial point of the spline.
 		/// </summary>
 		[WireMember(3)]
-		public Vector3<float> InitialMovePoint { get; }
+		public Vector3<float> InitialMovePoint { get; internal set; }
 
 		/// <summary>
 		/// The id of the spline.
 		/// </summary>
 		[WireMember(4)]
-		public int SplineId { get; }
+		public int SplineId { get; internal set; }
 
 		/// <summary>
 		/// The movement information for the monster.
@@ -34,7 +34,7 @@ namespace FreecraftCore
 		/// The rest of the packet will be empty.
 		/// </summary>
 		[WireMember(5)]
-		public MonsterMoveInfo MoveInfo { get; }
+		public MonsterMoveInfo MoveInfo { get; internal set; }
 
 		/// <summary>
 		/// Some "Move" packets are stop moves.
@@ -50,7 +50,7 @@ namespace FreecraftCore
 		/// </summary>
 		[Optional(nameof(IsMovePacket))]
 		[WireMember(6)]
-		public MonsterSplineInfo OptionalSplineInformation { get; }
+		public MonsterSplineInfo OptionalSplineInformation { get; internal set; }
 
 		//TODO: Additional ctors
 		//TODO: Validate parameters.

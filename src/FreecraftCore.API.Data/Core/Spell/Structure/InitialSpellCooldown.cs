@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -10,19 +10,19 @@ namespace FreecraftCore
 		where TSpellIdType : struct
 	{
 		[WireMember(1)]
-		public TSpellIdType SpellId { get; }
+		public TSpellIdType SpellId { get; internal set; }
 
 		[WireMember(2)]
-		public short ItemId { get; }
+		public short ItemId { get; internal set; }
 
 		[WireMember(3)]
-		public short CategoryId { get; }
+		public short CategoryId { get; internal set; }
 
 		[WireMember(4)]
-		public uint SpellCooldown { get; }
+		public uint SpellCooldown { get; internal set; }
 
 		[WireMember(5)]
-		public uint CategoryCooldown { get; }
+		public uint CategoryCooldown { get; internal set; }
 
 		public bool IsInfiteCooldown => SpellCooldown == 1 && CategoryCooldown == 0x80000000;
 
