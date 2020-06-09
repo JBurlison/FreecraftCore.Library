@@ -24,9 +24,8 @@ namespace FreecraftCore
 		/// </summary>
 		UPDATETYPE_CREATE_OBJECT = 2,
 		
-		//TODO: Find out what this is
 		/// <summary>
-		/// Don't know.
+		/// Creation type used when an object is being copied or Respawned.
 		/// </summary>
 		UPDATETYPE_CREATE_OBJECT2 = 3,
 

@@ -4,6 +4,7 @@ namespace FreecraftCore
 {
 	/// <summary>
 	/// The update block involved with object creation.
+	/// Used when an object is being copied or respawned.
 	/// </summary>
 	[WireDataContract]
 	public sealed class ObjectUpdateCreateObject2Block : ObjectUpdateBlock

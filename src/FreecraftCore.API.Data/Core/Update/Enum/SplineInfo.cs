@@ -36,11 +36,16 @@ namespace FreecraftCore
 		[WireMember(4)]
 		public Vector3<float> FinalPoint { get; }
 
-		//TODO: What are these?
-		//Always has these next 3 fields
+		/// <summary>
+		/// Represents the milliseconds of time that has passed since
+		/// the spline began.
+		/// </summary>
 		[WireMember(5)]
 		public int SplineTime { get; }
 
+		/// <summary>
+		/// Represents the full milliseconds duration of the spline.
+		/// </summary>
 		[WireMember(6)]
 		public int SplineFullTime { get; }
 

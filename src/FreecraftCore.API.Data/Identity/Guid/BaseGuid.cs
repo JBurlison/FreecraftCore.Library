@@ -22,7 +22,8 @@ namespace FreecraftCore
 		public int CurrentObjectGuid => (int)(RawGuidValue & 0x0000000000FFFFFF);
 
 		/// <summary>
-		/// Based on ObjectGuid::GetEntry
+		/// Based on ObjectGuid::GetEntry.
+		/// This is a reference to the Creature Template table.
 		/// </summary>
 		public int Entry => (int) (HasEntry ? (RawGuidValue >> 24) & 0x0000000000FFFFFF : 0);
 
