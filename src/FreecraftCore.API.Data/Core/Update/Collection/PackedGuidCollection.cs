@@ -10,7 +10,7 @@ namespace FreecraftCore
 		//We have to do this because serializer will choke otherwise
 		[SendSize(SendSizeAttribute.SizeType.Int32)]
 		[WireMember(1)]
-		private readonly PackedGuid[] _items;
+		internal PackedGuid[] _items;
 
 		/// <summary>
 		/// A collection of packed <see cref="ObjectGuid"/>s

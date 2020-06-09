@@ -17,7 +17,7 @@ namespace FreecraftCore
 		//I can only guess what this is for.
 		//This is what EmberEmu had to say: https://github.com/EmberEmu/Ember/blob/spark-new/src/login/grunt/client/RequestRealmList.h
 		[WireMember(1)]
-		private readonly int unknownValue = 0; // hardcoded to zero in public client
+		internal int unknownValue = 0; // hardcoded to zero in public client
 		
 		public AuthRealmListRequest()
 		{

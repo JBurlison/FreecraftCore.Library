@@ -20,7 +20,7 @@ namespace FreecraftCore
 		/// Unknown 0x00 byte sent from the server.
 		/// </summary>
 		[WireMember(1)]
-		public readonly byte unknownResponseByte = 0;
+		internal byte unknownResponseByte = 0;
 
 		//Second piece of data sent is a result
 		[WireMember(2)]

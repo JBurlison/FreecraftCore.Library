@@ -14,7 +14,7 @@ namespace FreecraftCore
 		//See: https://github.com/FreecraftCore/FreecraftCore/blob/master/docs/WorldHeader.md
 		[KnownSize(3)]
 		[WireMember(1)]
-		private readonly byte[] encodedSizeBytes;
+		private byte[] encodedSizeBytes;
 
 		//[cc]
 		//See: https://github.com/FreecraftCore/FreecraftCore/blob/master/docs/WorldHeader.md

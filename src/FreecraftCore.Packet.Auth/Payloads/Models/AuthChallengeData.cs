@@ -28,7 +28,7 @@ namespace FreecraftCore
 		/// Packet size. Computed by Trinitycore as the size of the payload + the username size.
 		/// </summary>
 		[WireMember(2)]
-		private readonly ushort size;
+		internal ushort size;
 
 		//Could be reversed?
 		/// <summary>
@@ -103,7 +103,7 @@ namespace FreecraftCore
 
 		[KnownSize(4)]
 		[WireMember(12)]
-		private readonly byte[] ipAddressInBytes;
+		internal byte[] ipAddressInBytes;
 
 		//Lazily cached Ip built from wired bytes
 		internal Lazy<IPAddress> cachedIp { get; set; }

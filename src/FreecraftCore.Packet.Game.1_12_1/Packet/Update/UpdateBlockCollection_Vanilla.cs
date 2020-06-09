@@ -31,7 +31,7 @@ namespace FreecraftCore
 		//We do this because the serializer currently chokes
 		[SendSize(SendSizeAttribute.SizeType.Int32)]
 		[WireMember(3)]
-		internal readonly ObjectUpdateBlock_Vanilla[] _items;
+		internal ObjectUpdateBlock_Vanilla[] _items;
 
 		//WPP shows this is sent as a int length prefixed collection of update blocks.
 		/// <inheritdoc />

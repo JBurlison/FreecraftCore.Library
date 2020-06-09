@@ -42,11 +42,11 @@ namespace FreecraftCore
 		//Documentation says it's never used
 		//TODO: Find out what this is. Trinitycore doesn't seem to reference it. Neither does Mangos.
 		[WireMember(4)]
-		private readonly byte KeyCount = 0;
+		internal byte KeyCount = 0;
 
 		//No server implements tokens so security flags are always 0
 		[WireMember(5)]
-		private readonly byte securityFlags = 0;
+		internal byte securityFlags = 0;
 
 		public AuthLogonProofRequest([NotNull] byte[] providedA, [NotNull] byte[] m1Hash)
 		{

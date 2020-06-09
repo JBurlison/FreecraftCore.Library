@@ -20,11 +20,11 @@ namespace FreecraftCore
 		//TODO: What is this?
 		//Trinitycore always sends 3
 		[WireMember(1)]
-		private readonly byte unknownOne = 3;
+		internal byte unknownOne = 3;
 
 		//TODO: What is this?
 		[WireMember(2)]
-		private readonly byte unknownTwo = 0;
+		internal byte unknownTwo = 0;
 
 		//TODO: Only doing client stuff. Implement ctor later if/when we build a server.
 
