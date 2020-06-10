@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_GROUP_LIST)]
-	public sealed class ServerGroupListEvent : GamePacketPayload
+	public sealed class SMSG_GROUP_LIST_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public GroupType PartyType { get; internal set; }
@@ -59,7 +59,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		public ServerGroupListEvent()
+		public SMSG_GROUP_LIST_Payload()
 		{
 			
 		}
