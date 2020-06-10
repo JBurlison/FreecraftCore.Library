@@ -7,7 +7,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_PARTY_COMMAND_RESULT)]
-	public sealed class ServerPartyCommandResultResponse : GamePacketPayload
+	public sealed class SMSG_PARTY_COMMAND_RESULT_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public PartyOperation Operation { get; internal set; }
@@ -31,7 +31,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		private ServerPartyCommandResultResponse()
+		private SMSG_PARTY_COMMAND_RESULT_Payload()
 		{
 			
 		}
