@@ -33,7 +33,8 @@ namespace FreecraftCore
 
 		public SMSG_NEW_WORLD_Payload(int mapId, [NotNull] Vector3<float> position, float orientation)
 		{
-			if (mapId <= 0) throw new ArgumentOutOfRangeException(nameof(mapId));
+			//Blizzlike has map ID 0.
+			if(mapId < 0) throw new ArgumentOutOfRangeException(nameof(mapId));
 
 			MapId = mapId;
 			Position = position ?? throw new ArgumentNullException(nameof(position));
