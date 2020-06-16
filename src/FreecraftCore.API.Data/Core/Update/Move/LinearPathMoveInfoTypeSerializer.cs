@@ -7,12 +7,6 @@ using Reinterpret.Net;
 
 namespace FreecraftCore
 {
-	internal static class LinearPathReinterpretCastExtensions
-	{
-		public static unsafe float AsFloat(this uint n) => *(float*)&n;
-		public static unsafe uint AsInt(this float n) => *(uint*)&n;
-	}
-
 	public sealed class LinearPathMoveInfoTypeSerializer : SimpleTypeSerializerStrategy<LinearPathMoveInfo>
 	{
 		/// <inheritdoc />
@@ -26,7 +20,7 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		public override LinearPathMoveInfo Read(IWireStreamReaderStrategy source)
 		{
-			int lastIndex = source.ReadBytes(4).Reinterpret<int>();
+			int lastIndex = source.ReadBytes(sizeof(int)).Reinterpret<int>();
 
 			byte[] lastPointBytes = source.ReadBytes(sizeof(float) * 3);
 
@@ -56,10 +50,12 @@ namespace FreecraftCore
 			{
 				for (int i = 1; i < lastIndex; ++i)
 				{
-					uint packedFloats = source.ReadBytes(sizeof(uint)).Reinterpret<uint>();
-					float x = (packedFloats & 0x7FF).AsFloat() * 0.25f;
-					float y = ((packedFloats >> 11) & 0x7FF).AsFloat() * 0.25f;
-					float z = ((packedFloats >> 22) & 0x3FF).AsFloat() * 0.25f;
+					int packedFloats = source.ReadBytes(sizeof(int)).Reinterpret<int>();
+
+					float x = ((packedFloats & 0x7FF) << 21 >> 21) * 0.25f;
+					float y = ((((packedFloats >> 11) & 0x7FF) << 21) >> 21) * 0.25f;
+					float z = ((packedFloats >> 22 << 22) >> 22) * 0.25f;
+
 					middlePoints[i - 1] = new Vector3<float>(x, y, z);
 				}
 			}
