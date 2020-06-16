@@ -9,5 +9,10 @@
 		/// Indicates that update type of the chunk.
 		/// </summary>
 		ObjectUpdateType UpdateType { get; }
+
+		/// <summary>
+		/// Indicates the guid of the entity.
+		/// </summary>
+		ObjectGuid Guid { get; }
 	}
 }

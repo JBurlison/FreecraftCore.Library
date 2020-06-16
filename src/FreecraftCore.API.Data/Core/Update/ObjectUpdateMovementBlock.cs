@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
@@ -12,6 +13,9 @@ namespace FreecraftCore
 
 		[WireMember(2)]
 		public MovementBlockData MovementData { get; internal set; }
+
+		[NotMapped]
+		public override ObjectGuid Guid => MovementGuid;
 
 		/// <inheritdoc />
 		public ObjectUpdateMovementBlock(PackedGuid movementGuid, MovementBlockData movementData)

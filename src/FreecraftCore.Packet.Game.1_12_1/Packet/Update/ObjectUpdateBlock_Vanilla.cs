@@ -26,6 +26,8 @@ namespace FreecraftCore
 		[WireMember(1)]
 		public ObjectUpdateType UpdateType { get; internal set; }
 
+		public ObjectGuid Guid => throw new NotImplementedException($"TODO: Vanilla.");
+
 		//While most update types do have a GUID as the next fields some
 		//do not therefore we must only read them in child types
 

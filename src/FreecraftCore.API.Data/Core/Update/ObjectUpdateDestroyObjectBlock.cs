@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
 
@@ -15,6 +16,9 @@ namespace FreecraftCore
 		/// </summary>
 		[WireMember(1)]
 		public PackedGuidCollection DestroyedGuids { get; internal set; }
+
+		[NotMapped]
+		public override ObjectGuid Guid => ObjectGuid.Empty;
 
 		/// <inheritdoc />
 		public ObjectUpdateDestroyObjectBlock([NotNull] PackedGuidCollection destroyedGuids)

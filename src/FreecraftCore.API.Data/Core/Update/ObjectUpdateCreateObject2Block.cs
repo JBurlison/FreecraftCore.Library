@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
@@ -14,6 +15,9 @@ namespace FreecraftCore
 		/// </summary>
 		[WireMember(1)]
 		public ObjectCreationData CreationData { get; internal set; }
+
+		[NotMapped]
+		public override ObjectGuid Guid => CreationData.CreationGuid;
 
 		/// <inheritdoc />
 		public ObjectUpdateCreateObject2Block(ObjectCreationData creationData)

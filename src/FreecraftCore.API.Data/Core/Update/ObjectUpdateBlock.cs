@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
@@ -24,6 +25,9 @@ namespace FreecraftCore
 		[DontWrite] //we don't want to write because we want the serializer to use the type information instead.
 		[WireMember(1)]
 		public ObjectUpdateType UpdateType { get; internal set; }
+
+		[NotMapped]
+		public abstract ObjectGuid Guid { get; }
 
 		//While most update types do have a GUID as the next fields some
 		//do not therefore we must only read them in child types

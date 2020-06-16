@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using FreecraftCore.Serializer;
 
@@ -18,6 +19,9 @@ namespace FreecraftCore
 		/// </summary>
 		[WireMember(2)]
 		public UpdateFieldValueCollection UpdateValuesCollection { get; internal set; }
+
+		[NotMapped]
+		public override ObjectGuid Guid => ObjectToUpdate;
 
 		/// <inheritdoc />
 		public ObjectUpdateValuesObjectBlock(PackedGuid objectToUpdate, UpdateFieldValueCollection updateValuesCollection)
