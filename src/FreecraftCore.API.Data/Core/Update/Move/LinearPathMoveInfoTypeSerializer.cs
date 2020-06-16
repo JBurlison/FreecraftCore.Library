@@ -7,6 +7,12 @@ using Reinterpret.Net;
 
 namespace FreecraftCore
 {
+	internal static class LinearPathReinterpretCastExtensions
+	{
+		public static unsafe float AsFloat(this uint n) => *(float*)&n;
+		public static unsafe uint AsInt(this float n) => *(uint*)&n;
+	}
+
 	public sealed class LinearPathMoveInfoTypeSerializer : SimpleTypeSerializerStrategy<LinearPathMoveInfo>
 	{
 		/// <inheritdoc />
@@ -27,12 +33,40 @@ namespace FreecraftCore
 			Vector3<float> lastPoint = new Vector3<float>(lastPointBytes.Reinterpret<float>(),
 				lastPointBytes.Reinterpret<float>(sizeof(float)), lastPointBytes.Reinterpret<float>(sizeof(float) * 2));
 
-			//TODO: Deserialize to vectors
-			//Then there are a bunch of packed points here
-			byte[] packedDataBytes = lastIndex > 1 ? source.ReadBytes((lastIndex - 1) * sizeof(int)) : Array.Empty<byte>();
+			/*// can be used in SMSG_MONSTER_MOVE opcode
+			void appendPackXYZ(float x, float y, float z)
+			{
+				uint32 packed = 0;
+				packed |= ((int)(x / 0.25f) & 0x7FF);
+				packed |= ((int)(y / 0.25f) & 0x7FF) << 11;
+				packed |= ((int)(z / 0.25f) & 0x3FF) << 22;
+				*this << packed;
+			}*/
 
-			return new LinearPathMoveInfo(lastIndex, lastPoint, packedDataBytes);
+			/*G3D::Vector3 middle = (real_path[0] + real_path[last_idx]) / 2.f;
+			G3D::Vector3 offset;
+			// first and last points already appended
+			for (uint32 i = 1; i < last_idx; ++i)
+			{
+				offset = middle - real_path[i];
+				data << TaggedPosition<Position::PackedXYZ>(offset.x, offset.y, offset.z);
+			}*/
+			Vector3<float>[] middlePoints = new Vector3<float>[lastIndex - 1];
+			if (lastIndex > 1)
+			{
+				for (int i = 1; i < lastIndex; ++i)
+				{
+					uint packedFloats = source.ReadBytes(sizeof(uint)).Reinterpret<uint>();
+					float x = (packedFloats & 0x7FF).AsFloat() * 0.25f;
+					float y = ((packedFloats >> 11) & 0x7FF).AsFloat() * 0.25f;
+					float z = ((packedFloats >> 22) & 0x3FF).AsFloat() * 0.25f;
+					middlePoints[i - 1] = new Vector3<float>(x, y, z);
+				}
+			}
+
+			return new LinearPathMoveInfo(lastIndex, lastPoint, middlePoints);
 		}
+
 
 		/// <inheritdoc />
 		public override void Write(LinearPathMoveInfo value, IWireStreamWriterStrategy dest)
@@ -47,7 +81,7 @@ namespace FreecraftCore
 			dest.Write(value.FinalPosition.Z.Reinterpret());
 
 			if(value.LastIndex > 1 && value.SplineMiddlePoints != null)
-				dest.Write(value.SplineMiddlePoints);
+				throw new NotImplementedException($"TODO: Implement mid points.");
 		}
 
 		/// <inheritdoc />
@@ -59,7 +93,7 @@ namespace FreecraftCore
 			await dest.WriteAsync(value.FinalPosition.Y.Reinterpret());
 			await dest.WriteAsync(value.FinalPosition.Z.Reinterpret());
 
-			await dest.WriteAsync(value.SplineMiddlePoints);
+			throw new NotImplementedException($"TODO: Implement mid points.");
 		}
 
 		/// <inheritdoc />

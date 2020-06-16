@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
+using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
@@ -21,19 +22,17 @@ namespace FreecraftCore
 		//[WireMember(2)]
 		public Vector3<float> FinalPosition { get; internal set; }
 
-		//TODO: Actually implement the packed XYZ
-		//TODO: Is the same format on 1.12.1? I can't tell.
-		public byte[] SplineMiddlePoints { get; }
+		public Vector3<float>[] SplineMiddlePoints { get; internal set; }
 
 		/// <inheritdoc />
-		public LinearPathMoveInfo(int lastIndex, Vector3<float> finalPosition, byte[] splineMiddlePoints)
+		public LinearPathMoveInfo(int lastIndex, Vector3<float> finalPosition, [NotNull] Vector3<float>[] splineMiddlePoints)
 		{
 			LastIndex = lastIndex;
 			FinalPosition = finalPosition;
-			SplineMiddlePoints = splineMiddlePoints;
+			SplineMiddlePoints = splineMiddlePoints ?? throw new ArgumentNullException(nameof(splineMiddlePoints));
 		}
 
-		public LinearPathMoveInfo()
+		internal LinearPathMoveInfo()
 		{
 			
 		}
