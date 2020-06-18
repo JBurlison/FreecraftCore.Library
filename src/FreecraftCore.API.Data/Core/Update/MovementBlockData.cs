@@ -36,12 +36,12 @@ namespace FreecraftCore
 		[WireMember(5)]
 		public SplineInfo SplineInformation { get; internal set; }
 
-		private bool HasUpdatePosition => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_POSITION);
+		public bool HasUpdatePosition => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_POSITION);
 
 		//The following data requires that we're not living.
-		private bool HasCorpseLocation => IsDead && HasUpdatePosition; //TODO: WPP says this is GOPosition
+		public bool HasCorpseLocation => IsDead && HasUpdatePosition; //TODO: WPP says this is GOPosition
 
-		private bool IsStationaryObject => IsDead && !HasUpdatePosition && UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_STATIONARY_POSITION);
+		public bool IsStationaryObject => IsDead && !HasUpdatePosition && UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_STATIONARY_POSITION);
 
 		[Optional(nameof(HasCorpseLocation))]
 		[WireMember(6)]
@@ -82,7 +82,7 @@ namespace FreecraftCore
 		[WireMember(12)]
 		public VehicleMovementInfo VehicleMovementInformation { get; internal set; }
 
-		private bool HasUpdateRotation => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_ROTATION);
+		public bool HasUpdateRotation => UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_ROTATION);
 
 		//TODO: Handle packed quaternions. See WoWPacketParser
 		[Optional(nameof(HasUpdateRotation))]
