@@ -2,6 +2,9 @@ using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
+	/// <summary>
+	/// See: Object::BuildMovementUpdate
+	/// </summary>
 	[WireDataContract]
 	public sealed class MovementBlockData
 	{
@@ -41,6 +44,10 @@ namespace FreecraftCore
 		//The following data requires that we're not living.
 		public bool HasCorpseLocation => IsDead && HasUpdatePosition; //TODO: WPP says this is GOPosition
 
+		/// <summary>
+		/// An object is only considered Stationary if it's considered DEAD and does not send ObjectUpdateFlags.UPDATEFLAG_POSITION.
+		/// See: Object::BuildMovementUpdate
+		/// </summary>
 		public bool IsStationaryObject => IsDead && !HasUpdatePosition && UpdateFlags.HasFlag(ObjectUpdateFlags.UPDATEFLAG_STATIONARY_POSITION);
 
 		[Optional(nameof(HasCorpseLocation))]
