@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
+using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
@@ -18,7 +19,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_LOGIN_VERIFY_WORLD)]
-	public sealed class SMSG_LOGIN_VERIFY_WORLD_PAYLOAD : GamePacketPayload
+	public sealed class SMSG_LOGIN_VERIFY_WORLD_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The Map Id to load the character into.
@@ -38,10 +39,20 @@ namespace FreecraftCore
 		[WireMember(3)]
 		public float Orientation { get; internal set; }
 
+		public SMSG_LOGIN_VERIFY_WORLD_Payload(int mapId, [NotNull] Vector3<float> position, float orientation)
+		{
+			//Blizzlike map supports map 0. FOR SOME REASON!!
+			if (mapId < 0) throw new ArgumentOutOfRangeException(nameof(mapId));
+
+			MapId = mapId;
+			Position = position ?? throw new ArgumentNullException(nameof(position));
+			Orientation = orientation;
+		}
+
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		private SMSG_LOGIN_VERIFY_WORLD_PAYLOAD()
+		internal SMSG_LOGIN_VERIFY_WORLD_Payload()
 		{
 			
 		}
