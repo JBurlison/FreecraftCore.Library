@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
+using Newtonsoft.Json;
 
 namespace FreecraftCore
 {
@@ -11,8 +13,24 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_FORCE_FLIGHT_BACK_SPEED_CHANGE)]
-	public sealed class SMSG_FORCE_FLIGHT_BACK_SPEED_CHANGE_Payload : GamePacketPayload
+	public sealed class SMSG_FORCE_FLIGHT_BACK_SPEED_CHANGE_Payload : GamePacketPayload, IMovementSpeedChangePayload
 	{
+		[WireMember(1)]
+		public PackedGuid Target { get; internal set; }
+
+		/// <summary>
+		/// Movement counter. Unimplemented at the moment! NUM_PMOVE_EVTS = 0x39Z.
+		/// </summary>
+		[WireMember(2)]
+		public int MovementCounter { get; internal set; }
+
+		[JsonIgnore]
+		[NotMapped]
+		public UnitMoveType MoveType => UnitMoveType.MOVE_FLIGHT_BACK;
+
+		[WireMember(3)]
+		public float Speed { get; internal set; }
+
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
