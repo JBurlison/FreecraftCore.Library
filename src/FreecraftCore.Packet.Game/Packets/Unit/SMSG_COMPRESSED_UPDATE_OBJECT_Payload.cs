@@ -24,7 +24,7 @@ namespace FreecraftCore
 			UpdateBlocks = updateBlocks ?? throw new ArgumentNullException(nameof(updateBlocks));
 		}
 
-		protected SMSG_COMPRESSED_UPDATE_OBJECT_Payload()
+		internal SMSG_COMPRESSED_UPDATE_OBJECT_Payload()
 		{
 			
 		}
