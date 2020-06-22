@@ -13,7 +13,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_FORCE_SWIM_BACK_SPEED_CHANGE)]
-	public sealed class SMSG_FORCE_SWIM_BACK_SPEED_CHANGE_Payload : GamePacketPayload
+	public sealed class SMSG_FORCE_SWIM_BACK_SPEED_CHANGE_Payload : GamePacketPayload, IMovementSpeedChangePayload
 	{
 		[WireMember(1)]
 		public PackedGuid Target { get; internal set; }

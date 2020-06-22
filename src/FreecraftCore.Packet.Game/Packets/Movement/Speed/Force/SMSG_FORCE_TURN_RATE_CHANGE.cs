@@ -13,7 +13,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_FORCE_TURN_RATE_CHANGE)]
-	public sealed class SMSG_FORCE_TURN_RATE_CHANGE_Payload : GamePacketPayload
+	public sealed class SMSG_FORCE_TURN_RATE_CHANGE_Payload : GamePacketPayload, IMovementSpeedChangePayload
 	{
 		[WireMember(1)]
 		public PackedGuid Target { get; internal set; }
