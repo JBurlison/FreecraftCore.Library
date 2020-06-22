@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
+using Newtonsoft.Json;
 
 namespace FreecraftCore
 {
@@ -11,8 +13,25 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.MSG_MOVE_SET_SWIM_SPEED)]
-	public sealed class MSG_MOVE_SET_SWIM_SPEED_Payload : GamePacketPayload
+	public sealed class MSG_MOVE_SET_SWIM_SPEED_Payload : GamePacketPayload, IMovementSpeedChangeOtherPayload
 	{
+		/// <inheritdoc />
+		[WireMember(1)]
+		public PackedGuid Target { get; internal set; }
+
+		/// <inheritdoc />
+		[WireMember(2)]
+		public MovementInfo MovementInformation { get; internal set; }
+
+		/// <inheritdoc />
+		[JsonIgnore]
+		[NotMapped]
+		public UnitMoveType MoveType => UnitMoveType.MOVE_SWIM;
+
+		/// <inheritdoc />
+		[WireMember(3)]
+		public float Speed { get; internal set; }
+
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
