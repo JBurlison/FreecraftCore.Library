@@ -45,6 +45,9 @@ namespace FreecraftCore
 
 		/// <summary>
 		/// Represents the full milliseconds duration of the spline.
+		/// WARNING: This is what actually controls the client's movement speed
+		/// of the creature watching the spline. I verified this by debugging. Soooo, units following splines seem to (maybe) ignore their 9 float block movement speed and when SMSG_MONSTER_MOVE packets are sent they just have a path millisecond duration within them.
+		/// It seems this is what ACTUALLY controls the movement speed on the client. Here is a gif of a test example of what happens when you dramatically increase this duration in the packet, they all slow down: https://i.gyazo.com/98af107ff0f07402e460763b0cb69416.mp4.
 		/// </summary>
 		[WireMember(6)]
 		public int SplineFullTime { get; internal set; }
