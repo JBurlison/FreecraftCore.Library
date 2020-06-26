@@ -10,7 +10,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_AURA_UPDATE_ALL)]
-	public sealed class SMSG_AURA_UPDATE_ALL_Payload
+	public sealed class SMSG_AURA_UPDATE_ALL_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The guid of the aura target.
