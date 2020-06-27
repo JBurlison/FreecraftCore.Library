@@ -19,10 +19,11 @@ namespace FreecraftCore
 		/// <summary>
 		/// Indicates if the <see cref="AuraApplicationStateUpdate"/> has an associated
 		/// caster guid.
+		/// If it doesn't have a caster guid than the target is likely the caster.
 		/// </summary>
 		[JsonIgnore]
 		[NotMapped]
-		public bool HasCasterGuid => Flags.HasFlag(AuraFlags.CASTER);
+		public bool HasCasterGuid => !Flags.HasFlag(AuraFlags.CASTER);
 
 		/// <summary>
 		/// Indicates if the <see cref="AuraApplicationStateUpdate"/> will sent duration data.
@@ -47,7 +48,7 @@ namespace FreecraftCore
 
 		/// <summary>
 		/// Set if <see cref="HasCasterGuid"/> is true. <see cref="AuraFlags.CASTER"/>
-		/// Optional: Will be empty if not sent.
+		/// Optional: Will be empty if not sent. Meaning it either has no caster or the target is the caster.
 		/// </summary>
 		[Optional(nameof(HasCasterGuid))]
 		[WireMember(6)]
