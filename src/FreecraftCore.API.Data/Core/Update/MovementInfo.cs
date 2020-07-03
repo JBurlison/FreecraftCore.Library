@@ -39,7 +39,8 @@ namespace FreecraftCore
 
 		private bool HasTransportationTime => IsOnTransport && ExtraFlags.HasFlag(MovementFlagExtra.InterpolateMove);
 
-		private bool HasMovementPitch => MoveFlags.HasFlag(MovementFlag.MOVEMENTFLAG_SWIMMING | MovementFlag.MOVEMENTFLAG_FLYING)
+		//Note, important to use HasAnyFlags as it checks if EITHER flag is set
+		private bool HasMovementPitch => MoveFlags.HasAnyFlags(MovementFlag.MOVEMENTFLAG_SWIMMING | MovementFlag.MOVEMENTFLAG_FLYING)
 			|| ExtraFlags.HasFlag(MovementFlagExtra.AlwaysAllowPitching);
 
 		private bool IsFalling => MoveFlags.HasFlag(MovementFlag.MOVEMENTFLAG_FALLING);
