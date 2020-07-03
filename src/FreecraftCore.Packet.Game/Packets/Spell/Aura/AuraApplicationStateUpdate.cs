@@ -62,7 +62,7 @@ namespace FreecraftCore
 		public int MaximumAuraDuration { get; internal set; }
 
 		/// <summary>
-		/// Represents the duration passed so far during the aura lifetime.
+		/// Represents the duration, counting down from <see cref="MaximumAuraDuration"/>
 		/// </summary>
 		[Optional(nameof(HasDuration))]
 		[WireMember(8)]
