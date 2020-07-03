@@ -14,6 +14,7 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		public override SerializationContextRequirement ContextRequirement { get; } = SerializationContextRequirement.Contextless;
 
+		//See Also: https://github.com/TrinityCore/WowPacketParser/blob/5663c555cb560769df23685bf769c08af277f419/WowPacketParser/Misc/PacketReads.cs#L54
 		/// <inheritdoc />
 		public override PackedGuid Read(IWireStreamReaderStrategy source)
 		{
@@ -33,8 +34,6 @@ namespace FreecraftCore
 
 				i++;
 			}
-
-			//throw new InvalidOperationException("hello");
 
 			return new PackedGuid(res);
 		}
