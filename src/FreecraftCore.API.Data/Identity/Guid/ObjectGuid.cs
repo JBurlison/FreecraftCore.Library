@@ -1,5 +1,6 @@
 using System;
 using FreecraftCore.Serializer;
+using Newtonsoft.Json;
 
 
 namespace FreecraftCore
@@ -11,11 +12,13 @@ namespace FreecraftCore
 		/// <summary>
 		/// Represents an Empty or uninitialized <see cref="ObjectGuid"/>.
 		/// </summary>
+		[JsonIgnore]
 		public static ObjectGuid Empty { get; } = new ObjectGuid(0);
 
 		/// <summary>
 		/// GUID value.
 		/// </summary>
+		[JsonProperty]
 		[WireMember(1)]
 		public override ulong RawGuidValue { get; internal set; }
 

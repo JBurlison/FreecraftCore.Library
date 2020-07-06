@@ -1,35 +1,42 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Newtonsoft.Json;
 
 namespace FreecraftCore
 {
+	[JsonObject]
 	public abstract class BaseGuid : IEquatable<BaseGuid>
 	{
 		/// <summary>
 		/// GUID value.
 		/// </summary>
+		[JsonProperty]
 		public abstract ulong RawGuidValue { get; internal set; } //setter only for serialization
 
 		/// <summary>
 		/// Indicates the object Type that the <see cref="GUID"/> is associated with.
 		/// </summary>
+		[JsonIgnore]
 		public EntityGuidMask ObjectType => (EntityGuidMask)((RawGuidValue >> 48) & 0x0000FFFF);
 
 		/// <summary>
 		/// Indiciates the current GUID of the object. This is the last chunk represents the id that the world server assigned to the object. (The rest is just maskable flags about the object)
 		/// </summary>
+		[JsonIgnore]
 		public int CurrentObjectGuid => (int)(RawGuidValue & 0x0000000000FFFFFF);
 
 		/// <summary>
 		/// Based on ObjectGuid::GetEntry.
 		/// This is a reference to the Creature Template table.
 		/// </summary>
+		[JsonIgnore]
 		public int Entry => (int) (HasEntry ? (RawGuidValue >> 24) & 0x0000000000FFFFFF : 0);
 
 		/// <summary>
 		/// Base on ObjectGuid::HasEntry
 		/// </summary>
+		[JsonIgnore]
 		public bool HasEntry => EntityGuidMaskHasEntry(ObjectType);
 
 		/// <summary>
@@ -84,6 +91,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Based on TrinityCore: ObjectGuid::GetTypeId
 		/// </summary>
+		[JsonIgnore]
 		public EntityTypeId TypeId => MaskToTypeId(ObjectType);
 
 		/// <summary>
@@ -211,6 +219,14 @@ namespace FreecraftCore
 		public override string ToString()
 		{
 			return $"{RawGuidValue} 0x{RawGuidValue:X} Type: {TypeId} Entry: {Entry} Id: {CurrentObjectGuid}";
+		}
+
+		/// <summary>
+		/// Serializer ctor.
+		/// </summary>
+		internal BaseGuid()
+		{
+			
 		}
 	}
 }
