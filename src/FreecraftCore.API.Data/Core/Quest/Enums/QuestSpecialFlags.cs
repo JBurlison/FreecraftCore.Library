@@ -7,6 +7,7 @@ namespace FreecraftCore
 	/// <summary>
 	/// Trinity flags for set SpecialFlags in DB if required but used only at server
 	/// </summary>
+	[Flags]
 	public enum QuestSpecialFlags
 	{
 		NONE = 0x000,

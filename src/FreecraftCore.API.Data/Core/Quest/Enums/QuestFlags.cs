@@ -1,8 +1,11 @@
-﻿namespace FreecraftCore
+﻿using System;
+
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Flags used at server and sent to client
 	/// </summary>
+	[Flags]
 	public enum QuestFlags
 	{
 		NONE = 0x00000000,
