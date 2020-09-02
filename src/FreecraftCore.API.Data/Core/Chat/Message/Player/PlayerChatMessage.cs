@@ -9,6 +9,7 @@ namespace FreecraftCore
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_CHANNEL, typeof(ChannelPlayerChatMessage))] //for channel messages
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_WHISPER, typeof(WhisperPlayerChatMessage))] //for player whispers
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_SAY, typeof(SayPlayerChatMessage))]
+	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_AFK, typeof(PlayerAfkChatMessage))]
 	[WireDataContract(WireDataContractAttribute.KeyType.Int32, InformationHandlingFlags.DontConsumeRead | InformationHandlingFlags.DontWrite)]
 	public abstract class PlayerChatMessage
 	{
