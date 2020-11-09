@@ -2,4 +2,5 @@
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=newfolder1/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=packetcaptures_005Csmsg_005Fupdate_005Fobject/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=packetcaptures_005Cwotlk_005Csmsg_005Fupdate_005Fobject/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=packetcaptures_005Cwrathofthelichking_005Csmsg_005Fupdate_005Fobject/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=packetcaptures_005Cwrathofthelichking_005Csmsg_005Fupdate_005Fobject/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeInspection/NamespaceProvider/NamespaceFoldersToSkip/=packetcaptures_005Cwrath_005Fof_005Fthe_005Flich_005Fking_005Csmsg_005Fupdate_005Fobject/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
