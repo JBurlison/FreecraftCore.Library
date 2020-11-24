@@ -82,12 +82,6 @@ namespace FreecraftCore.ObjectUpdatePacketSerializer.PerfTest
 						.ToList()
 						.ForEach(t => Serializer.RegisterType(t));
 
-					//Then we want to register DTOs for unknown
-					GamePacketStubMetadataMarker.GamePacketPayloadStubTypes
-						.Where(t => GamePacketMetadataMarker.UnimplementedOperationCodes.Value.Contains(t.GetCustomAttribute<GamePayloadOperationCodeAttribute>().OperationCode))
-						.ToList()
-						.ForEach(t => Serializer.RegisterType(t));
-
 					Serializer.Compile();
 				}
 			}

@@ -55,9 +55,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConverterTests\VanillaToWotlkConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\Capture\VanillaPacketCaptureTestCaseBuilder.cs" />
     <Compile Include="Tests\Capture\WotlkPacketCaptureTestCaseBuilder.cs" />
     <Compile Include="Tests\DynamicProxyTypeTests.cs" />
     <Compile Include="Tests\GamePacketPayloadTests.cs" />
@@ -67,7 +65,6 @@
     <Compile Include="Tests\ManualSerializationTests.cs" />
     <Compile Include="Tests\Capture\PacketCaptureTestCaseCaptureBuilder.cs" />
     <Compile Include="Tests\Capture\PacketCaptureTestEntry.cs" />
-    <Compile Include="Tests\Capture\VanillaPacketCaptureGenericTests.cs" />
     <Compile Include="Tests\Capture\WotlkPacketCaptureGenericTests.cs" />
     <Compile Include="WireReadyBitArray\WireReadyBitArrayGetSetTests.cs" />
     <Compile Include="WireReadyBitArray\WireReadyBitArrayCustomTests.cs" />
@@ -106,14 +103,6 @@
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Common\FreecraftCore.Packet.Common.csproj">
       <Project>{EB22A6AE-5098-40CD-9A58-EF989075FB22}</Project>
       <Name>FreecraftCore.Packet.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game.1_12_1\FreecraftCore.Packet.Game.1_12_1.csproj">
-      <Project>{54942DA8-4C1F-4766-AE56-424F9384FA8E}</Project>
-      <Name>FreecraftCore.Packet.Game.1_12_1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game.Stubs\FreecraftCore.Packet.Game.Stubs.csproj">
-      <Project>{ad87fe80-85a6-4f6f-998f-5fdaae870d50}</Project>
-      <Name>FreecraftCore.Packet.Game.Stubs</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\FreecraftCore.Packet.Game\FreecraftCore.Packet.Game.csproj">
       <Project>{E7203CA7-1D14-4322-8062-1F72FCDD3EC5}</Project>
@@ -6259,6 +6248,7 @@
     <None Include="PacketCaptures\WRATH_OF_THE_LICH_KING\SMSG_WORLD_STATE_UI_TIMER_UPDATE\SMSG_WORLD_STATE_UI_TIMER_UPDATE_dae6d9c3-95b8-428f-ab07-ce6697b75a1e" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ConverterTests\" />
     <Folder Include="PacketCaptures\WRATH_OF_THE_LICH_KING\CMSG_ACCEPT_LEVEL_GRANT\" />
     <Folder Include="PacketCaptures\WRATH_OF_THE_LICH_KING\CMSG_ACCEPT_TRADE\" />
     <Folder Include="PacketCaptures\WRATH_OF_THE_LICH_KING\CMSG_ACTIVATETAXIEXPRESS\" />
