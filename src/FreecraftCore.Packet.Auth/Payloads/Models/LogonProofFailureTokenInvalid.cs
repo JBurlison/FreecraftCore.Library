@@ -2,6 +2,7 @@
 
 namespace FreecraftCore
 {
+	//This is sent when SRP6 was invalid or Token failed
 	/// <summary>
 	/// Sent by the server when a logon proof request was failed due to either an invalid SRP6 M sent
 	/// or an invalid token (Authenticator pin) sent. (Ex. Invalid authenticator pin or invalid phone pin)
@@ -9,12 +10,6 @@ namespace FreecraftCore
 	[WireDataContract]
 	public class LogonProofFailure : LogonProofResult
 	{
-		//This is sent when SRP6 was invalid or Token failed
-		/// <summary>
-		/// Indicates a failure to authenticate.
-		/// </summary>
-		public override AuthenticationResult Result { get; } = AuthenticationResult.FailUnknownAccount;
-
 		//The below fields are always the same whether it's an invalid token or if it's an invalid SRP6 M sent.
 
 		//TODO: What is this?
@@ -27,8 +22,8 @@ namespace FreecraftCore
 		internal byte unknownTwo = 0;
 
 		//TODO: Only doing client stuff. Implement ctor later if/when we build a server.
-
 		public LogonProofFailure()
+			: base(AuthenticationResult.FailUnknownAccount)
 		{
 
 		}

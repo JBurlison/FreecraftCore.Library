@@ -34,7 +34,7 @@ namespace FreecraftCore
 		[WireMember(3)]
 		public int TitleTextId { get; internal set; }
 
-		[SendSize(SendSizeAttribute.SizeType.Int32)]
+		[SendSize(PrimitiveSizeType.Int32)]
 		[WireMember(4)]
 		internal GossipMenuItem[] _GossipOptions { get; set; }
 
@@ -44,7 +44,7 @@ namespace FreecraftCore
 		[NotMapped]
 		public IEnumerable<GossipMenuItem> GossipOptions => _GossipOptions;
 
-		[SendSize(SendSizeAttribute.SizeType.Int32)]
+		[SendSize(PrimitiveSizeType.Int32)]
 		[WireMember(5)]
 		internal QuestGossipEntry[] _QuestOptions { get; set; }
 

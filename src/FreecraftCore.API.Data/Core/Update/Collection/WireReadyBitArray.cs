@@ -27,7 +27,7 @@ namespace FreecraftCore
 		public int Length => InternalArray.Length * BitsPerByte; //32 bits in an int
 
 		//WoW sends a byte-prefixed int array representing the bitarray.
-		[SendSize(SendSizeAttribute.SizeType.Byte)]
+		[SendSize(PrimitiveSizeType.Byte)]
 		[WireMember(1)]
 		internal byte[] InternalArray { get; set; }
 

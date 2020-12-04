@@ -13,7 +13,7 @@ namespace FreecraftCore
 		/// The name of the sender.
 		/// </summary>
 		[Encoding(EncodingType.ASCII)]
-		[SendSize(SendSizeAttribute.SizeType.Int32)]
+		[SendSize(PrimitiveSizeType.Int32)]
 		[WireMember(1)]
 		public TSenderDataType SenderInfo { get; internal set; }
 

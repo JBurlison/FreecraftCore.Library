@@ -75,6 +75,7 @@ namespace FreecraftCore
 		/// </summary>
 		/// <param name="result">Non-success result.</param>
 		public AuthLogonChallengeResponse(AuthenticationResult result)
+			: this()
 		{
 			if(!Enum.IsDefined(typeof(AuthenticationResult), result)) throw new ArgumentOutOfRangeException(nameof(result), "Value should be defined in the AuthenticationResult enum.");
 
@@ -86,6 +87,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public AuthLogonChallengeResponse([NotNull] SRPToken challenge, byte securityFlags = 0) //TODO: Handle security flags
+			: this()
 		{
 			if(challenge == null) throw new ArgumentNullException(nameof(challenge));
 
@@ -99,6 +101,7 @@ namespace FreecraftCore
 		//TODO: Proper ctor; right now we don't have a server so we can get away with just default
 
 		public AuthLogonChallengeResponse()
+			: base(AuthOperationCode.AUTH_LOGON_CHALLENGE)
 		{
 
 		}

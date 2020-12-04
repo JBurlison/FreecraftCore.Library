@@ -16,7 +16,7 @@ namespace FreecraftCore
 		//strings meaning we can easily handle that.
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(1)]
-		[SendSize(SendSizeAttribute.SizeType.Int32)]
+		[SendSize(PrimitiveSizeType.Int32)]
 		internal string[] MessageOfTheDayByLines { get; set; }
 
 		/// <summary>

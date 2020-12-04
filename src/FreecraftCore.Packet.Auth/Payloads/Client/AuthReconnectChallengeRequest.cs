@@ -22,6 +22,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public AuthReconnectChallengeRequest([NotNull] AuthChallengeData challengeData)
+			: this()
 		{
 			ChallengeData = challengeData ?? throw new ArgumentNullException(nameof(challengeData));
 		}
@@ -29,7 +30,8 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor
 		/// </summary>
-		private AuthReconnectChallengeRequest()
+		public AuthReconnectChallengeRequest()
+			: base(AuthOperationCode.AUTH_RECONNECT_CHALLENGE)
 		{
 			
 		}

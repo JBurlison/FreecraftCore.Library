@@ -20,6 +20,7 @@ namespace FreecraftCore
 		internal int unknownValue = 0; // hardcoded to zero in public client
 		
 		public AuthRealmListRequest()
+			: base(AuthOperationCode.REALM_LIST)
 		{
 			//Don't need to send anything.
 		}

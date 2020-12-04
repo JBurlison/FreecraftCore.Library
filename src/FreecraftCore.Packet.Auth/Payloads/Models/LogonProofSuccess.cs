@@ -12,11 +12,6 @@ namespace FreecraftCore
 	public class LogonProofSuccess : LogonProofResult
 	{
 		/// <summary>
-		/// Indicates that the result of the logon attempt was successful.
-		/// </summary>
-		public override AuthenticationResult Result { get; } = AuthenticationResult.Success;
-
-		/// <summary>
 		/// SRP6 M2. See http://srp.stanford.edu/design.html for more information.
 		/// (M2 = H(A, M (computed by client), K) where K is H(S) and S is session key. M2 proves server computed same K and recieved M1/M
 		/// </summary>
@@ -42,6 +37,7 @@ namespace FreecraftCore
 		//TODO: Proper Ctor. Right now we only implement client stuff. Server sends this.
 
 		public LogonProofSuccess([NotNull] byte[] m2Value)
+			: this()
 		{
 			if(m2Value == null) throw new ArgumentNullException(nameof(m2Value));
 			if(m2Value.Length != 20) throw new ArgumentException("Value cannot be a collection with size not equal to 20.", nameof(m2Value));
@@ -50,6 +46,7 @@ namespace FreecraftCore
 		}
 
 		protected LogonProofSuccess()
+			: base(AuthenticationResult.Success)
 		{
 
 		}

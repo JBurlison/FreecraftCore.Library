@@ -24,12 +24,14 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public AuthLogonChallengeRequest([NotNull] AuthChallengeData challenge)
+			: this()
 		{
 			Challenge = challenge ?? throw new ArgumentNullException(nameof(challenge));
 		}
 
 		//Serializer ctor.
-		private AuthLogonChallengeRequest()
+		public AuthLogonChallengeRequest()
+			: base(AuthOperationCode.AUTH_LOGON_CHALLENGE)
 		{
 			
 		}

@@ -23,8 +23,9 @@ namespace FreecraftCore.Tests
 				.Assembly
 				.GetTypes()
 				.Where(t =>  typeof(WireDataContractBaseLinkAttribute).IsAssignableFrom(t) && !t.IsAbstract)
+				.Where(t => typeof(IPayloadAttribute).IsAssignableFrom(t))
 				.Select(t => Activator.CreateInstance(t, BindingFlags.CreateInstance | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, new object[] { 5 }, null) as WireDataContractBaseLinkAttribute)
-				.FirstOrDefault(c => c.BaseType == typeof(TPayloadBaseType));
+				.FirstOrDefault(c => ((IPayloadAttribute)c).BaseType == typeof(TPayloadBaseType));
 
 			if(linkAttri == null)
 				Assert.Fail($"Failed to get link attribute for {typeof(TPayloadBaseType).Name}.");
@@ -36,14 +37,13 @@ namespace FreecraftCore.Tests
 			{
 				try
 				{
-					Assert.True(typeof(TPayloadBaseType).IsAssignableFrom(t), $"Type: {t.Name} is marked with Attribute: {linkAttri.GetType().Name} but doesn't derive from Type: {linkAttri.BaseType.Name}. In derives from incorrect Type: {t.BaseType}");
+					Assert.True(typeof(TPayloadBaseType).IsAssignableFrom(t), $"Type: {t.Name} is marked with Attribute: {linkAttri.GetType().Name} but doesn't derive from Type: {((IPayloadAttribute)linkAttri).BaseType.Name}. In derives from incorrect Type: {t.BaseType}");
 				}
 				catch(Exception e)
 				{
 					Assert.Fail($"Failed to check the link for {t.Name} Exception: {e.Message}");
 				}
 			}
-
 		}
 
 		[Test]
@@ -59,34 +59,19 @@ namespace FreecraftCore.Tests
 
 		[Test]
 		[TestCaseSource(nameof(PayloadTypes))]
-		public void Test_Can_Register_All_Concrete_Payloads(Type t)
-		{
-			//arrange
-			SerializerService serializer = new SerializerService();
-
-			//assert
-			Assert.DoesNotThrow(() => serializer.RegisterType(t));
-			serializer.Compile();
-
-			Assert.True(serializer.isTypeRegistered(t), $"Failed to register Type: {t.Name}");
-			Assert.True(serializer.isTypeRegistered(typeof(TPayloadBaseType)), $"Base packet type wasn't registered.");
-		}
-
-		[Test]
-		[TestCaseSource(nameof(PayloadTypes))]
 		public void Test_Payload_With_Link_Has_Correct_BaseType(Type t)
 		{
 			//assert
 			if(GetWireDataContractLinkAttribute(t) != null)
 			{
 				Assert.NotNull(GetWireDataContractLinkAttribute(t).BaseType, $"Type: {t.Name} did not have a statically linked base type.");
-				Assert.True(GetWireDataContractLinkAttribute(t).BaseType.IsAssignableFrom(t), $"Type: {t.Name} linked to Type: {t.GetCustomAttribute<WireDataContractBaseLinkAttribute>().BaseType} but was not a basetype of Type: {t.Name}.");
+				Assert.True(GetWireDataContractLinkAttribute(t).BaseType.IsAssignableFrom(t), $"Type: {t.Name} linked to Type: {GetWireDataContractLinkAttribute(t).BaseType} but was not a basetype of Type: {t.Name}.");
 			}
 		}
 
-		private WireDataContractBaseLinkAttribute GetWireDataContractLinkAttribute(Type t)
+		private IPayloadAttribute GetWireDataContractLinkAttribute(Type t)
 		{
-			return t.GetCustomAttributes().FirstOrDefault(a => a is WireDataContractBaseLinkAttribute) as WireDataContractBaseLinkAttribute;
+			return t.GetCustomAttributes().FirstOrDefault(a => a is WireDataContractBaseLinkAttribute && a is IPayloadAttribute) as IPayloadAttribute;
 		}
 
 		[Test]
@@ -95,8 +80,6 @@ namespace FreecraftCore.Tests
 		{
 			//arrange
 			SerializerService serializer = new SerializerService();
-			serializer.RegisterType(t);
-			serializer.Compile();
 
 			//Abstracts can't be created
 			if(t.IsAbstract) //if it's unknown then it's probably default and thus unwritable
@@ -105,17 +88,17 @@ namespace FreecraftCore.Tests
 			object payload = Activator.CreateInstance(t, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.CreateInstance, null, new object[0], null);
 
 			//act
-			byte[] bytes = null;
+			Span<byte> buffer = new Span<byte>(new byte[62000]);
+			int offset = 0;
 
 			//We have to suppress these exceptions because some payloads have complex object graphs and
 			//need more than default initialization to be serializable
 			try
 			{
-				bytes = serializer.Serialize(payload);
+				serializer.Write(payload, buffer, ref offset);
 
 				//assert
-				Assert.NotNull(bytes);
-				Assert.True(bytes.Length != 0);
+				Assert.True(offset != 0);
 			}
 			catch(ArgumentNullException e)
 			{

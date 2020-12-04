@@ -29,7 +29,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// The quest entries for the quest list.
 		/// </summary>
-		[SendSize(SendSizeAttribute.SizeType.Byte)]
+		[SendSize(PrimitiveSizeType.Byte)]
 		[WireMember(3)]
 		internal QuestGossipEntry[] _Entries { get; set; }
 

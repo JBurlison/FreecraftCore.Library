@@ -29,11 +29,13 @@ namespace FreecraftCore
 		//TODO: Make better ctor
 		/// <inheritdoc />
 		public AuthLogonProofResponse(LogonProofResult proofResult)
+			: this()
 		{
 			ProofResult = proofResult;
 		}
 
 		public AuthLogonProofResponse()
+			: base(AuthOperationCode.AUTH_LOGON_PROOF)
 		{
 
 		}

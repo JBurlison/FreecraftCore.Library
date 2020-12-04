@@ -68,12 +68,13 @@ namespace FreecraftCore
 				}
 			}
 
-			typesToRegister
+			throw new NotImplementedException($"TODO: Reimplement.");
+			/*typesToRegister
 				.ToList()
 				.ForEach(t => serializer.RegisterType(t));
 
 			//This is kinda hacky but we compile here for test reasons
-			serializer.Compile();
+			serializer.Compile();*/
 
 			return testSource;
 		}

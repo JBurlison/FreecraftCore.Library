@@ -102,7 +102,7 @@ namespace FreecraftCore
 		[WireMember(25)]
 		public int ContainerSlots { get; internal set; }
 
-		[SendSize(SendSizeAttribute.SizeType.Int32)]
+		[SendSize(PrimitiveSizeType.Int32)]
 		[WireMember(26)]
 		public StatInfo[] StatInfos { get; internal set; }
 

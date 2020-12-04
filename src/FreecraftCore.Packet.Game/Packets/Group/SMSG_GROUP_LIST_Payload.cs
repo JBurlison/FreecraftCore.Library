@@ -33,7 +33,7 @@ namespace FreecraftCore
 		public int UpdateCounter { get; internal set; }
 
 		//Follow is a collection of group member data. Similar to above.
-		[SendSize(SendSizeAttribute.SizeType.Int32)] //for some reason Blizzard wasted 3 bytes here.
+		[SendSize(PrimitiveSizeType.Int32)] //for some reason Blizzard wasted 3 bytes here.
 		[WireMember(9)]
 		internal GroupListMemberData[] _GroupMemberDataList { get; set; }
 

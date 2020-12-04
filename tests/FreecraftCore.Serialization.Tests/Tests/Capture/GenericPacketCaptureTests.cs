@@ -38,7 +38,7 @@ namespace FreecraftCore
 			//act
 			try
 			{
-				payload = serializer.Deserialize<GamePacketPayload>(entry.BinaryData);
+				payload = serializer.Read<GamePacketPayload>(new Span<byte>(entry.BinaryData), 0);
 			}
 			catch(Exception e)
 			{
@@ -65,24 +65,26 @@ namespace FreecraftCore
 			//arrange
 			Console.WriteLine($"Entry Size: {entry.BinaryData.Length} OpCode: {entry.OpCode}");
 			SerializerService serializer = Serializer;
-			GamePacketPayload payload = serializer.Deserialize<GamePacketPayload>(entry.BinaryData);
+			GamePacketPayload payload = serializer.Read<GamePacketPayload>(new Span<byte>(entry.BinaryData), 0);
 
 			//act
-			byte[] serializedBytes = serializer.Serialize(payload);
+			int offset = 0;
+			Span<byte> buffer = new Span<byte>(new byte[62000]);
+			serializer.Write(payload, buffer, ref offset);
 
 			//assert
 			try
 			{
-				Assert.AreEqual(entry.BinaryData.Length, serializedBytes.Length, $"Mismatched length on OpCode: {entry.OpCode} Type: {payload.GetType().Name}");
+				Assert.AreEqual(entry.BinaryData.Length, offset, $"Mismatched length on OpCode: {entry.OpCode} Type: {payload.GetType().Name}");
 			}
 			catch(AssertionException e)
 			{
-				Assert.Fail($"Failed: {e.Message} {PrintFailureBytes(entry.BinaryData, serializedBytes)}");
+				Assert.Fail($"Failed: {e.Message} {PrintFailureBytes(entry.BinaryData, buffer.Slice(0, offset).ToArray())}");
 			}
 			
 
 			for(int i = 0; i < entry.BinaryData.Length; i++)
-				Assert.AreEqual(entry.BinaryData[i], serializedBytes[i], $"Mismatched byte value at Index: {i} on OpCode: {entry.OpCode} Type: {payload.GetType().Name}");
+				Assert.AreEqual(entry.BinaryData[i], buffer[i], $"Mismatched byte value at Index: {i} on OpCode: {entry.OpCode} Type: {payload.GetType().Name}");
 		}
 
 		public static string PrintFailureBytes(byte[] original, byte[] result)

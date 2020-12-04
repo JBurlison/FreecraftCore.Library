@@ -22,14 +22,14 @@ namespace FreecraftCore
 		/// <summary>
 		/// Array of spell ids sent as the inital spells
 		/// </summary>
-		[SendSize(SendSizeAttribute.SizeType.UShort)]
+		[SendSize(PrimitiveSizeType.UInt16)]
 		[WireMember(2)]
 		public InitialSpellData<TSpellType>[] SpellIds { get; internal set; }
 
 		/// <summary>
 		/// Spell cooldowns.
 		/// </summary>
-		[SendSize(SendSizeAttribute.SizeType.UShort)]
+		[SendSize(PrimitiveSizeType.UInt16)]
 		[WireMember(3)]
 		public InitialSpellCooldown<TSpellType>[] SpellCooldowns { get; internal set; }
 

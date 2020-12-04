@@ -18,6 +18,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public DefaultAuthenticationServerPayload([NotNull] byte[] data)
+			: this()
 		{
 			if(data == null) throw new ArgumentNullException(
 				nameof(data));
@@ -26,6 +27,7 @@ namespace FreecraftCore
 
 		//Serializer ctor
 		protected DefaultAuthenticationServerPayload()
+			: base(AuthOperationCode.END)
 		{
 			
 		}

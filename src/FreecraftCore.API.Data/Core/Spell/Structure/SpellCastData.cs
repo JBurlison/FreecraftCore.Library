@@ -43,12 +43,12 @@ namespace FreecraftCore
 		//Targets are sent byte prefixed
 		//Both a miss and hit block
 		[Optional(nameof(HasHitInformation))]
-		[SendSize(SendSizeAttribute.SizeType.Byte)]
+		[SendSize(PrimitiveSizeType.Byte)]
 		[WireMember(7)]
 		public ObjectGuid[] HitTargets { get; internal set; }
 
 		[Optional(nameof(HasHitInformation))]
-		[SendSize(SendSizeAttribute.SizeType.Byte)]
+		[SendSize(PrimitiveSizeType.Byte)]
 		[WireMember(8)]
 		public SpellMissInfo[] SpellMisses { get; internal set; }
 

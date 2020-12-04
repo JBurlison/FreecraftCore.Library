@@ -6,8 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2018.2.1" />
-    <PackageReference Include="FreecraftCore.Serializer.Stream" Version="3.0.39" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
     <PackageReference Include="BouncyCastle" Version="1.8.3" />
     <ProjectReference Include="..\FreecraftCore.Crypto.BigInteger\FreecraftCore.Crypto.BigInteger.csproj" />
   </ItemGroup>

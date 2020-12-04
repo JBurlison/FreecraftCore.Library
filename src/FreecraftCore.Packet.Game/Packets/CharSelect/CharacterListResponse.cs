@@ -13,7 +13,7 @@ namespace FreecraftCore
 		public override bool isValid { get; } = true; //TODO: Implement data validation
 
 		[WireMember(1)]
-		[SendSize(SendSizeAttribute.SizeType.Byte)] //Jackpoz's bot shows it sends count as byte
+		[SendSize(PrimitiveSizeType.Byte)] //Jackpoz's bot shows it sends count as byte
 		public CharacterScreenCharacter[] Characters { get; internal set; }
 
 		/// <inheritdoc />

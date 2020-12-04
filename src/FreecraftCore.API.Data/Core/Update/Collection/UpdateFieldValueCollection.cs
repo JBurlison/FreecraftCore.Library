@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
-	[IncludeCustomTypeSerializer(typeof(CustomUpdateFieldCollectionTypeSerializer))]
+	[CustomTypeSerializer(typeof(CustomUpdateFieldCollectionTypeSerializer))]
 	[WireDataContract]
 	public sealed class UpdateFieldValueCollection
 	{

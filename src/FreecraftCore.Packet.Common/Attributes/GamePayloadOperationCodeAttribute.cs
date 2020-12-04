@@ -7,12 +7,15 @@ namespace FreecraftCore
 	/// Metadata marker that fulfills the <see cref="WireDataContractBaseLinkAttribute"/> metadata role
 	/// with a stronger typed ctor parameter for a <see cref="NetworkOperationCode"/>.
 	/// </summary>
-	public class GamePayloadOperationCodeAttribute : WireDataContractBaseLinkAttribute
+	public class GamePayloadOperationCodeAttribute : WireDataContractBaseLinkAttribute, IOperationCodeProvidable<NetworkOperationCode>, IPayloadAttribute
 	{
 		/// <summary>
 		/// The <see cref="NetworkOperationCode"/> of the packet.
 		/// </summary>
 		public NetworkOperationCode OperationCode => (NetworkOperationCode) Index;
+
+		/// <inheritdoc />
+		public Type BaseType { get; }
 
 		/// <summary>
 		/// Creates a metadata marker that defines the <see cref="NetworkOperationCode"/>
@@ -20,10 +23,12 @@ namespace FreecraftCore
 		/// </summary>
 		/// <param name="operationCode">The operation code.</param>
 		public GamePayloadOperationCodeAttribute(NetworkOperationCode operationCode) 
-			: base((int)operationCode, typeof(GamePacketPayload))
+			: base((int)operationCode)
 		{
 			if (!Enum.IsDefined(typeof(NetworkOperationCode), operationCode)) 
 				throw new ArgumentOutOfRangeException(nameof(operationCode), "Value should be defined in the NetworkOperationCode enum.");
+
+			BaseType = typeof(GamePacketPayload);
 		}
 
 		/// <summary>
@@ -32,9 +37,9 @@ namespace FreecraftCore
 		/// </summary>
 		/// <param name="i"></param>
 		internal GamePayloadOperationCodeAttribute(int i)
-			: base(i, typeof(GamePacketPayload))
+			: base(i)
 		{
-			
+			BaseType = typeof(GamePacketPayload);
 		}
 	}
 }
