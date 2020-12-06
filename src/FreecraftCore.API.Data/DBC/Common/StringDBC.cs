@@ -5,6 +5,7 @@ using FreecraftCore.Serializer;
 
 namespace FreecraftCore
 {
+	[WireMessageType]
 	[WireDataContract]
 	public sealed class StringDBC
 	{

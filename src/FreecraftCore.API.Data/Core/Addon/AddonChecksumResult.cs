@@ -10,7 +10,7 @@ namespace FreecraftCore
 	/// check.
 	/// </summary>
 	[WireDataContract]
-	public sealed class AddonChecksumResult
+	public sealed partial class AddonChecksumResult
 	{
 		/// <summary>
 		/// TODO: What does this mean?

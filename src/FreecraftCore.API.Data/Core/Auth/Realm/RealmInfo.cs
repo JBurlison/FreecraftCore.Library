@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 namespace FreecraftCore
 {
 	[WireDataContract]
-	public class RealmInfo
+	public partial class RealmInfo
 	{
 		/// <summary>
 		/// Realm Type

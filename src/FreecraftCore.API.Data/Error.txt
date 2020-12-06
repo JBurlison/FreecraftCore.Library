@@ -1,0 +1,10 @@
+System.ArgumentOutOfRangeException: StartIndex cannot be less than zero.
+Parameter name: startIndex
+   at System.String.Remove(Int32 startIndex)
+   at FreecraftCore.Serializer.GeneratedSerializerNameStringBuilder.ComputeName(ITypeSymbol type)
+   at FreecraftCore.Serializer.GeneratedSerializerNameStringBuilder.ToString()
+   at FreecraftCore.Serializer.BaseSerializerImplementationCompilationUnitEmitter..ctor(INamedTypeSymbol typeSymbol)
+   at FreecraftCore.Serializer.SerializerSourceEmitter.CreateEmittableImplementationSerializerStrategy(INamedTypeSymbol type)
+   at FreecraftCore.Serializer.SerializerSourceEmitter.WriteSerializerStrategyClass(INamedTypeSymbol typeSymbol)
+   at FreecraftCore.Serializer.SerializerSourceEmitter.Generate()
+   at FreecraftCore.Serializer.WireTypeSerializationSourceGenerator.Execute(GeneratorExecutionContext context)

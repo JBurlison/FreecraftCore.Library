@@ -12,6 +12,7 @@ namespace FreecraftCore
 	/// <summary>
 	/// Structure for the DBC file header.
 	/// </summary>
+	[WireMessageType]
 	[WireDataContract]
 	public sealed class DBCHeader
 	{
