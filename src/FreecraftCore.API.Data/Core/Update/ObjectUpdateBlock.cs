@@ -16,7 +16,7 @@ namespace FreecraftCore
 	[WireDataContractBaseType((int)ObjectUpdateType.UPDATETYPE_NEAR_OBJECTS, typeof(ObjectUpdateNearObjectsBlock))]
 	[WireDataContractBaseType((int)ObjectUpdateType.UPDATETYPE_OUT_OF_RANGE_OBJECTS, typeof(ObjectUpdateDestroyObjectBlock))]
 	[WireDataContract(PrimitiveSizeType.Byte)]
-	public abstract class ObjectUpdateBlock : IUpdateBlockChunk
+	public abstract partial class ObjectUpdateBlock : IUpdateBlockChunk
 	{
 		//This field is set by the serializer.
 		/// <summary>

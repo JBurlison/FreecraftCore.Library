@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="4.0.14" />
+    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="4.0.22" />
     <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
   </ItemGroup>
 

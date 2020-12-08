@@ -46,14 +46,6 @@ namespace FreecraftCore
 		public bool UseUrl { get; internal set; }
 
 		/// <summary>
-		/// Serializer ctor.
-		/// </summary>
-		protected AddonChecksumResult()
-		{
-			
-		}
-		
-		/// <summary>
 		/// Creates a result with a CRC and Public Key enabled at
 		/// minimum
 		/// </summary>
@@ -102,6 +94,14 @@ namespace FreecraftCore
 			UsePublicKey = false;
 			Unk = crcUnkVal;
 			UseUrl = useUrl;
+		}
+
+		/// <summary>
+		/// Serializer ctor.
+		/// </summary>
+		public AddonChecksumResult()
+		{
+			
 		}
 	}
 }

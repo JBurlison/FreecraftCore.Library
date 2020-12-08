@@ -7,7 +7,7 @@ namespace FreecraftCore
 {
 	[WireMessageType]
 	[WireDataContract]
-	public sealed class StringDBC
+	public sealed partial class StringDBC
 	{
 		/// <summary>
 		/// Null terminated ASCII string.
@@ -25,7 +25,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		protected StringDBC()
+		public StringDBC()
 		{
 			
 		}

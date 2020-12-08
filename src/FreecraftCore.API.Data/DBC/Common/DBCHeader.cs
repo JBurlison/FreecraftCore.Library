@@ -14,7 +14,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireMessageType]
 	[WireDataContract]
-	public sealed class DBCHeader
+	public sealed partial class DBCHeader
 	{
 		/// <summary>
 		/// The expected signature that a DBC file should have.
@@ -84,7 +84,7 @@ namespace FreecraftCore
 		}
 
 		//Serializer ctor
-		protected DBCHeader()
+		public DBCHeader()
 		{
 			
 		}

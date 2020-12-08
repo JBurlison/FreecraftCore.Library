@@ -31,7 +31,7 @@ namespace FreecraftCore
 			RecieverGuid = recieverGuid ?? throw new ArgumentNullException(nameof(recieverGuid));
 		}
 
-		protected MessageAddressingDetails()
+		public MessageAddressingDetails()
 		{
 			
 		}

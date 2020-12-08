@@ -95,7 +95,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		protected MovementInfo()
+		public MovementInfo()
 		{
 			
 		}

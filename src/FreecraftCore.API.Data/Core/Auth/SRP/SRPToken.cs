@@ -58,7 +58,7 @@ namespace FreecraftCore
 		}
 
 		//Serializer ctor
-		protected SRPToken()
+		public SRPToken()
 		{
 			
 		}

@@ -30,7 +30,7 @@ namespace FreecraftCore
 			Tag = tag;
 		}
 
-		protected NetworkChatMessageFooter()
+		public NetworkChatMessageFooter()
 		{
 
 		}

@@ -66,7 +66,7 @@ namespace FreecraftCore
 				throw new ArgumentNullException(nameof(buildInfo), $"{defaultInformation} has the {RealmFlags.SpecifyBuild} flags but no build information is provided.");
 		}
 
-		protected RealmInfo()
+		public RealmInfo()
 		{
 
 		}

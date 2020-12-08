@@ -38,8 +38,9 @@ namespace FreecraftCore
 
 		/// <summary>
 		/// Serializer ctor.
+		/// DO NOT MANUALLY CALL THIS!
 		/// </summary>
-		private WireReadyBitArray()
+		public WireReadyBitArray()
 		{
 
 		}

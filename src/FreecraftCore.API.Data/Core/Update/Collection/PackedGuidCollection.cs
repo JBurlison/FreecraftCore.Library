@@ -24,7 +24,7 @@ namespace FreecraftCore
 			_items = items ?? throw new ArgumentNullException(nameof(items));
 		}
 
-		protected PackedGuidCollection()
+		public PackedGuidCollection()
 		{
 
 		}

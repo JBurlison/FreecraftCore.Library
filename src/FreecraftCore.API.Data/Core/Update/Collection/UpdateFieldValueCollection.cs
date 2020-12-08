@@ -30,7 +30,7 @@ namespace FreecraftCore
 			UpdateDiffValues = updateDiffValues ?? throw new ArgumentNullException(nameof(updateDiffValues));
 		}
 
-		protected UpdateFieldValueCollection()
+		public UpdateFieldValueCollection()
 		{
 			
 		}

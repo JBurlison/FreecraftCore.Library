@@ -110,7 +110,7 @@ namespace FreecraftCore
 			SplineEndpoint = splineEndpoint;
 		}
 
-		protected SplineInfo()
+		public SplineInfo()
 		{
 			
 		}

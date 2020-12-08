@@ -26,7 +26,7 @@ namespace FreecraftCore
 		}
 
 		//Serializer ctor
-		protected RealmListContainer()
+		public RealmListContainer()
 		{
 			
 		}

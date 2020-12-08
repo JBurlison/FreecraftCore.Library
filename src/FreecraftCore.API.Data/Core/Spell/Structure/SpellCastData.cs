@@ -110,7 +110,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		internal SpellCastData()
+		public SpellCastData()
 		{
 			
 		}

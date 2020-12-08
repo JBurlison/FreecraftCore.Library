@@ -11,7 +11,7 @@ namespace FreecraftCore
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_SAY, typeof(SayPlayerChatMessage))]
 	[WireDataContractBaseType((int)ChatMessageType.CHAT_MSG_AFK, typeof(PlayerAfkChatMessage))]
 	[WireDataContract(PrimitiveSizeType.Int32)]
-	public abstract class PlayerChatMessage
+	public abstract partial class PlayerChatMessage
 	{
 		/// <summary>
 		/// Indicates the message type of the chat message.
