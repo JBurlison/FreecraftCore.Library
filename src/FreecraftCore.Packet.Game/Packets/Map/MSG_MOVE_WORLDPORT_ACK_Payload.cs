@@ -17,7 +17,6 @@ namespace FreecraftCore
 		/// Creates a new world port acknowledgement.
 		/// </summary>
 		public MSG_MOVE_WORLDPORT_ACK_Payload()
-			: base(NetworkOperationCode.MSG_MOVE_WORLDPORT_ACK)
 		{
 
 		}

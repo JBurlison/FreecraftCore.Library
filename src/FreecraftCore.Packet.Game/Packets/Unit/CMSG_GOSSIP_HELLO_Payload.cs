@@ -17,7 +17,6 @@ namespace FreecraftCore
 		public ObjectGuid Target { get; internal set; }
 
 		public CMSG_GOSSIP_HELLO_Payload([NotNull] ObjectGuid target)
-			: this()
 		{
 			Target = target ?? throw new ArgumentNullException(nameof(target));
 		}
@@ -26,7 +25,6 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal CMSG_GOSSIP_HELLO_Payload()
-			: base(NetworkOperationCode.CMSG_GOSSIP_HELLO)
 		{
 
 		}

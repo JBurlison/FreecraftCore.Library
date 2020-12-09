@@ -18,7 +18,6 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		public SMSG_GOSSIP_COMPLETE_Payload()
-			: base(NetworkOperationCode.SMSG_GOSSIP_COMPLETE)
 		{
 
 		}

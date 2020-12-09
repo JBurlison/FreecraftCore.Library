@@ -15,13 +15,11 @@ namespace FreecraftCore
 		public UpdateBlockCollection UpdateBlocks { get; internal set; }
 
 		public SMSG_UPDATE_OBJECT_Payload([NotNull] UpdateBlockCollection updateBlocks)
-			: this()
 		{
 			UpdateBlocks = updateBlocks ?? throw new ArgumentNullException(nameof(updateBlocks));
 		}
 
 		protected SMSG_UPDATE_OBJECT_Payload()
-			: base(NetworkOperationCode.SMSG_UPDATE_OBJECT)
 		{
 			
 		}

@@ -28,7 +28,6 @@ namespace FreecraftCore
 		public uint ClientTimestamp { get; internal set; }
 
 		public CMSG_TIME_SYNC_RESP_Payload(int synchronizationCounter, uint clientTimestamp)
-			: this()
 		{
 			if (synchronizationCounter < 0) throw new ArgumentOutOfRangeException(nameof(synchronizationCounter));
 			if (clientTimestamp == 0) throw new ArgumentOutOfRangeException(nameof(clientTimestamp));
@@ -41,7 +40,6 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		private CMSG_TIME_SYNC_RESP_Payload()
-			: base(NetworkOperationCode.CMSG_TIME_SYNC_RESP)
 		{
 
 		}

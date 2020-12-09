@@ -36,7 +36,6 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal MSG_MOVE_SET_TURN_RATE_Payload()
-			: base(NetworkOperationCode.MSG_MOVE_SET_TURN_RATE)
 		{
 
 		}

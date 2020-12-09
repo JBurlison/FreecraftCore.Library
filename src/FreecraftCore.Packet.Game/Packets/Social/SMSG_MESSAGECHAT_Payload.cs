@@ -129,7 +129,6 @@ namespace FreecraftCore
 		//TODO: Parameter validation
 		/// <inheritdoc />
 		public SMSG_MESSAGECHAT_Payload([NotNull] NetworkChatMessageHeader messageHeader, [NotNull] NetworkChatMessageFooter messageFooter, [NotNull] NetworkChatWhisperMessageDetails whisperMessageDetails)
-			: this()
 		{
 			MessageHeader = messageHeader ?? throw new ArgumentNullException(nameof(messageHeader));
 			WhisperMessageDetails = whisperMessageDetails ?? throw new ArgumentNullException(nameof(whisperMessageDetails));
@@ -137,7 +136,6 @@ namespace FreecraftCore
 		}
 
 		public SMSG_MESSAGECHAT_Payload([NotNull] NetworkChatMessageHeader messageHeader, [NotNull] NetworkChatMessageFooter messageFooter, [NotNull] NetworkChatCreatureMessageDetails creatureMessageDetails)
-			: this()
 		{
 			MessageHeader = messageHeader ?? throw new ArgumentNullException(nameof(messageHeader));
 			CreatureMessageDetails = creatureMessageDetails ?? throw new ArgumentNullException(nameof(creatureMessageDetails));
@@ -145,7 +143,6 @@ namespace FreecraftCore
 		}
 
 		public SMSG_MESSAGECHAT_Payload([NotNull] NetworkChatMessageHeader messageHeader, [NotNull] NetworkChatMessageFooter messageFooter, [NotNull] NetworkChatChannelMessageDetails channelMessageDetails)
-			: this()
 		{
 			MessageHeader = messageHeader ?? throw new ArgumentNullException(nameof(messageHeader));
 			ChannelMessageDetails = channelMessageDetails ?? throw new ArgumentNullException(nameof(channelMessageDetails));
@@ -153,7 +150,6 @@ namespace FreecraftCore
 		}
 
 		public SMSG_MESSAGECHAT_Payload([NotNull] NetworkChatMessageHeader messageHeader, [NotNull] NetworkChatMessageFooter messageFooter, [NotNull] NetworkChatDefaultMessageDetails defaultMessageDetails)
-			: this()
 		{
 			MessageHeader = messageHeader ?? throw new ArgumentNullException(nameof(messageHeader));
 			DefaultMessageDetails = defaultMessageDetails;
@@ -161,7 +157,6 @@ namespace FreecraftCore
 		}
 
 		protected SMSG_MESSAGECHAT_Payload()
-			: base(NetworkOperationCode.SMSG_MESSAGECHAT)
 		{
 			//serializer ctor
 		}

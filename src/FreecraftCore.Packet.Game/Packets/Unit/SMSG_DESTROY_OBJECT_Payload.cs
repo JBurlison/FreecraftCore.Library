@@ -18,14 +18,12 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_DESTROY_OBJECT_Payload([NotNull] ObjectGuid destroyedObject, bool isForDeath)
-			: this()
 		{
 			DestroyedObject = destroyedObject ?? throw new ArgumentNullException(nameof(destroyedObject));
 			IsForDeath = isForDeath;
 		}
 
 		protected SMSG_DESTROY_OBJECT_Payload()
-			: base(NetworkOperationCode.SMSG_DESTROY_OBJECT)
 		{
 			
 		}

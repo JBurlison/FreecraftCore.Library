@@ -19,7 +19,6 @@ namespace FreecraftCore
 		public UnitStandStateType State => (UnitStandStateType)_State;
 
 		public SMSG_STANDSTATE_UPDATE_Payload(UnitStandStateType state)
-			: this()
 		{
 			_State = (byte) state;
 		}
@@ -28,7 +27,6 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal SMSG_STANDSTATE_UPDATE_Payload()
-			: base(NetworkOperationCode.SMSG_STANDSTATE_UPDATE)
 		{
 
 		}

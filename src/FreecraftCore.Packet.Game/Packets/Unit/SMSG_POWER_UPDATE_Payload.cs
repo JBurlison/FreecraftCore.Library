@@ -50,7 +50,6 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_POWER_UPDATE_Payload(PackedGuid unitGuid, Powers powerType, int newValue)
-			: this()
 		{
 			UnitGuid = unitGuid;
 			PowerType = powerType;
@@ -61,7 +60,6 @@ namespace FreecraftCore
 		/// Serializer ctor
 		/// </summary>
 		protected SMSG_POWER_UPDATE_Payload()
-			: base(NetworkOperationCode.SMSG_POWER_UPDATE)
 		{
 			
 		}

@@ -22,13 +22,11 @@ namespace FreecraftCore
 		public MovementInfo MoveInfo { get; internal set; }
 
 		public CMSG_MOVE_FALL_RESET_Payload([NotNull] PackedGuid movementGuid, [NotNull] MovementInfo moveInfo)
-			: this()
 		{
 			MovementGuid = movementGuid ?? throw new ArgumentNullException(nameof(movementGuid)); MoveInfo = moveInfo ?? throw new ArgumentNullException(nameof(moveInfo));
 		}
 
 		protected CMSG_MOVE_FALL_RESET_Payload()
-			: base(NetworkOperationCode.CMSG_MOVE_FALL_RESET)
 		{
 
 		}

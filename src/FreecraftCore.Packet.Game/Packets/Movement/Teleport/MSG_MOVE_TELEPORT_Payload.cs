@@ -22,7 +22,6 @@ namespace FreecraftCore
 		public MovementInfo MoveInfo { get; internal set; }
 
 		public MSG_MOVE_TELEPORT_Payload([NotNull] PackedGuid movementGuid, int sequenceCounter, [NotNull] MovementInfo moveInfo)
-			: this()
 		{
 			MovementGuid = movementGuid ?? throw new ArgumentNullException(nameof(movementGuid));
 			MoveInfo = moveInfo ?? throw new ArgumentNullException(nameof(moveInfo));
@@ -31,7 +30,6 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal MSG_MOVE_TELEPORT_Payload()
-			: base(NetworkOperationCode.MSG_MOVE_TELEPORT)
 		{
 
 		}

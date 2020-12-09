@@ -60,7 +60,6 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		public SMSG_GROUP_LIST_Payload()
-			: base(NetworkOperationCode.SMSG_GROUP_LIST)
 		{
 			
 		}

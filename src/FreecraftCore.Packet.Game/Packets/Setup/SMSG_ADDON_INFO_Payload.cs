@@ -28,7 +28,6 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_ADDON_INFO_Payload([NotNull] AddonChecksumResult[] addonChecks)
-			: this()
 		{
 			//TODO: Assert size
 			_AddonChecks = addonChecks ?? throw new ArgumentNullException(nameof(addonChecks));
@@ -38,7 +37,6 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		protected SMSG_ADDON_INFO_Payload()
-			: base(NetworkOperationCode.SMSG_ADDON_INFO)
 		{
 
 		}

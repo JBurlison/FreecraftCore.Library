@@ -14,7 +14,6 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		public SMSG_LOGOUT_COMPLETE_Payload()
-			: base(NetworkOperationCode.SMSG_LOGOUT_COMPLETE)
 		{
 			
 		}

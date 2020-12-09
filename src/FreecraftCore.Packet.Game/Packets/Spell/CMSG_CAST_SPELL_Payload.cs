@@ -25,7 +25,6 @@ namespace FreecraftCore
 		//TODO: If CastFlags is 0x02 then there is some projectile information and maybe even MovementData.
 
 		public CMSG_CAST_SPELL_Payload(byte castCount, int spellId, SpellTargetInfo targetInformation)
-			: this()
 		{
 			CastCount = castCount;
 			SpellId = spellId;
@@ -37,7 +36,6 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		internal CMSG_CAST_SPELL_Payload()
-			: base(NetworkOperationCode.CMSG_CAST_SPELL)
 		{
 			
 		}

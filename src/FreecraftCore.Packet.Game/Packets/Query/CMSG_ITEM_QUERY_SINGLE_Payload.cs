@@ -23,7 +23,6 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public CMSG_ITEM_QUERY_SINGLE_Payload(int itemId)
-			: this()
 		{
 			QueryId = itemId;
 		}
@@ -32,7 +31,6 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		protected CMSG_ITEM_QUERY_SINGLE_Payload()
-			: base(NetworkOperationCode.CMSG_ITEM_QUERY_SINGLE)
 		{
 			
 		}

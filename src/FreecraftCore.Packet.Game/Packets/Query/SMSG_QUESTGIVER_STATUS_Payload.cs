@@ -22,14 +22,12 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_QUESTGIVER_STATUS_Payload([NotNull] ObjectGuid queryId, QuestGiverStatus status)
-			: this()
 		{
 			QueryId = queryId ?? throw new ArgumentNullException(nameof(queryId));
 			Status = status;
 		}
 
 		protected SMSG_QUESTGIVER_STATUS_Payload()
-			: base(NetworkOperationCode.SMSG_QUESTGIVER_STATUS)
 		{
 			
 		}

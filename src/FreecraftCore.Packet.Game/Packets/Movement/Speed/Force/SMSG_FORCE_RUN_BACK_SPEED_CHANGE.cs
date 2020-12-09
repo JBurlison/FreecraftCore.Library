@@ -35,7 +35,6 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal SMSG_FORCE_RUN_BACK_SPEED_CHANGE_Payload()
-			: base(NetworkOperationCode.SMSG_FORCE_RUN_BACK_SPEED_CHANGE)
 		{
 
 		}

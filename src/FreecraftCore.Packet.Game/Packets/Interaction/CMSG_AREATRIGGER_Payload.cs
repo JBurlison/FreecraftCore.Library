@@ -16,7 +16,6 @@ namespace FreecraftCore
 		public int AreaTriggerId { get; internal set; }
 
 		public CMSG_AREATRIGGER_Payload(int areaTriggerId)
-			: this()
 		{
 			if (areaTriggerId <= 0) throw new ArgumentOutOfRangeException(nameof(areaTriggerId));
 
@@ -24,7 +23,6 @@ namespace FreecraftCore
 		}
 
 		internal CMSG_AREATRIGGER_Payload()
-			: base(NetworkOperationCode.CMSG_AREATRIGGER)
 		{
 			
 		}

@@ -13,7 +13,6 @@ namespace FreecraftCore
 		/// Creates a new request to logout.
 		/// </summary>
 		public CMSG_LOGOUT_REQUEST_Payload()
-			: base(NetworkOperationCode.CMSG_LOGOUT_REQUEST)
 		{
 			
 		}

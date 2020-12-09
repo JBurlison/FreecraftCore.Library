@@ -19,7 +19,6 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		public CMSG_GUILD_ACCEPT_Payload()
-			: base(NetworkOperationCode.CMSG_GUILD_ACCEPT)
 		{
 
 		}

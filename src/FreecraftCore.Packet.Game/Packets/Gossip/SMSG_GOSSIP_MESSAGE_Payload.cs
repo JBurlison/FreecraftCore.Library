@@ -52,7 +52,6 @@ namespace FreecraftCore
 		public IEnumerable<QuestGossipEntry> QuestOptions => _QuestOptions;
 
 		public SMSG_GOSSIP_MESSAGE_Payload([NotNull] ObjectGuid gossipSource, int menuId, int titleTextId, [NotNull] GossipMenuItem[] gossipOptions, [NotNull] QuestGossipEntry[] questOptions)
-			: this()
 		{
 			GossipSource = gossipSource ?? throw new ArgumentNullException(nameof(gossipSource));
 			MenuId = menuId;
@@ -65,7 +64,6 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal SMSG_GOSSIP_MESSAGE_Payload()
-			: base(NetworkOperationCode.SMSG_GOSSIP_MESSAGE)
 		{
 
 		}

@@ -17,7 +17,6 @@ namespace FreecraftCore
 		/// (Not really empty, unknown Data within it.)
 		/// </summary>
 		public CMSG_GROUP_ACCEPT_Payload()
-			: base(NetworkOperationCode.CMSG_GROUP_ACCEPT)
 		{
 
 		}

@@ -18,7 +18,6 @@ namespace FreecraftCore
 		public UnitStandStateType State { get; internal set; }
 
 		public CMSG_STANDSTATECHANGE_Payload(UnitStandStateType state)
-			: this()
 		{
 			if(!Enum.IsDefined(typeof(UnitStandStateType), state)) throw new InvalidEnumArgumentException(nameof(state), (int)state, typeof(UnitStandStateType));
 
@@ -29,7 +28,6 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal CMSG_STANDSTATECHANGE_Payload()
-			: base(NetworkOperationCode.CMSG_STANDSTATECHANGE)
 		{
 
 		}

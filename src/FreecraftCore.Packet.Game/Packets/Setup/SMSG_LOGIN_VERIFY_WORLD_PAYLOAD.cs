@@ -40,7 +40,6 @@ namespace FreecraftCore
 		public float Orientation { get; internal set; }
 
 		public SMSG_LOGIN_VERIFY_WORLD_Payload(int mapId, [NotNull] Vector3<float> position, float orientation)
-			: this()
 		{
 			//Blizzlike map supports map 0. FOR SOME REASON!!
 			if (mapId < 0) throw new ArgumentOutOfRangeException(nameof(mapId));
@@ -54,7 +53,6 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		internal SMSG_LOGIN_VERIFY_WORLD_Payload()
-			: base(NetworkOperationCode.SMSG_LOGIN_VERIFY_WORLD)
 		{
 			
 		}
