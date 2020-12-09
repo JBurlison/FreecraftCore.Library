@@ -99,9 +99,18 @@ namespace FreecraftCore
 				.Split(')')
 				.First();
 
-			builder.Append($": base(");
-			builder.Append(opcodeName);
-			builder.Append(")");
+			//Parameterless
+			if (file.Contains("Payload()"))
+			{
+				builder.Append($": base(");
+				builder.Append(opcodeName);
+				builder.Append(")");
+			}
+			else
+			{
+				builder.Append($": this()");
+			}
+
 			file.Insert(i + 1, builder.ToString());
 			isFileModified = true;
 			return isFileModified;
