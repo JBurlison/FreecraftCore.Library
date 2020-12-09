@@ -62,13 +62,13 @@ namespace FreecraftCore
 						isFileModified = true;
 					}
 
-					if (IsBasePayloadCtorCallMissing(file, i))
+					if (IsBasePayloadCtorCallMissing(file, i) && !file.Any(f => f.Contains(": base(")))
 					{
 						isFileModified = AddBaseConstructorCall(file, i);
 
-						if (file.Count(s => s.Contains("Payload()")) > 1)
+						if (file.Count(s => s.Contains("Payload(")) > 1)
 							for (int j = i; j < file.Count; j++)
-								if (IsBasePayloadCtorCallMissing(file, j))
+								if (IsBasePayloadCtorCallMissing(file, j) && !file[j + 1].Contains("base"))
 									AddBaseConstructorCall(file, j);
 					}
 				}
@@ -83,8 +83,7 @@ namespace FreecraftCore
 
 		private static bool IsBasePayloadCtorCallMissing(List<string> file, int i)
 		{
-			return file[i].Contains("Payload()") && file.Any(f => f.Contains("GamePayloadOperationCode")) 
-			                                     && !file.Any(f => f.Contains(": base("));
+			return file[i].Contains("Payload(") && file.Any(f => f.Contains("GamePayloadOperationCode"));
 		}
 
 		private static bool AddBaseConstructorCall(List<string> file, int i)
