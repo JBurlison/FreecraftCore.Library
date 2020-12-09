@@ -54,6 +54,12 @@ namespace FreecraftCore
 							}
 						}
 					}
+
+					if (file[i].Contains(": GamePacketPayload") && !file[i].Contains("partial class"))
+					{
+						file[i] = file[i].Replace("public sealed class", "public sealed partial class");
+						file[i] = file[i].Replace("public class", "public partial class");
+					}
 				}
 
 				if (isFileModified)
