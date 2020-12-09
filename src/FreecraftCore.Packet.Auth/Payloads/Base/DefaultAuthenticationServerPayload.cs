@@ -8,7 +8,7 @@ namespace FreecraftCore
 	/// Default payload for unknown authentication payloads.
 	/// </summary>
 	[WireDataContract]
-	public sealed class DefaultAuthenticationServerPayload : AuthenticationServerPayload
+	public sealed partial class DefaultAuthenticationServerPayload : AuthenticationServerPayload
 	{
 		/// <inheritdoc />
 		public override bool isValid { get; } = false;
@@ -26,7 +26,7 @@ namespace FreecraftCore
 		}
 
 		//Serializer ctor
-		protected DefaultAuthenticationServerPayload()
+		public DefaultAuthenticationServerPayload()
 			: base(AuthOperationCode.END)
 		{
 			

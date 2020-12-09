@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[AuthenticationServerPayload(AuthOperationCode.AUTH_LOGON_CHALLENGE)] //TODO: Figure out how to support linking with the limited information.
-	public class AuthLogonChallengeResponse : AuthenticationServerPayload
+	public partial class AuthLogonChallengeResponse : AuthenticationServerPayload
 	{
 		//TODO: Implement
 		public override bool isValid { get; } = true;

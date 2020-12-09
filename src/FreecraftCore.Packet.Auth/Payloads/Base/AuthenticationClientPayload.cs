@@ -9,7 +9,7 @@ namespace FreecraftCore
 	[ProtocolGrouping(ProtocolCode.Authentication)] //we can put this on the base type because all auth packets have the same protocol.
 	[DefaultChild(typeof(DefaultAuthenticationClientPayload))]
 	[WireDataContract(PrimitiveSizeType.Byte)] //expect runtime linking
-	public abstract class AuthenticationClientPayload : IAuthenticationPayload
+	public abstract partial class AuthenticationClientPayload : IAuthenticationPayload
 	{
 		/// <inheritdoc />
 		public abstract bool isValid { get; }

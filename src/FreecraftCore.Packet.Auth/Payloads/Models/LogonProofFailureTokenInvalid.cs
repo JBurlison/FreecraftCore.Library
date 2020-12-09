@@ -8,7 +8,7 @@ namespace FreecraftCore
 	/// or an invalid token (Authenticator pin) sent. (Ex. Invalid authenticator pin or invalid phone pin)
 	/// </summary>
 	[WireDataContract]
-	public class LogonProofFailure : LogonProofResult
+	public partial class LogonProofFailure : LogonProofResult
 	{
 		//The below fields are always the same whether it's an invalid token or if it's an invalid SRP6 M sent.
 

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="4.0.23" />
+    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="4.0.25" />
     <PackageReference Include="Generic.Math" Version="1.0.2" />
   </ItemGroup>
 

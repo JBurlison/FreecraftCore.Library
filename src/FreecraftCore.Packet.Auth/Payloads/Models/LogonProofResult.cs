@@ -9,7 +9,7 @@ namespace FreecraftCore
 	[WireDataContract(PrimitiveSizeType.Byte)] //the type information is sent as a byte
 	[WireDataContractBaseType((int)AuthenticationResult.Success, typeof(LogonProofSuccess))] //0 in the stream means success
 	[WireDataContractBaseType((int)AuthenticationResult.FailUnknownAccount, typeof(LogonProofFailure))] //4 means token failure.
-	public abstract class LogonProofResult
+	public abstract partial class LogonProofResult
 	{
 		/// <summary>
 		/// Indicates the result of the proof.

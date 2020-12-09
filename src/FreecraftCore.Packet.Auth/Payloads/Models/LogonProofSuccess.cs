@@ -9,7 +9,7 @@ namespace FreecraftCore
 	/// Only for >= 2.x.x clients. 1.12.1 clients recieve something slightly different.
 	/// </summary>
 	[WireDataContract]
-	public class LogonProofSuccess : LogonProofResult
+	public partial class LogonProofSuccess : LogonProofResult
 	{
 		/// <summary>
 		/// SRP6 M2. See http://srp.stanford.edu/design.html for more information.
@@ -45,7 +45,7 @@ namespace FreecraftCore
 			M2 = m2Value;
 		}
 
-		protected LogonProofSuccess()
+		public LogonProofSuccess()
 			: base(AuthenticationResult.Success)
 		{
 
