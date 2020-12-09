@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -7,7 +7,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_AREATRIGGER)]
-	public sealed class CMSG_AREATRIGGER_Payload : GamePacketPayload
+	public sealed partial class CMSG_AREATRIGGER_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The ID of the <see cref="AreaTriggerEntry"/>.

@@ -7,7 +7,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_PONG)]
-	public sealed class PongResponse : GamePacketPayload
+	public sealed partial class PongResponse : GamePacketPayload
 	{
 		/// <inheritdoc />
 		public override bool isValid => true;

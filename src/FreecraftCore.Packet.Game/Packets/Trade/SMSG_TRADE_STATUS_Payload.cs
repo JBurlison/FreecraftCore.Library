@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_TRADE_STATUS)]
-	public sealed class SMSG_TRADE_STATUS_Payload : GamePacketPayload
+	public sealed partial class SMSG_TRADE_STATUS_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public TradeStatus Status { get; internal set; }

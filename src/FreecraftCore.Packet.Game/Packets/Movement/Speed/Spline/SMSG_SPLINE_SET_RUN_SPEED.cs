@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -13,7 +13,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_SPLINE_SET_RUN_SPEED)]
-	public sealed class SMSG_SPLINE_SET_RUN_SPEED_Payload : GamePacketPayload, IMovementSpeedChangePayload
+	public sealed partial class SMSG_SPLINE_SET_RUN_SPEED_Payload : GamePacketPayload, IMovementSpeedChangePayload
 	{
 		/// <inheritdoc />
 		[WireMember(1)]

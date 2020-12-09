@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_WORLD_STATE_UI_TIMER_UPDATE)]
-	public sealed class SMSG_WORLD_STATE_UI_TIMER_UPDATE_Payload : GamePacketPayload
+	public sealed partial class SMSG_WORLD_STATE_UI_TIMER_UPDATE_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The current time.

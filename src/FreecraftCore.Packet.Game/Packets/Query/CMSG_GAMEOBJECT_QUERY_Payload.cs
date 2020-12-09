@@ -7,7 +7,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_GAMEOBJECT_QUERY)]
-	public sealed class CMSG_GAMEOBJECT_QUERY_Payload : GamePacketPayload, IQueryRequestPayload
+	public sealed partial class CMSG_GAMEOBJECT_QUERY_Payload : GamePacketPayload, IQueryRequestPayload
 	{
 		/// <inheritdoc />
 		[WireMember(1)]

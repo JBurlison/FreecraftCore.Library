@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -10,7 +10,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_TRANSFER_PENDING)]
-	public sealed class SMSG_TRANSFER_PENDING_Payload : GamePacketPayload
+	public sealed partial class SMSG_TRANSFER_PENDING_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public int MapId { get; internal set; }

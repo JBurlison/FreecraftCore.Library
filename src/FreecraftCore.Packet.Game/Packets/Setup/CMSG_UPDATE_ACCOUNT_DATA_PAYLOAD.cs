@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_UPDATE_ACCOUNT_DATA)]
-	public sealed class CMSG_UPDATE_ACCOUNT_DATA_PAYLOAD : GamePacketPayload
+	public sealed partial class CMSG_UPDATE_ACCOUNT_DATA_PAYLOAD : GamePacketPayload
 	{
 		//TODO: Extract out of the class
 		public enum AccountDataType : int

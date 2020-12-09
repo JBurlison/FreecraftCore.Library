@@ -1,10 +1,10 @@
-﻿namespace FreecraftCore
+namespace FreecraftCore
 {
 	/// <summary>
 	/// Represents an unknown game payload.
 	/// </summary>
 	[ProtocolGrouping(ProtocolCode.None)] //Unknown has no protocol
-	public class UnknownGamePayload : GamePacketPayload
+	public partial class UnknownGamePayload : GamePacketPayload
 	{
 		public override bool isValid => true;
 

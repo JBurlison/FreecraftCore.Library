@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_QUERY_TIME_RESPONSE)]
-	public class SMSG_QUERY_TIME_RESPONSE_Payload : GamePacketPayload
+	public partial class SMSG_QUERY_TIME_RESPONSE_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The current time.

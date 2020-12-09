@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_STANDSTATECHANGE)]
-	public sealed class CMSG_STANDSTATECHANGE_Payload : GamePacketPayload
+	public sealed partial class CMSG_STANDSTATECHANGE_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public UnitStandStateType State { get; internal set; }

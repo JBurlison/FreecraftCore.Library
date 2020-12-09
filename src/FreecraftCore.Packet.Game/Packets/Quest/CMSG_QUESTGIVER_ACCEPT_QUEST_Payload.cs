@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_QUESTGIVER_ACCEPT_QUEST)]
-	public sealed class CMSG_QUESTGIVER_ACCEPT_QUEST_Payload : GamePacketPayload
+	public sealed partial class CMSG_QUESTGIVER_ACCEPT_QUEST_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The <see cref="ObjectGuid"/> of the quest giver.

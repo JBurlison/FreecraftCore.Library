@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_QUESTGIVER_QUEST_LIST)]
-	public sealed class SMSG_QUESTGIVER_QUEST_LIST_Payload : GamePacketPayload
+	public sealed partial class SMSG_QUESTGIVER_QUEST_LIST_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The GUID of the quest giver.

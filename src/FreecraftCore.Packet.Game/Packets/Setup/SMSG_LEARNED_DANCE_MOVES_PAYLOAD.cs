@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_LEARNED_DANCE_MOVES)]
 	[WireDataContract]
-	public sealed class SMSG_LEARNED_DANCE_MOVES_PAYLOAD : GamePacketPayload
+	public sealed partial class SMSG_LEARNED_DANCE_MOVES_PAYLOAD : GamePacketPayload
 	{
 		//TODO: What is this? Was this ever used...?
 		[WireMember(1)]

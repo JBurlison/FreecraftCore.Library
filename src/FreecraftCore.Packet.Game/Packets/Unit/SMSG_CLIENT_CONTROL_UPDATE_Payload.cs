@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_CLIENT_CONTROL_UPDATE)]
-	public sealed class SMSG_CLIENT_CONTROL_UPDATE_Payload : GamePacketPayload
+	public sealed partial class SMSG_CLIENT_CONTROL_UPDATE_Payload : GamePacketPayload
 	{
 		//Both 1.12.1 and 3.3.5 send a packed guid.
 		/// <summary>

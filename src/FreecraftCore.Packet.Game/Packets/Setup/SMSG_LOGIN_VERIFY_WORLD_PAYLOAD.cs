@@ -19,7 +19,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_LOGIN_VERIFY_WORLD)]
-	public sealed class SMSG_LOGIN_VERIFY_WORLD_Payload : GamePacketPayload
+	public sealed partial class SMSG_LOGIN_VERIFY_WORLD_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The Map Id to load the character into.

@@ -9,7 +9,7 @@ namespace FreecraftCore
 	//Slightly different in 1.12.1, Mangos makes a mention of a GUID sent too.
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_ITEM_QUERY_SINGLE)]
-	public sealed class CMSG_ITEM_QUERY_SINGLE_Payload : GamePacketPayload, IQueryRequestPayload
+	public sealed partial class CMSG_ITEM_QUERY_SINGLE_Payload : GamePacketPayload, IQueryRequestPayload
 	{
 		/// <summary>
 		/// The item ID this query is for.

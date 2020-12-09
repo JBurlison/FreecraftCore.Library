@@ -7,7 +7,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_CAST_SPELL)]
-	public sealed class CMSG_CAST_SPELL_Payload : GamePacketPayload
+	public sealed partial class CMSG_CAST_SPELL_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public byte CastCount { get; internal set; }

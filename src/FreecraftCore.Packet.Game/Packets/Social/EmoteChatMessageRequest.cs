@@ -6,7 +6,7 @@ namespace FreecraftCore
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_TEXT_EMOTE)]
 	[ProtocolGrouping(ProtocolCode.Game)] //TODO: Change this protocol to something more specific
-	public class EmoteChatMessageRequest : GamePacketPayload
+	public partial class EmoteChatMessageRequest : GamePacketPayload
 	{
 		/// <inheritdoc />
 		public override bool isValid { get; } = true;

@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_SET_SELECTION)]
-	public sealed class CMSG_SET_SELECTION_Payload : GamePacketPayload
+	public sealed partial class CMSG_SET_SELECTION_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public ObjectGuid Target { get; internal set; }

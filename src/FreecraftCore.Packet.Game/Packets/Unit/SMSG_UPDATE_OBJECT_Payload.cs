@@ -6,7 +6,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_UPDATE_OBJECT)]
-	public sealed class SMSG_UPDATE_OBJECT_Payload : GamePacketPayload, IObjectUpdatePayload
+	public sealed partial class SMSG_UPDATE_OBJECT_Payload : GamePacketPayload, IObjectUpdatePayload
 	{
 		/// <summary>
 		/// The update blocks.

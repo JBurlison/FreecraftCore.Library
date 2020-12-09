@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.MSG_MOVE_START_PITCH_DOWN)]
-	public sealed class MSG_MOVE_START_PITCH_DOWN_Payload : GamePacketPayload, IPlayerMovementPayload<MovementInfo, MovementFlag, PackedGuid>
+	public sealed partial class MSG_MOVE_START_PITCH_DOWN_Payload : GamePacketPayload, IPlayerMovementPayload<MovementInfo, MovementFlag, PackedGuid>
 	{
 		//Not optional, always sent in 3.3.5
 		/// <inheritdoc />

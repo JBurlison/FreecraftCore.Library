@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_SPELL_FAILURE)]
-	public sealed class SMSG_SPELL_FAILURE_Payload : GamePacketPayload
+	public sealed partial class SMSG_SPELL_FAILURE_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public SpellFailureData FailureData { get; internal set; }

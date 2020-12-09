@@ -10,7 +10,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_TIME_SYNC_RESP)]
-	public sealed class CMSG_TIME_SYNC_RESP_Payload : GamePacketPayload
+	public sealed partial class CMSG_TIME_SYNC_RESP_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// Represents the counter/index for which sync request

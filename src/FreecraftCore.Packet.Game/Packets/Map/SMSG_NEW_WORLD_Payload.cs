@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_NEW_WORLD)]
-	public sealed class SMSG_NEW_WORLD_Payload : GamePacketPayload
+	public sealed partial class SMSG_NEW_WORLD_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The ID of the map to teleport.

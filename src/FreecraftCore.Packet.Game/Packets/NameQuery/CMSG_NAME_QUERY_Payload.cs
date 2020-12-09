@@ -12,7 +12,7 @@ namespace FreecraftCore
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_NAME_QUERY)]
 	[ProtocolGrouping(ProtocolCode.Game)] //TODO: Change this protocol to something more specific
-	public class CMSG_NAME_QUERY_Payload : GamePacketPayload
+	public partial class CMSG_NAME_QUERY_Payload : GamePacketPayload
 	{
 		/// <inheritdoc />
 		public override bool isValid { get; } = true;

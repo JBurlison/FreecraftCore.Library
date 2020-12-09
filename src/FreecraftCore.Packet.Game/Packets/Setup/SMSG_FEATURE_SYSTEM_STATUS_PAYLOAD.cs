@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_FEATURE_SYSTEM_STATUS)]
-	public sealed class SMSG_FEATURE_SYSTEM_STATUS_PAYLOAD : GamePacketPayload
+	public sealed partial class SMSG_FEATURE_SYSTEM_STATUS_PAYLOAD : GamePacketPayload
 	{
 		//TODO: What is this?
 		/// <summary>

@@ -11,7 +11,7 @@ namespace FreecraftCore
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_MESSAGECHAT)]
 	[ProtocolGrouping(ProtocolCode.Game)] //TODO: Change this protocol to something more specific
-	public class SMSG_MESSAGECHAT_Payload : GamePacketPayload
+	public partial class SMSG_MESSAGECHAT_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The header details of the message.

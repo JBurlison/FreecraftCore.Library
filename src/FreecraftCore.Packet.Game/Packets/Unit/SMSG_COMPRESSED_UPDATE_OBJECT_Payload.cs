@@ -9,7 +9,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_COMPRESSED_UPDATE_OBJECT)]
-	public sealed class SMSG_COMPRESSED_UPDATE_OBJECT_Payload : GamePacketPayload, IObjectUpdatePayload
+	public sealed partial class SMSG_COMPRESSED_UPDATE_OBJECT_Payload : GamePacketPayload, IObjectUpdatePayload
 	{
 		//Compressed update object just uses the regular compression in WoW
 		/// <summary>

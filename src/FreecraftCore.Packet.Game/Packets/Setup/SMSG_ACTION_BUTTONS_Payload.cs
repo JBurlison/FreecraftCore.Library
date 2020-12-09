@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_ACTION_BUTTONS)]
-	public sealed class SMSG_ACTION_BUTTONS_Payload : GamePacketPayload
+	public sealed partial class SMSG_ACTION_BUTTONS_Payload : GamePacketPayload
 	{
 		public enum State : byte
 		{

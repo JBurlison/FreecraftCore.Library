@@ -7,7 +7,7 @@ namespace FreecraftCore
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_PLAYER_LOGIN)]
 	[ProtocolGrouping(ProtocolCode.Game)] //TODO: Change this protocol to something more specific
-	public class CharacterLoginRequest : GamePacketPayload
+	public partial class CharacterLoginRequest : GamePacketPayload
 	{
 		/// <inheritdoc />
 		public override bool isValid { get; } = true; //TODO: When rules/data validation engine is written implement

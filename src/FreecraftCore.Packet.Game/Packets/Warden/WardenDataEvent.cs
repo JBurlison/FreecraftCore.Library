@@ -8,7 +8,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_WARDEN_DATA)]
-	public class WardenDataEvent : GamePacketPayload
+	public partial class WardenDataEvent : GamePacketPayload
 	{
 		[ReadToEnd]
 		[WireMember(1)]

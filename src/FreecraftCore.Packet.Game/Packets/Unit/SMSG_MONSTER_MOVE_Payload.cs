@@ -7,7 +7,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_MONSTER_MOVE)]
-	public sealed class SMSG_MONSTER_MOVE_Payload : GamePacketPayload
+	public sealed partial class SMSG_MONSTER_MOVE_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public PackedGuid MonsterGuid { get; internal set; }

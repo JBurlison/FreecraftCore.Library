@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_GROUP_LIST)]
-	public sealed class SMSG_GROUP_LIST_Payload : GamePacketPayload
+	public sealed partial class SMSG_GROUP_LIST_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public GroupType PartyType { get; internal set; }

@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_SPELL_GO)]
-	public sealed class SMSG_SPELL_GO_Payload : GamePacketPayload
+	public sealed partial class SMSG_SPELL_GO_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public SpellCastData CastData { get; internal set; }

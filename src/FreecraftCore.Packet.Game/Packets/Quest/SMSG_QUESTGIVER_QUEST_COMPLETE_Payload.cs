@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_QUESTGIVER_QUEST_COMPLETE)]
-	public sealed class SMSG_QUESTGIVER_QUEST_COMPLETE_Payload : GamePacketPayload
+	public sealed partial class SMSG_QUESTGIVER_QUEST_COMPLETE_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public int QuestId { get; internal set; }

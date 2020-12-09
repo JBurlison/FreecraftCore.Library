@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_GAMEOBJECT_QUERY_RESPONSE)]
-	public sealed class SMSG_GAMEOBJECT_QUERY_RESPONSE_Payload : GamePacketPayload, IQueryResponsePayload<GameObjectQueryResponseInfo>
+	public sealed partial class SMSG_GAMEOBJECT_QUERY_RESPONSE_Payload : GamePacketPayload, IQueryResponsePayload<GameObjectQueryResponseInfo>
 	{
 		[WireMember(1)]
 		internal uint PackedResponseId { get; set; }

@@ -9,7 +9,7 @@ namespace FreecraftCore
 	//TODO: How is this different than SMSG_SPELL_FAILED???
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_SPELL_FAILED_OTHER)]
-	public sealed class SMSG_SPELL_FAILED_OTHER_Payload : GamePacketPayload
+	public sealed partial class SMSG_SPELL_FAILED_OTHER_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public SpellFailureData FailureData { get; internal set; }

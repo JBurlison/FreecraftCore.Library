@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using FreecraftCore.Serializer;
 using JetBrains.Annotations;
@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_ADDON_INFO)]
-	public sealed class SMSG_ADDON_INFO_Payload : GamePacketPayload
+	public sealed partial class SMSG_ADDON_INFO_Payload : GamePacketPayload
 	{
 		[KnownSize(23)] //TC sends 23 of these
 		[WireMember(1)]

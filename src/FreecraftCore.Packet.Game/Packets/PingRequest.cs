@@ -4,7 +4,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_PING)]
-	public sealed class PingRequest : GamePacketPayload
+	public sealed partial class PingRequest : GamePacketPayload
 	{
 		/// <inheritdoc />
 		public override bool isValid => true;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_LOGOUT_COMPLETE)]
-	public sealed class SMSG_LOGOUT_COMPLETE_Payload : GamePacketPayload
+	public sealed partial class SMSG_LOGOUT_COMPLETE_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// Serializer ctor.

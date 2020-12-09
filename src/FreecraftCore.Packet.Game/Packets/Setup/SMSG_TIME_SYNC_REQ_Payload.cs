@@ -10,7 +10,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_TIME_SYNC_REQ)]
-	public sealed class SMSG_TIME_SYNC_REQ_Payload : GamePacketPayload
+	public sealed partial class SMSG_TIME_SYNC_REQ_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// Represents the counter for how many

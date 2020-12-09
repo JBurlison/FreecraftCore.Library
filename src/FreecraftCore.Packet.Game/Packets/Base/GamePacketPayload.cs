@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using FreecraftCore.Serializer;
 
 namespace FreecraftCore
@@ -13,7 +13,7 @@ namespace FreecraftCore
 
 		[EnumSize(PrimitiveSizeType.UInt16)]
 		[WireMember(1)]
-		public NetworkOperationCode OperationCode { get; }
+		public NetworkOperationCode OperationCode { get; internal set; }
 
 		protected GamePacketPayload(NetworkOperationCode operationCode)
 		{

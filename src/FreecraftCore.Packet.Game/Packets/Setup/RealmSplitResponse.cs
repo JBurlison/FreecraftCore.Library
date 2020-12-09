@@ -21,7 +21,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_REALM_SPLIT)]
-	public sealed class RealmSplitResponse : GamePacketPayload
+	public sealed partial class RealmSplitResponse : GamePacketPayload
 	{
 		//TODO: Extrat this.
 		/// <summary>

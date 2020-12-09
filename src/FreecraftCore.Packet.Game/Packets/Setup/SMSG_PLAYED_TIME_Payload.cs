@@ -10,7 +10,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_PLAYED_TIME)]
-	public sealed class SMSG_PLAYED_TIME_Payload : GamePacketPayload
+	public sealed partial class SMSG_PLAYED_TIME_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The total play time for the character.

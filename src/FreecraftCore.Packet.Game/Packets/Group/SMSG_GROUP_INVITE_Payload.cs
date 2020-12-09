@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_GROUP_INVITE)]
-	public sealed class SMSG_GROUP_INVITE_Payload : GamePacketPayload
+	public sealed partial class SMSG_GROUP_INVITE_Payload : GamePacketPayload
 	{
 		//TC sends 0 or 1. 1 when it's successful. 0 when the target player is already in a group.
 		/// <summary>

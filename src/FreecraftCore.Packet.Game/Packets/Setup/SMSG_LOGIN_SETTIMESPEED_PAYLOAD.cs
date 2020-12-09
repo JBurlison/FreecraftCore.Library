@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_LOGIN_SETTIMESPEED)]
 	[WireDataContract]
-	public sealed class SMSG_LOGIN_SETTIMESPEED_Payload : GamePacketPayload
+	public sealed partial class SMSG_LOGIN_SETTIMESPEED_Payload : GamePacketPayload
 	{
 		//TODO: Implement packed DateTime support.
 		[WireMember(1)]

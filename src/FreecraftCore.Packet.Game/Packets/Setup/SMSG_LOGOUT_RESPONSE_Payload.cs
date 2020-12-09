@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_LOGOUT_RESPONSE)]
-	public sealed class SMSG_LOGOUT_RESPONSE_Payload : GamePacketPayload
+	public sealed partial class SMSG_LOGOUT_RESPONSE_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		public LogoutResultCode Result { get; internal set; }

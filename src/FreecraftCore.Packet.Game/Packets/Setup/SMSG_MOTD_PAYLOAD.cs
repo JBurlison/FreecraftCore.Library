@@ -9,7 +9,7 @@ namespace FreecraftCore
 	//TC says new in 2.0.1 which leads me to believe 3.3.5 and 1.12.1 will have differing structures.
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_MOTD)]
-	public sealed class SMSG_MOTD_PAYLOAD : GamePacketPayload
+	public sealed partial class SMSG_MOTD_PAYLOAD : GamePacketPayload
 	{
 		//the MOTD on Trinitycore is implemented as a tokenized string
 		//They split by the token and then it becomes a length-prefixed array of null terminated ASCII

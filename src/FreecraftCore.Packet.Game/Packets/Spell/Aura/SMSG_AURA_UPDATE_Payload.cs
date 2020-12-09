@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -8,7 +8,7 @@ namespace FreecraftCore
 {
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_AURA_UPDATE)]
-	public sealed class SMSG_AURA_UPDATE_Payload : GamePacketPayload
+	public sealed partial class SMSG_AURA_UPDATE_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The guid of the aura target.

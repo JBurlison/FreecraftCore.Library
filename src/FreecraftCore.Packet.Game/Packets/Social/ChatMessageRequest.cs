@@ -7,7 +7,7 @@ namespace FreecraftCore
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_MESSAGECHAT)]
 	[ProtocolGrouping(ProtocolCode.Game)] //TODO: Change this protocol to something more specific
-	public class ChatMessageRequest : GamePacketPayload
+	public partial class ChatMessageRequest : GamePacketPayload
 	{
 		/// <inheritdoc />
 		public override bool isValid { get; }

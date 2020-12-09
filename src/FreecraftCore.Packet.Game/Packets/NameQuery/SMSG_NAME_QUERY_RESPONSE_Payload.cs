@@ -8,7 +8,7 @@ namespace FreecraftCore
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_NAME_QUERY_RESPONSE)]
 	[ProtocolGrouping(ProtocolCode.Game)] //TODO: Change this protocol to something more specific
-	public class SMSG_NAME_QUERY_RESPONSE_Payload : GamePacketPayload
+	public partial class SMSG_NAME_QUERY_RESPONSE_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// Enumeration of response codes for

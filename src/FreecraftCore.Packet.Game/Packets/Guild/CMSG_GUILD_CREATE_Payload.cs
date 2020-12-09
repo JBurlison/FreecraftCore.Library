@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -13,7 +13,7 @@ namespace FreecraftCore
 	[Obsolete("TrinityCore does not implement this packet.")]
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_GUILD_CREATE)]
-	public sealed class CMSG_GUILD_CREATE_Payload : GamePacketPayload
+	public sealed partial class CMSG_GUILD_CREATE_Payload : GamePacketPayload
 	{
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(1)]

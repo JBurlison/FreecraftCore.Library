@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_GOSSIP_MESSAGE)]
-	public sealed class SMSG_GOSSIP_MESSAGE_Payload : GamePacketPayload
+	public sealed partial class SMSG_GOSSIP_MESSAGE_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The GUID of the gossip source.

@@ -12,7 +12,7 @@ namespace FreecraftCore
 	/// </summary>
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_CONTACT_LIST)]
 	[WireDataContract]
-    public sealed class SMSG_CONTACT_LIST_PAYLOAD : GamePacketPayload
+    public sealed partial class SMSG_CONTACT_LIST_PAYLOAD : GamePacketPayload
 	{
 		//TODO: Extract
 		[WireDataContract]

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_GUILD_INVITE)]
-	public sealed class SMSG_GUILD_INVITE_Payload : GamePacketPayload
+	public sealed partial class SMSG_GUILD_INVITE_Payload : GamePacketPayload
 	{
 		[Encoding(EncodingType.ASCII)]
 		[WireMember(1)]

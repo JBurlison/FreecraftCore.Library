@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_STANDSTATE_UPDATE)]
-	public sealed class SMSG_STANDSTATE_UPDATE_Payload : GamePacketPayload
+	public sealed partial class SMSG_STANDSTATE_UPDATE_Payload : GamePacketPayload
 	{
 		[WireMember(1)]
 		internal byte _State { get; set; }

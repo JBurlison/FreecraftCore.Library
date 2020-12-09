@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using FreecraftCore.Serializer;
@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.CMSG_GUILD_ACCEPT)]
-	public sealed class CMSG_GUILD_ACCEPT_Payload : GamePacketPayload
+	public sealed partial class CMSG_GUILD_ACCEPT_Payload : GamePacketPayload
 	{
 		//Packet is EMPTY, just means accept.
 

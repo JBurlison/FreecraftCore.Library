@@ -11,7 +11,7 @@ namespace FreecraftCore
 	/// </summary>
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_POWER_UPDATE)]
 	[WireDataContract]
-	public sealed class SMSG_POWER_UPDATE_Payload : GamePacketPayload
+	public sealed partial class SMSG_POWER_UPDATE_Payload : GamePacketPayload
 	{
 		//TODO: Extract
 		public enum Powers : byte

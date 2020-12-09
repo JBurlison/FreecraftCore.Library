@@ -9,7 +9,7 @@ namespace FreecraftCore
 	//3.3.5 only sends a byte for the state unlike 1.12.1's 4 bytes
 	[WireDataContract]
 	[GamePayloadOperationCode(NetworkOperationCode.SMSG_QUESTGIVER_STATUS)]
-	public sealed class SMSG_QUESTGIVER_STATUS_Payload : GamePacketPayload
+	public sealed partial class SMSG_QUESTGIVER_STATUS_Payload : GamePacketPayload
 	{
 		/// <summary>
 		/// The ID of the quest query.
