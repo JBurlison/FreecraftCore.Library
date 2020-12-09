@@ -31,7 +31,7 @@ namespace FreecraftCore.Serializer
             //Type: AddonChecksumResult Field: 3 Name: UsePublicKey Type: Boolean;
             value.UsePublicKey = GenericTypePrimitiveSerializerStrategy<Boolean>.Instance.Read(buffer, ref offset);
             //Type: AddonChecksumResult Field: 4 Name: PublicKey Type: Byte[];
-            if (value.UsePublicKey)value.PublicKey = FixedSizePrimitiveArrayTypeSerializerStrategy<Byte, StaticTypedNumeric_Int32_256>.Instance.Read(buffer, ref offset);
+            if (value.UsePublicKey)value.PublicKey = FixedSizePrimitiveArrayTypeSerializerStrategy<byte, StaticTypedNumeric_Int32_256>.Instance.Read(buffer, ref offset);
             //Type: AddonChecksumResult Field: 5 Name: Unk Type: Int32;
             if (value.UseCrc)value.Unk = GenericTypePrimitiveSerializerStrategy<Int32>.Instance.Read(buffer, ref offset);
             //Type: AddonChecksumResult Field: 6 Name: UseUrl Type: Boolean;
@@ -54,7 +54,7 @@ namespace FreecraftCore.Serializer
             //Type: AddonChecksumResult Field: 3 Name: UsePublicKey Type: Boolean;
             GenericTypePrimitiveSerializerStrategy<Boolean>.Instance.Write(value.UsePublicKey, buffer, ref offset);
             //Type: AddonChecksumResult Field: 4 Name: PublicKey Type: Byte[];
-            if (value.UsePublicKey)FixedSizePrimitiveArrayTypeSerializerStrategy<Byte, StaticTypedNumeric_Int32_256>.Instance.Write(value.PublicKey, buffer, ref offset);
+            if (value.UsePublicKey)FixedSizePrimitiveArrayTypeSerializerStrategy<byte, StaticTypedNumeric_Int32_256>.Instance.Write(value.PublicKey, buffer, ref offset);
             //Type: AddonChecksumResult Field: 5 Name: Unk Type: Int32;
             if (value.UseCrc)GenericTypePrimitiveSerializerStrategy<Int32>.Instance.Write(value.Unk, buffer, ref offset);
             //Type: AddonChecksumResult Field: 6 Name: UseUrl Type: Boolean;

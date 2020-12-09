@@ -67,7 +67,7 @@ namespace FreecraftCore
 
 		public bool HasVisualChainData => CastFlags.HasFlag(SpellCastFlag.CAST_FLAG_VISUAL_CHAIN);
 
-		private bool HasTargetUnknownByte => TargetInfo != null && TargetInfo.HasTransportDestinationLocation;
+		public bool HasTargetUnknownByte => TargetInfo != null && TargetInfo.HasTransportDestinationLocation;
 
 		[Optional(nameof(HasPowerInformation))]
 		[WireMember(10)]

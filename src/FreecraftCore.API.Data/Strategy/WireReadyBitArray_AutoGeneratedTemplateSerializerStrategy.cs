@@ -25,7 +25,7 @@ namespace FreecraftCore.Serializer
         public override void InternalRead(WireReadyBitArray value, Span<byte> buffer, ref int offset)
         {
             //Type: WireReadyBitArray Field: 1 Name: InternalArray Type: Byte[];
-            value.InternalArray = SendSizePrimitiveArrayTypeSerializerStrategy<Byte, Byte>.Instance.Read(buffer, ref offset);
+            value.InternalArray = SendSizePrimitiveArrayTypeSerializerStrategy<byte, Byte>.Instance.Read(buffer, ref offset);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace FreecraftCore.Serializer
         public override void InternalWrite(WireReadyBitArray value, Span<byte> buffer, ref int offset)
         {
             //Type: WireReadyBitArray Field: 1 Name: InternalArray Type: Byte[];
-            SendSizePrimitiveArrayTypeSerializerStrategy<Byte, Byte>.Instance.Write(value.InternalArray, buffer, ref offset);
+            SendSizePrimitiveArrayTypeSerializerStrategy<byte, Byte>.Instance.Write(value.InternalArray, buffer, ref offset);
         }
     }
 }

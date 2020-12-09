@@ -35,7 +35,7 @@ namespace FreecraftCore.Serializer
             //Type: CharacterScreenData Field: 5 Name: Gender Type: CharacterGender;
             value.Gender = GenericPrimitiveEnumTypeSerializerStrategy<CharacterGender, Byte>.Instance.Read(buffer, ref offset);
             //Type: CharacterScreenData Field: 6 Name: UnknownBytesOne Type: Byte[];
-            value.UnknownBytesOne = FixedSizePrimitiveArrayTypeSerializerStrategy<Byte, StaticTypedNumeric_Int32_5>.Instance.Read(buffer, ref offset);
+            value.UnknownBytesOne = FixedSizePrimitiveArrayTypeSerializerStrategy<byte, StaticTypedNumeric_Int32_5>.Instance.Read(buffer, ref offset);
             //Type: CharacterScreenData Field: 7 Name: CharacterLevel Type: Byte;
             value.CharacterLevel = BytePrimitiveSerializerStrategy.Instance.Read(buffer, ref offset);
             //Type: CharacterScreenData Field: 8 Name: Location Type: TempLocationStructure;
@@ -66,7 +66,7 @@ namespace FreecraftCore.Serializer
             //Type: CharacterScreenData Field: 5 Name: Gender Type: CharacterGender;
             GenericPrimitiveEnumTypeSerializerStrategy<CharacterGender, Byte>.Instance.Write(value.Gender, buffer, ref offset);
             //Type: CharacterScreenData Field: 6 Name: UnknownBytesOne Type: Byte[];
-            FixedSizePrimitiveArrayTypeSerializerStrategy<Byte, StaticTypedNumeric_Int32_5>.Instance.Write(value.UnknownBytesOne, buffer, ref offset);
+            FixedSizePrimitiveArrayTypeSerializerStrategy<byte, StaticTypedNumeric_Int32_5>.Instance.Write(value.UnknownBytesOne, buffer, ref offset);
             //Type: CharacterScreenData Field: 7 Name: CharacterLevel Type: Byte;
             BytePrimitiveSerializerStrategy.Instance.Write(value.CharacterLevel, buffer, ref offset);
             //Type: CharacterScreenData Field: 8 Name: Location Type: TempLocationStructure;

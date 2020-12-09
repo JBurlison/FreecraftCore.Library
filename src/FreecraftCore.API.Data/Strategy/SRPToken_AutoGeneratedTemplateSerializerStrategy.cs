@@ -25,13 +25,13 @@ namespace FreecraftCore.Serializer
         public override void InternalRead(SRPToken value, Span<byte> buffer, ref int offset)
         {
             //Type: SRPToken Field: 1 Name: B Type: Byte[];
-            value.B = FixedSizePrimitiveArrayTypeSerializerStrategy<Byte, StaticTypedNumeric_Int32_32>.Instance.Read(buffer, ref offset);
+            value.B = FixedSizePrimitiveArrayTypeSerializerStrategy<byte, StaticTypedNumeric_Int32_32>.Instance.Read(buffer, ref offset);
             //Type: SRPToken Field: 2 Name: g Type: Byte[];
-            value.g = SendSizePrimitiveArrayTypeSerializerStrategy<Byte, Byte>.Instance.Read(buffer, ref offset);
+            value.g = SendSizePrimitiveArrayTypeSerializerStrategy<byte, Byte>.Instance.Read(buffer, ref offset);
             //Type: SRPToken Field: 3 Name: N Type: Byte[];
-            value.N = SendSizePrimitiveArrayTypeSerializerStrategy<Byte, Byte>.Instance.Read(buffer, ref offset);
+            value.N = SendSizePrimitiveArrayTypeSerializerStrategy<byte, Byte>.Instance.Read(buffer, ref offset);
             //Type: SRPToken Field: 4 Name: salt Type: Byte[];
-            value.salt = FixedSizePrimitiveArrayTypeSerializerStrategy<Byte, StaticTypedNumeric_Int32_32>.Instance.Read(buffer, ref offset);
+            value.salt = FixedSizePrimitiveArrayTypeSerializerStrategy<byte, StaticTypedNumeric_Int32_32>.Instance.Read(buffer, ref offset);
         }
 
         /// <summary>
@@ -44,13 +44,13 @@ namespace FreecraftCore.Serializer
         public override void InternalWrite(SRPToken value, Span<byte> buffer, ref int offset)
         {
             //Type: SRPToken Field: 1 Name: B Type: Byte[];
-            FixedSizePrimitiveArrayTypeSerializerStrategy<Byte, StaticTypedNumeric_Int32_32>.Instance.Write(value.B, buffer, ref offset);
+            FixedSizePrimitiveArrayTypeSerializerStrategy<byte, StaticTypedNumeric_Int32_32>.Instance.Write(value.B, buffer, ref offset);
             //Type: SRPToken Field: 2 Name: g Type: Byte[];
-            SendSizePrimitiveArrayTypeSerializerStrategy<Byte, Byte>.Instance.Write(value.g, buffer, ref offset);
+            SendSizePrimitiveArrayTypeSerializerStrategy<byte, Byte>.Instance.Write(value.g, buffer, ref offset);
             //Type: SRPToken Field: 3 Name: N Type: Byte[];
-            SendSizePrimitiveArrayTypeSerializerStrategy<Byte, Byte>.Instance.Write(value.N, buffer, ref offset);
+            SendSizePrimitiveArrayTypeSerializerStrategy<byte, Byte>.Instance.Write(value.N, buffer, ref offset);
             //Type: SRPToken Field: 4 Name: salt Type: Byte[];
-            FixedSizePrimitiveArrayTypeSerializerStrategy<Byte, StaticTypedNumeric_Int32_32>.Instance.Write(value.salt, buffer, ref offset);
+            FixedSizePrimitiveArrayTypeSerializerStrategy<byte, StaticTypedNumeric_Int32_32>.Instance.Write(value.salt, buffer, ref offset);
         }
         private sealed class StaticTypedNumeric_Int32_32 : StaticTypedNumeric<Int32> { public sealed override Int32 Value => 32; }
     }

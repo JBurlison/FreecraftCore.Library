@@ -27,7 +27,7 @@ namespace FreecraftCore.Serializer
             //Type: SessionAuthChallengeEventData Field: 2 Name: AuthenticationSeed Type: UInt32;
             value.AuthenticationSeed = GenericTypePrimitiveSerializerStrategy<UInt32>.Instance.Read(buffer, ref offset);
             //Type: SessionAuthChallengeEventData Field: 3 Name: OptionalSeeds Type: Byte[];
-            value.OptionalSeeds = PrimitiveArrayTypeSerializerStrategy<Byte>.Instance.Read(buffer, ref offset);
+            value.OptionalSeeds = PrimitiveArrayTypeSerializerStrategy<byte>.Instance.Read(buffer, ref offset);
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace FreecraftCore.Serializer
             //Type: SessionAuthChallengeEventData Field: 2 Name: AuthenticationSeed Type: UInt32;
             GenericTypePrimitiveSerializerStrategy<UInt32>.Instance.Write(value.AuthenticationSeed, buffer, ref offset);
             //Type: SessionAuthChallengeEventData Field: 3 Name: OptionalSeeds Type: Byte[];
-            PrimitiveArrayTypeSerializerStrategy<Byte>.Instance.Write(value.OptionalSeeds, buffer, ref offset);
+            PrimitiveArrayTypeSerializerStrategy<byte>.Instance.Write(value.OptionalSeeds, buffer, ref offset);
         }
     }
 }
