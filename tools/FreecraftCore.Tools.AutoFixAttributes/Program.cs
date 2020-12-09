@@ -14,18 +14,18 @@ namespace FreecraftCore
 		{
 			foreach (string filePath in Directory.GetFiles(Directory.GetCurrentDirectory(), "*.cs", SearchOption.AllDirectories))
 			{
-				string[] file = await File.ReadAllLinesAsync(filePath);
+				List<string> file = (await File.ReadAllLinesAsync(filePath)).ToList();
 
 				bool isFileModified = false;
 				int errorCount = 0;
 
 				//Find the a WireMember
-				for (int i = 0; i < file.Length; i++)
+				for (int i = 0; i < file.Count; i++)
 				{
 					if (file[i].Contains("[WireMember"))
 					{
 						//Now, find the member it's actually tagging
-						for (int j = i; j < file.Length; j++)
+						for (int j = i; j < file.Count; j++)
 						{
 							//TODO: Support same line.
 							//Attributes are done.
@@ -61,6 +61,16 @@ namespace FreecraftCore
 						file[i] = file[i].Replace("public class", "public partial class");
 						isFileModified = true;
 					}
+
+					if (IsBasePayloadCtorCallMissing(file, i))
+					{
+						isFileModified = AddBaseConstructorCall(file, i);
+
+						if (file.Count(s => s.Contains("Payload()")) > 1)
+							for (int j = i; j < file.Count; j++)
+								if (IsBasePayloadCtorCallMissing(file, j))
+									AddBaseConstructorCall(file, j);
+					}
 				}
 
 				if (isFileModified)
@@ -69,6 +79,33 @@ namespace FreecraftCore
 					await File.WriteAllLinesAsync(filePath, file);
 				}
 			}
+		}
+
+		private static bool IsBasePayloadCtorCallMissing(List<string> file, int i)
+		{
+			return file[i].Contains("Payload()") && file.Any(f => f.Contains("GamePayloadOperationCode")) 
+			                                     && !file.Any(f => f.Contains(": base("));
+		}
+
+		private static bool AddBaseConstructorCall(List<string> file, int i)
+		{
+			bool isFileModified;
+			StringBuilder builder = new StringBuilder();
+			for (int j = 0; j < file[i].Count(c => c == '\t') + 1; j++)
+				builder.Append('\t');
+
+			string attribute = file.First(s => s.Contains("GamePayloadOperationCode"));
+			string opcodeName = attribute.Split('(')
+				.Last()
+				.Split(')')
+				.First();
+
+			builder.Append($": base(");
+			builder.Append(opcodeName);
+			builder.Append(")");
+			file.Insert(i + 1, builder.ToString());
+			isFileModified = true;
+			return isFileModified;
 		}
 	}
 }
