@@ -59,6 +59,7 @@ namespace FreecraftCore
 					{
 						file[i] = file[i].Replace("public sealed class", "public sealed partial class");
 						file[i] = file[i].Replace("public class", "public partial class");
+						isFileModified = true;
 					}
 				}
 
