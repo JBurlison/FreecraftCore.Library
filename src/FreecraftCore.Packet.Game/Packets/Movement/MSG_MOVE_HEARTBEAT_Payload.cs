@@ -22,11 +22,13 @@ namespace FreecraftCore
 		public MovementInfo MoveInfo { get; internal set; }
 
 		public MSG_MOVE_HEARTBEAT_Payload([NotNull] PackedGuid movementGuid, [NotNull] MovementInfo moveInfo)
+			: this()
 		{
 			MovementGuid = movementGuid ?? throw new ArgumentNullException(nameof(movementGuid)); MoveInfo = moveInfo ?? throw new ArgumentNullException(nameof(moveInfo));
 		}
 
 		protected MSG_MOVE_HEARTBEAT_Payload()
+			: base(NetworkOperationCode.MSG_MOVE_HEARTBEAT)
 		{
 
 		}

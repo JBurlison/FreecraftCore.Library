@@ -56,6 +56,7 @@ namespace FreecraftCore
 		//TODO: Validate parameters.
 		/// <inheritdoc />
 		public SMSG_MONSTER_MOVE_Payload(PackedGuid monsterGuid, byte unk1, Vector3<float> initialMovePoint, int splineId, MonsterMoveInfo moveInfo, MonsterSplineInfo optionalSplineInformation)
+			: this()
 		{
 			MonsterGuid = monsterGuid;
 			Unk1 = unk1;
@@ -67,6 +68,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		protected SMSG_MONSTER_MOVE_Payload()
+			: base(NetworkOperationCode.SMSG_MONSTER_MOVE)
 		{
 
 		}

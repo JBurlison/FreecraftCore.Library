@@ -40,12 +40,14 @@ namespace FreecraftCore
 		//TODO: Validate data
 		/// <inheritdoc />
 		public SMSG_ACTION_BUTTONS_Payload(State actionBarUpdateState, [NotNull] ActionButtonData[] buttonData)
+			: this()
 		{
 			ActionBarUpdateState = actionBarUpdateState;
 			_ButtonData = buttonData ?? throw new ArgumentNullException(nameof(buttonData));
 		}
 
 		protected SMSG_ACTION_BUTTONS_Payload()
+			: base(NetworkOperationCode.SMSG_ACTION_BUTTONS)
 		{
 			
 		}

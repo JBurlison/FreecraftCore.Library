@@ -25,6 +25,7 @@ namespace FreecraftCore
 		//TODO: There is more stuff here, but not implementing it at this time. See Player::SendQuestReward
 
 		public SMSG_QUESTGIVER_QUEST_COMPLETE_Payload(int questId, int experienceRewarded, int moneyRewarded)
+			: this()
 		{
 			if (questId <= 0) throw new ArgumentOutOfRangeException(nameof(questId));
 
@@ -37,6 +38,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal SMSG_QUESTGIVER_QUEST_COMPLETE_Payload()
+			: base(NetworkOperationCode.SMSG_QUESTGIVER_QUEST_COMPLETE)
 		{
 
 		}

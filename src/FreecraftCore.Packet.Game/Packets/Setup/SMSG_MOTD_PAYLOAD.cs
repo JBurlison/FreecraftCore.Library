@@ -26,6 +26,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_MOTD_PAYLOAD([NotNull] string[] messageOfTheDayByLines)
+			: this()
 		{
 			MessageOfTheDayByLines = messageOfTheDayByLines ?? throw new ArgumentNullException(nameof(messageOfTheDayByLines));
 		}
@@ -34,6 +35,8 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		protected SMSG_MOTD_PAYLOAD()
+			: this()
+			: this()
 		{
 			
 		}

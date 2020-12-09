@@ -48,6 +48,7 @@ namespace FreecraftCore
 		/// (For testing purposes. Don't call in prod)
 		/// </summary>
 		public SMSG_INSTANCE_DIFFICULTY_PAYLOAD()
+			: this()
 		{
 			
 		}

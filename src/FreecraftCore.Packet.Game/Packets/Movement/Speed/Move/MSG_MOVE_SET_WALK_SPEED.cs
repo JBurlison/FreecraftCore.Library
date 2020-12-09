@@ -36,6 +36,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal MSG_MOVE_SET_WALK_SPEED_Payload()
+			: base(NetworkOperationCode.MSG_MOVE_SET_WALK_SPEED)
 		{
 
 		}

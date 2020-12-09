@@ -31,6 +31,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_QUERY_TIME_RESPONSE_Payload(uint currentTime, uint dailyQuestTime)
+			: this()
 		{
 			CurrentTime = currentTime;
 			DailyQuestTime = dailyQuestTime;
@@ -41,6 +42,7 @@ namespace FreecraftCore
 		/// with the current time.
 		/// </summary>
 		public SMSG_QUERY_TIME_RESPONSE_Payload()
+			: base(NetworkOperationCode.SMSG_QUERY_TIME_RESPONSE)
 		{
 			
 		}

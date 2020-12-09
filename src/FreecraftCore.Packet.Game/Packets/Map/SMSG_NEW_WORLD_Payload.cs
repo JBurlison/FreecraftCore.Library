@@ -32,6 +32,7 @@ namespace FreecraftCore
 		public float Orientation { get; internal set; }
 
 		public SMSG_NEW_WORLD_Payload(int mapId, [NotNull] Vector3<float> position, float orientation)
+			: this()
 		{
 			//Blizzlike has map ID 0.
 			if(mapId < 0) throw new ArgumentOutOfRangeException(nameof(mapId));
@@ -45,6 +46,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		internal SMSG_NEW_WORLD_Payload()
+			: base(NetworkOperationCode.SMSG_NEW_WORLD)
 		{
 
 		}

@@ -43,6 +43,7 @@ namespace FreecraftCore
 		/// Creates an empty friends list packet.
 		/// </summary>
 		public SMSG_CONTACT_LIST_PAYLOAD()
+			: this()
 		{
 			
 		}

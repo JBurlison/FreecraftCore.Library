@@ -29,11 +29,14 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_FEATURE_SYSTEM_STATUS_PAYLOAD(bool isFeatureEnabled)
+			: this()
 		{
 			this.isFeatureEnabled = isFeatureEnabled;
 		}
 
 		protected SMSG_FEATURE_SYSTEM_STATUS_PAYLOAD()
+			: this()
+			: this()
 		{
 			
 		}

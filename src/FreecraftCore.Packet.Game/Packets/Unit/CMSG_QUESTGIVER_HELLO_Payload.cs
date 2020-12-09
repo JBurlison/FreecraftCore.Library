@@ -20,6 +20,7 @@ namespace FreecraftCore
 		public ObjectGuid Target { get; internal set; }
 
 		public CMSG_QUESTGIVER_HELLO_Payload([NotNull] ObjectGuid target)
+			: this()
 		{
 			Target = target ?? throw new ArgumentNullException(nameof(target));
 		}
@@ -28,6 +29,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal CMSG_QUESTGIVER_HELLO_Payload()
+			: base(NetworkOperationCode.CMSG_QUESTGIVER_HELLO)
 		{
 
 		}

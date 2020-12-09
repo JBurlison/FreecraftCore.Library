@@ -19,11 +19,13 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_INITIAL_SPELLS_Payload(InitialSpellDataBlock<int> data)
+			: this()
 		{
 			Data = data;
 		}
 
 		protected SMSG_INITIAL_SPELLS_Payload()
+			: base(NetworkOperationCode.SMSG_INITIAL_SPELLS)
 		{
 			
 		}

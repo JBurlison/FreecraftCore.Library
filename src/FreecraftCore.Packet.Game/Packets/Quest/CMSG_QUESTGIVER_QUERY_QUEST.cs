@@ -29,6 +29,7 @@ namespace FreecraftCore
 		internal byte Unk1 { get; set; } = 1; //Usually 1, never seen it not 1 yet.
 
 		public CMSG_QUESTGIVER_QUERY_QUEST_Payload([NotNull] ObjectGuid questGiver, int questId)
+			: this()
 		{
 			QuestGiver = questGiver ?? throw new ArgumentNullException(nameof(questGiver));
 			QuestId = questId;
@@ -38,6 +39,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal CMSG_QUESTGIVER_QUERY_QUEST_Payload()
+			: base(NetworkOperationCode.CMSG_QUESTGIVER_QUERY_QUEST)
 		{
 
 		}

@@ -35,6 +35,7 @@ namespace FreecraftCore
 		public int RewardSlot { get; internal set; }
 
 		public CMSG_QUESTGIVER_CHOOSE_REWARD_Payload([NotNull] ObjectGuid questGiver, int questId, int rewardSlot)
+			: this()
 		{
 			if (questId <= 0) throw new ArgumentOutOfRangeException(nameof(questId));
 			if (rewardSlot < 0) throw new ArgumentOutOfRangeException(nameof(rewardSlot));
@@ -48,6 +49,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal CMSG_QUESTGIVER_CHOOSE_REWARD_Payload()
+			: base(NetworkOperationCode.CMSG_QUESTGIVER_CHOOSE_REWARD)
 		{
 
 		}

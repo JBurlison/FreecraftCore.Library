@@ -21,6 +21,7 @@ namespace FreecraftCore
 		public ObjectGuid Guid { get; internal set; }
 
 		public CMSG_GAMEOBJ_USE_Payload([NotNull] ObjectGuid guid)
+			: this()
 		{
 			if(guid.TypeId != EntityTypeId.TYPEID_GAMEOBJECT)
 				throw new InvalidOperationException($"Cannot send {nameof(NetworkOperationCode.CMSG_GAMEOBJ_USE)} for Non-GameObject Guid: {guid}");
@@ -29,6 +30,7 @@ namespace FreecraftCore
 		}
 
 		internal CMSG_GAMEOBJ_USE_Payload()
+			: base(NetworkOperationCode.CMSG_GAMEOBJ_USE)
 		{
 			
 		}

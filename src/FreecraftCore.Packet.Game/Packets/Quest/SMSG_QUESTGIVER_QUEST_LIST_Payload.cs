@@ -37,6 +37,7 @@ namespace FreecraftCore
 		public IEnumerable<QuestGossipEntry> Entries => _Entries;
 
 		public SMSG_QUESTGIVER_QUEST_LIST_Payload([NotNull] ObjectGuid questGiver, [NotNull] QuestGreeting greeting, [NotNull] QuestGossipEntry[] entries)
+			: this()
 		{
 			QuestGiver = questGiver ?? throw new ArgumentNullException(nameof(questGiver));
 			Greeting = greeting ?? throw new ArgumentNullException(nameof(greeting));
@@ -47,6 +48,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal SMSG_QUESTGIVER_QUEST_LIST_Payload()
+			: base(NetworkOperationCode.SMSG_QUESTGIVER_QUEST_LIST)
 		{
 
 		}

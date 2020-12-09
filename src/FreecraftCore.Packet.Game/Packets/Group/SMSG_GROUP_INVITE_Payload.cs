@@ -35,6 +35,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_GROUP_INVITE_Payload(bool isInviteSuccessful, [NotNull] string invitingPlayer)
+			: this()
 		{
 			if(string.IsNullOrWhiteSpace(invitingPlayer)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(invitingPlayer));
 
@@ -46,6 +47,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		private SMSG_GROUP_INVITE_Payload()
+			: base(NetworkOperationCode.SMSG_GROUP_INVITE)
 		{
 			
 		}

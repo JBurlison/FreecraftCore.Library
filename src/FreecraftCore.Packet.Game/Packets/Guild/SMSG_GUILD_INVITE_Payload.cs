@@ -22,6 +22,7 @@ namespace FreecraftCore
 		public string GuildName { get; internal set; }
 
 		public SMSG_GUILD_INVITE_Payload([NotNull] string invitingPlayerName, [NotNull] string guildName)
+			: this()
 		{
 			if (string.IsNullOrWhiteSpace(invitingPlayerName)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(invitingPlayerName));
 			if (string.IsNullOrWhiteSpace(guildName)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(guildName));
@@ -34,6 +35,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal SMSG_GUILD_INVITE_Payload()
+			: base(NetworkOperationCode.SMSG_GUILD_INVITE)
 		{
 
 		}

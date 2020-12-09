@@ -29,6 +29,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_CLIENT_CONTROL_UPDATE_Payload([NotNull] PackedGuid controlledObject, bool isEnabled)
+			: this()
 		{
 			ControlledObject = controlledObject ?? throw new ArgumentNullException(nameof(controlledObject));
 			IsEnabled = isEnabled;
@@ -38,6 +39,7 @@ namespace FreecraftCore
 		/// Serializer
 		/// </summary>
 		protected SMSG_CLIENT_CONTROL_UPDATE_Payload()
+			: base(NetworkOperationCode.SMSG_CLIENT_CONTROL_UPDATE)
 		{
 			
 		}

@@ -15,6 +15,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_TRADE_STATUS_Payload(TradeStatus status)
+			: this()
 		{
 			if(!Enum.IsDefined(typeof(TradeStatus), status)) throw new InvalidEnumArgumentException(nameof(status), (int)status, typeof(TradeStatus));
 
@@ -25,6 +26,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		private SMSG_TRADE_STATUS_Payload()
+			: base(NetworkOperationCode.SMSG_TRADE_STATUS)
 		{
 
 		}

@@ -53,6 +53,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public CMSG_UPDATE_ACCOUNT_DATA_PAYLOAD(AccountDataType dataType, [NotNull] string timeStamp, [NotNull] string configData)
+			: this()
 		{
 			DataType = dataType;
 			TimeStamp = timeStamp ?? throw new ArgumentNullException(nameof(timeStamp));
@@ -61,6 +62,8 @@ namespace FreecraftCore
 
 
 		protected CMSG_UPDATE_ACCOUNT_DATA_PAYLOAD()
+			: this()
+			: this()
 		{
 			
 		}

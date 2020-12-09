@@ -29,11 +29,14 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_UPDATE_ACCOUNT_DATA_COMPLETE_PAYLOAD(CMSG_UPDATE_ACCOUNT_DATA_PAYLOAD.AccountDataType dataType)
+			: this()
 		{
 			DataType = dataType;
 		}
 
 		protected SMSG_UPDATE_ACCOUNT_DATA_COMPLETE_PAYLOAD()
+			: this()
+			: this()
 		{
 			
 		}

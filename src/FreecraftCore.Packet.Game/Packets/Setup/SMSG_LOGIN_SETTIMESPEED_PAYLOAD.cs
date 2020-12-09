@@ -30,6 +30,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_LOGIN_SETTIMESPEED_Payload(uint gameTimeStamp, float gameTickRate)
+			: this()
 		{
 			if (gameTickRate <= 0) throw new ArgumentOutOfRangeException(nameof(gameTickRate));
 
@@ -41,6 +42,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		private SMSG_LOGIN_SETTIMESPEED_Payload()
+			: base(NetworkOperationCode.SMSG_LOGIN_SETTIMESPEED)
 		{
 			
 		}

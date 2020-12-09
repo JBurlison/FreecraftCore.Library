@@ -30,6 +30,7 @@ namespace FreecraftCore
 		public int ZoneId { get; internal set; }
 
 		public SMSG_INIT_WORLD_STATES_PAYLOAD()
+			: this()
 		{
 			
 		}
