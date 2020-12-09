@@ -20,6 +20,7 @@ namespace FreecraftCore
 		public int SpellId { get; internal set; }
 
 		public CMSG_CANCEL_AURA_Payload(int spellId)
+			: this()
 		{
 			if (spellId <= 0) throw new ArgumentOutOfRangeException(nameof(spellId));
 
@@ -30,6 +31,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal CMSG_CANCEL_AURA_Payload()
+			: base(NetworkOperationCode.CMSG_CANCEL_AURA)
 		{
 
 		}

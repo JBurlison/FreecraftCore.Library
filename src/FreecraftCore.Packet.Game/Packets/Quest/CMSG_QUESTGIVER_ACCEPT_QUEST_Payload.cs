@@ -30,6 +30,7 @@ namespace FreecraftCore
 		internal int StartCheat { get; set; } =  0;
 
 		public CMSG_QUESTGIVER_ACCEPT_QUEST_Payload([NotNull] ObjectGuid questGiver, int questId)
+			: this()
 		{
 			QuestGiver = questGiver ?? throw new ArgumentNullException(nameof(questGiver));
 			QuestId = questId;
@@ -39,6 +40,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal CMSG_QUESTGIVER_ACCEPT_QUEST_Payload()
+			: base(NetworkOperationCode.CMSG_QUESTGIVER_ACCEPT_QUEST)
 		{
 
 		}

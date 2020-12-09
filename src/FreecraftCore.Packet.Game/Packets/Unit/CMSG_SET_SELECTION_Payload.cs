@@ -14,6 +14,7 @@ namespace FreecraftCore
 		public ObjectGuid Target { get; internal set; }
 
 		public CMSG_SET_SELECTION_Payload([NotNull] ObjectGuid target)
+			: this()
 		{
 			Target = target ?? throw new ArgumentNullException(nameof(target));
 		}
@@ -22,6 +23,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		internal CMSG_SET_SELECTION_Payload()
+			: base(NetworkOperationCode.CMSG_SET_SELECTION)
 		{
 			
 		}

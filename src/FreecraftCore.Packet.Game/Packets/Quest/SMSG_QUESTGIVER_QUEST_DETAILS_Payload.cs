@@ -38,6 +38,7 @@ namespace FreecraftCore
 		//implementations we pull them down over HTTP instead.
 
 		public SMSG_QUESTGIVER_QUEST_DETAILS_Payload([NotNull] ObjectGuid questGiver, [NotNull] ObjectGuid optionalQuestSharer, int questId)
+			: this()
 		{
 			QuestGiver = questGiver ?? throw new ArgumentNullException(nameof(questGiver));
 			OptionalQuestSharer = optionalQuestSharer ?? throw new ArgumentNullException(nameof(optionalQuestSharer));
@@ -45,6 +46,7 @@ namespace FreecraftCore
 		}
 
 		public SMSG_QUESTGIVER_QUEST_DETAILS_Payload([NotNull] ObjectGuid questGiver, int questId)
+			: this()
 		{
 			QuestGiver = questGiver ?? throw new ArgumentNullException(nameof(questGiver));
 			QuestId = questId;
@@ -54,6 +56,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal SMSG_QUESTGIVER_QUEST_DETAILS_Payload()
+			: base(NetworkOperationCode.SMSG_QUESTGIVER_QUEST_DETAILS)
 		{
 
 		}

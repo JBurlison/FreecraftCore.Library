@@ -17,12 +17,14 @@ namespace FreecraftCore
 		public bool IsInstant { get; internal set; }
 
 		public SMSG_LOGOUT_RESPONSE_Payload(bool isInstant)
+			: this()
 		{
 			Result = LogoutResultCode.Success;
 			IsInstant = isInstant;
 		}
 
 		public SMSG_LOGOUT_RESPONSE_Payload(LogoutResultCode result)
+			: this()
 		{
 			if (!Enum.IsDefined(typeof(LogoutResultCode), result)) throw new InvalidEnumArgumentException(nameof(result), (int) result, typeof(LogoutResultCode));
 
@@ -34,6 +36,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		internal SMSG_LOGOUT_RESPONSE_Payload()
+			: base(NetworkOperationCode.SMSG_LOGOUT_RESPONSE)
 		{
 			
 		}

@@ -33,6 +33,7 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SMSG_PLAYED_TIME_Payload(uint totalPlayTime, uint playtimeAtLevel)
+			: this()
 		{
 			//TODO: Assert played time
 			TotalPlayTime = totalPlayTime;
@@ -43,6 +44,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		public SMSG_PLAYED_TIME_Payload()
+			: base(NetworkOperationCode.SMSG_PLAYED_TIME)
 		{
 			
 		}

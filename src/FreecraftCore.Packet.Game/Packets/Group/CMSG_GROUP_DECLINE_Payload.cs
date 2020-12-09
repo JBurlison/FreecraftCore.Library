@@ -13,6 +13,7 @@ namespace FreecraftCore
 		/// This just sends an empty group decline packet.
 		/// </summary>
 		public CMSG_GROUP_DECLINE_Payload()
+			: base(NetworkOperationCode.CMSG_GROUP_DECLINE)
 		{
 
 		}

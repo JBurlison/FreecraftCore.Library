@@ -23,6 +23,7 @@ namespace FreecraftCore
 		public AuraUpdateData Data { get; internal set; }
 
 		public SMSG_AURA_UPDATE_Payload([NotNull] PackedGuid targetGuid, [NotNull] AuraUpdateData data)
+			: this()
 		{
 			TargetGuid = targetGuid ?? throw new ArgumentNullException(nameof(targetGuid));
 			Data = data ?? throw new ArgumentNullException(nameof(data));
@@ -32,6 +33,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		internal SMSG_AURA_UPDATE_Payload()
+			: base(NetworkOperationCode.SMSG_AURA_UPDATE)
 		{
 
 		}

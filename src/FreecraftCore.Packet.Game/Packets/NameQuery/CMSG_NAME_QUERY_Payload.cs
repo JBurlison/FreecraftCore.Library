@@ -24,6 +24,7 @@ namespace FreecraftCore
 		public ObjectGuid TargetGuid { get; internal set; }
 
 		public CMSG_NAME_QUERY_Payload([NotNull] ObjectGuid targetGuid)
+			: this()
 		{
 			if (targetGuid == null)
 				throw new ArgumentNullException(nameof(targetGuid));
@@ -32,6 +33,7 @@ namespace FreecraftCore
 		}
 
 		protected CMSG_NAME_QUERY_Payload()
+			: base(NetworkOperationCode.CMSG_NAME_QUERY)
 		{
 			//serializer ctor
 		}

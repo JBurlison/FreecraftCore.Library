@@ -18,6 +18,7 @@ namespace FreecraftCore
 		public string PlayerToInviteName { get; internal set; }
 
 		public CMSG_GUILD_INVITE_Payload([NotNull] string playerToInviteName)
+			: this()
 		{
 			if (string.IsNullOrWhiteSpace(playerToInviteName)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(playerToInviteName));
 
@@ -28,6 +29,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal CMSG_GUILD_INVITE_Payload()
+			: base(NetworkOperationCode.CMSG_GUILD_INVITE)
 		{
 
 		}

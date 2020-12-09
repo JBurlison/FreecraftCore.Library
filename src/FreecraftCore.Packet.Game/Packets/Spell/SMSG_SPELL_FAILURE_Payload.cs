@@ -14,11 +14,13 @@ namespace FreecraftCore
 		public SpellFailureData FailureData { get; internal set; }
 
 		public SMSG_SPELL_FAILURE_Payload([NotNull] SpellFailureData failureData)
+			: this()
 		{
 			FailureData = failureData ?? throw new ArgumentNullException(nameof(failureData));
 		}
 
 		internal SMSG_SPELL_FAILURE_Payload()
+			: base(NetworkOperationCode.SMSG_SPELL_FAILURE)
 		{
 			
 		}

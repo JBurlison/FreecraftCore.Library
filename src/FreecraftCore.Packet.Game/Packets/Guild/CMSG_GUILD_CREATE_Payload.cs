@@ -20,6 +20,7 @@ namespace FreecraftCore
 		public string GuildName { get; internal set; }
 
 		public CMSG_GUILD_CREATE_Payload([NotNull] string guildName)
+			: this()
 		{
 			if (string.IsNullOrWhiteSpace(guildName)) throw new ArgumentException("Value cannot be null or whitespace.", nameof(guildName));
 
@@ -30,6 +31,7 @@ namespace FreecraftCore
 		/// Default Serializer Ctor.
 		/// </summary>
 		internal CMSG_GUILD_CREATE_Payload()
+			: base(NetworkOperationCode.CMSG_GUILD_CREATE)
 		{
 
 		}

@@ -18,6 +18,7 @@ namespace FreecraftCore
 		/// Creates a new time query request.
 		/// </summary>
 		public CMSG_QUERY_TIME_Payload()
+			: base(NetworkOperationCode.CMSG_QUERY_TIME)
 		{
 			
 		}

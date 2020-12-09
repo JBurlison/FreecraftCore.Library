@@ -32,6 +32,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		private SMSG_PARTY_COMMAND_RESULT_Payload()
+			: base(NetworkOperationCode.SMSG_PARTY_COMMAND_RESULT)
 		{
 			
 		}

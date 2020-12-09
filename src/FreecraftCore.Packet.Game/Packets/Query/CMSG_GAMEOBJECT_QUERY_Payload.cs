@@ -19,11 +19,13 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public CMSG_GAMEOBJECT_QUERY_Payload(int gameObjectId)
+			: this()
 		{
 			QueryId = gameObjectId;
 		}
 
 		protected CMSG_GAMEOBJECT_QUERY_Payload()
+			: base(NetworkOperationCode.CMSG_GAMEOBJECT_QUERY)
 		{
 			
 		}

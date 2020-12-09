@@ -21,6 +21,7 @@ namespace FreecraftCore
 		public int SynchronizationCounter { get; internal set; }
 
 		public SMSG_TIME_SYNC_REQ_Payload(int synchronizationCounter)
+			: this()
 		{
 			if (synchronizationCounter < 0) throw new ArgumentOutOfRangeException(nameof(synchronizationCounter));
 
@@ -31,6 +32,7 @@ namespace FreecraftCore
 		/// Serializer ctor.
 		/// </summary>
 		private SMSG_TIME_SYNC_REQ_Payload()
+			: base(NetworkOperationCode.SMSG_TIME_SYNC_REQ)
 		{
 			
 		}
