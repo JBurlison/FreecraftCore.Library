@@ -66,10 +66,17 @@ namespace FreecraftCore
 					{
 						isFileModified = AddBaseConstructorCall(file, i);
 
+						if (isFileModified)
+							i++;
+
 						if (file.Count(s => s.Contains("Payload(")) > 1)
 							for (int j = i; j < file.Count; j++)
 								if (IsBasePayloadCtorCallMissing(file, j) && (!file[j + 1].Contains("base") || !file[j + 1].Contains("this")))
-									AddBaseConstructorCall(file, j);
+									if (AddBaseConstructorCall(file, j))
+									{
+										isFileModified = true;
+										j++;
+									}
 					}
 				}
 
@@ -100,7 +107,7 @@ namespace FreecraftCore
 				.First();
 
 			//Parameterless
-			if (file.Contains("Payload()"))
+			if (file[i].Contains("Payload()"))
 			{
 				builder.Append($": base(");
 				builder.Append(opcodeName);
