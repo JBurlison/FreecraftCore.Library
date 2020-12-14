@@ -23,7 +23,7 @@ namespace FreecraftCore
 			AreaTriggerId = areaTriggerId;
 		}
 
-		internal CMSG_AREATRIGGER_Payload()
+		public CMSG_AREATRIGGER_Payload()
 			: base(NetworkOperationCode.CMSG_AREATRIGGER)
 		{
 			

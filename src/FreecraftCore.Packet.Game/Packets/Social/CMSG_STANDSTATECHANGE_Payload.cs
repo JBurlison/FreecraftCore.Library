@@ -28,7 +28,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal CMSG_STANDSTATECHANGE_Payload()
+		public CMSG_STANDSTATECHANGE_Payload()
 			: base(NetworkOperationCode.CMSG_STANDSTATECHANGE)
 		{
 

@@ -18,11 +18,13 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public RealmSplitRequest(int unk)
+			: this()
 		{
 			Unk = unk;
 		}
 
 		public RealmSplitRequest()
+			: base(NetworkOperationCode.CMSG_REALM_SPLIT)
 		{
 			
 		}

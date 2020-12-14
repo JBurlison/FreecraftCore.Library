@@ -42,7 +42,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		internal SMSG_AURA_UPDATE_ALL_Payload()
+		public SMSG_AURA_UPDATE_ALL_Payload()
 			: base(NetworkOperationCode.SMSG_AURA_UPDATE_ALL)
 		{
 

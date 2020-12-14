@@ -20,7 +20,8 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		protected ClientCacheVersionEvent()
+		public ClientCacheVersionEvent()
+			: base(NetworkOperationCode.SMSG_CLIENTCACHE_VERSION)
 		{
 			
 		}

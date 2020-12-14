@@ -27,7 +27,7 @@ namespace FreecraftCore
 			MovementGuid = movementGuid ?? throw new ArgumentNullException(nameof(movementGuid));
 		}
 
-		protected CMSG_MOVE_SET_FLY_Payload()
+		public CMSG_MOVE_SET_FLY_Payload()
 			: base(NetworkOperationCode.CMSG_MOVE_SET_FLY)
 		{
 

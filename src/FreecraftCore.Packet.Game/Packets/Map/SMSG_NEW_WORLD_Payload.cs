@@ -45,7 +45,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		internal SMSG_NEW_WORLD_Payload()
+		public SMSG_NEW_WORLD_Payload()
 			: base(NetworkOperationCode.SMSG_NEW_WORLD)
 		{
 

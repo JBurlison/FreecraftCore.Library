@@ -6,6 +6,7 @@ using FreecraftCore.Serializer;
 namespace FreecraftCore
 {
 	//TODO: Refactor this, it's TERRIBLE!
+	[WireDataContract]
 	public sealed class ItemQueryResponseInfo
 	{
 		[WireMember(1)]
@@ -266,7 +267,7 @@ namespace FreecraftCore
 			HolidayId = holidayId;
 		}
 
-		protected ItemQueryResponseInfo()
+		public ItemQueryResponseInfo()
 		{
 			
 		}

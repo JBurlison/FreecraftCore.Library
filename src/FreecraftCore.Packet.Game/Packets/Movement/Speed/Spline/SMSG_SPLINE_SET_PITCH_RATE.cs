@@ -31,7 +31,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal SMSG_SPLINE_SET_PITCH_RATE_Payload()
+		public SMSG_SPLINE_SET_PITCH_RATE_Payload()
 			: base(NetworkOperationCode.SMSG_SPLINE_SET_PITCH_RATE)
 		{
 

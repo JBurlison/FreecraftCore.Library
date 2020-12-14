@@ -55,7 +55,7 @@ namespace FreecraftCore
 			//assert
 			Assert.NotNull(payload, $"Resulting capture capture deserialization attempt null for File: {entry.FileName}");
 			//We should have deserialized it. We want to make sure the opcode matches
-			Assert.AreEqual(entry.OpCode, payload.GetOperationCode(), $"Mismatched {nameof(NetworkOperationCode)} on packet capture File: {entry.FileName}. Expected: {entry.OpCode} Was: {payload.GetOperationCode()}");
+			Assert.AreEqual(entry.OpCode, payload.OperationCode, $"Mismatched {nameof(NetworkOperationCode)} on packet capture File: {entry.FileName}. Expected: {entry.OpCode} Was: {payload.OperationCode}");
 		}
 
 		[Test]

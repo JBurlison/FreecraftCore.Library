@@ -16,13 +16,15 @@ namespace FreecraftCore
 		public ObjectGuid CharacterGuid { get; internal set; }
 
 		public CharacterLoginRequest([NotNull] ObjectGuid characterGuid)
+			: this()
 		{
 			if (characterGuid == null) throw new ArgumentNullException(nameof(characterGuid));
 
 			CharacterGuid = characterGuid;
 		}
 
-		protected CharacterLoginRequest()
+		public CharacterLoginRequest()
+			: base(NetworkOperationCode.CMSG_PLAYER_LOGIN)
 		{
 			//serializer ctor
 		}

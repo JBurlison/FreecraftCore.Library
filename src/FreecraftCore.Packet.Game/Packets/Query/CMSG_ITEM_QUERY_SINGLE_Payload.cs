@@ -31,7 +31,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		protected CMSG_ITEM_QUERY_SINGLE_Payload()
+		public CMSG_ITEM_QUERY_SINGLE_Payload()
 			: base(NetworkOperationCode.CMSG_ITEM_QUERY_SINGLE)
 		{
 			

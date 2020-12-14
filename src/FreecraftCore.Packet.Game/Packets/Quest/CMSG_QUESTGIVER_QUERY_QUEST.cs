@@ -38,7 +38,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal CMSG_QUESTGIVER_QUERY_QUEST_Payload()
+		public CMSG_QUESTGIVER_QUERY_QUEST_Payload()
 			: base(NetworkOperationCode.CMSG_QUESTGIVER_QUERY_QUEST)
 		{
 

@@ -20,7 +20,7 @@ namespace FreecraftCore
 			FailureData = failureData ?? throw new ArgumentNullException(nameof(failureData));
 		}
 
-		internal SMSG_SPELL_FAILED_OTHER_Payload()
+		public SMSG_SPELL_FAILED_OTHER_Payload()
 			: base(NetworkOperationCode.SMSG_SPELL_FAILED_OTHER)
 		{
 			

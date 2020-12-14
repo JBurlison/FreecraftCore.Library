@@ -30,7 +30,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal MSG_MOVE_TELEPORT_Payload()
+		public MSG_MOVE_TELEPORT_Payload()
 			: base(NetworkOperationCode.MSG_MOVE_TELEPORT)
 		{
 

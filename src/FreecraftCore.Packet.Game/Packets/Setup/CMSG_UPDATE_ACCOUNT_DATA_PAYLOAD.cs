@@ -61,9 +61,8 @@ namespace FreecraftCore
 		}
 
 
-		protected CMSG_UPDATE_ACCOUNT_DATA_PAYLOAD()
-			: this()
-			: this()
+		public CMSG_UPDATE_ACCOUNT_DATA_PAYLOAD()
+			: base(NetworkOperationCode.CMSG_UPDATE_ACCOUNT_DATA)
 		{
 			
 		}

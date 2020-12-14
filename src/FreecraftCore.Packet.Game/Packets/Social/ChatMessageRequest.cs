@@ -19,13 +19,15 @@ namespace FreecraftCore
 		public PlayerChatMessage Message { get; internal set; }
 
 		public ChatMessageRequest([NotNull] PlayerChatMessage message)
+			: this()
 		{
 			if (message == null) throw new ArgumentNullException(nameof(message));
 
 			Message = message;
 		}
 
-		protected ChatMessageRequest()
+		public ChatMessageRequest()
+			: base(NetworkOperationCode.CMSG_MESSAGECHAT)
 		{
 			
 		}

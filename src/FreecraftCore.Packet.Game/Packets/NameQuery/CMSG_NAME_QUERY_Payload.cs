@@ -32,7 +32,7 @@ namespace FreecraftCore
 			TargetGuid = targetGuid;
 		}
 
-		protected CMSG_NAME_QUERY_Payload()
+		public CMSG_NAME_QUERY_Payload()
 			: base(NetworkOperationCode.CMSG_NAME_QUERY)
 		{
 			//serializer ctor

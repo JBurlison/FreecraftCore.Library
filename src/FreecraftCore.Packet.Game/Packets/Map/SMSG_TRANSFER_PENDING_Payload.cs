@@ -29,7 +29,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		internal SMSG_TRANSFER_PENDING_Payload()
+		public SMSG_TRANSFER_PENDING_Payload()
 			: base(NetworkOperationCode.SMSG_TRANSFER_PENDING)
 		{
 

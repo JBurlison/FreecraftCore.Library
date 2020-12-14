@@ -41,7 +41,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		private SMSG_LOGIN_SETTIMESPEED_Payload()
+		public SMSG_LOGIN_SETTIMESPEED_Payload()
 			: base(NetworkOperationCode.SMSG_LOGIN_SETTIMESPEED)
 		{
 			

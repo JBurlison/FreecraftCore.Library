@@ -30,7 +30,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal CMSG_CANCEL_AURA_Payload()
+		public CMSG_CANCEL_AURA_Payload()
 			: base(NetworkOperationCode.CMSG_CANCEL_AURA)
 		{
 

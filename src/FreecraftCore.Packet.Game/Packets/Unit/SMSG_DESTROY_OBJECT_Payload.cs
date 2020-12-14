@@ -24,7 +24,7 @@ namespace FreecraftCore
 			IsForDeath = isForDeath;
 		}
 
-		protected SMSG_DESTROY_OBJECT_Payload()
+		public SMSG_DESTROY_OBJECT_Payload()
 			: base(NetworkOperationCode.SMSG_DESTROY_OBJECT)
 		{
 			

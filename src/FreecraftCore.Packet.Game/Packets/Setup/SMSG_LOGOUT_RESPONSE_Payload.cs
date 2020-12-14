@@ -35,7 +35,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		internal SMSG_LOGOUT_RESPONSE_Payload()
+		public SMSG_LOGOUT_RESPONSE_Payload()
 			: base(NetworkOperationCode.SMSG_LOGOUT_RESPONSE)
 		{
 			

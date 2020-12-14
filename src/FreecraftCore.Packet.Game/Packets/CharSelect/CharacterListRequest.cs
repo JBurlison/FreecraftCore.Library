@@ -11,6 +11,7 @@ namespace FreecraftCore
 		public override bool isValid { get; } = true; //TODO: When rules/data validation engine is written implement
 
 		public CharacterListRequest()
+			: base(NetworkOperationCode.CMSG_CHAR_ENUM)
 		{
 			//We don't send any data
 		}

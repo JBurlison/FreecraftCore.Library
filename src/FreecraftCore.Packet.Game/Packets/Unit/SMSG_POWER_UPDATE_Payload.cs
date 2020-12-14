@@ -60,7 +60,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor
 		/// </summary>
-		protected SMSG_POWER_UPDATE_Payload()
+		public SMSG_POWER_UPDATE_Payload()
 			: base(NetworkOperationCode.SMSG_POWER_UPDATE)
 		{
 			

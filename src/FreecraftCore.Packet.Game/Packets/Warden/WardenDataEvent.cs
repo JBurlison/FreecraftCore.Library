@@ -17,7 +17,8 @@ namespace FreecraftCore
 		/// <inheritdoc />
 		public override bool isValid => true;
 
-		protected WardenDataEvent()
+		public WardenDataEvent()
+			: base(NetworkOperationCode.SMSG_WARDEN_DATA)
 		{
 			
 		}

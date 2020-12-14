@@ -18,6 +18,7 @@ namespace FreecraftCore
 		public byte[] Data { get; internal set; }
 
 		public AccountDataTimesRequest()
+			: base(NetworkOperationCode.CMSG_READY_FOR_ACCOUNT_DATA_TIMES)
 		{
 			
 		}

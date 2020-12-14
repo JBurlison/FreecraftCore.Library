@@ -10,6 +10,7 @@ namespace FreecraftCore.Tests
 	[TestFixture]
 	public abstract class AutomatedReflectionTests<TPayloadBaseType, TTypeToReflectForAssembly>
 		where TTypeToReflectForAssembly : TPayloadBaseType
+		where TPayloadBaseType : ISelfSerializable<TPayloadBaseType>
 	{
 		public static IEnumerable<Type> PayloadTypes { get; } = typeof(TTypeToReflectForAssembly).Assembly.GetTypes()
 			.Where(t => typeof(TPayloadBaseType).IsAssignableFrom(t));
@@ -85,7 +86,7 @@ namespace FreecraftCore.Tests
 			if(t.IsAbstract) //if it's unknown then it's probably default and thus unwritable
 				return;
 
-			object payload = Activator.CreateInstance(t, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.CreateInstance, null, new object[0], null);
+			TPayloadBaseType payload = (TPayloadBaseType)Activator.CreateInstance(t, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.CreateInstance, null, new object[0], null);
 
 			//act
 			Span<byte> buffer = new Span<byte>(new byte[62000]);

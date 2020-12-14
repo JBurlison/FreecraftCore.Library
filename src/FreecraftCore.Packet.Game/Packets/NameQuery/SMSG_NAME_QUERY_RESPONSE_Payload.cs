@@ -86,7 +86,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		protected SMSG_NAME_QUERY_RESPONSE_Payload()
+		public SMSG_NAME_QUERY_RESPONSE_Payload()
 			: base(NetworkOperationCode.SMSG_NAME_QUERY_RESPONSE)
 		{
 			

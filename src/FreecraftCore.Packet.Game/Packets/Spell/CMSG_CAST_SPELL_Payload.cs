@@ -36,7 +36,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		internal CMSG_CAST_SPELL_Payload()
+		public CMSG_CAST_SPELL_Payload()
 			: base(NetworkOperationCode.CMSG_CAST_SPELL)
 		{
 			

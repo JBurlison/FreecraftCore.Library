@@ -29,7 +29,7 @@ namespace FreecraftCore
 			Guid = guid ?? throw new ArgumentNullException(nameof(guid));
 		}
 
-		internal CMSG_GAMEOBJ_USE_Payload()
+		public CMSG_GAMEOBJ_USE_Payload()
 			: base(NetworkOperationCode.CMSG_GAMEOBJ_USE)
 		{
 			

@@ -67,7 +67,7 @@ namespace FreecraftCore
 		}
 
 		/// <inheritdoc />
-		protected SMSG_MONSTER_MOVE_Payload()
+		public SMSG_MONSTER_MOVE_Payload()
 			: base(NetworkOperationCode.SMSG_MONSTER_MOVE)
 		{
 

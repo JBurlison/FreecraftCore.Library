@@ -32,6 +32,7 @@ namespace FreecraftCore
 		/// Creates a default/test message instance.
 		/// </summary>
 		public MSG_SET_DUNGEON_DIFFICULTY()
+			: base(NetworkOperationCode.MSG_SET_DUNGEON_DIFFICULTY)
 		{
 			
 		}

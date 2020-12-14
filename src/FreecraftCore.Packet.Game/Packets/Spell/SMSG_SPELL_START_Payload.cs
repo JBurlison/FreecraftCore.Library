@@ -19,7 +19,7 @@ namespace FreecraftCore
 			CastData = castData ?? throw new ArgumentNullException(nameof(castData));
 		}
 
-		internal SMSG_SPELL_START_Payload()
+		public SMSG_SPELL_START_Payload()
 			: base(NetworkOperationCode.SMSG_SPELL_START)
 		{
 			

@@ -48,7 +48,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal CMSG_QUESTGIVER_CHOOSE_REWARD_Payload()
+		public CMSG_QUESTGIVER_CHOOSE_REWARD_Payload()
 			: base(NetworkOperationCode.CMSG_QUESTGIVER_CHOOSE_REWARD)
 		{
 

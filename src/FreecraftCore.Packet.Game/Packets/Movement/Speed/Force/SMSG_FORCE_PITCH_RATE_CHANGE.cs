@@ -34,7 +34,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal SMSG_FORCE_PITCH_RATE_CHANGE_Payload()
+		public SMSG_FORCE_PITCH_RATE_CHANGE_Payload()
 			: base(NetworkOperationCode.SMSG_FORCE_PITCH_RATE_CHANGE)
 		{
 

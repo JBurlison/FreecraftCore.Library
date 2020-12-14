@@ -160,7 +160,7 @@ namespace FreecraftCore
 			MessageFooter = messageFooter ?? throw new ArgumentNullException(nameof(messageFooter));
 		}
 
-		protected SMSG_MESSAGECHAT_Payload()
+		public SMSG_MESSAGECHAT_Payload()
 			: base(NetworkOperationCode.SMSG_MESSAGECHAT)
 		{
 			//serializer ctor

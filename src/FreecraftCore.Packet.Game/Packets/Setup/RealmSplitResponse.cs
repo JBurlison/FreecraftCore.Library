@@ -62,11 +62,13 @@ namespace FreecraftCore
 		/// </summary>
 		/// <param name="unk">Unk should match the unk in the <see cref="RealmSplitRequest"/>.</param>
 		public RealmSplitResponse(int unk)
+			: this()
 		{
 			Unk = unk;
 		}
 
 		public RealmSplitResponse()
+			: base(NetworkOperationCode.SMSG_REALM_SPLIT)
 		{
 			
 		}

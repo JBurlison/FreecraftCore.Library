@@ -53,7 +53,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		internal SMSG_LOGIN_VERIFY_WORLD_Payload()
+		public SMSG_LOGIN_VERIFY_WORLD_Payload()
 			: base(NetworkOperationCode.SMSG_LOGIN_VERIFY_WORLD)
 		{
 			

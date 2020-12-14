@@ -16,11 +16,13 @@ namespace FreecraftCore
 		public uint Ping { get; internal set; }
 
 		public PongResponse(uint ping)
+			: this()
 		{
 			Ping = ping;
 		}
 
-		private PongResponse()
+		public PongResponse()
+			: base(NetworkOperationCode.SMSG_PONG)
 		{
 			
 		}

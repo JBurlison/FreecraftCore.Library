@@ -40,7 +40,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		private CMSG_TIME_SYNC_RESP_Payload()
+		public CMSG_TIME_SYNC_RESP_Payload()
 			: base(NetworkOperationCode.CMSG_TIME_SYNC_RESP)
 		{
 

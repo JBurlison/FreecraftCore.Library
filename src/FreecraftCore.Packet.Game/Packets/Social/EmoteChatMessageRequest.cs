@@ -21,6 +21,7 @@ namespace FreecraftCore
 		public ObjectGuid EmoteTarget { get; internal set; }
 
 		public EmoteChatMessageRequest(TextEmotes emote, uint emoteNumber, ObjectGuid guid)
+			: this()
 		{
 			if (!Enum.IsDefined(typeof(TextEmotes), emote))
 				throw new ArgumentOutOfRangeException(nameof(emote), "Value should be defined in the TextEmotes enum.");
@@ -30,7 +31,8 @@ namespace FreecraftCore
 			EmoteTarget = guid;
 		}
 
-		protected EmoteChatMessageRequest()
+		public EmoteChatMessageRequest()
+			: base(NetworkOperationCode.CMSG_TEXT_EMOTE)
 		{
 			//serializer ctor
 		}

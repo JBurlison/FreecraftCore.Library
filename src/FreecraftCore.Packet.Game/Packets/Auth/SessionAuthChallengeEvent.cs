@@ -29,11 +29,13 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public SessionAuthChallengeEvent([NotNull] SessionAuthChallengeEventData eventData)
+			: this()
 		{
 			EventData = eventData ?? throw new ArgumentNullException(nameof(eventData));
 		}
 
 		public SessionAuthChallengeEvent()
+			: base(NetworkOperationCode.SMSG_AUTH_CHALLENGE)
 		{
 			//TODO: If we ever make a server we'll need a real ctor for this packet.
 		}

@@ -31,7 +31,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		private SMSG_TIME_SYNC_REQ_Payload()
+		public SMSG_TIME_SYNC_REQ_Payload()
 			: base(NetworkOperationCode.SMSG_TIME_SYNC_REQ)
 		{
 			

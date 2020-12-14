@@ -19,7 +19,8 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		protected TutorialDataEvent()
+		public TutorialDataEvent()
+			: base(NetworkOperationCode.SMSG_TUTORIAL_FLAGS)
 		{
 			
 		}

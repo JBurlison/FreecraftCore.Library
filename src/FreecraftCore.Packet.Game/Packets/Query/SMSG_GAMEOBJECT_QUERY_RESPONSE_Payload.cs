@@ -44,7 +44,7 @@ namespace FreecraftCore
 			PackedResponseId = queryId & 0x80000000;
 		}
 
-		protected SMSG_GAMEOBJECT_QUERY_RESPONSE_Payload()
+		public SMSG_GAMEOBJECT_QUERY_RESPONSE_Payload()
 			: base(NetworkOperationCode.SMSG_GAMEOBJECT_QUERY_RESPONSE)
 		{
 			

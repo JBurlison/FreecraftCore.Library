@@ -34,9 +34,8 @@ namespace FreecraftCore
 			this.isFeatureEnabled = isFeatureEnabled;
 		}
 
-		protected SMSG_FEATURE_SYSTEM_STATUS_PAYLOAD()
-			: this()
-			: this()
+		public SMSG_FEATURE_SYSTEM_STATUS_PAYLOAD()
+			: base(NetworkOperationCode.SMSG_FEATURE_SYSTEM_STATUS)
 		{
 			
 		}

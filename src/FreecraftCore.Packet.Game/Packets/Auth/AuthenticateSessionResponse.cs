@@ -39,6 +39,7 @@ namespace FreecraftCore
 		public Expansions AccountExpansion { get; internal set; }
 
 		public AuthenticateSessionResponse()
+			: base(NetworkOperationCode.SMSG_AUTH_RESPONSE)
 		{
 			//TODO: If we ever run a server add a ctor
 		}

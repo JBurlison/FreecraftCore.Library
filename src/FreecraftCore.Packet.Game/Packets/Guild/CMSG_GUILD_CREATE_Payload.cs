@@ -30,7 +30,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal CMSG_GUILD_CREATE_Payload()
+		public CMSG_GUILD_CREATE_Payload()
 			: base(NetworkOperationCode.CMSG_GUILD_CREATE)
 		{
 

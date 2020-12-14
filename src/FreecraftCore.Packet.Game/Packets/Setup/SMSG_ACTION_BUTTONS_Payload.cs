@@ -46,7 +46,7 @@ namespace FreecraftCore
 			_ButtonData = buttonData ?? throw new ArgumentNullException(nameof(buttonData));
 		}
 
-		protected SMSG_ACTION_BUTTONS_Payload()
+		public SMSG_ACTION_BUTTONS_Payload()
 			: base(NetworkOperationCode.SMSG_ACTION_BUTTONS)
 		{
 			

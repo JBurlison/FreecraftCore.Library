@@ -19,6 +19,7 @@ namespace FreecraftCore
 		public byte[] Data { get; internal set; }
 
 		public AccountDataTimesResponse()
+			: base(NetworkOperationCode.SMSG_ACCOUNT_DATA_TIMES)
 		{
 			
 		}

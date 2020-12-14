@@ -26,7 +26,7 @@ namespace FreecraftCore
 		/// Sent by Trinitycore with those values.
 		/// </summary>
 		public SMSG_LEARNED_DANCE_MOVES_PAYLOAD()
-			: this()
+			: base(NetworkOperationCode.SMSG_LEARNED_DANCE_MOVES)
 		{
 			
 		}

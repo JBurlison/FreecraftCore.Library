@@ -34,9 +34,8 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		protected SMSG_MOTD_PAYLOAD()
-			: this()
-			: this()
+		public SMSG_MOTD_PAYLOAD()
+			: base(NetworkOperationCode.SMSG_MOTD)
 		{
 			
 		}

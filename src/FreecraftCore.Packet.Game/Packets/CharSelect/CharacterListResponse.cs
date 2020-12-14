@@ -18,11 +18,13 @@ namespace FreecraftCore
 
 		/// <inheritdoc />
 		public CharacterListResponse([NotNull] CharacterScreenCharacter[] characters)
+			: this()
 		{
 			Characters = characters ?? throw new ArgumentNullException(nameof(characters));
 		}
 
-		protected CharacterListResponse()
+		public CharacterListResponse()
+			: base(NetworkOperationCode.SMSG_CHAR_ENUM)
 		{
 			//serialization ctor
 		}

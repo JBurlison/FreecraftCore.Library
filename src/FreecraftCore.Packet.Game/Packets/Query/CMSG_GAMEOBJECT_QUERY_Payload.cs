@@ -24,7 +24,7 @@ namespace FreecraftCore
 			QueryId = gameObjectId;
 		}
 
-		protected CMSG_GAMEOBJECT_QUERY_Payload()
+		public CMSG_GAMEOBJECT_QUERY_Payload()
 			: base(NetworkOperationCode.CMSG_GAMEOBJECT_QUERY)
 		{
 			

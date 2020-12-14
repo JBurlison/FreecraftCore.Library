@@ -41,7 +41,9 @@ namespace FreecraftCore
 
 			//Must use SIZE cannot just write with primitive array
 			for (int i = 0; i < size; i++)
-				buffer[offset + i] = packGuid[i];
+				buffer[i + offset] = packGuid[i];
+
+			offset += size;
 		}
 
 		private static byte[] GeneratePackedGuid(PackedGuid value, out int size)

@@ -27,7 +27,7 @@ namespace FreecraftCore
 			MovementGuid = movementGuid ?? throw new ArgumentNullException(nameof(movementGuid)); MoveInfo = moveInfo ?? throw new ArgumentNullException(nameof(moveInfo));
 		}
 
-		protected MSG_MOVE_STOP_STRAFE_Payload()
+		public MSG_MOVE_STOP_STRAFE_Payload()
 			: base(NetworkOperationCode.MSG_MOVE_STOP_STRAFE)
 		{
 

@@ -25,7 +25,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal CMSG_GOSSIP_HELLO_Payload()
+		public CMSG_GOSSIP_HELLO_Payload()
 			: base(NetworkOperationCode.CMSG_GOSSIP_HELLO)
 		{
 

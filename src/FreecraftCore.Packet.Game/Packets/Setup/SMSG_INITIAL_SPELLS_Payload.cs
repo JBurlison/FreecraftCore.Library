@@ -24,7 +24,7 @@ namespace FreecraftCore
 			Data = data;
 		}
 
-		protected SMSG_INITIAL_SPELLS_Payload()
+		public SMSG_INITIAL_SPELLS_Payload()
 			: base(NetworkOperationCode.SMSG_INITIAL_SPELLS)
 		{
 			

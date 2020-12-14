@@ -28,7 +28,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal CMSG_GUILD_INVITE_Payload()
+		public CMSG_GUILD_INVITE_Payload()
 			: base(NetworkOperationCode.CMSG_GUILD_INVITE)
 		{
 

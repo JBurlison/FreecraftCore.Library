@@ -28,7 +28,7 @@ namespace FreecraftCore
 			Status = status;
 		}
 
-		protected SMSG_QUESTGIVER_STATUS_Payload()
+		public SMSG_QUESTGIVER_STATUS_Payload()
 			: base(NetworkOperationCode.SMSG_QUESTGIVER_STATUS)
 		{
 			

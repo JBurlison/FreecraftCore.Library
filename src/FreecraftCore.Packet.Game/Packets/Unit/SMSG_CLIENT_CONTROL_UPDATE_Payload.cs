@@ -38,7 +38,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer
 		/// </summary>
-		protected SMSG_CLIENT_CONTROL_UPDATE_Payload()
+		public SMSG_CLIENT_CONTROL_UPDATE_Payload()
 			: base(NetworkOperationCode.SMSG_CLIENT_CONTROL_UPDATE)
 		{
 			

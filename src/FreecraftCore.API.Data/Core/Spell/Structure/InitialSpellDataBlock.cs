@@ -47,7 +47,7 @@ namespace FreecraftCore
 			SpellCooldowns = Array.Empty<InitialSpellCooldown<TSpellType>>();
 		}
 
-		protected InitialSpellDataBlock()
+		public InitialSpellDataBlock()
 		{
 			
 		}

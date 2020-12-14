@@ -46,7 +46,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		private SMSG_GROUP_INVITE_Payload()
+		public SMSG_GROUP_INVITE_Payload()
 			: base(NetworkOperationCode.SMSG_GROUP_INVITE)
 		{
 			

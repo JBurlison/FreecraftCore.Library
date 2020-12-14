@@ -22,7 +22,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		internal CMSG_SET_SELECTION_Payload()
+		public CMSG_SET_SELECTION_Payload()
 			: base(NetworkOperationCode.CMSG_SET_SELECTION)
 		{
 			

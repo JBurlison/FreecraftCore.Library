@@ -25,7 +25,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Serializer ctor.
 		/// </summary>
-		private SMSG_TRADE_STATUS_Payload()
+		public SMSG_TRADE_STATUS_Payload()
 			: base(NetworkOperationCode.SMSG_TRADE_STATUS)
 		{
 

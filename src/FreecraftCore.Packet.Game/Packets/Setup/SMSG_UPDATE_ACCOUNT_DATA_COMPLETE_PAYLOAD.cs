@@ -34,9 +34,8 @@ namespace FreecraftCore
 			DataType = dataType;
 		}
 
-		protected SMSG_UPDATE_ACCOUNT_DATA_COMPLETE_PAYLOAD()
-			: this()
-			: this()
+		public SMSG_UPDATE_ACCOUNT_DATA_COMPLETE_PAYLOAD()
+			: base(NetworkOperationCode.SMSG_UPDATE_ACCOUNT_DATA_COMPLETE)
 		{
 			
 		}

@@ -35,7 +35,7 @@ namespace FreecraftCore
 		/// <summary>
 		/// Default Serializer Ctor.
 		/// </summary>
-		internal MSG_MOVE_SET_SWIM_BACK_SPEED_Payload()
+		public MSG_MOVE_SET_SWIM_BACK_SPEED_Payload()
 			: base(NetworkOperationCode.MSG_MOVE_SET_SWIM_BACK_SPEED)
 		{
 

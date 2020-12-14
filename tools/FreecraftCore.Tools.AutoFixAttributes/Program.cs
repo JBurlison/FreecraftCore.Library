@@ -107,7 +107,7 @@ namespace FreecraftCore
 				.First();
 
 			//Parameterless
-			if (file[i].Contains("Payload()"))
+			if (file[i].Contains("Payload()") || file[i].Contains("PAYLOAD()"))
 			{
 				builder.Append($": base(");
 				builder.Append(opcodeName);

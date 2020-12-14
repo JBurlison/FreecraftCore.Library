@@ -84,6 +84,7 @@ namespace FreecraftCore
 		
 		public SessionAuthProofRequest(ClientBuild clientBuildNumber, [NotNull] string accountName, [NotNull] byte[] randomSeedBytes,
 			[NotNull] RealmIdentification realmIdentity, [NotNull] byte[] sessionDigest, [NotNull] AddonChecksumInfo[] addonChecksums)
+			: this()
 		{
 			if (!Enum.IsDefined(typeof(ClientBuild), clientBuildNumber))
 				throw new ArgumentOutOfRangeException(nameof(clientBuildNumber), "Value should be defined in the ClientBuild enum.");
@@ -104,7 +105,8 @@ namespace FreecraftCore
 			SessionDigest = sessionDigest;
 		}
 
-		protected SessionAuthProofRequest()
+		public SessionAuthProofRequest()
+			: base(NetworkOperationCode.CMSG_AUTH_SESSION)
 		{
 			//protected ctor for serialization
 		}
