@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 
 namespace FreecraftCore
 {
+	[WireDataContract]
 	public sealed class InitialSpellDataBlock<TSpellType>
 		where TSpellType : struct
 	{

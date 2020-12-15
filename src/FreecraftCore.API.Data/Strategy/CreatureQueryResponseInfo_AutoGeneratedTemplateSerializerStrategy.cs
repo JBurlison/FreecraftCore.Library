@@ -25,7 +25,7 @@ namespace FreecraftCore.Serializer
         public override void InternalRead(CreatureQueryResponseInfo value, Span<byte> buffer, ref int offset)
         {
             //Type: CreatureQueryResponseInfo Field: 1 Name: CreatureNames Type: String[];
-            value.CreatureNames = FixedSizeComplexArrayTypeSerializerStrategy<FixedSizeStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, StaticTypedNumeric_Int32_4, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Read(buffer, ref offset);
+            value.CreatureNames = FixedSizeComplexArrayTypeSerializerStrategy<TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Read(buffer, ref offset);
             //Type: CreatureQueryResponseInfo Field: 2 Name: AlternativeName Type: String;
             value.AlternativeName = TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>.Instance.Read(buffer, ref offset);
             //Type: CreatureQueryResponseInfo Field: 3 Name: CursorName Type: String;
@@ -64,7 +64,7 @@ namespace FreecraftCore.Serializer
         public override void InternalWrite(CreatureQueryResponseInfo value, Span<byte> buffer, ref int offset)
         {
             //Type: CreatureQueryResponseInfo Field: 1 Name: CreatureNames Type: String[];
-            FixedSizeComplexArrayTypeSerializerStrategy<FixedSizeStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, StaticTypedNumeric_Int32_4, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Write(value.CreatureNames, buffer, ref offset);
+            FixedSizeComplexArrayTypeSerializerStrategy<TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Write(value.CreatureNames, buffer, ref offset);
             //Type: CreatureQueryResponseInfo Field: 2 Name: AlternativeName Type: String;
             TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>.Instance.Write(value.AlternativeName, buffer, ref offset);
             //Type: CreatureQueryResponseInfo Field: 3 Name: CursorName Type: String;

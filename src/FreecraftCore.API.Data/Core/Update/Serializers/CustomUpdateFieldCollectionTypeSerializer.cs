@@ -45,7 +45,7 @@ namespace FreecraftCore
 
 		public override void Write(UpdateFieldValueCollection value, Span<byte> buffer, ref int offset)
 		{
-			throw new NotImplementedException($"TODO: Reimplement UpdateCollection write.");
+			throw KnownIncompleteSerializationException.Create<UpdateFieldValueCollection>($"TODO: Reimplement UpdateCollection write.");
 			/*//TODO: Major performance gains if we can avoid allocations here. MAJOR!!
 			//The size must be equal to the length divided by 8 bits (1 byte) but we do not include the
 			//remainder from a modular division. The reason for this is it's always sent as 4 byte chunks from

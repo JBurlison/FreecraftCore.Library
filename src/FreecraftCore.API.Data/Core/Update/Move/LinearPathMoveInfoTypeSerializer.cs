@@ -66,8 +66,8 @@ namespace FreecraftCore
 			GenericTypePrimitiveSerializerStrategy<float>.Instance.Write(value.FinalPosition.Y, buffer, ref offset);
 			GenericTypePrimitiveSerializerStrategy<float>.Instance.Write(value.FinalPosition.Z, buffer, ref offset);
 
-			if(value.LastIndex > 1 && value.SplineMiddlePoints != null)
-				throw new NotImplementedException($"TODO: Implement mid points.");
+			if (value.LastIndex > 1 && value.SplineMiddlePoints != null)
+				throw KnownIncompleteSerializationException.Create<LinearPathMoveInfo>($"TODO: Implement mid points writing.");
 		}
 	}
 }

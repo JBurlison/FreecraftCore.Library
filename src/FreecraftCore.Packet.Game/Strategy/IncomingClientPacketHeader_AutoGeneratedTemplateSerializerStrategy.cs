@@ -39,7 +39,7 @@ namespace FreecraftCore.Serializer
                 case 1:
                     return new IncomingClientLargePacketHeader();
                 default:
-                    return new IncomingClientSmallPacketHeader();
+                    throw new NotImplementedException($"Encountered unimplemented sub-type for Type: {nameof(IncomingClientPacketHeader)} with Key: {key}");
             }
         }
     }

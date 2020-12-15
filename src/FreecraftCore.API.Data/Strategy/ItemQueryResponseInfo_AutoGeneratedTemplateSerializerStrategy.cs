@@ -31,7 +31,7 @@ namespace FreecraftCore.Serializer
             //Type: ItemQueryResponseInfo Field: 3 Name: SoundOverrideSubclass Type: Int32;
             value.SoundOverrideSubclass = GenericTypePrimitiveSerializerStrategy<Int32>.Instance.Read(buffer, ref offset);
             //Type: ItemQueryResponseInfo Field: 4 Name: ItemNames Type: String[];
-            value.ItemNames = FixedSizeComplexArrayTypeSerializerStrategy<FixedSizeStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, StaticTypedNumeric_Int32_4, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Read(buffer, ref offset);
+            value.ItemNames = FixedSizeComplexArrayTypeSerializerStrategy<TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Read(buffer, ref offset);
             //Type: ItemQueryResponseInfo Field: 5 Name: DisplayId Type: Int32;
             value.DisplayId = GenericTypePrimitiveSerializerStrategy<Int32>.Instance.Read(buffer, ref offset);
             //Type: ItemQueryResponseInfo Field: 6 Name: Quality Type: ItemQuality;
@@ -156,7 +156,7 @@ namespace FreecraftCore.Serializer
             //Type: ItemQueryResponseInfo Field: 3 Name: SoundOverrideSubclass Type: Int32;
             GenericTypePrimitiveSerializerStrategy<Int32>.Instance.Write(value.SoundOverrideSubclass, buffer, ref offset);
             //Type: ItemQueryResponseInfo Field: 4 Name: ItemNames Type: String[];
-            FixedSizeComplexArrayTypeSerializerStrategy<FixedSizeStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, StaticTypedNumeric_Int32_4, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Write(value.ItemNames, buffer, ref offset);
+            FixedSizeComplexArrayTypeSerializerStrategy<TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Write(value.ItemNames, buffer, ref offset);
             //Type: ItemQueryResponseInfo Field: 5 Name: DisplayId Type: Int32;
             GenericTypePrimitiveSerializerStrategy<Int32>.Instance.Write(value.DisplayId, buffer, ref offset);
             //Type: ItemQueryResponseInfo Field: 6 Name: Quality Type: ItemQuality;

@@ -29,7 +29,7 @@ namespace FreecraftCore.Serializer
             //Type: GameObjectQueryResponseInfo Field: 2 Name: DisplayId Type: Int32;
             value.DisplayId = GenericTypePrimitiveSerializerStrategy<Int32>.Instance.Read(buffer, ref offset);
             //Type: GameObjectQueryResponseInfo Field: 3 Name: Names Type: String[];
-            value.Names = FixedSizeComplexArrayTypeSerializerStrategy<FixedSizeStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, StaticTypedNumeric_Int32_4, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Read(buffer, ref offset);
+            value.Names = FixedSizeComplexArrayTypeSerializerStrategy<TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Read(buffer, ref offset);
             //Type: GameObjectQueryResponseInfo Field: 4 Name: IconName Type: String;
             value.IconName = TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>.Instance.Read(buffer, ref offset);
             //Type: GameObjectQueryResponseInfo Field: 5 Name: CastBarCaption Type: String;
@@ -58,7 +58,7 @@ namespace FreecraftCore.Serializer
             //Type: GameObjectQueryResponseInfo Field: 2 Name: DisplayId Type: Int32;
             GenericTypePrimitiveSerializerStrategy<Int32>.Instance.Write(value.DisplayId, buffer, ref offset);
             //Type: GameObjectQueryResponseInfo Field: 3 Name: Names Type: String[];
-            FixedSizeComplexArrayTypeSerializerStrategy<FixedSizeStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, StaticTypedNumeric_Int32_4, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Write(value.Names, buffer, ref offset);
+            FixedSizeComplexArrayTypeSerializerStrategy<TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>, string, StaticTypedNumeric_Int32_4>.Instance.Write(value.Names, buffer, ref offset);
             //Type: GameObjectQueryResponseInfo Field: 4 Name: IconName Type: String;
             TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>.Instance.Write(value.IconName, buffer, ref offset);
             //Type: GameObjectQueryResponseInfo Field: 5 Name: CastBarCaption Type: String;

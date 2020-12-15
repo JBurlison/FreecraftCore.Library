@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreecraftCore.Serializer.Compiler" Version="4.0.30" />
-    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="4.0.30" />
+    <PackageReference Include="FreecraftCore.Serializer.Compiler" Version="4.0.33" />
+    <PackageReference Include="FreecraftCore.Serializer.Metadata" Version="4.0.33" />
   </ItemGroup>
 
   <ItemGroup>

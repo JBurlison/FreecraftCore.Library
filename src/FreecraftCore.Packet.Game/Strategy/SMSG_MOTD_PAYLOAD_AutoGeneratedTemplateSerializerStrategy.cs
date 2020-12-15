@@ -44,7 +44,7 @@ namespace FreecraftCore.Serializer
             //Type: GamePacketPayload Field: 1 Name: OperationCode Type: NetworkOperationCode;
             value.OperationCode = GenericPrimitiveEnumTypeSerializerStrategy<NetworkOperationCode, UInt16>.Instance.Read(buffer, ref offset);
             //Type: SMSG_MOTD_PAYLOAD Field: 1 Name: MessageOfTheDayByLines Type: String[];
-            value.MessageOfTheDayByLines = SendSizeComplexArrayTypeSerializerStrategy<LengthPrefixedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy, Int32>, string, Int32>.Instance.Read(buffer, ref offset);
+            value.MessageOfTheDayByLines = SendSizeComplexArrayTypeSerializerStrategy<TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>, string, Int32>.Instance.Read(buffer, ref offset);
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace FreecraftCore.Serializer
             //Type: GamePacketPayload Field: 1 Name: OperationCode Type: NetworkOperationCode;
             GenericPrimitiveEnumTypeSerializerStrategy<NetworkOperationCode, UInt16>.Instance.Write(value.OperationCode, buffer, ref offset);
             //Type: SMSG_MOTD_PAYLOAD Field: 1 Name: MessageOfTheDayByLines Type: String[];
-            SendSizeComplexArrayTypeSerializerStrategy<LengthPrefixedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy, Int32>, string, Int32>.Instance.Write(value.MessageOfTheDayByLines, buffer, ref offset);
+            SendSizeComplexArrayTypeSerializerStrategy<TerminatedStringTypeSerializerStrategy<ASCIIStringTypeSerializerStrategy, ASCIIStringTerminatorTypeSerializerStrategy>, string, Int32>.Instance.Write(value.MessageOfTheDayByLines, buffer, ref offset);
         }
     }
 }
