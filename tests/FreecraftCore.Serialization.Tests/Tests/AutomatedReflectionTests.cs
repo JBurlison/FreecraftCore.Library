@@ -20,9 +20,7 @@ namespace FreecraftCore.Tests
 		{
 			//arrange
 			//Find the attribute that should be annoting these payloads
-			WireDataContractBaseLinkAttribute linkAttri = typeof(AuthenticationServerPayloadAttribute)
-				.Assembly
-				.GetTypes()
+			WireDataContractBaseLinkAttribute linkAttri = GetPayloadAssemblyTypes()
 				.Where(t =>  typeof(WireDataContractBaseLinkAttribute).IsAssignableFrom(t) && !t.IsAbstract)
 				.Where(t => typeof(IPayloadAttribute).IsAssignableFrom(t))
 				.Select(t => Activator.CreateInstance(t, BindingFlags.CreateInstance | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, new object[] { 5 }, null) as WireDataContractBaseLinkAttribute)
@@ -45,6 +43,15 @@ namespace FreecraftCore.Tests
 					Assert.Fail($"Failed to check the link for {t.Name} Exception: {e.Message}");
 				}
 			}
+		}
+
+		private static Type[] GetPayloadAssemblyTypes()
+		{
+			return typeof(AuthenticationServerPayloadAttribute)
+				.Assembly
+				.GetTypes()
+				.Concat(typeof(GamePayloadOperationCodeAttribute).Assembly.GetTypes())
+				.ToArray();
 		}
 
 		[Test]
